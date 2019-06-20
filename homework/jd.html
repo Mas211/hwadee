@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东</title>
+<style type="text/css"> 
+.myCategory{ 
+width:150px; 
+font-size:12px; 
+font-family:arial,sans-serif; 
+letter-spacing:2px; 
+} 
+.myCategory h1{ 
+background-image:url(http://www.webjx.com/files/100709/1_185326.gif); 
+height:20px; 
+background-repeat:no-repeat; 
+font-size:14px; 
+font-weight:bold; 
+padding-left:15px; 
+padding-top:8px; 
+margin:0px; 
+color:#FFF; 
+} 
+.myCategory .myCatList{ 
+width:148px; 
+border-color:#b60134; 
+border-style:solid; 
+border-width:0px 1px 1px 1px; 
+line-height:13.5pt; 
+} 
+.myCategory .myCatList h2 { 
+margin:0px; 
+padding:3px 5px 0px 9px; 
+} 
+.myCategory .myCatList h2 a { 
+color:#d6290b; 
+font-weight:bold; 
+font-size:14px; 
+line-height:22px; 
+} 
+.myCategory .myCatList h2 a:hover { 
+color:#d6290b; 
+font-weight:bold; 
+font-size:14px; 
+line-height:22px; 
+} 
+.myCategory .h2Cat{ 
+width:148px; 
+height:26px; 
+background-image:url(http://www.webjx.com/files/100709/1_185410.gif); 
+background-repeat:no-repeat; 
+line-height:26px; 
+font-weight:normal; 
+color:#333333; 
+position:relative; 
+} 
+.myCategory .h2Cat1{ 
+width:148px; 
+height:26px; 
+background-image:url(http://www.webjx.com/files/100709/1_185458.gif); 
+background-repeat:no-repeat; 
+line-height:26px; 
+font-weight:normal; 
+color:#333333; 
+position:relative; 
+} 
+.myCategory a{ 
+font:12px; 
+text-decoration:none; 
+color:#333333; 
+} 
+.myCategory a:hover{ 
+text-decoration:underline; 
+color:#ff3333; 
+} 
+.myCategory h3{ 
+margin:0px; 
+padding:0px; 
+height:26px; 
+font-size:12px; 
+font-weight:normal; 
+display:block; 
+padding-left:8px; 
+} 
+.myCategory h3 span{color:#999999; width:145px; float:right;} 
+.myCategory h3 a{ line-height:26px;} 
+.myCategory .h3Cat{ 
+display:none; 
+width:204px; 
+position:absolute; 
+left:123px; 
+margin-top:-26px; 
+cursor:auto; 
+} 
+.myCategory .shadow{ 
+position:inherit; 
+background:url(http://www.webjx.com/files/100709/1_185541.gif) left top; 
+width:204px; 
+} 
+.myCategory .shadowBorder{ 
+position:inherit; 
+width:200px; 
+border:1px solid #959595; margin-top:1px; 
+border-left-width:0px; 
+background:url(http://www.webjx.com/files/100709/1_185622.gif) no-repeat 0px 21px; 
+background-color:#ffffff; 
+margin-bottom:3px; 
+} 
+.myCategory .shadowBorder ul{
+	margin: 0;
+	padding: 0;
+	margin-left: 15px;
+}
+.myCategory .shadowBorder ul li{
+	list-style:none;
+	padding-left: 10px;
+	background-image:url(http://www.webjx.com/files/100709/1_185704.gif); 
+	background-repeat:no-repeat; 
+	background-position:0px 8px;
+	float: left;
+	width: 75px;
+	height: 26px;
+	overflow: hidden;
+	letter-spacing: 0;
+}
+.myCategory .activeCat{
+	z-index: 99;
+	cursor: pointer;
+}
+.myCategory .activeCat h3{
+	font-weight: bold;
+}
+.myCategory .activeCat h3 span{
+	display: none;
+}
+.myCategory .activeCat div{
+	display: block;
+}
+</style> 
+</head> 
+<body> 
+	<div class="myCategory"> 
+		<h1>导航</h1> 
+		<div class="myCatList"> 
+			<h2><a href="#">家用电器</a></h2> 
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">电视</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">超薄电视</a></li> 
+								<li><a href="#">智能电视</a></li> 
+								<li><a href="#">曲面电视</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">空调</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">空调挂机</a></li> 
+								<li><a href="#">空调柜机</a></li> 
+								<li><a href="#">中央空调</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">冰箱</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">双开门</a></li> 
+								<li><a href="#">单开门</a></li> 
+								<li><a href="#">多开门</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<h2><a href="#">手机/运营商/数码</a></h2> 
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">手机通讯</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">手机</a></li> 
+								<li><a href="#">游戏手机</a></li> 
+								<li><a href="#">老人机</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">运营商</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">合约机</a></li> 
+								<li><a href="#">办套餐</a></li> 
+								<li><a href="#">充话费</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">摄影摄像</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">数码相机</a></li> 
+								<li><a href="#">单反相机</a></li> 
+								<li><a href="#">拍立得</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<h2><a href="#">电脑/办公</a></h2> 
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">电脑整机</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">笔记本</a></li> 
+								<li><a href="#">游戏本</a></li> 
+								<li><a href="#">平板电脑</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<div class="h2Cat" onmouseover="this.className='h2Cat activeCat'" onmouseout="this.className='h2Cat'"> 
+				<h3><a href="#">电脑配件</a></h3> 
+				<div class="h3Cat"> 
+					<div class="shadow"> 
+						<div class="shadowBorder"> 
+							<ul> 
+								<li><a href="#">显示器</a></li> 
+								<li><a href="#">CPU</a></li> 
+								<li><a href="#">主板</a></li> 
+							</ul> 
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<h2><a href="#">家居/家具/家装/厨具</a></h2> 
+			<h2><a href="#">男装/女装/童装/内衣</a></h2> 
+			<h2><a href="#">美妆/个护清洁/宠物</a></h2> 
+			<h2><a href="#">女鞋/箱包/钟表/珠宝</a></h2> 
+			<h2><a href="#">男鞋/运动/户外</a></h2> 
+			<h2><a href="#">房产/汽车/汽车用品</a></h2> 
+			<h2><a href="#">.........</a></h2> 
+		</div>
+	</div>
+</body>
+</html>
