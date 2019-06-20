@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东菜单</title>
+	<style>
+		body{
+			font-size: 14px;
+			font-family: "Microsoft Yahei"
+			color:#ccc;
+		}
+		a{
+			line-height: 24px;
+			text-decoration:none;
+			color: #626262;
+		}
+		a:hover{
+			color: red;
+		}
+		.left{
+			position: relative;
+		}
+		.classifiction{
+			height: 24px;
+			
+			padding: 0 0 0 18px;
+		}
+		.classifiction>.extends{
+			display: none;
+			width: 531px;
+			height: 432px;
+			position: absolute;
+			left:190px;
+			top:0;
+			background: #666;
+		}
+		.classifiction:hover{
+			background: #d9d9d9;
+		}
+		.classifiction:hover>.extends{
+			display: block;
+		}
+		.left{
+			float: left;
+		}
+		.rightshow{
+			float: left;
+		}
+		.clearfix:after {                 
+			content: "." ;                    
+			display: block ;   
+			height: 0 ;
+			clear: both ;
+			visibility: hidden;   
+		}   
+		.clearfix{ display: inline-block; }   
+		      /*  Hides from IE-mac  \*/         
+		*html .clearfix{ height:1%; }   
+		.clearfix{ display:block; }
+		.shoppingcar:hover>.car{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper" style="width: 800px;margin:0 auto;">
+		<div class="top">
+			<div class="top-left clearfix" style="width: 30%;float: left;">
+				<img src="images/jdimage.gif" alt="jd" width="180" height="180" style="float: left;">
+			</div>
+			<div class="top-right" style="width:70%;float: left;height: 180px;">
+				<div class="top-right1 " style="text-align: right;">
+					<a href="">你好，请登录</a>&nbsp;
+					<a href="">免费注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="">我的京东</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="">京东会员</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="">客户服务</a>
+				</div>
+				<div class="top-right2" style="position: relative;">
+					<input type="text" name="input" id="sovalue" style="height: 26px;width: 280px;margin-top: 50px;">
+					<input type="submit" name="submit" id="sosubmit" value="搜索" style="background-color: #f10215;border-radius: 0;width: 50px;height: 35px;border: none;color: white;">
+					<div class="shoppingcar" style="position: absolute;left: 380px;top: 50px;line-height: 30px; border: 1px solid gray;height: 30px;width: 150px;text-align: center;">
+						<a href="" >我的购物车</a>
+						<div class="car" style="position: absolute;display: none;height: 60px;width: 200px;border: 1px solid red;right: -1px;background: #ccc;">
+							
+						</div>
+					</div>
+				</div>
+				<div class="top-right3" style="margin-top: 30px;">
+					<a href="">秒杀</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">优惠券</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">PLUS会员</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">闪购</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">拍卖</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="">京东时尚</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">京东超市</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">京东生鲜</a>
+				</div>
+			</div>
+		</div>
+		<div class="left clearfix" style="background: pink;width: 190px;">
+			<div class="electric classifiction">
+				<a href="">家用电器</a>
+				<div class="extends">扩展菜单1</div>
+			</div>
+			<div class="digital classifiction">
+				<a href="">手机</a>/
+				<a href="">运营商</a>/
+				<a href="">数码</a>
+				<div class="extends">扩展菜单2</div>
+			</div>
+			<div class="office classifiction">
+				<a href="">电脑</a>/
+				<a href="">办公</a>
+				<div class="extends">扩展菜单3</div>
+			</div>
+			<div class="furniture classifiction">
+				<a href="">家居</a>/
+				<a href="">家具</a>/
+				<a href="">家装</a>/
+				<a href="">厨具</a>
+				<div class="extends">扩展菜单4</div>
+			</div>
+			<div class="clothes classifiction">
+				<a href="">男装</a>/
+				<a href="">女装</a>/
+				<a href="">童装</a>/
+				<a href="">内衣</a>
+				<div class="extends">扩展菜单5</div>
+			</div>
+			<div class="nursing classifiction">
+				<a href="">美妆</a>/
+				<a href="">个护清洁</a>/
+				<a href="">宠物</a>
+				<div class="extends">扩展菜单6</div>
+			</div>
+			<div class="bags classifiction">
+				<a href="">女鞋</a>/
+				<a href="">箱包</a>/
+				<a href="">钟表</a>/
+				<a href="">珠宝</a>
+				<div class="extends">扩展菜单7</div>
+			</div>
+			<div class="sport classifiction">
+				<a href="">男鞋</a>/
+				<a href="">运动</a>/
+				<a href="">户外</a>
+				<div class="extends">扩展菜单8</div>
+			</div>
+			<div class="cars classifiction">
+				<a href="">房产</a>/
+				<a href="">汽车</a>/
+				<a href="">汽车用品</a>
+				<div class="extends">扩展菜单9</div>
+			</div>
+			<div class="toys classifiction">
+				<a href="">母婴</a>/
+				<a href="">玩具乐器</a>
+				<div class="extends">扩展菜单10</div>
+			</div>
+			<div class="foods classifiction">
+				<a href="">食品</a>/
+				<a href="">酒类</a>/
+				<a href="">生鲜</a>/
+				<a href="">特产</a>
+				<div class="extends">扩展菜单11</div>
+			</div>
+			<div class="art classifiction">
+				<a href="">艺术</a>/
+				<a href="">礼品鲜花</a>/
+				<a href="">农资绿植</a>
+				<div class="extends">扩展菜单12</div>
+			</div>
+			<div class="medicine classifiction">
+				<a href="">医药保健</a>/
+				<a href="">计生情趣</a>
+				<div class="extends">扩展菜单13</div>
+			</div>
+			<div class="books classifiction">
+				<a href="">图书</a>/
+				<a href="">文娱</a>/
+				<a href="">电子书</a>
+				<div class="extends">扩展菜单14</div>
+			</div>
+			<div class="travel classifiction">
+				<a href="">机票</a>/
+				<a href="">酒店</a>/
+				<a href="">旅游</a>/
+				<a href="">生活</a>
+				<div class="extends">扩展菜单15</div>
+			</div>
+			<div class="finance classifiction">
+				<a href="">理财</a>/
+				<a href="">众筹</a>/
+				<a href="">白条</a>/
+				<a href="">保险</a>
+				<div class="extends">扩展菜单16</div>
+			</div>
+			<div class="repair classifiction">
+				<a href="">安装</a>/
+				<a href="">维修</a>/
+				<a href="">清洗</a>/
+				<a href="">二手</a>
+				<div class="extends">扩展菜单17</div>
+			</div>
+			<div class="industry classifiction">
+				<a href="">工业品</a>
+				<div class="extends">扩展菜单18</div>
+			</div>
+		</div>
+		<div class="rightshow clearfix">
+			<img src="images/jdpic1.png" alt="" width="90%" height="90%" style="margin-left: 10px;">
+		</div>
+	</div>
+</body>
+</html>
