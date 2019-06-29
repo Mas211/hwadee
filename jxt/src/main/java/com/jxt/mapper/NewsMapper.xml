@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.jxt.mapper.NewsMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.News" useGeneratedKeys="true" keyProperty="news_id">
+		INSERT INTO NEWS(news_id, news_title, news_time, publisher) VALUES(#{newsId}, #{newsTitle}, #{newsTime}, #{publisher})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM NEWS
+		WHERE
+			news_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="string"
+		resultType="com.jxt.entity.News">
+		SELECT
+			news_id, news_title, news_time, publisher
+		FROM
+			NEWS
+		WHERE
+			news_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.News">
+		UPDATE NEWS SET news_title = #{newsTitle}, news_time=#{newsTime}, publisher=#{publisher}
+		WHERE
+			news_id = #{newsId}
+	</update>
+</mapper>

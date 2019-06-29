@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -93,4 +94,40 @@
 		a.id = 4
 	</select>
   
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.jxt.mapper.MessageMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="message_id">
+		INSERT INTO MESSAGE(message_id, commenter_id, comment_target_id, reply_id, is_read, message_content) VALUES(#{messageId}, #{commenterId}, #{commentTargetId}, #{replyId}, #{isRead}, #{messageContent})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM MESSAGE
+		WHERE
+			message_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="string"
+		resultType="com.jxt.entity.Message">
+		SELECT
+			message_id, commenter_id, comment_target_id, reply_id, is_read, message_content
+		FROM
+			MESSAGE
+		WHERE
+			message_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Message">
+		UPDATE MESSAGE SET commenter_id=#{commenterId}, comment_target_id=#{commentTargetId}, reply_id=#{replyId}, is_read=#{isRead}, message_content=#{messageContent}
+		WHERE
+			message_id = #{messageId}
+	</update>
+>>>>>>> c5e955072e063d1439a4632d3fdee216791fb5b9
 </mapper>
