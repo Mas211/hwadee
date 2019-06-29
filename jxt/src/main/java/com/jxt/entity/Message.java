@@ -7,7 +7,14 @@ public class Message {
 	private Integer commenterTargetId; 
 	private Integer replyId; 					//回复ID
 	private Integer isRead;					//是否已读
+	private String messageContent;
 	
+	public String getMessageContent() {
+		return messageContent;
+	}
+	public void setMessageContent(String messageContent) {
+		this.messageContent = messageContent;
+	}
 	public Integer getMessageId() {
 		return messageId;
 	}
