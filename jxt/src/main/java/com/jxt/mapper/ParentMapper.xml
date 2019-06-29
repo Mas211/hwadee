@@ -29,7 +29,7 @@
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Parent">
-		UPDATE PARENT SET par_name = #{parName}, par_password=#{parPassword}, par_auth_level=#{parAuthLevel}
+		UPDATE PARENT SET par_name = #{parName}, par_password=#{parPassword}, par_auth_level=#{parAuthLevel}, par_stu_id=#{parStuId}, par_phone=#{parPhone}, par_address=#{parAddress}, par_sex={parSex}
 		WHERE
 			par_id = #{parId}
 	</update>
