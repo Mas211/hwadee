@@ -3,7 +3,7 @@ package com.jxt.entity;
 //成绩
 public class Grade {
 	private Integer gradeId;
-	private Integer gradeTd;
+	private Integer gradeTId;
 	private Integer gradeStuId;
 	private Integer grade;
 	
@@ -13,11 +13,11 @@ public class Grade {
 	public void setGradeId(Integer gradeId) {
 		this.gradeId = gradeId;
 	}
-	public Integer getGradeTd() {
-		return gradeTd;
+	public Integer getGradeTId() {
+		return gradeTId;
 	}
-	public void setGradeTd(Integer gradeTd) {
-		this.gradeTd = gradeTd;
+	public void setGradeTId(Integer gradeTId) {
+		this.gradeTId = gradeTId;
 	}
 	public Integer getGradeStuId() {
 		return gradeStuId;
