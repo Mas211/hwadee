@@ -1,6 +1,6 @@
 package com.jxt.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 //奖罚
 public class RewardAndPunish {

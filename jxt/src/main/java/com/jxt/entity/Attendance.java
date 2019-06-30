@@ -1,6 +1,6 @@
 package com.jxt.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 //考勤
 public class Attendance {
