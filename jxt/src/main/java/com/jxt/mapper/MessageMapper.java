@@ -1,21 +1,7 @@
 package com.jxt.mapper;
 
-<<<<<<< HEAD
 import java.util.List;
 
-import com.jxt.entity.Message;
-
-public interface MessageMapper {
-
-	List<Message> findByCommenterId(int commenterId);
-	
-	int insert(Message message);
-	
-	int delete(int messageId);
-	
-	List<Message> findByCommenterTargetId(int commenterTargetId);
-	
-=======
 import com.jxt.entity.Message;
 
 public interface MessageMapper {
@@ -30,5 +16,12 @@ public interface MessageMapper {
 
 	// 改
 	int update(Message message);
->>>>>>> c5e955072e063d1439a4632d3fdee216791fb5b9
+	
+	
+	//找出所有发出的留言
+	List<Message> findByCommenterId(int commenterId);
+	
+	//找出所有回复用户的留言
+	List<Message> findByCommenterTargetId(int commenterTargetId);
+	
 }
