@@ -8,18 +8,27 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://58.87.124.193:3306/database?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="url" value="jdbc:mysql://58.87.124.193:3306/jxt?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
       </dataSource>
     </environment>
   </environments>
   
-  <!-- 需要修改的地方 -->
-  <!-- 
   <mappers>
-    <mapper resource="com/hwadee/mybatis/mapper/UserMapper.xml"/>
-    <mapper resource="com/hwadee/mybatis/mapper/PostMapper.xml"/>
+    <mapper resource="com/jxt/mapper/AccountMapper.xml"/>
+    <mapper resource="com/jxt/mapper/ActivityMapper.xml"/>
+    <mapper resource="com/jxt/mapper/AttendanceMapper.xml"/>
+    <mapper resource="com/jxt/mapper/AuthMapper.xml"/>
+    <mapper resource="com/jxt/mapper/AuthRoleMapper.xml"/>
+    <mapper resource="com/jxt/mapper/ClassMapper.xml"/>
+    <mapper resource="com/jxt/mapper/GradeMapper.xml"/>
+    <mapper resource="com/jxt/mapper/MessageMapper.xml"/>
+    <mapper resource="com/jxt/mapper/NewsMapper.xml"/>
+    <mapper resource="com/jxt/mapper/NoticeMapper.xml"/>
+    <mapper resource="com/jxt/mapper/RewardAndPunishMapper.xml"/>
+    <mapper resource="com/jxt/mapper/RoleMapper.xml"/>
+    <mapper resource="com/jxt/mapper/TaskMapper.xml"/>
   </mappers>
-   -->
+  
 </configuration>

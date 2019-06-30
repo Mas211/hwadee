@@ -5,7 +5,7 @@
 <mapper namespace="com.jxt.mapper.AuthMapper">
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Auth" useGeneratedKeys="true" keyProperty="auth_id">
-		INSERT INTO AUTH(auth_id, auth_level, auth_path) VALUES(#{authId}, #{authLevel}, #{authPath})
+		INSERT INTO AUTH(auth_id, auth_path) VALUES(#{authId}, #{authPath})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -18,7 +18,7 @@
 	<select id="findById" parameterType="string"
 		resultType="com.jxt.entity.Auth">
 		SELECT
-			auth_id, auth_level, auth_path
+			auth_id, auth_path
 		FROM
 			AUTH
 		WHERE
@@ -27,7 +27,7 @@
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Auth">
-		UPDATE AUTH SET auth_level = #{authLevel}, auth_path=#{authPath}
+		UPDATE AUTH SET auth_path=#{authPath}
 		WHERE
 			auth_id = #{authId}
 	</update>

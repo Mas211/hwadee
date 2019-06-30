@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.jxt.mapper.TaskMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="task_id">
+		INSERT INTO TASK(task_id, task_title, task_content, task_begin_time, task_deadline) 
+		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM TASK
+		WHERE
+			task_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="string"
+		resultType="com.jxt.entity.Task">
+		SELECT
+			task_id, task_title, task_content, task_begin_time, task_deadline
+		FROM
+			TASK
+		WHERE
+			task_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Task">
+		UPDATE TASK SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}
+		WHERE
+			task_id = #{taskId}
+	</update>
+</mapper>

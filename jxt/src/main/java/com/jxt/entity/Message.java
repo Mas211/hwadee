@@ -3,11 +3,13 @@ package com.jxt.entity;
 //消息
 public class Message {
 	private Integer messageId;
-	private Integer commenterId;				//评论ID
-	private Integer commentTargetId; 
-	private Integer replyId; 					//回复ID
-	private Integer isRead;					//是否已读
-	private String messageContent;
+	private Integer actId;
+	private Integer sourceId;
+	private Integer targetId;
+	private Integer replyId;
+	private Integer isRead;
+	private Integer messageType;
+	private Integer commentActId;
 	
 	public String getMessageContent() {
 		return messageContent;
@@ -21,17 +23,23 @@ public class Message {
 	public void setMessageId(Integer messageId) {
 		this.messageId = messageId;
 	}
-	public Integer getCommenterId() {
-		return commenterId;
+	public Integer getActId() {
+		return actId;
 	}
-	public void setCommenterId(Integer commenterId) {
-		this.commenterId = commenterId;
+	public void setActId(Integer actId) {
+		this.actId = actId;
 	}
-	public Integer getCommentTargetId() {
-		return commentTargetId;
+	public Integer getSourceId() {
+		return sourceId;
 	}
-	public void setCommentTargetId(Integer commentTargetId) {
-		this.commentTargetId = commentTargetId;
+	public void setSourceId(Integer sourceId) {
+		this.sourceId = sourceId;
+	}
+	public Integer getTargetId() {
+		return targetId;
+	}
+	public void setTargetId(Integer targetId) {
+		this.targetId = targetId;
 	}
 	public Integer getReplyId() {
 		return replyId;
@@ -45,11 +53,16 @@ public class Message {
 	public void setIsRead(Integer isRead) {
 		this.isRead = isRead;
 	}
-	public String getMessageContent() {
-		return messageContent;
+	public Integer getMessageType() {
+		return messageType;
 	}
-	public void setMessageContent(String messageContent) {
-		this.messageContent = messageContent;
+	public void setMessageType(Integer messageType) {
+		this.messageType = messageType;
 	}
-
+	public Integer getCommentActId() {
+		return commentActId;
+	}
+	public void setCommentActId(Integer commentActId) {
+		this.commentActId = commentActId;
+	}
 }
