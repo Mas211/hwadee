@@ -3,7 +3,6 @@ package com.jxt.entity;
 //权限
 public class Auth {
 	private Integer authId;
-	private Integer authLevel;
 	private String authPath;
 	
 	public Integer getAuthId() {
@@ -11,12 +10,6 @@ public class Auth {
 	}
 	public void setAuthId(Integer authId) {
 		this.authId = authId;
-	}
-	public Integer getAuthLevel() {
-		return authLevel;
-	}
-	public void setAuthLevel(Integer authLevel) {
-		this.authLevel = authLevel;
 	}
 	public String getAuthPath() {
 		return authPath;

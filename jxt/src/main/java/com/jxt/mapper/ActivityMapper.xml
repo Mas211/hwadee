@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.jxt.mapper.ActivityMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Activity" useGeneratedKeys="true" keyProperty="act_id">
+		INSERT INTO ACTIVITY(act_id, act_pubber_id, act_title, image_path) 
+		VALUES(#{actId}, #{actPubberId}, #{actTitle} ,#{imagePath})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM ACTIVITY
+		WHERE
+			act_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="string"
+		resultType="com.jxt.entity.Activity">
+		SELECT
+			act_id, act_pubber_id, act_title, image_path
+		FROM
+			ACTIVITY
+		WHERE
+			act_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Activity">
+		UPDATE ACTIVITY SET act_pubber_id = #{actPubberId}, act_title=#{actTitle}, image_path=#{imagePath}
+		WHERE
+			act_id = #{actId}
+	</update>
+</mapper>
