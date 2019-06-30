@@ -4,26 +4,28 @@ import java.security.Timestamp;
 
 //考勤
 public class Attendance {
-	private Integer attenId;
-	private Integer attenStuId;
-	private Timestamp attenTime;
+	private Integer attendId;
+	private Integer attendStuId;
+	private Timestamp attendTime;
 	
-	public Integer getAttenId() {
-		return attenId;
+	
+	public Integer getAttendId() {
+		return attendId;
 	}
-	public void setAttenId(Integer attenId) {
-		this.attenId = attenId;
+	public void setAttendId(Integer attendId) {
+		this.attendId = attendId;
 	}
-	public Integer getAttenStuId() {
-		return attenStuId;
+	public Integer getAttendStuId() {
+		return attendStuId;
 	}
-	public void setAttenStuId(Integer attenStuId) {
-		this.attenStuId = attenStuId;
+	public void setAttendStuId(Integer attendStuId) {
+		this.attendStuId = attendStuId;
 	}
-	public Timestamp getAttenTime() {
-		return attenTime;
+	public Timestamp getAttendTime() {
+		return attendTime;
 	}
-	public void setAttenTime(Timestamp attenTime) {
-		this.attenTime = attenTime;
+	public void setAttendTime(Timestamp attendTime) {
+		this.attendTime = attendTime;
 	}
+
 }

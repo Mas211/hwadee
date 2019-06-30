@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.jxt.mapper.TeacherMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Teacher" useGeneratedKeys="true" keyProperty="t_id">
+		INSERT INTO TEACHER(t_id, t_name, t_password, t_auth_level, t_sex, t_phone, t_subject) 
+		VALUES(#{tId}, #{tName}, #{tPassword}, #{tAuthLevel}, #{tSex}, #{tPhone}, #{tSubject})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM TEACHER
+		WHERE
+			t_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="string"
+		resultType="com.jxt.entity.Teacher">
+		SELECT
+			t_id, t_name, t_password, t_auth_level, t_sex, t_phone, t_subject
+		FROM
+			TEACHER
+		WHERE
+			t_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Teacher">
+		UPDATE TEACHER SET t_name = #{tName}, t_password=#{tPassword}, t_auth_level=#{tAuthLevel}, t_sex=#{tSex}, t_phone=#{tPhone}, t_subject=#{tSubject}
+		WHERE
+			t_id = #{tId}
+	</update>
+</mapper>
