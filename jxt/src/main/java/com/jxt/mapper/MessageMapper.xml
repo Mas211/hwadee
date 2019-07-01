@@ -6,12 +6,12 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="message_id">
-		INSERT INTO MESSAGE(message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id) 
+		INSERT INTO message(message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id) 
 		VALUES(#{messageId}, #{actId}, #{sourceId}, #{targetId}, #{replyId}, #{isRead}, #{messageType}, #{commentActId})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM MESSAGE
+		DELETE FROM message
 		WHERE
 			message_id = #{value}
 	</delete>
@@ -22,14 +22,14 @@
 		SELECT
 			message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id
 		FROM
-			MESSAGE
+			message
 		WHERE
 			message_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Message">
-		UPDATE MESSAGE SET act_id=#{actId}, source_id=#{sourceId}, target_id=#{targetId}, reple_id=#{replyId}, is_read=#{isRead}, message_type=#{messageType}, comment_act_id=#{commentActId}
+		UPDATE message SET act_id=#{actId}, source_id=#{sourceId}, target_id=#{targetId}, reple_id=#{replyId}, is_read=#{isRead}, message_type=#{messageType}, comment_act_id=#{commentActId}
 		WHERE
 			message_id = #{messageId}
 	</update>

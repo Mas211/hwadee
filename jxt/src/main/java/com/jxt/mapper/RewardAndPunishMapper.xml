@@ -6,12 +6,12 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.RewardAndPunish" useGeneratedKeys="true" keyProperty="reward_and_punish_id">
-		INSERT INTO REWARD_AND_PUNISH(reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time) 
+		INSERT INTO reward_and_punish(reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time) 
 		VALUES(#{rewardAndPunisId}, #{rewardOrPunis}, #{rpStuId}, #{rpContent}, #{rpTime})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM REWARD_AND_PUNISH
+		DELETE FROM reward_and_punish
 		WHERE
 			reward_and_punish_id = #{value}
 	</delete>
@@ -22,14 +22,14 @@
 		SELECT
 			reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time
 		FROM
-			REWARD_AND_PUNISH
+			reward_and_punish
 		WHERE
 			reward_and_punish_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.RewardAndPunish">
-		UPDATE REWARD_AND_PUNISH SET reward_or_punish = #{rewardOrPunis}, rp_stu_id=#{rpStuId}, rp_content=#{rpContent}, rp_time=#{rpTime}
+		UPDATE reward_and_punish SET reward_or_punish = #{rewardOrPunis}, rp_stu_id=#{rpStuId}, rp_content=#{rpContent}, rp_time=#{rpTime}
 		WHERE
 			reward_and_punish_id = #{rewardAndPunisId}
 	</update>

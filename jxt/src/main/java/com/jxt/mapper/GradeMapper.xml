@@ -6,11 +6,11 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Grade" useGeneratedKeys="true" keyProperty="grade_id">
-		INSERT INTO GRADE(grade_id, grade_t_id, grade_stu_id, grade) VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade})
+		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade) VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM GRADE
+		DELETE FROM grade
 		WHERE
 			grade_id = #{value}
 	</delete>
@@ -21,14 +21,14 @@
 		SELECT
 			grade_id, grade_t_id, grade_stu_id, grade
 		FROM
-			GRADE
+			grade
 		WHERE
 			grade_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Grade">
-		UPDATE GRADE SET grade_t_id = #{gradeTId}, grade_stu_id=#{gradeStuId}, grade=#{grade}
+		UPDATE grade SET grade_t_id = #{gradeTId}, grade_stu_id=#{gradeStuId}, grade=#{grade}
 		WHERE
 			grade_id = #{gradeId}
 	</update>

@@ -1,6 +1,6 @@
 package com.jxt.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 //作业
 public class Task {

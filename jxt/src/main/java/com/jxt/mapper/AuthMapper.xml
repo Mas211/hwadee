@@ -5,11 +5,11 @@
 <mapper namespace="com.jxt.mapper.AuthMapper">
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Auth" useGeneratedKeys="true" keyProperty="auth_id">
-		INSERT INTO AUTH(auth_id, auth_path) VALUES(#{authId}, #{authPath})
+		INSERT INTO auth(auth_id, auth_path) VALUES(#{authId}, #{authPath})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM AUTH
+		DELETE FROM auth
 		WHERE
 			auth_id = #{value}
 	</delete>
@@ -20,14 +20,14 @@
 		SELECT
 			auth_id, auth_path
 		FROM
-			AUTH
+			auth
 		WHERE
 			auth_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Auth">
-		UPDATE AUTH SET auth_path=#{authPath}
+		UPDATE auth SET auth_path=#{authPath}
 		WHERE
 			auth_id = #{authId}
 	</update>

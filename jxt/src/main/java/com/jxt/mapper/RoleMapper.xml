@@ -6,12 +6,12 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Role" useGeneratedKeys="true" keyProperty="r_id">
-		INSERT INTO ROLE(r_id, r_name) 
+		INSERT INTO role(r_id, r_name) 
 		VALUES(#{rId}, #{rName})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM ROLE
+		DELETE FROM role
 		WHERE
 			r_id = #{value}
 	</delete>
@@ -22,14 +22,14 @@
 		SELECT
 			r_id, r_name
 		FROM
-			ROLE
+			role
 		WHERE
 			r_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Role">
-		UPDATE ROLE SET r_name = #{rName}
+		UPDATE role SET r_name = #{rName}
 		WHERE
 			r_id = #{rId}
 	</update>

@@ -1,6 +1,6 @@
 package com.jxt.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class News {
 	private Integer newsId;

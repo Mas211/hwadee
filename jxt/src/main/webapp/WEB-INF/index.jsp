@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>About Us</title>
+	<title>Home</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -82,10 +84,10 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
+								<li class="active">
 									<a href="index.html" class="effect-3">Home</a>
 								</li>
-								<li class="active">
+								<li>
 									<a href="about.html" class="effect-3">About Us</a>
 								</li>
 								<li>
@@ -123,49 +125,113 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
-
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+			<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<div class="container">
+					<div class="carousel-caption">
+						<h6>Welcome To Best Study</h6>
+						<h3>Leading
+							<span>University</span>
+						</h3>
+						<p>Create an all-encompassing website for your school with ease.</p>
+					</div>
+				</div>
+			</div>
+			<div class="item item2">
+				<div class="container">
+					<div class="carousel-caption">
+						<h6>Welcome To Best Study</h6>
+						<h3>Most Popular
+							<span>Education</span>
+						</h3>
+						<p>Create an all-encompassing website for your school with ease.</p>
+					</div>
+				</div>
+			</div>
+			<div class="item item3">
+				<div class="container">
+					<div class="carousel-caption">
+						<h6>Welcome To Best Study</h6>
+						<h3>We Can
+							<span>Teach</span> You</h3>
+						<p>Create an all-encompassing website for your school with ease.</p>
+					</div>
+				</div>
+			</div>
+			<div class="item item4">
+				<div class="container">
+					<div class="carousel-caption">
+						<h6>Welcome To Best Study</h6>
+						<h3>Most Popular
+							<span>Education</span>
+						</h3>
+						<p>Create an all-encompassing website for your school with ease.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="fa fa-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="fa fa-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+		<!-- The Modal -->
 	</div>
 	<!--//banner -->
-	<!-- short -->
-	<div class="services-breadcrumb">
-		<div class="inner_breadcrumb">
-			<ul class="short_ls">
-				<li>
-					<a href="index.html">Home</a>
-					<span>| |</span>
-				</li>
-				<li>About Us</li>
-			</ul>
-		</div>
-	</div>
-	<!-- //short-->
 	<!-- about -->
-	<div class="about-sec" id="about">
+	<div class="banner-bottom-w3l" id="about">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>A</span>bout
-					<span>U</span>s
+					<span>W</span>elcome
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="about-sub">
-				<div class="col-md-6 about_bottom_left">
-					<h4>Welcome to
+			<div class="welcome-sub-wthree">
+				<div class="col-md-6 banner_bottom_left">
+					<h4>About
 						<span>Best Study</span>
 					</h4>
 					<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit, Nulla viverra pharetra sem eget.</p>
 					<p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
 						pulvinar neque pharetra ac.Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla
 						viverra pharetra sem.</p>
-					<a class="button-style" href="join.html">Join Now</a>
 				</div>
 				<!-- Stats-->
-				<div class="col-md-6 about2-info">
-					<img src="images/graduate.png" alt="" />
+				<div class="col-md-6 stats-info-agile">
+					<div class="col-xs-6 stats-grid stat-border">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='768' data-delay='.5' data-increment="1">768</div>
+						<p>Faculties</p>
+					</div>
+					<div class="col-xs-6 stats-grid">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='678' data-delay='.5' data-increment="1">678</div>
+						<p>Approved Courses</p>
+					</div>
+					<div class="clearfix"></div>
+					<div class="child-stat">
+						<div class="col-xs-6 stats-grid stat-border border-st2">
+							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='800' data-delay='.5' data-increment="1">800</div>
+							<p>Certified Teachers</p>
+						</div>
+						<div class="col-xs-6 stats-grid">
+							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='485' data-delay='.5' data-increment="1">485</div>
+							<p>Happy Students</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 				</div>
 				<!-- //Stats -->
 				<div class="clearfix"> </div>
@@ -173,208 +239,70 @@
 		</div>
 	</div>
 	<!-- //about -->
-	<!-- Achievements -->
-	<div class="aitsresumethree">
+	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网站建设</a></div>
+	<!-- services -->
+	<div class="services">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
 					<span>O</span>ur
-					<span>A</span>chievements
+					<span>S</span>ervices
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="load_more">
-				<ul id="myList">
-					<li class="aitsaitsresumewthreeli-1">
-						<div class="l_g">
-							<div class="l_g_r g_r">
-								<div class="work">
-									<div class="work-info">
-										<div class="col-xs-6 work-grid work-left">
-											<h4>2000-2017</h4>
-										</div>
-										<div class="col-xs-6 work-grid work-right">
-											<h5>Ranked Top 1st</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-												eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="work-info">
-										<div class="col-xs-6 work-grid work-right work-right2">
-											<h4>2011 - 2012</h4>
-										</div>
-										<div class="col-xs-6 work-grid work-left work-left2">
-											<h5>Queen's Anniversary Prize</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-												eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="work-info">
-										<div class="col-xs-6 work-grid work-left">
-											<h4>2004 - 2017</h4>
-										</div>
-										<div class="col-xs-6 work-grid work-right">
-											<h5 class="comp">Excellent University Guide</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-												eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
+			<div class="services-moksrow">
+				<div class="col-xs-4 services-grids-w3l">
+					<div class="servi-shadow">
+						<span class="fa fa-bullhorn icon" aria-hidden="true"></span>
+						<h4>Popular Courses</h4>
+						<p>Phasellus at placerat ante nulla adipiscing elit</p>
+					</div>
+				</div>
+				<div class="col-xs-4 services-grids-w3l">
+					<div class="servi-shadow">
+						<span class="fa fa-certificate icon" aria-hidden="true"></span>
+						<h4>Certification</h4>
+						<p>Phasellus at placerat ante nulla adipiscing elit</p>
+					</div>
+				</div>
+				<div class="col-xs-4 services-grids-w3l">
+					<div class="servi-shadow">
+						<span class="fa fa-book icon" aria-hidden="true"></span>
+						<h4>Book Library</h4>
+						<p>Phasellus at placerat ante nulla adipiscing elit</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
 			</div>
-		</div>
-	</div>
-	<!-- //Achievements -->
-	<!-- about-team -->
-	<div class="team">
-		<div class="container">
-			<div class="title-div">
-				<h3 class="tittle">
-					<span>O</span>ur
-					<span>F</span>aculties
-				</h3>
-				<div class="tittle-style">
-
-				</div>
-			</div>
-			<div class="team-row-agileinfo">
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t1.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Vaura Tegsner</h4>
-							<p>Principal</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
+			<div class="services-moksrow">
+				<div class="col-xs-4 services-grids-w3l">
+					<div class="servi-shadow">
+						<span class="fa fa-users icon" aria-hidden="true"></span>
+						<h4>Best Teachers</h4>
+						<p>Phasellus at placerat ante nulla adipiscing elit</p>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t2.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Jark Kohnson</h4>
-							<p>Senior Teacher</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
+				<div class="col-xs-4 services-grids-w3l">
+					<div class="servi-shadow">
+						<span class="fa fa-bus icon" aria-hidden="true"></span>
+						<h4>Transport Facility</h4>
+						<p>Phasellus at placerat ante nulla adipiscing elit</p>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t3.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Chunk Erson</h4>
-							<p>Vice Principal</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t4.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Goes Mehak</h4>
-							<p>Teacher Science</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
+				<div class="col-xs-4 services-grids-w3l">
+					<div class="servi-shadow">
+						<span class="fa fa-laptop icon" aria-hidden="true"></span>
+						<h4>Excellent Lab</h4>
+						<p>Phasellus at placerat ante nulla adipiscing elit</p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!-- //about-team -->
-	<!-- middle section -->
-	<div class="middle-sec-agile">
-		<div class="container">
-			<h4>Our
-				<span>Best Study</span> Institute</h4>
-			<ul>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Select A Course You Like And Explore It!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Join A Seminar To Know More About It!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Get Enrolled And Start Better Future With Us!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-			</ul>
-			<a class="button-style" href="join.html">Join Now</a>
-		</div>
-		<div class="pencil-img">
-			<img src="images/bg5.png" alt="" />
-		</div>
-	</div>
-	<!-- //middle section -->
+	<!-- //services -->
 	<!-- news -->
 	<div class="news" id="news">
 		<div class="container">
@@ -523,8 +451,7 @@
 						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque
 							ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis
 							porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper. Cras tempor massa
-							luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem
-						</p>
+							luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
 					</div>
 				</div>
 			</div>
@@ -532,6 +459,129 @@
 	</div>
 	<!-- //modal -->
 	<!-- //news -->
+	<!-- middle section -->
+	<div class="middle-sec-agile">
+		<div class="container">
+			<h4>Our
+				<span>Best Study</span> Institute</h4>
+			<ul>
+				<li>
+					<div class="midle-left-w3l">
+						<span class="fa fa-check" aria-hidden="true"></span>
+					</div>
+					<div class="middle-right">
+						<h5>Select A Course You Like And Explore It!</h5>
+						<p>Integer eu facilisis nunc, a iaculis felis.</p>
+					</div>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<div class="midle-left-w3l">
+						<span class="fa fa-check" aria-hidden="true"></span>
+					</div>
+					<div class="middle-right">
+						<h5>Join A Seminar To Know More About It!</h5>
+						<p>Integer eu facilisis nunc, a iaculis felis.</p>
+					</div>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<div class="midle-left-w3l">
+						<span class="fa fa-check" aria-hidden="true"></span>
+					</div>
+					<div class="middle-right">
+						<h5>Get Enrolled And Start Better Future With Us!</h5>
+						<p>Integer eu facilisis nunc, a iaculis felis.</p>
+					</div>
+					<div class="clearfix"></div>
+				</li>
+			</ul>
+			<a class="button-style" href="join.html">Join Now</a>
+		</div>
+		<div class="pencil-img">
+			<img src="images/bg5.png" alt="" />
+		</div>
+	</div>
+	<!-- //middle section -->
+	<!-- testimonials -->
+	<div class="testimonials">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>O</span>ur
+					<span>C</span>lient's
+					<span>S</span>ay
+				</h3>
+				<div class="tittle-style">
+
+				</div>
+			</div>
+			<ul id="flexiselDemo1">
+				<li>
+					<div class="three_testimonials_grid_main">
+						<div class="col-xs-3 three_testimonials_grid_pos">
+							<div class="grid-test-allah-agile">
+								<img src="images/te1.jpg" alt=" " class="img-responsive" />
+							</div>
+						</div>
+						<div class="col-xs-9 three_testimonials_grid">
+							<div class="three_testimonials_grid1">
+								<h5>Michael Paul</h5>
+								<p>Client 1</p>
+							</div>
+							<p>
+								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
+								Integer id erat porta, convallis.
+							</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</li>
+				<li>
+					<div class="three_testimonials_grid_main">
+						<div class="col-xs-3 three_testimonials_grid_pos">
+							<div class="grid-test-allah-agile">
+								<img src="images/te2.jpg" alt=" " class="img-responsive" />
+							</div>
+						</div>
+						<div class="col-xs-9 three_testimonials_grid">
+							<div class="three_testimonials_grid1">
+								<h5>Faul John</h5>
+								<p>Client 2</p>
+							</div>
+							<p>
+								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
+								Integer id erat porta, convallis.
+							</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</li>
+				<li>
+					<div class="three_testimonials_grid_main">
+						<div class="col-xs-3 three_testimonials_grid_pos">
+							<div class="grid-test-allah-agile">
+								<img src="images/te3.jpg" alt=" " class="img-responsive" />
+							</div>
+						</div>
+						<div class="col-xs-9 three_testimonials_grid">
+							<div class="three_testimonials_grid1">
+								<h5>Richa Roy</h5>
+								<p>Client 3</p>
+							</div>
+							<p>
+								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
+								Integer id erat porta, convallis.
+							</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+	<!-- //testimonials -->
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
@@ -629,6 +679,37 @@
 	<!-- stats numscroller-js-file -->
 	<script src="js/numscroller-1.0.js"></script>
 	<!-- //stats numscroller-js-file -->
+
+	<!-- Flexslider-js for-testimonials -->
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 1,
+				animationSpeed: 1000,
+				autoPlay: false,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 1
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 1
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="js/jquery.flexisel.js"></script>
+	<!-- //Flexslider-js for-testimonials -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>
