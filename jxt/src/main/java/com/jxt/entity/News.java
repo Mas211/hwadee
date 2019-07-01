@@ -8,6 +8,7 @@ public class News {
 	private Timestamp newsTime;
 	private String publisher;
 	
+
 	public Integer getNewsId() {
 		return newsId;
 	}
