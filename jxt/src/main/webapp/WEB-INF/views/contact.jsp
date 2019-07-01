@@ -33,11 +33,6 @@
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
-			<div class="bottom_header_left">
-				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
-				</p>
-			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
 					<a class="facebook" href="#">
@@ -55,7 +50,7 @@
 				</div>
 				<div class="header-top-righ">
 					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+						<span class="fa fa-sign-out" aria-hidden="true"></span>Login</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -147,11 +142,9 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>C</span>ontact
-					<span>U</span>s
+					<span>发&nbsp;布&nbsp;</span>作&nbsp;业
 				</h3>
 				<div class="tittle-style">
-
 				</div>
 			</div>
 			<div class="contact-row">
@@ -164,8 +157,7 @@
 					</p>
 				</div>
 				<div class="col-md-6 contact-w3lsright">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26370863.006641828!2d-113.70834778640587!3d36.212776709411365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1511345829734"
-					    allowfullscreen></iframe>
+					<iframe></iframe>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -173,6 +165,7 @@
 	</div>
 	<div class="contact-lsleft">
 		<div class="container">
+			<!--
 			<div class="address-grid">
 				<h4>Contact Details</h4>
 				<ul class="w3_address">
@@ -188,20 +181,23 @@
 					</li>
 				</ul>
 			</div>
+			-->
 			<div class="contact-grid agileits">
-				<h4>Get In Touch</h4>
+				<h4>发 布 作 业</h4>
 				<form action="#" method="post">
 					<div class="">
-						<input type="text" name="Name" placeholder="Name" required="">
+						<input type="text" name="task_title" placeholder="作业标题" required="">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker" placeholder="开始时间" name="task_bagin_time" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							    required="">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker1" placeholder="截止时间" name="task_deadline" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							    required="">
 					</div>
 					<div class="">
-						<input type="email" name="Email" placeholder="Email" required="">
-					</div>
-					<div class="">
-						<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-					</div>
-					<div class="">
-						<textarea name="Message" placeholder="Message..." required=""></textarea>
+						<textarea name="task_content" placeholder="内容..." required=""></textarea>
 					</div>
 					<input type="submit" value="Submit">
 				</form>
@@ -305,11 +301,21 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
+	<!-- Calendar -->
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>
 	<script src="js/easing.js"></script>
 	<!-- here stars scrolling icon -->
+	</script>
 	<script>
 		$(document).ready(function () {
 			/*
