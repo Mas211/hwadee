@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Login</title>
+	<title>Contact Us</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -40,7 +40,7 @@
 			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html">
+					<a class="facebook" href="#">
 						<span class="fa fa-facebook"></span>
 					</a>
 					<a class="twitter" href="#">
@@ -110,9 +110,9 @@
 									</ul>
 								</li>
 								<li>
-									<a href="gallery.html" class="effect-3">Gallery</a>
+									<a href="Gallery.html" class="effect-3">Gallery</a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="contact.html" class="effect-3">Contact Us</a>
 								</li>
 							</ul>
@@ -134,62 +134,82 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">首页</a>
+					<a href="index.html">Home</a>
 					<span>| |</span>
 				</li>
-				<li>登录</li>
+				<li>Contact Us</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div class="register-form-main">
+	<!-- contact -->
+	<div class="contact">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>登</span>
-					<span></span>录
+					<span>C</span>ontact
+					<span>U</span>s
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="login-form">
-				<form action="#" method="post">
-					<div class="">
-						<p>登录名 </p>
-						<input type="text" class="name" name="user name" required="" />
-					</div>
-					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="Password" required="" />
-					</div>
-					<div>
-						<select style="width:100%;">
-  							<option value ="教师">教师</option>
-  							<option value ="学生">学生</option>
-  							<option value="家长">家长</option>
-						</select>
-					</div>
-					<label class="anim">
-						<input type="checkbox" class="checkbox">
-						<span> 记住账号</span>
-					</label>
-					<div class="login-agileits-bottom wthree">
-						<h6>
-							<a href="#">忘记密码</a>
-						</h6>
-					</div>
-					<input type="submit" value="登录">
-					<div class="register-forming">
-						<p>
-							<a  href="register.html">注册新账号</a>
-						</p>
-					</div>
-				</form>
+			<div class="contact-row">
+				<div class="col-md-6 contact-text1">
+					<h4>Contact Our
+						<span>Best Study</span>
+					</h4>
+					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
+						volutpat. Duis vulputate tempus laoreet.
+					</p>
+				</div>
+				<div class="col-md-6 contact-w3lsright">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26370863.006641828!2d-113.70834778640587!3d36.212776709411365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1511345829734"
+					    allowfullscreen></iframe>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-
 		</div>
 	</div>
+	<div class="contact-lsleft">
+		<div class="container">
+			<div class="address-grid">
+				<h4>Contact Details</h4>
+				<ul class="w3_address">
+					<li>
+						<span class="fa fa-globe" aria-hidden="true"></span>1235 Ipswich, Foxhall Road, USA
+					</li>
+					<li>
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+						<a href="mailto:info@example.com">mail@example.com</a>
+					</li>
+					<li>
+						<span class="fa fa-phone" aria-hidden="true"></span>+001 234 5678
+					</li>
+				</ul>
+			</div>
+			<div class="contact-grid agileits">
+				<h4>Get In Touch</h4>
+				<form action="#" method="post">
+					<div class="">
+						<input type="text" name="Name" placeholder="Name" required="">
+					</div>
+					<div class="">
+						<input type="email" name="Email" placeholder="Email" required="">
+					</div>
+					<div class="">
+						<input type="text" name="Phone Number" placeholder="Phone Number" required="">
+					</div>
+					<div class="">
+						<textarea name="Message" placeholder="Message..." required=""></textarea>
+					</div>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -247,6 +267,9 @@
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
+				<div class="allah-copy">
+					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+				</div>
 				<div class="footercopy-social">
 					<ul>
 						<li>
