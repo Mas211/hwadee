@@ -16,7 +16,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Attendance">
 		SELECT
 			attend_id, attend_stu_id, attend_time

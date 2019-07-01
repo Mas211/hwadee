@@ -17,7 +17,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Message">
 		SELECT
 			message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id
