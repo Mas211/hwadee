@@ -184,20 +184,20 @@
 			-->
 			<div class="contact-grid agileits">
 				<h4>发 布 作 业</h4>
-				<form action="#" method="post">
+				<form action="/homework" method="post">
 					<div class="">
-						<input type="text" name="task_title" placeholder="作业标题" required="">
+						<input type="text" name="taskTitle" placeholder="作业标题" required="">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker" placeholder="开始时间" name="task_bagin_time" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
 							    required="">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker1" placeholder="截止时间" name="task_deadline" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
 							    required="">
 					</div>
 					<div class="">
-						<textarea name="task_content" placeholder="内容..." required=""></textarea>
+						<textarea name="taskContent" placeholder="内容..." required=""></textarea>
 					</div>
 					<input type="submit" value="Submit">
 				</form>
@@ -298,12 +298,12 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="../../assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
-	<script src="js/bootstrap.js"></script>
+	<script src="../../assets/js/bootstrap.js"></script>
 	<!-- Calendar -->
-	<link rel="stylesheet" href="css/jquery-ui.css" />
-	<script src="js/jquery-ui.js"></script>
+	<link rel="stylesheet" href="../../assets/css/jquery-ui.css" />
+	<script src="../../assets/js/jquery-ui.js"></script>
 	<script>
 		$(function () {
 			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
@@ -311,11 +311,10 @@
 	</script>
 	<!-- //Calendar -->
 	<!-- smooth scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="../../assets/js/SmoothScroll.min.js"></script>
+	<script src="../../assets/js/move-top.js"></script>
+	<script src="../../assets/js/easing.js"></script>
 	<!-- here stars scrolling icon -->
-	</script>
 	<script>
 		$(document).ready(function () {
 			/*

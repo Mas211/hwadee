@@ -5,7 +5,7 @@
  <mapper namespace="com.jxt.mapper.TaskMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="task_id">
+	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="taskId">
 		INSERT INTO task(task_id, task_title, task_content, task_begin_time, task_deadline) 
 		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline})
 	</insert>
