@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Login</title>
+	<title>Attend</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -54,8 +54,8 @@
 					</a>
 				</div>
 				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+					<a href="index.html">
+						<span class="fa fa-sign-out" aria-hidden="true"></span>注销</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -137,7 +137,7 @@
 					<a href="index.html">首页</a>
 					<span>| |</span>
 				</li>
-				<li>登录</li>
+				<li>考勤记录</li>
 			</ul>
 		</div>
 	</div>
@@ -146,8 +146,8 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>登</span>
-					<span></span>录
+					<span>考勤</span>
+					<span></span>记录
 				</h3>
 				<div class="tittle-style">
 
@@ -155,36 +155,35 @@
 			</div>
 			<div class="login-form">
 				<form action="#" method="post">
+					<input type="submit" value="查       询">
 					<div class="">
-						<p>登录名 </p>
-						<input type="text" class="name" name="user name" required="" />
+						<p>直接调attendance数据库吧= =</p>
+						<p>最好能调用近几次的，全部调用是不是太...</p>
 					</div>
-					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="Password" required="" />
-					</div>
-					<div>
-						<select style="width:100%;">
-  							<option value ="教师">教师</option>
-  							<option value ="学生">学生</option>
-  							<option value="家长">家长</option>
-						</select>
-					</div>
-					<label class="anim">
-						<input type="checkbox" class="checkbox">
-						<span> 记住账号</span>
-					</label>
-					<div class="login-agileits-bottom wthree">
-						<h6>
-							<a href="#">忘记密码</a>
-						</h6>
-					</div>
-					<input type="submit" value="登录">
-					<div class="register-forming">
-						<p>
-							<a  href="register.html">注册新账号</a>
-						</p>
-					</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>出勤编号</th>
+								<th>学生学号</th>
+								<th>出勤时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>20164285</td>
+								<td>已出勤</td>
+							</tr>
+									
+							<tr>
+								<td>2</td>
+								<td>20164285</td>
+								<td>缺勤</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					
 				</form>
 			</div>
 

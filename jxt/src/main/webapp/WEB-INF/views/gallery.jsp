@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Courses</title>
+	<title>Gallery</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -64,7 +64,7 @@
 	</div>
 	<div class="header">
 		<div class="content white">
-			<nav class="navbar navbar-default" >
+			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -90,7 +90,7 @@
 								<li>
 									<a href="about.html" class="effect-3">About Us</a>
 								</li>
-								<li class="active">
+								<li>
 									<a href="courses.html" class="effect-3">Courses</a>
 								</li>
 								<li>
@@ -109,8 +109,8 @@
 										</li>
 									</ul>
 								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
+								<li class="active">
+									<a href="gallery.html" class="effect-3">Gallery</a>
 								</li>
 								<li>
 									<a href="contact.html" class="effect-3">Contact Us</a>
@@ -137,78 +137,100 @@
 					<a href="index.html">Home</a>
 					<span>| |</span>
 				</li>
-				<li>Courses</li>
+				<li>Gallery</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- blog -->
-	<div class="blog-cource">
+	<!-- Gallery -->
+	<div class="gallery">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>P</span>opular
-					<span>C</span>ourses
+					<span>O</span>ur <span>G</span>allery
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="blog-info">
-				<div class="col-xs-4 blog-grid-img">
-					<img src="images/c2.jpg" class="img-responsive" alt="" />
+			<div class="agileinfo-gallery-row">
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g7.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g7.jpg" alt="" title="Our Library" />
+						<div class="agile-figcaption">
+							<h4>Library</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Web Technology</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum delectus in auctor sapien. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g9.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g9.jpg" alt="" title="Volleyball Sports" />
+						<div class="agile-figcaption">
+							<h4>Volleyball</h4>
+						</div>
+					</a>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-agileinfo blog-info-mdl">
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Academic English</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g3.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g3.jpg" alt="" title="Our Computer Lab" />
+						<div class="agile-figcaption">
+							<h4>Computer Lab</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-4 blog-grid-img blog-img-rght">
-					<img src="images/c1.jpg" class="img-responsive" alt="" />
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g4.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g4.jpg" alt="" title="Meditation" />
+						<div class="agile-figcaption">
+							<h4>Meditation</h4>
+						</div>
+					</a>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-info">
-				<div class="col-xs-4 blog-grid-img">
-					<img src="images/c3.jpg" class="img-responsive" alt="" />
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g1.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g1.jpg" alt="" title="Science" />
+						<div class="agile-figcaption">
+							<h4>Science</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-8 blog-grid-text">
-					<h4>HR Management</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante rerum hic a sapiente delectus in auctor sapien. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g6.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g6.jpg" alt="" title="Group Discussion" />
+						<div class="agile-figcaption">
+							<h4>Group Discussion</h4>
+						</div>
+					</a>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-agileinfo blog-info-mdl">
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Process Engineering</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g2.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g2.jpg" alt="" title="Chemical Lab" />
+						<div class="agile-figcaption">
+							<h4>Chemical Lab</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-4 blog-grid-img blog-img-rght">
-					<img src="images/c7.jpg" class="img-responsive" alt="" />
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g5.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g5.jpg" alt="" title="Our Sports" />
+						<div class="agile-figcaption">
+							<h4>Sports</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g8.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g8.jpg" alt="" title="Our Excellent Seminar" />
+						<div class="agile-figcaption">
+							<h4>Seminar</h4>
+						</div>
+					</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!-- //blog -->
+	<!-- //Gallery -->
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -304,9 +326,17 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
-	<!-- stats numscroller-js-file -->
-	<script src="js/numscroller-1.0.js"></script>
-	<!-- //stats numscroller-js-file -->
+	<!-- simple-lightbox -->
+	<script type="text/javascript" src="js/simple-lightbox.js"></script>	
+	<script>
+		$(function () {
+			var gallery = $('.agileinfo-gallery-row a').simpleLightbox({
+				navText: ['&lsaquo;', '&rsaquo;']
+			});
+		});
+	</script>
+	<link href='css/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+	<!-- Light-box css -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>
