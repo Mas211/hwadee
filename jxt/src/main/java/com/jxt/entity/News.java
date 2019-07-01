@@ -10,8 +10,15 @@ public class News {
 	private String newsContent;
 	private String newsWord;
 	private String publisher;
+	private Timestamp newsModified;
 	
 	
+	public Timestamp getNewsModified() {
+		return newsModified;
+	}
+	public void setNewsModified(Timestamp newsModified) {
+		this.newsModified = newsModified;
+	}
 	public Integer getNewsId() {
 		return newsId;
 	}

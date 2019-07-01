@@ -18,6 +18,15 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
+
+	<!-- UEditor配置文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+	<!-- 解析器源码文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.parse.min.js"></script>
+
+
 	<!-- //meta-tags -->
 	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -159,36 +168,27 @@
 							<label class="header">标题</label>
 							<input type="text" name="newsTitle" value="新闻标题">
 							<label class="header">发布人</label>
-							<input type="text" name="newsTitle" value="${sessionScope.account.accountName}">
+							<input type="text" name="publisher" value="${sessionScope.account.accountName}">
 						</div>
-						<div class="styled-input">
-							
-						</div>
-						<div class="styled-input">
-							
-						</div>
-						<div class="styled-input agile-styled-input-top">
-							
-						</div>
-						<div class="styled-input">
-							
-						</div>
-						<div class="styled-input">
-							
-						</div>
-						<div class="styled-input agile-styled-input-top">
-							
-						</div>
-						<div class="styled-input">
-							
-						</div>
-						<div class="styled-input">
+						
+						<div class="styled-input"  >
 							<label class="header">正文</label>
-							
+							<!-- 加载编辑器的容器 -->
+							<script id="container" name="newsContent" type="text/plain" style="height: 400px">这里写你的初始化内容</script>
+							<!-- 配置文件 -->
+							<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+							<!-- 编辑器源码文件 -->
+							<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+							<!-- 实例化编辑器 -->
+							<script type="text/javascript">
+								var ue = UE.getEditor('container');
+							</script>
+
+
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<input type="submit" value="Submit">
+					<input type="submit" value="发布">
 				</form>
 			</div>
 		</div>

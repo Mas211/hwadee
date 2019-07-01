@@ -37,11 +37,11 @@
             'fullscreen', 'source', '|', 'undo', 'redo', '|',
             'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist','cleardoc', '|',
             'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', 'insertcode','|',
             'directionalityltr', 'directionalityrtl', 'indent', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
             'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'insertframe', 'insertcode', 'pagebreak', 'template', 'background', '|',
+            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'insertframe',  'pagebreak', 'template', 'background', '|',
             'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
             'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
              'preview', 'searchreplace'
