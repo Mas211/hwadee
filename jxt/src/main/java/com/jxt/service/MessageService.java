@@ -19,13 +19,13 @@ public interface MessageService {
 	
 	//列出发出的留言
 	//typeId=1
-	List<Message> listLeavMessages(int sourceId);
+	List<Message> listLeavMessages(int sourceId,int typeId);
 	
 	//列出收到的回复
-	List<Message> listRecMessages(int targetId);
+	List<Message> listRecMessages(int targetId,int typeId);
 	
 	//列出新闻通知
 	//typeId=2
-	List<Message> listNewsMessages(int targetId);
+	List<Message> listNewsMessages(int targetId,int typeId);
 
 }

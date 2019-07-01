@@ -45,21 +45,21 @@ public class MessageServiceImpl implements MessageService {
 	}
 
 	@Override
-	public List<Message> listLeavMessages(int sourceId) {
+	public List<Message> listLeavMessages(int sourceId,int typeId) {
 		// TODO Auto-generated method stub
-		return messageMapper.findBySourceId(sourceId, 1);
+		return messageMapper.findBySourceId(sourceId, typeId);
 	}
 
 	@Override
-	public List<Message> listRecMessages(int targetId) {
+	public List<Message> listRecMessages(int targetId,int typeId) {
 		// TODO Auto-generated method stub
-		return messageMapper.findByTargetId(targetId, 1);
+		return messageMapper.findByTargetId(targetId, typeId);
 	}
 
 	@Override
-	public List<Message> listNewsMessages(int targetId) {
+	public List<Message> listNewsMessages(int targetId,int typeId) {
 		// TODO Auto-generated method stub
-		return messageMapper.findByTargetId(targetId, 2);
+		return messageMapper.findByTargetId(targetId, typeId);
 	}
 	
 	

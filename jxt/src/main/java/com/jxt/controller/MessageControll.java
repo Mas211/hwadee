@@ -24,15 +24,16 @@ public class MessageControll {
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
 	public String login(HttpSession session) {
 		session.setAttribute("id", 1);
-		return "redirect:/news";
+		return "redirect:/MyMessages/news";
 	}
 	
 	@RequestMapping(value = "/news",method = RequestMethod.GET)
 	public String listNews(HttpSession session,Model model) {
 		
 		int tagetId = (int) session.getAttribute("id");
-		List<Message> news = messageService.listNewsMessages(tagetId);
+		List<Message> news = messageService.listNewsMessages(tagetId,2);
 		model.addAttribute("news", news);
+		System.out.println("11111");
 		return "MessageCenter/news";
 	}
 

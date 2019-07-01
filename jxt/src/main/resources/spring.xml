@@ -22,7 +22,6 @@
 		<property name="password" value="123456"/>
 	</bean>
 	   
-
 	<!-- ========================================针对myBatis的配置项============================== -->
     <!-- 配置sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

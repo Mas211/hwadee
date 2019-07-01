@@ -18,8 +18,8 @@ public class NoticeController {
 	
 	@RequestMapping(value = "/NewsNotices")
 	public String listNotices(Model model) {
-		List<Notice> newsNotes = noticeController.listNotices();
-		model.addAttribute("newsNotesList", newsNotes);
+		//List<Notice> newsNotes = noticeController.listNotices();
+		//model.addAttribute("newsNotesList", newsNotes);
 		return "MessageCenter/MyNotices";
 	}
 	

@@ -1,41 +1,11 @@
 package com.jxt.service.impl;
-
-<<<<<<< HEAD
-import java.util.List;
-
-=======
->>>>>>> d6c89d24e8179f25f55041632cc34efde146caac
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jxt.entity.Notice;
-<<<<<<< HEAD
 import com.jxt.service.NoticeService;
-
- @Service
-public class NoticeServiceImpl implements NoticeService {
-
-	 @Autowired
-	 private NoticeMapper noticeMapper;
-
-	@Override
-	public List<Notice> findAll() {
-		// TODO Auto-generated method stub
-		return noticeMapper.findAll();
-	}
-
-
-	@Override
-	public int delete(int noticeId) {
-		// TODO Auto-generated method stub
-		return noticeMapper.delete();
-	}
-	 
 	
-	
-=======
 import com.jxt.mapper.NoticeMapper;
-import com.jxt.service.NoticeService;
 
 @Service
 public class NoticeServiceImpl implements NoticeService {
@@ -70,5 +40,4 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeMapper.update(notice);
 	}
 
->>>>>>> d6c89d24e8179f25f55041632cc34efde146caac
 }
