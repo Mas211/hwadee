@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="/assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -186,18 +186,18 @@
 				<h4>发 布 作 业</h4>
 				<form action="/homework" method="post">
 					<div class="">
-						<input type="text" name="taskTitle" placeholder="作业标题" required="">
+						<input type="text" name="taskTitle" placeholder="作业标题">
 					</div>
 					<div class="styled-input">
 							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
+							    >
 					</div>
 					<div class="styled-input">
 							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
+							    >
 					</div>
 					<div class="">
-						<textarea name="taskContent" placeholder="内容..." required=""></textarea>
+						<textarea name="taskContent" placeholder="内容..."></textarea>
 					</div>
 					<input type="submit" value="Submit">
 				</form>
@@ -298,12 +298,12 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src="../../assets/js/jquery-2.1.4.min.js"></script>
+	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
-	<script src="../../assets/js/bootstrap.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
 	<!-- Calendar -->
-	<link rel="stylesheet" href="../../assets/css/jquery-ui.css" />
-	<script src="../../assets/js/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+	<script src="/assets/js/jquery-ui.js"></script>
 	<script>
 		$(function () {
 			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
@@ -311,9 +311,9 @@
 	</script>
 	<!-- //Calendar -->
 	<!-- smooth scrolling -->
-	<script src="../../assets/js/SmoothScroll.min.js"></script>
-	<script src="../../assets/js/move-top.js"></script>
-	<script src="../../assets/js/easing.js"></script>
+	<script src="/assets/js/SmoothScroll.min.js"></script>
+	<script src="/assets/js/move-top.js"></script>
+	<script src="/assets/js/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
