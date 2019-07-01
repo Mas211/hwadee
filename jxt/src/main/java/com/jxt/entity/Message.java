@@ -10,7 +10,16 @@ public class Message {
 	private Integer isRead;
 	private Integer messageType;
 	private Integer commentActId;
+	private String messageContent;
+	//
+	private Account account;
 	
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 	public String getMessageContent() {
 		return messageContent;
 	}

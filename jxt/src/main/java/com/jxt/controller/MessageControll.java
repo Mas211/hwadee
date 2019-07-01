@@ -1,11 +1,16 @@
 package com.jxt.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jxt.entity.Message;
 import com.jxt.service.MessageService;
 
 @Controller
@@ -15,11 +20,20 @@ public class MessageControll {
 	@Autowired
 	private MessageService messageService;
 	
-	@RequestMapping(value = "")
-	public void list(HttpSession session) {
+	//test
+	@RequestMapping(value = "/login",method = RequestMethod.GET)
+	public String login(HttpSession session) {
+		session.setAttribute("id", 1);
+		return "redirect:/news";
+	}
+	
+	@RequestMapping(value = "/news",method = RequestMethod.GET)
+	public String listNews(HttpSession session,Model model) {
 		
-		int commenterId = (int) session.getAttribute("id");
-		messageService.list(commenterId);
+		int tagetId = (int) session.getAttribute("id");
+		List<Message> news = messageService.listNewsMessages(tagetId);
+		model.addAttribute("news", news);
+		return "MessageCenter/news";
 	}
 
 	

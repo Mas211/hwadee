@@ -33,5 +33,38 @@
 		WHERE
 			message_id = #{messageId}
 	</update>
+	
+	<select id="findBySourceId" parameterType="int">
+ 		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			a.account_id,
+			a.account_name
+		FROM
+			account a
+			INNER JOIN (select * from message m where m.message_type = #{typeId}) p ON p.source_id = a.account_id 
+			where source_id = #{sourceId}
+	</select>
+	
+	<select id="findByTargetId" parameterType="int">
+		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			a.account_id,
+			a.account_name
+		FROM
+			account a
+			INNER JOIN (select * from message m where m.message_type = #{typeId} ) p ON p.target_id = a.account_id 
+			where target_id = #{targetId}
+	</select>
+	
 
 </mapper>

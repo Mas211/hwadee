@@ -17,11 +17,12 @@ public interface MessageMapper {
 	// 改
 	int update(Message message);
 	
-	
 	//找出所有发出的留言
-	List<Message> findByCommenterId(int commenterId);
+	//typeId=1表示留言
+	//typeId=2表示新闻
+	List<Message> findBySourceId(int sourceId,int typeId);
 	
 	//找出所有回复用户的留言
-	List<Message> findByCommenterTargetId(int commenterTargetId);
+	List<Message> findByTargetId(int targetId,int typeId);
 	
 }
