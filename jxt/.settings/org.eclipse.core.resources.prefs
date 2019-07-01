@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/views/contact.jsp=UTF-8
+=======
+encoding/<project>=UTF-8
+>>>>>>> 4a70360152e6b0ab295a7bc82ec5772aad98199b
