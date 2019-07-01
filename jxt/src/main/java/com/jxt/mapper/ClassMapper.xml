@@ -5,7 +5,7 @@
   <mapper namespace="com.jxt.mapper.ClassMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Class" useGeneratedKeys="true" keyProperty="class_id">
+	<insert id="insert" parameterType="com.jxt.entity.Class" useGeneratedKeys="true" keyProperty="classId">
 		INSERT INTO class(class_id, master_id, classroom, class_stu_count) VALUES(#{classId}, #{masterId}, #{classroom}, #{classStuCount})
 	</insert>
 	

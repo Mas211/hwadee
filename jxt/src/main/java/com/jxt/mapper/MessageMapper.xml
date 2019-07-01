@@ -5,7 +5,7 @@
  <mapper namespace="com.jxt.mapper.MessageMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="message_id">
+	<insert id="insert" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="messageId">
 		INSERT INTO message(message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id) 
 		VALUES(#{messageId}, #{actId}, #{sourceId}, #{targetId}, #{replyId}, #{isRead}, #{messageType}, #{commentActId})
 	</insert>

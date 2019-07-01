@@ -1,5 +1,7 @@
 package com.jxt.service;
 
+import java.util.List;
+
 import com.jxt.entity.Task;
 
 public interface TaskService {
@@ -14,4 +16,6 @@ public interface TaskService {
 
 	// 改
 	int update(Task task);
+	
+	List<Task> tasks();
 }

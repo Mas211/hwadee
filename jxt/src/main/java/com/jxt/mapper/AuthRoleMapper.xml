@@ -5,7 +5,7 @@
   <mapper namespace="com.jxt.mapper.AuthRoleMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.AuthRole" useGeneratedKeys="true" keyProperty="auth_role_id">
+	<insert id="insert" parameterType="com.jxt.entity.AuthRole" useGeneratedKeys="true" keyProperty="authRoleId">
 		INSERT INTO auth_role(auth_role_id, auth_id, r_id, a_id) 
 		VALUES(#{authRoleId}, #{authId}, #{rId} ,#{aId})
 	</insert>
