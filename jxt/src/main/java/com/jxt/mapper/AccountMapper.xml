@@ -17,7 +17,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Account">
 		SELECT
 			account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject
