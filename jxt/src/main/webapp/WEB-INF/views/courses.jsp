@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Join Us</title>
+	<title>Courses</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -64,7 +64,7 @@
 	</div>
 	<div class="header">
 		<div class="content white">
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-default" >
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -90,10 +90,10 @@
 								<li>
 									<a href="about.html" class="effect-3">About Us</a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="courses.html" class="effect-3">Courses</a>
 								</li>
-								<li class="active">
+								<li>
 									<a href="join.html" class="effect-3">Join Us</a>
 								</li>
 								<li class="dropdown">
@@ -110,7 +110,7 @@
 									</ul>
 								</li>
 								<li>
-									<a href="gallery.html" class="effect-3">Gallery</a>
+									<a href="Gallery.html" class="effect-3">Gallery</a>
 								</li>
 								<li>
 									<a href="contact.html" class="effect-3">Contact Us</a>
@@ -137,93 +137,78 @@
 					<a href="index.html">Home</a>
 					<span>| |</span>
 				</li>
-				<li>Join Us</li>
+				<li>Courses</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div class="register-form-main">
+	<!-- blog -->
+	<div class="blog-cource">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>A</span>dmission
-					<span>F</span>orm
+					<span>P</span>opular
+					<span>C</span>ourses
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="register-form">
-				<form action="#" method="post">
-					<div class="fields-grid">
-						<div class="styled-input">
-							<input type="text" placeholder="Your Name" name="Your name" required="">
-						</div>
-						<div class="styled-input">
-							<input id="datepicker" placeholder="Birth Date" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
-						</div>
-						<div class="styled-input agile-styled-input-top">
-							<select class="category2" required="">
-								<option value="">Gender</option>
-								<option value="">Female</option>
-								<option value="">Male</option>
-								<option value="">Other</option>
-							</select>
-						</div>
-						<div class="styled-input">
-							<input type="email" placeholder="Your E-mail" name="Email" required="">
-						</div>
-						<div class="styled-input">
-							<input type="text" placeholder="Phone Number" name="Phone" required="">
-						</div>
-						<div class="styled-input agile-styled-input-top">
-							<select class="category2" required="">
-								<option value="">Select Course</option>
-								<option value="">Web Designing</option>
-								<option value="">Web Technology </option>
-								<option value="">PC Systems </option>
-								<option value="">IT Foundations </option>
-								<option value="">HR Management </option>
-								<option value="">Modeling </option>
-								<option value="">Basic Marketing</option>
-							</select>
-							<span></span>
-						</div>
-						<div class="styled-input">
-							<div class="agileits_w3layouts_grid">
-								<select class="category2" name="category1" required="">
-									<option value="">Select Course Time</option>
-									<option value="">Hours: 8am - 10am</option>
-									<option value="">Hours: 10am - 12pm</option>
-									<option value="">Hours: 12pm - 4pm</option>
-									<option value="">Hours: 4pm - 7pm</option>
-									<option value="">Hours: 7pm - 9pm</option>
-								</select>
-							</div>
-						</div>
-						<div class="styled-input">
-							<label class="header">Your Address</label>
-							<div class="">
-								<input type="text" name="name" placeholder="Address" title="Please enter your Address" required="">
-							</div>
-							<div class="">
-								<input type="text" name="name" placeholder="Line" title="Please enter your Line" required="">
-							</div>
-							<div class="">
-								<input type="text" name="name" placeholder="City" title="Please enter your City" required="">
-							</div>
-							<div class="">
-								<input type="text" name="name" placeholder="Zip Code" title="Please enter your Zip code" required="">
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<input type="submit" value="Submit">
-				</form>
+			<div class="blog-info">
+				<div class="col-xs-4 blog-grid-img">
+					<img src="images/c2.jpg" class="img-responsive" alt="" />
+				</div>
+				<div class="col-xs-8 blog-grid-text">
+					<h4>Web Technology</h4>
+					<h6>Rerum Delectus</h6>
+					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
+						Donec ultricies faucibus ante in mattis earum rerum delectus in auctor sapien. </p>
+					<a class="button-style" href="join.html">Apply Now</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="blog-agileinfo blog-info-mdl">
+				<div class="col-xs-8 blog-grid-text">
+					<h4>Academic English</h4>
+					<h6>Rerum Delectus</h6>
+					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
+						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
+					<a class="button-style" href="join.html">Apply Now</a>
+				</div>
+				<div class="col-xs-4 blog-grid-img blog-img-rght">
+					<img src="images/c1.jpg" class="img-responsive" alt="" />
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="blog-info">
+				<div class="col-xs-4 blog-grid-img">
+					<img src="images/c3.jpg" class="img-responsive" alt="" />
+				</div>
+				<div class="col-xs-8 blog-grid-text">
+					<h4>HR Management</h4>
+					<h6>Rerum Delectus</h6>
+					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
+						Donec ultricies faucibus ante rerum hic a sapiente delectus in auctor sapien. </p>
+					<a class="button-style" href="join.html">Apply Now</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="blog-agileinfo blog-info-mdl">
+				<div class="col-xs-8 blog-grid-text">
+					<h4>Process Engineering</h4>
+					<h6>Rerum Delectus</h6>
+					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
+						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
+					<a class="button-style" href="join.html">Apply Now</a>
+				</div>
+				<div class="col-xs-4 blog-grid-img blog-img-rght">
+					<img src="images/c7.jpg" class="img-responsive" alt="" />
+				</div>
+				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
+	<!-- //blog -->
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -319,15 +304,9 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
-	<!-- Calendar -->
-	<link rel="stylesheet" href="css/jquery-ui.css" />
-	<script src="js/jquery-ui.js"></script>
-	<script>
-		$(function () {
-			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
-		});
-	</script>
-	<!-- //Calendar -->
+	<!-- stats numscroller-js-file -->
+	<script src="js/numscroller-1.0.js"></script>
+	<!-- //stats numscroller-js-file -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>

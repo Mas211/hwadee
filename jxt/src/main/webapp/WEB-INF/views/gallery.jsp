@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Contact Us</title>
+	<title>Gallery</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -109,10 +109,10 @@
 										</li>
 									</ul>
 								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
-								</li>
 								<li class="active">
+									<a href="gallery.html" class="effect-3">Gallery</a>
+								</li>
+								<li>
 									<a href="contact.html" class="effect-3">Contact Us</a>
 								</li>
 							</ul>
@@ -137,79 +137,100 @@
 					<a href="index.html">Home</a>
 					<span>| |</span>
 				</li>
-				<li>Contact Us</li>
+				<li>Gallery</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- contact -->
-	<div class="contact">
+	<!-- Gallery -->
+	<div class="gallery">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>C</span>ontact
-					<span>U</span>s
+					<span>O</span>ur <span>G</span>allery
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="contact-row">
-				<div class="col-md-6 contact-text1">
-					<h4>Contact Our
-						<span>Best Study</span>
-					</h4>
-					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
-						volutpat. Duis vulputate tempus laoreet.
-					</p>
+			<div class="agileinfo-gallery-row">
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g7.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g7.jpg" alt="" title="Our Library" />
+						<div class="agile-figcaption">
+							<h4>Library</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-md-6 contact-w3lsright">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26370863.006641828!2d-113.70834778640587!3d36.212776709411365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1511345829734"
-					    allowfullscreen></iframe>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g9.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g9.jpg" alt="" title="Volleyball Sports" />
+						<div class="agile-figcaption">
+							<h4>Volleyball</h4>
+						</div>
+					</a>
 				</div>
-				<div class="clearfix"></div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g3.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g3.jpg" alt="" title="Our Computer Lab" />
+						<div class="agile-figcaption">
+							<h4>Computer Lab</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g4.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g4.jpg" alt="" title="Meditation" />
+						<div class="agile-figcaption">
+							<h4>Meditation</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g1.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g1.jpg" alt="" title="Science" />
+						<div class="agile-figcaption">
+							<h4>Science</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g6.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g6.jpg" alt="" title="Group Discussion" />
+						<div class="agile-figcaption">
+							<h4>Group Discussion</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g2.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g2.jpg" alt="" title="Chemical Lab" />
+						<div class="agile-figcaption">
+							<h4>Chemical Lab</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g5.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g5.jpg" alt="" title="Our Sports" />
+						<div class="agile-figcaption">
+							<h4>Sports</h4>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="images/g8.jpg" class="imghvr-hinge-right figure">
+						<img src="images/g8.jpg" alt="" title="Our Excellent Seminar" />
+						<div class="agile-figcaption">
+							<h4>Seminar</h4>
+						</div>
+					</a>
+				</div>
+				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<div class="contact-lsleft">
-		<div class="container">
-			<div class="address-grid">
-				<h4>Contact Details</h4>
-				<ul class="w3_address">
-					<li>
-						<span class="fa fa-globe" aria-hidden="true"></span>1235 Ipswich, Foxhall Road, USA
-					</li>
-					<li>
-						<span class="fa fa-envelope-o" aria-hidden="true"></span>
-						<a href="mailto:info@example.com">mail@example.com</a>
-					</li>
-					<li>
-						<span class="fa fa-phone" aria-hidden="true"></span>+001 234 5678
-					</li>
-				</ul>
-			</div>
-			<div class="contact-grid agileits">
-				<h4>Get In Touch</h4>
-				<form action="#" method="post">
-					<div class="">
-						<input type="text" name="Name" placeholder="Name" required="">
-					</div>
-					<div class="">
-						<input type="email" name="Email" placeholder="Email" required="">
-					</div>
-					<div class="">
-						<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-					</div>
-					<div class="">
-						<textarea name="Message" placeholder="Message..." required=""></textarea>
-					</div>
-					<input type="submit" value="Submit">
-				</form>
-			</div>
-		</div>
-	</div>
-	<!-- //contact -->
-
+	<!-- //Gallery -->
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -305,6 +326,17 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
+	<!-- simple-lightbox -->
+	<script type="text/javascript" src="js/simple-lightbox.js"></script>	
+	<script>
+		$(function () {
+			var gallery = $('.agileinfo-gallery-row a').simpleLightbox({
+				navText: ['&lsaquo;', '&rsaquo;']
+			});
+		});
+	</script>
+	<link href='css/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+	<!-- Light-box css -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>

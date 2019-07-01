@@ -6,11 +6,11 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.News" useGeneratedKeys="true" keyProperty="news_id">
-		INSERT INTO NEWS(news_id, news_title, news_time, publisher) VALUES(#{newsId}, #{newsTitle}, #{newsTime}, #{publisher})
+		INSERT INTO news(news_id, news_title, news_time, publisher) VALUES(#{newsId}, #{newsTitle}, #{newsTime}, #{publisher})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM NEWS
+		DELETE FROM news
 		WHERE
 			news_id = #{value}
 	</delete>
@@ -21,14 +21,14 @@
 		SELECT
 			news_id, news_title, news_time, publisher
 		FROM
-			NEWS
+			news
 		WHERE
 			news_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.News">
-		UPDATE NEWS SET news_title = #{newsTitle}, news_time=#{newsTime}, publisher=#{publisher}
+		UPDATE news SET news_title = #{newsTitle}, news_time=#{newsTime}, publisher=#{publisher}
 		WHERE
 			news_id = #{newsId}
 	</update>

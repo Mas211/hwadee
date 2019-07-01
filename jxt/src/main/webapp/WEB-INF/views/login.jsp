@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Gallery</title>
+	<title>Login</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -40,7 +40,7 @@
 			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
+					<a class="facebook" href="register.html">
 						<span class="fa fa-facebook"></span>
 					</a>
 					<a class="twitter" href="#">
@@ -109,7 +109,7 @@
 										</li>
 									</ul>
 								</li>
-								<li class="active">
+								<li>
 									<a href="gallery.html" class="effect-3">Gallery</a>
 								</li>
 								<li>
@@ -134,103 +134,62 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.html">首页</a>
 					<span>| |</span>
 				</li>
-				<li>Gallery</li>
+				<li>登录</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- Gallery -->
-	<div class="gallery">
+	<div class="register-form-main">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>O</span>ur <span>G</span>allery
+					<span>登</span>
+					<span></span>录
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="agileinfo-gallery-row">
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g7.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g7.jpg" alt="" title="Our Library" />
-						<div class="agile-figcaption">
-							<h4>Library</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g9.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g9.jpg" alt="" title="Volleyball Sports" />
-						<div class="agile-figcaption">
-							<h4>Volleyball</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g3.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g3.jpg" alt="" title="Our Computer Lab" />
-						<div class="agile-figcaption">
-							<h4>Computer Lab</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g4.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g4.jpg" alt="" title="Meditation" />
-						<div class="agile-figcaption">
-							<h4>Meditation</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g1.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g1.jpg" alt="" title="Science" />
-						<div class="agile-figcaption">
-							<h4>Science</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g6.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g6.jpg" alt="" title="Group Discussion" />
-						<div class="agile-figcaption">
-							<h4>Group Discussion</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g2.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g2.jpg" alt="" title="Chemical Lab" />
-						<div class="agile-figcaption">
-							<h4>Chemical Lab</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g5.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g5.jpg" alt="" title="Our Sports" />
-						<div class="agile-figcaption">
-							<h4>Sports</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="images/g8.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g8.jpg" alt="" title="Our Excellent Seminar" />
-						<div class="agile-figcaption">
-							<h4>Seminar</h4>
-						</div>
-					</a>
-				</div>
-				<div class="clearfix"> </div>
+			<div class="login-form">
+				<form action="#" method="post">
+					<div class="">
+						<p>登录名 </p>
+						<input type="text" class="name" name="user name" required="" />
+					</div>
+					<div class="">
+						<p>密码</p>
+						<input type="password" class="password" name="Password" required="" />
+					</div>
+					<div>
+						<select style="width:100%;">
+  							<option value ="教师">教师</option>
+  							<option value ="学生">学生</option>
+  							<option value="家长">家长</option>
+						</select>
+					</div>
+					<label class="anim">
+						<input type="checkbox" class="checkbox">
+						<span> 记住账号</span>
+					</label>
+					<div class="login-agileits-bottom wthree">
+						<h6>
+							<a href="#">忘记密码</a>
+						</h6>
+					</div>
+					<input type="submit" value="登录">
+					<div class="register-forming">
+						<p>
+							<a  href="register.html">注册新账号</a>
+						</p>
+					</div>
+				</form>
 			</div>
+
 		</div>
 	</div>
-	<!-- //Gallery -->
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -288,9 +247,6 @@
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
-				<div class="allah-copy">
-					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-				</div>
 				<div class="footercopy-social">
 					<ul>
 						<li>
@@ -326,17 +282,6 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
-	<!-- simple-lightbox -->
-	<script type="text/javascript" src="js/simple-lightbox.js"></script>	
-	<script>
-		$(function () {
-			var gallery = $('.agileinfo-gallery-row a').simpleLightbox({
-				navText: ['&lsaquo;', '&rsaquo;']
-			});
-		});
-	</script>
-	<link href='css/simplelightbox.min.css' rel='stylesheet' type='text/css'>
-	<!-- Light-box css -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>

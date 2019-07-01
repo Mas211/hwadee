@@ -6,12 +6,12 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="task_id">
-		INSERT INTO TASK(task_id, task_title, task_content, task_begin_time, task_deadline) 
+		INSERT INTO task(task_id, task_title, task_content, task_begin_time, task_deadline) 
 		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM TASK
+		DELETE FROM task
 		WHERE
 			task_id = #{value}
 	</delete>
@@ -22,14 +22,14 @@
 		SELECT
 			task_id, task_title, task_content, task_begin_time, task_deadline
 		FROM
-			TASK
+			task
 		WHERE
 			task_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Task">
-		UPDATE TASK SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}
+		UPDATE task SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}
 		WHERE
 			task_id = #{taskId}
 	</update>

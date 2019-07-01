@@ -6,11 +6,11 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Class" useGeneratedKeys="true" keyProperty="class_id">
-		INSERT INTO CLASS(class_id, master_id, classroom, class_stu_count) VALUES(#{classId}, #{masterId}, #{classroom}, #{classStuCount})
+		INSERT INTO class(class_id, master_id, classroom, class_stu_count) VALUES(#{classId}, #{masterId}, #{classroom}, #{classStuCount})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM CLASS
+		DELETE FROM class
 		WHERE
 			class_id = #{value}
 	</delete>
@@ -21,14 +21,14 @@
 		SELECT
 			class_id, master_id, classroom, class_stu_count
 		FROM
-			CLASS
+			class
 		WHERE
 			class_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Class">
-		UPDATE CLASS SET master_id=#{masterId}, classroom=#{classromm}, class_stu_count=#{classStuCount}
+		UPDATE class SET master_id=#{masterId}, classroom=#{classromm}, class_stu_count=#{classStuCount}
 		WHERE
 			class_id = #{classId}
 	</update>
