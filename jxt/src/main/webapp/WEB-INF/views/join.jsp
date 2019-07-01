@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Register</title>
+	<title>Join Us</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,15 +19,14 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
 </head>
 
 <body>
@@ -94,7 +93,7 @@
 								<li>
 									<a href="courses.html" class="effect-3">Courses</a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="join.html" class="effect-3">Join Us</a>
 								</li>
 								<li class="dropdown">
@@ -135,10 +134,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">首页</a>
+					<a href="index.html">Home</a>
 					<span>| |</span>
 				</li>
-				<li>注册</li>
+				<li>Join Us</li>
 			</ul>
 		</div>
 	</div>
@@ -147,46 +146,82 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>注</span>
-					<span></span>册
+					<span>A</span>dmission
+					<span>F</span>orm
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="login-form">
+			<div class="register-form">
 				<form action="#" method="post">
-					<div class="">
-						<p>账号名 </p>
-						<input type="text" class="name" name="user name" required="" />
+					<div class="fields-grid">
+						<div class="styled-input">
+							<input type="text" placeholder="Your Name" name="Your name" required="">
+						</div>
+						<div class="styled-input">
+							<input id="datepicker" placeholder="Birth Date" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							    required="">
+						</div>
+						<div class="styled-input agile-styled-input-top">
+							<select class="category2" required="">
+								<option value="">Gender</option>
+								<option value="">Female</option>
+								<option value="">Male</option>
+								<option value="">Other</option>
+							</select>
+						</div>
+						<div class="styled-input">
+							<input type="email" placeholder="Your E-mail" name="Email" required="">
+						</div>
+						<div class="styled-input">
+							<input type="text" placeholder="Phone Number" name="Phone" required="">
+						</div>
+						<div class="styled-input agile-styled-input-top">
+							<select class="category2" required="">
+								<option value="">Select Course</option>
+								<option value="">Web Designing</option>
+								<option value="">Web Technology </option>
+								<option value="">PC Systems </option>
+								<option value="">IT Foundations </option>
+								<option value="">HR Management </option>
+								<option value="">Modeling </option>
+								<option value="">Basic Marketing</option>
+							</select>
+							<span></span>
+						</div>
+						<div class="styled-input">
+							<div class="agileits_w3layouts_grid">
+								<select class="category2" name="category1" required="">
+									<option value="">Select Course Time</option>
+									<option value="">Hours: 8am - 10am</option>
+									<option value="">Hours: 10am - 12pm</option>
+									<option value="">Hours: 12pm - 4pm</option>
+									<option value="">Hours: 4pm - 7pm</option>
+									<option value="">Hours: 7pm - 9pm</option>
+								</select>
+							</div>
+						</div>
+						<div class="styled-input">
+							<label class="header">Your Address</label>
+							<div class="">
+								<input type="text" name="name" placeholder="Address" title="Please enter your Address" required="">
+							</div>
+							<div class="">
+								<input type="text" name="name" placeholder="Line" title="Please enter your Line" required="">
+							</div>
+							<div class="">
+								<input type="text" name="name" placeholder="City" title="Please enter your City" required="">
+							</div>
+							<div class="">
+								<input type="text" name="name" placeholder="Zip Code" title="Please enter your Zip code" required="">
+							</div>
+						</div>
+						<div class="clearfix"> </div>
 					</div>
-					<div class="">
-						<p>邮箱</p>
-						<input type="email" class="password" name="email" required="" />
-					</div>
-					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="Password" id="password1" required="" />
-					</div>
-					<div class="">
-						<p>确认密码</p>
-						<input type="password" class="password" name="Password" id="password2" required="" />
-					</div>
-					<div>
-						<select style="width:100%;">
-  							<option value ="教师">教师</option>
-  							<option value ="学生">学生</option>
-  							<option value="家长">家长</option>
-						</select>
-					</div>
-					<label class="anim">
-						<input type="checkbox" class="checkbox">
-						<span>接受服务条款</span>
-					</label>
-					<input type="submit" value="登录">
+					<input type="submit" value="Submit">
 				</form>
 			</div>
-
 		</div>
 	</div>
 
@@ -246,6 +281,9 @@
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
+				<div class="allah-copy">
+					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+				</div>
 				<div class="footercopy-social">
 					<ul>
 						<li>
@@ -281,6 +319,15 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
+	<!-- Calendar -->
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>
 	<script src="js/move-top.js"></script>
@@ -305,24 +352,6 @@
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
-	<!-- password-script -->
-	<script>
-		window.onload = function () {
-			document.getElementById("password1").onchange = validatePassword;
-			document.getElementById("password2").onchange = validatePassword;
-		}
-
-		function validatePassword() {
-			var pass2 = document.getElementById("password2").value;
-			var pass1 = document.getElementById("password1").value;
-			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-			else
-				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
-	</script>
-	<!-- //password-script -->
 	<!-- //js-files -->
 
 </body>

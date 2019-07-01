@@ -16,7 +16,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Grade">
 		SELECT
 			grade_id, grade_t_id, grade_stu_id, grade

@@ -16,7 +16,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Notice">
 		SELECT
 			notice_id, notice_title, notice_content, notice_time

@@ -17,7 +17,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Message">
 		SELECT
 			message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id
@@ -33,4 +33,37 @@
 		WHERE
 			message_id = #{messageId}
 	</update>
+	
+	<select id="findBySourceId" parameterType="int" resultType="Message">
+ 		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			a.account_id "account.accountId",
+			a.account_name "account.accountName"
+		FROM
+			account a
+			INNER JOIN (select * from message m where m.message_type = #{typeId}) p ON p.source_id = a.account_id 
+			where source_id = #{sourceId}
+	</select>
+	
+	<select id="findByTargetId" parameterType="int" resultType="Message">
+		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			a.account_id "account.accountId",
+			a.account_name "account.accountName"
+		FROM
+			account a
+			INNER JOIN (select * from message m where m.message_type = #{typeId} ) p ON p.target_id = a.account_id 
+			where target_id = #{targetId}
+	</select>
+	 	
 </mapper>

@@ -1,5 +1,7 @@
 package com.jxt.mapper;
 
+import java.util.List;
+
 import com.jxt.entity.News;
 
 public interface NewsMapper {
@@ -14,4 +16,5 @@ public interface NewsMapper {
 
 	// 改
 	int update(News news);
+	
 }

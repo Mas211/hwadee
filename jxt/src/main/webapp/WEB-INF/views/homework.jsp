@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Courses</title>
+	<title>Contact Us</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -33,11 +33,6 @@
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
-			<div class="bottom_header_left">
-				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
-				</p>
-			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
 					<a class="facebook" href="#">
@@ -55,7 +50,7 @@
 				</div>
 				<div class="header-top-righ">
 					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+						<span class="fa fa-sign-out" aria-hidden="true"></span>Login</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -64,7 +59,7 @@
 	</div>
 	<div class="header">
 		<div class="content white">
-			<nav class="navbar navbar-default" >
+			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -90,7 +85,7 @@
 								<li>
 									<a href="about.html" class="effect-3">About Us</a>
 								</li>
-								<li class="active">
+								<li>
 									<a href="courses.html" class="effect-3">Courses</a>
 								</li>
 								<li>
@@ -112,7 +107,7 @@
 								<li>
 									<a href="Gallery.html" class="effect-3">Gallery</a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="contact.html" class="effect-3">Contact Us</a>
 								</li>
 							</ul>
@@ -137,78 +132,80 @@
 					<a href="index.html">Home</a>
 					<span>| |</span>
 				</li>
-				<li>Courses</li>
+				<li>Contact Us</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- blog -->
-	<div class="blog-cource">
+	<!-- contact -->
+	<div class="contact">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>P</span>opular
-					<span>C</span>ourses
+					<span>发&nbsp;布&nbsp;</span>作&nbsp;业
 				</h3>
 				<div class="tittle-style">
-
 				</div>
 			</div>
-			<div class="blog-info">
-				<div class="col-xs-4 blog-grid-img">
-					<img src="images/c2.jpg" class="img-responsive" alt="" />
+			<div class="contact-row">
+				<div class="col-md-6 contact-text1">
+					<h4>Contact Our
+						<span>Best Study</span>
+					</h4>
+					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
+						volutpat. Duis vulputate tempus laoreet.
+					</p>
 				</div>
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Web Technology</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum delectus in auctor sapien. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
+				<div class="col-md-6 contact-w3lsright">
+					<iframe></iframe>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-agileinfo blog-info-mdl">
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Academic English</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="col-xs-4 blog-grid-img blog-img-rght">
-					<img src="images/c1.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-info">
-				<div class="col-xs-4 blog-grid-img">
-					<img src="images/c3.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="col-xs-8 blog-grid-text">
-					<h4>HR Management</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante rerum hic a sapiente delectus in auctor sapien. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-agileinfo blog-info-mdl">
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Process Engineering</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="col-xs-4 blog-grid-img blog-img-rght">
-					<img src="images/c7.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="clearfix"> </div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
-	<!-- //blog -->
+	<div class="contact-lsleft">
+		<div class="container">
+			<!--
+			<div class="address-grid">
+				<h4>Contact Details</h4>
+				<ul class="w3_address">
+					<li>
+						<span class="fa fa-globe" aria-hidden="true"></span>1235 Ipswich, Foxhall Road, USA
+					</li>
+					<li>
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+						<a href="mailto:info@example.com">mail@example.com</a>
+					</li>
+					<li>
+						<span class="fa fa-phone" aria-hidden="true"></span>+001 234 5678
+					</li>
+				</ul>
+			</div>
+			-->
+			<div class="contact-grid agileits">
+				<h4>发 布 作 业</h4>
+				<form action="/homework" method="post">
+					<div class="">
+						<input type="text" name="taskTitle" placeholder="作业标题" required="">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							    required="">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							    required="">
+					</div>
+					<div class="">
+						<textarea name="taskContent" placeholder="内容..." required=""></textarea>
+					</div>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -301,16 +298,22 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="../../assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
-	<script src="js/bootstrap.js"></script>
-	<!-- stats numscroller-js-file -->
-	<script src="js/numscroller-1.0.js"></script>
-	<!-- //stats numscroller-js-file -->
+	<script src="../../assets/js/bootstrap.js"></script>
+	<!-- Calendar -->
+	<link rel="stylesheet" href="../../assets/css/jquery-ui.css" />
+	<script src="../../assets/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="../../assets/js/SmoothScroll.min.js"></script>
+	<script src="../../assets/js/move-top.js"></script>
+	<script src="../../assets/js/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {

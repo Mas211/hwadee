@@ -1,5 +1,8 @@
 package com.jxt.service.impl;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +12,7 @@ import com.jxt.service.MessageService;
 
 @Service
 public class MessageServiceImpl implements MessageService {
+
 	@Autowired
 	private MessageMapper messageMapper;
 
@@ -39,5 +43,25 @@ public class MessageServiceImpl implements MessageService {
 		// TODO Auto-generated method stub
 		return messageMapper.update(message);
 	}
+
+	@Override
+	public List<Message> listLeavMessages(int sourceId,int typeId) {
+		// TODO Auto-generated method stub
+		return messageMapper.findBySourceId(sourceId, typeId);
+	}
+
+	@Override
+	public List<Message> listRecMessages(int targetId,int typeId) {
+		// TODO Auto-generated method stub
+		return messageMapper.findByTargetId(targetId, typeId);
+	}
+
+	@Override
+	public List<Message> listNewsMessages(int targetId,int typeId) {
+		// TODO Auto-generated method stub
+		return messageMapper.findByTargetId(targetId, typeId);
+	}
+	
+	
 
 }
