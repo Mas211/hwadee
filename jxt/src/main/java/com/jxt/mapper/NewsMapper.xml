@@ -6,7 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.News" useGeneratedKeys="true" keyProperty="news_id">
-		INSERT INTO news(news_id, news_title, news_time, publisher) VALUES(#{newsId}, #{newsTitle}, #{newsTime}, #{publisher})
+		INSERT INTO news(news_id, editor_id, news_title, news_create, news_content, news_word, publisher) 
+		VALUES(#{newsId}, #{editor_id}, #{news_title}, #{news_create}, #{news_content}, #{news_word}, #{publisher})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -19,7 +20,7 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.News">
 		SELECT
-			news_id, news_title, news_time, publisher
+			news_id, editor_id, news_title, news_create, news_content, news_word, publisher
 		FROM
 			news
 		WHERE
@@ -28,7 +29,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.News">
-		UPDATE news SET news_title = #{newsTitle}, news_time=#{newsTime}, publisher=#{publisher}
+		UPDATE news SET news_title = #{newsTitle}, news_create=#{news_create}, publisher=#{publisher}, 
+			news_content=#{news_content}, news_word=#{news_word}
 		WHERE
 			news_id = #{newsId}
 	</update>
