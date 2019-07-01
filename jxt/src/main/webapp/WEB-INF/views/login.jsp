@@ -154,19 +154,20 @@
 				</div>
 			</div>
 			<div class="login-form">
-				<form action="#" method="post">
+				<form action="/login" method="post">
 					<div class="">
-						<p>登录名 </p>
-						<input type="text" class="name" name="user name" required="" />
+						<p>账号 </p>
+						<input type="text" name="accountId" required="" /><span></span>
 					</div>
 					<div class="">
 						<p>密码</p>
-						<input type="password" class="password" name="Password" required="" />
+						<input type="password" class="password" name="accountPassword" required="" />
 					</div>
+					<div>${msg}</div>
 					<div>
 						<select style="width:100%;">
+						  	<option value ="学生">学生</option>
   							<option value ="教师">教师</option>
-  							<option value ="学生">学生</option>
   							<option value="家长">家长</option>
 						</select>
 					</div>
@@ -182,7 +183,7 @@
 					<input type="submit" value="登录">
 					<div class="register-forming">
 						<p>
-							<a  href="register.html">注册新账号</a>
+							<a  href="studentCheck">注册新账号</a>
 						</p>
 					</div>
 				</form>

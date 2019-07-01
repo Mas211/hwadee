@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.jxt.entity.Notice;
+import com.jxt.entity.Announce;
 
 @Controller
 @RequestMapping(value = "/MessageCenter")
