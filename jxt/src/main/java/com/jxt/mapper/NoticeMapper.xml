@@ -5,7 +5,7 @@
  <mapper namespace="com.jxt.mapper.NoticeMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Notice" useGeneratedKeys="true" keyProperty="notice_id">
+	<insert id="insert" parameterType="com.jxt.entity.Notice" useGeneratedKeys="true" keyProperty="noticeId">
 		INSERT INTO notice(notice_id, notice_title, notice_content, notice_time) VALUES(#{noticeId}, #{noticeTitle}, #{noticeContent}, #{noticeTime})
 	</insert>
 	

@@ -5,7 +5,7 @@
  <mapper namespace="com.jxt.mapper.NewsMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.News" useGeneratedKeys="true" keyProperty="news_id">
+	<insert id="insert" parameterType="com.jxt.entity.News" useGeneratedKeys="true" keyProperty="newsId">
 		INSERT INTO news(news_id, news_title, news_time, publisher) VALUES(#{newsId}, #{newsTitle}, #{newsTime}, #{publisher})
 	</insert>
 	
