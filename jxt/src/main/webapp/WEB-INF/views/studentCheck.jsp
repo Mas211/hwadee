@@ -134,10 +134,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">首页</a>
+					<a href="login.html">登录</a>
 					<span>| |</span>
 				</li>
-				<li>登录</li>
+				<li>验证</li>
 			</ul>
 		</div>
 	</div>
@@ -146,46 +146,28 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>登</span>
-					<span></span>录
+					<span>验</span>
+					<span></span>证
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
 			<div class="login-form">
-				<form action="/login" method="post">
+				<form action="/studentCheck" method="post">
 					<div class="">
-						<p>账号 </p>
+						<p style = "color:red">*提示：注册前请先验证您子女的学生信息！</p>
+					</div>
+					<div class="">
+						<p>学生账号 </p>
 						<input type="text" name="accountId" required="" /><span></span>
 					</div>
 					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="accountPassword" required="" />
+						<p>学生姓名</p>
+						<input type="text" class="name" name="accountName" required="" />
 					</div>
 					<div>${msg}</div>
-					<div>
-						<select style="width:100%;">
-						  	<option value ="学生">学生</option>
-  							<option value ="教师">教师</option>
-  							<option value="家长">家长</option>
-						</select>
-					</div>
-					<label class="anim">
-						<input type="checkbox" class="checkbox">
-						<span> 记住账号</span>
-					</label>
-					<div class="login-agileits-bottom wthree">
-						<h6>
-							<a href="#">忘记密码</a>
-						</h6>
-					</div>
-					<input type="submit" value="登录">
-					<div class="register-forming">
-						<p>
-							<a  href="studentCheck">注册新账号</a>
-						</p>
-					</div>
+					<input type="submit" value="验证">
 				</form>
 			</div>
 

@@ -155,36 +155,58 @@
 				</div>
 			</div>
 			<div class="login-form">
-				<form action="#" method="post">
+				<form action="/register" method="post">
 					<div class="">
-						<p>账号名 </p>
-						<input type="text" class="name" name="user name" required="" />
+						<p>家长账号 </p>
+						<input type="text" name="accountId" required="" /><span></span>
 					</div>
 					<div class="">
-						<p>邮箱</p>
-						<input type="email" class="password" name="email" required="" />
+						<p>家长姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
 					</div>
 					<div class="">
 						<p>密码</p>
-						<input type="password" class="password" name="Password" id="password1" required="" />
+						<input type="password" class="password" name="accountPassword" id="password1" required="" />
 					</div>
 					<div class="">
 						<p>确认密码</p>
-						<input type="password" class="password" name="Password" id="password2" required="" />
-					</div>
-					<div>
-						<select style="width:100%;">
-  							<option value ="教师">教师</option>
-  							<option value ="学生">学生</option>
-  							<option value="家长">家长</option>
-						</select>
+						<input type="password" class="password" id="password2" required="" />
 					</div>
 					<label class="anim">
 						<input type="checkbox" class="checkbox">
 						<span>接受服务条款</span>
 					</label>
-					<input type="submit" value="登录">
+					<input type="submit" value="注册">
 				</form>
+				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						$("form > input[name=accountId]").blur(function( e ){
+							input.next("span").html("该账号已存在").css("color", "red");
+						var input = $( this );
+						$.get("/check",{accountId: input.val(), t : new Date().getTime()}, function( data ){
+						if( data == 1 ){
+							input.next("span").html("该账号已存在").css("color", "red");
+						} else {
+							input.next("span").html("该账号可以注册").css("color", "green");
+						}
+				}, "json");
+			});
+			
+		});
+	</script>
 			</div>
 
 		</div>
