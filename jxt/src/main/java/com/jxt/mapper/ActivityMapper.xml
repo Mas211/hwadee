@@ -6,12 +6,12 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Activity" useGeneratedKeys="true" keyProperty="act_id">
-		INSERT INTO ACTIVITY(act_id, act_pubber_id, act_title, image_path) 
+		INSERT INTO activity(act_id, act_pubber_id, act_title, image_path) 
 		VALUES(#{actId}, #{actPubberId}, #{actTitle} ,#{imagePath})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM ACTIVITY
+		DELETE FROM activity
 		WHERE
 			act_id = #{value}
 	</delete>
@@ -22,14 +22,14 @@
 		SELECT
 			act_id, act_pubber_id, act_title, image_path
 		FROM
-			ACTIVITY
+			activity
 		WHERE
 			act_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Activity">
-		UPDATE ACTIVITY SET act_pubber_id = #{actPubberId}, act_title=#{actTitle}, image_path=#{imagePath}
+		UPDATE activity SET act_pubber_id = #{actPubberId}, act_title=#{actTitle}, image_path=#{imagePath}
 		WHERE
 			act_id = #{actId}
 	</update>

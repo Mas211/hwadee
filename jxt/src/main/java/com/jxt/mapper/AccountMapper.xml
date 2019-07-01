@@ -6,12 +6,12 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Account" useGeneratedKeys="true" keyProperty="account_id">
-		INSERT INTO ACCOUNT(account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject) 
+		INSERT INTO account(account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject) 
 		VALUES(#{accountId}, #{roleId}, #{accountPassword}, #{accountName}, #{accountSex}, #{accountPhone}, #{accountAddress}, #{parId}, #{accountClassId}, #{tSubject})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM ACCOUNT
+		DELETE FROM account
 		WHERE
 			account_id = #{value}
 	</delete>
@@ -22,14 +22,14 @@
 		SELECT
 			account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject
 		FROM
-			ACCOUNT
+			account
 		WHERE
 			account_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Account">
-		UPDATE ACCOUNT SET role_id = #{roleId}, account_password=#{accountPassword}, account_name=#{accountName}, account_sex=#{accountSex}, account_phone=#{accountPhone}, account_address=#{accountAddress}, par_id=#{parId}, account_class_id=#{accountClassId}, t_subject=#{tSubject}
+		UPDATE account SET role_id = #{roleId}, account_password=#{accountPassword}, account_name=#{accountName}, account_sex=#{accountSex}, account_phone=#{accountPhone}, account_address=#{accountAddress}, par_id=#{parId}, account_class_id=#{accountClassId}, t_subject=#{tSubject}
 		WHERE
 			account_id = #{accountId}
 	</update>
