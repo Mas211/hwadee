@@ -37,7 +37,7 @@ public class RegisterController {
 			target = "register";
 		}else{
 			//注册成功
-			Account account_student=(Account)request.getSession().getAttribute("a");
+			Account account_student=(Account)request.getSession().getAttribute("account");
 			account_student.setParId(account.getAccountId());
 			registerService.update(account_student);
 			account.setRoleId(4);

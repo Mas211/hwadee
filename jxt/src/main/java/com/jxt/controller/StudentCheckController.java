@@ -34,7 +34,7 @@ public class StudentCheckController {
 				if(registerService.check(account.getAccountId())==1 && account.getAccountName().equalsIgnoreCase(account_student.getAccountName())){//根据用户名和密码找到了该用户
 					//验证成功
 					HttpSession session = request.getSession(true);
-					session.setAttribute("a", account);//把user对象存到session中 以后每个页面中都可以取出来使用
+					session.setAttribute("account", account);//把user对象存到session中 以后每个页面中都可以取出来使用
 					target = "redirect:/register";
 				}else{
 					//登录失败 跳回登录页面 显示 "用户名或密码错误"

@@ -190,6 +190,23 @@
 					</label>
 					<input type="submit" value="注册">
 				</form>
+				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						$("form > input[name=accountId]").blur(function( e ){
+							input.next("span").html("该账号已存在").css("color", "red");
+						var input = $( this );
+						$.get("/check",{accountId: input.val(), t : new Date().getTime()}, function( data ){
+						if( data == 1 ){
+							input.next("span").html("该账号已存在").css("color", "red");
+						} else {
+							input.next("span").html("该账号可以注册").css("color", "green");
+						}
+				}, "json");
+			});
+			
+		});
+	</script>
 			</div>
 
 		</div>
