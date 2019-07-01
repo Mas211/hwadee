@@ -5,7 +5,7 @@
 <mapper namespace="com.jxt.mapper.AccountMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Account" useGeneratedKeys="true" keyProperty="account_id">
+	<insert id="insert" parameterType="com.jxt.entity.Account" useGeneratedKeys="true" keyProperty="accountId">
 		INSERT INTO account(account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject) 
 		VALUES(#{accountId}, #{roleId}, #{accountPassword}, #{accountName}, #{accountSex}, #{accountPhone}, #{accountAddress}, #{parId}, #{accountClassId}, #{tSubject})
 	</insert>

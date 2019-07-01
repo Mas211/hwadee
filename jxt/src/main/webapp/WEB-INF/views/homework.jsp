@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Contact Us</title>
+	<title>发布作业</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -129,10 +129,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.jsp">主页</a>
 					<span>| |</span>
 				</li>
-				<li>Contact Us</li>
+				<li>发布作业</li>
 			</ul>
 		</div>
 	</div>

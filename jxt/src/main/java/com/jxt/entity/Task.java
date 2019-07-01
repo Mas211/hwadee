@@ -6,7 +6,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 //作业
 public class Task {
-	
 	private Integer taskId;
 	private String taskTitle;
 	private String taskContent;
@@ -14,6 +13,8 @@ public class Task {
 	private Date taskBeginTime;
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date taskDeadline;
+	private Integer taskTeacherId;
+	private Account account;
 	
 	public Integer getTaskId() {
 		return taskId;
@@ -45,9 +46,24 @@ public class Task {
 	public void setTaskDeadline(Date taskDeadline) {
 		this.taskDeadline = taskDeadline;
 	}
+	public Integer getTaskTeacherId() {
+		return taskTeacherId;
+	}
+	public void setTaskTeacherId(Integer taskTeacherId) {
+		this.taskTeacherId = taskTeacherId;
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	
+
 	@Override
 	public String toString() {
 		return "Task [taskId=" + taskId + ", taskTitle=" + taskTitle + ", taskContent=" + taskContent
-				+ ", taskBeginTime=" + taskBeginTime + ", taskDeadline=" + taskDeadline + "]";
+				+ ", taskBeginTime=" + taskBeginTime + ", taskDeadline=" + taskDeadline + ", taskTeacherId="
+				+ taskTeacherId + ", account=" + account + "]";
 	}
 }

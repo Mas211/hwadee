@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.jxt.mapper.AnnounceMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Announce" useGeneratedKeys="true" keyProperty="announce_id">
+		INSERT INTO announce(announce_id, announce_title, announce_content, announce_time) VALUES(#{announceId}, #{announceTitle}, #{announceContent}, #{announceTime})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM announce
+		WHERE
+			announce_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="int"
+		resultType="com.jxt.entity.Announce">
+		SELECT
+			announce_id, announce_title, announce_content, announce_time
+		FROM
+			announce
+		WHERE
+			announce_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Announce">
+		UPDATE announce SET announce_title = #{announceTitle}, announce_content=#{announceContent}, announce_time=#{announceTime}
+		WHERE
+			announce_id = #{announceId}
+	</update>
+</mapper>
