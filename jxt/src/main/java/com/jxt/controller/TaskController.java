@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.jxt.entity.Task;
 import com.jxt.service.TaskService;
 
@@ -27,6 +25,9 @@ public class TaskController {
 	@PostMapping("/homework")
 	public String add(Task task) {
 		int rows = taskService.add(task);
+		if(rows != 1) {
+			throw new RuntimeException("添加失败");
+		}
 		return "homework";
 	}
 	
