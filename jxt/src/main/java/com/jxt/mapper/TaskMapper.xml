@@ -5,9 +5,9 @@
  <mapper namespace="com.jxt.mapper.TaskMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="task_id">
-		INSERT INTO task(task_id, task_title, task_content, task_begin_time, task_deadline) 
-		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline})
+	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="taskId">
+		INSERT INTO task(task_id, task_title, task_content, task_begin_time, task_deadline, task_teacher_id) 
+		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline}, #{taskTeacherId})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -17,10 +17,10 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Task">
 		SELECT
-			task_id, task_title, task_content, task_begin_time, task_deadline
+			task_id, task_title, task_content, task_begin_time, task_deadline, task_teacher_id
 		FROM
 			task
 		WHERE
@@ -29,8 +29,51 @@
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Task">
-		UPDATE task SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}
+		UPDATE task SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}, task_teacher_id=#{taskTeacherId}
 		WHERE
 			task_id = #{taskId}
 	</update>
+	
+	<resultMap type="com.jxt.entity.Task" id="taskMap">
+		<id column="task_id" property="taskId" />
+		<id column="task_title" property="taskTitle" />
+		<id column="task_content" property="taskContent" />
+		<id column="task_begin_time" property="taskBeginTime" />
+		<id column="task_deadline" property="taskDeadline" />
+		<id column="task_teacher_id" property="taskTeacherId" />
+		<association property="account" javaType="com.jxt.entity.Account">
+			<id column="account_id" property="accountId" />
+			<result column="role_id" property="roleId" />
+			<result column="account_password" property="accountPassword" />
+			<result column="account_name" property="accountName" />
+			<result column="account_sex" property="accountSex" />
+			<result column="account_phone" property="accountPhone" />
+			<result column="account_address" property="accountAddress" />
+			<result column="par_id" property="parId" />
+			<result column="account_class_id" property="accountClassId" />
+			<result column="t_subject" property="tSubject" />
+		</association>
+	</resultMap>
+	<select id="findAll" resultMap="taskMap">
+	SELECT
+		a.account_id,
+		a.role_id,
+		a.account_name,
+		a.account_address,
+		a.account_class_id,
+		a.account_password,
+		a.account_phone,
+		a.account_sex,
+		a.t_subject,
+		a.par_id,
+		t.task_id,
+		t.task_title,
+		t.task_teacher_id,
+		t.task_begin_time,
+		t.task_deadline,
+		t.task_content
+	FROM
+		account a
+	INNER JOIN task t ON a.account_id = t.task_teacher_id
+	</select>
 </mapper>

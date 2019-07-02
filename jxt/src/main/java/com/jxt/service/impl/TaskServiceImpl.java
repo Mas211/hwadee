@@ -1,5 +1,7 @@
 package com.jxt.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +40,12 @@ public class TaskServiceImpl implements TaskService {
 	public int update(Task task) {
 		// TODO Auto-generated method stub
 		return taskMapper.update(task);
+	}
+
+	@Override
+	public List<Task> tasks() {
+		// TODO Auto-generated method stub
+		return taskMapper.findAll();
 	}
 
 }

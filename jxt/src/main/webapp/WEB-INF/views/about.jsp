@@ -19,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="/assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -625,16 +625,16 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
-	<script src="js/bootstrap.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
 	<!-- stats numscroller-js-file -->
-	<script src="js/numscroller-1.0.js"></script>
+	<script src="/assets/js/numscroller-1.0.js"></script>
 	<!-- //stats numscroller-js-file -->
 	<!-- smooth scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="/assets/js/SmoothScroll.min.js"></script>
+	<script src="/assets/js/move-top.js"></script>
+	<script src="/assets/js/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {

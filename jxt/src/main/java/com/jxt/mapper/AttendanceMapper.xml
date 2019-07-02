@@ -5,7 +5,7 @@
 <mapper namespace="com.jxt.mapper.AttendanceMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Attendance" useGeneratedKeys="true" keyProperty="attend_id">
+	<insert id="insert" parameterType="com.jxt.entity.Attendance" useGeneratedKeys="true" keyProperty="attendId">
 		INSERT INTO attendance(attend_id, attend_stu_id, attend_time) VALUES(#{attendId}, #{attendStuId}, #{attendTime})
 	</insert>
 	
@@ -16,7 +16,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Attendance">
 		SELECT
 			attend_id, attend_stu_id, attend_time

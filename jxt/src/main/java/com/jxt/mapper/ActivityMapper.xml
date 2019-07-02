@@ -5,7 +5,7 @@
   <mapper namespace="com.jxt.mapper.ActivityMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Activity" useGeneratedKeys="true" keyProperty="act_id">
+	<insert id="insert" parameterType="com.jxt.entity.Activity" useGeneratedKeys="true" keyProperty="actId">
 		INSERT INTO activity(act_id, act_pubber_id, act_title, image_path) 
 		VALUES(#{actId}, #{actPubberId}, #{actTitle} ,#{imagePath})
 	</insert>
@@ -17,7 +17,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Activity">
 		SELECT
 			act_id, act_pubber_id, act_title, image_path

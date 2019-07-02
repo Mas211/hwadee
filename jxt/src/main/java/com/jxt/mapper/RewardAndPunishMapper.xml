@@ -5,7 +5,7 @@
   <mapper namespace="com.jxt.mapper.RewardAndPunishMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.RewardAndPunish" useGeneratedKeys="true" keyProperty="reward_and_punish_id">
+	<insert id="insert" parameterType="com.jxt.entity.RewardAndPunish" useGeneratedKeys="true" keyProperty="rewardAndPunisId">
 		INSERT INTO reward_and_punish(reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time) 
 		VALUES(#{rewardAndPunisId}, #{rewardOrPunis}, #{rpStuId}, #{rpContent}, #{rpTime})
 	</insert>
@@ -17,7 +17,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.RewardAndPunish">
 		SELECT
 			reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time

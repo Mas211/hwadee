@@ -5,7 +5,7 @@
   <mapper namespace="com.jxt.mapper.GradeMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Grade" useGeneratedKeys="true" keyProperty="grade_id">
+	<insert id="insert" parameterType="com.jxt.entity.Grade" useGeneratedKeys="true" keyProperty="gradeId">
 		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade) VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade})
 	</insert>
 	
@@ -16,7 +16,7 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="string"
+	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Grade">
 		SELECT
 			grade_id, grade_t_id, grade_stu_id, grade
