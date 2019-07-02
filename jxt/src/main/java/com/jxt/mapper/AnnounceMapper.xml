@@ -5,7 +5,7 @@
  <mapper namespace="com.jxt.mapper.AnnounceMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.Announce" useGeneratedKeys="true" keyProperty="announce_id">
+	<insert id="insert" parameterType="com.jxt.entity.Announce" useGeneratedKeys="true" keyProperty="announceId">
 		INSERT INTO announce(announce_id, announce_title, announce_content, announce_time) VALUES(#{announceId}, #{announceTitle}, #{announceContent}, #{announceTime})
 	</insert>
 	
