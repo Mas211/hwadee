@@ -165,7 +165,7 @@
 					</div>
 					<div>${msg}</div>
 					<div>
-						<select style="width:100%;">
+						<select style="width:100%;" name="choose">
 						  	<option value ="学生">学生</option>
   							<option value ="教师">教师</option>
   							<option value="家长">家长</option>
