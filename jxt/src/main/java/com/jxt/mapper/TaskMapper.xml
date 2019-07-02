@@ -10,6 +10,11 @@
 		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline}, #{taskTeacherId})
 	</insert>
 	
+	<insert id="insertMessage" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="messageId">
+		INSERT INTO message(message_id, act_id, source_id, target_id, reply_id, is_read, message_type, comment_act_id) 
+		VALUES(#{messageId}, #{actId}, #{sourceId}, #{targetId}, #{replyId}, #{isRead}, #{messageType}, #{commentActId})
+	</insert>
+	
 	<delete id="delete" parameterType="int">
 		DELETE FROM task
 		WHERE

@@ -172,7 +172,7 @@
 						<input type="text" name="taskTitle" placeholder="作业标题">
 					</div>
 					<div class="">
-						<input type="text" name="account.accountName" value="${sessionScope.account.accountName}" placeholder="发布老师">
+						<input type="text" name="taskTeacherId" value="${sessionScope.account.accountId}" placeholder="发布老师ID">
 					</div>
 					<div class="styled-input">
 							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">

@@ -2,6 +2,7 @@ package com.jxt.mapper;
 
 import java.util.List;
 
+import com.jxt.entity.Message;
 import com.jxt.entity.Task;
 
 public interface TaskMapper {
@@ -18,4 +19,6 @@ public interface TaskMapper {
 	int update(Task task);
 	
 	List<Task> findAll();
+	
+	int insertMessage(Message message);
 }

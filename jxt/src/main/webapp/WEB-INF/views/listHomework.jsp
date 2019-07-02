@@ -159,6 +159,7 @@
 							<th>发布时间</th>
 							<th>截止时间</th>
 							<th>内容</th>
+							<th>操作</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -171,6 +172,7 @@
 							<td>${t.taskBeginTime }</td>
 							<td>${t.taskDeadline }</td>
 							<td>${t.taskContent }</td>
+							<td><a href="/homework/${t.taskId }">修改</a> | <a href="/homework/${t.taskId }?_method=DELETE">删除</a></td>
 						</tr>
 						</c:forEach>
 					</tbody>
