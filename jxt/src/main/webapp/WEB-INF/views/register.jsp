@@ -190,18 +190,16 @@
 					</label>
 					<input type="submit" value="注册">
 				</form>
-				<input type="text" name="test" required="" /><span></span>
 				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 				<script type="text/javascript">
 					$(function(){
-						$("input[name=test]").blur(function(e){
+						$("div > input[name=accountId]").blur(function(e){
 							var input = $( this );
-
-							$.get("/check2",{test :input.val(), t : new Date().getTime()}, function( data ){
+							$.get("/check2",{id :input.val(), t : new Date().getTime()}, function( data ){
 							if( data == 1 ){ 
-								input.next("span").html("该账号已存在").css("color", "red");
+								input.next("span").html("*该账号已存在").css("color", "red");
 							} else {
-								input.next("span").html("该账号可以注册").css("color", "green");
+								input.next("span").html("*该账号可以注册").css("color", "green");
 							}
 				}, "json");
 			});

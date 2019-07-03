@@ -169,6 +169,22 @@
 					<div>${msg}</div>
 					<input type="submit" value="验证">
 				</form>
+				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						$("div > input[name=accountId]").blur(function(e){
+							var input = $( this );
+							$.get("/check3",{id :input.val(), t : new Date().getTime()}, function( data ){
+							if( data == 1 ){ 
+								input.next("span").html("*该账号存在且为学生账号").css("color", "red");
+							} else {
+								input.next("span").html("*该账号不存在或不是学生账号").css("color", "green");
+							}
+				}, "json");
+			});
+			
+		});
+	</script>
 			</div>
 
 		</div>

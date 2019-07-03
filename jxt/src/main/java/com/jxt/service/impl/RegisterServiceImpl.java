@@ -36,11 +36,19 @@ public class RegisterServiceImpl implements RegisterService {
 	@Override
 	public int check2(String id) {
 		// TODO Auto-generated method stub
-		System.out.println("error");
-		System.out.println(id);
 		int id_int = Integer.parseInt(id);
 		Account account = accountMapper.findById(id_int);
 		if( null != account ) {
+			return 1;
+		}
+		return 0;
+	}
+	@Override
+	public int check3(String id) {
+		// TODO Auto-generated method stub
+		int id_int = Integer.parseInt(id);
+		Account account = accountMapper.findById(id_int);
+		if( null != account && account.getRoleId()==5) {
 			return 1;
 		}
 		return 0;

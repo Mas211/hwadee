@@ -50,7 +50,7 @@
 				</div>
 				<div class="header-top-righ">
 					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>Login</a>
+						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -165,36 +165,20 @@
 	</div>
 	<div class="contact-lsleft">
 		<div class="container">
-			<!--
-			<div class="address-grid">
-				<h4>Contact Details</h4>
-				<ul class="w3_address">
-					<li>
-						<span class="fa fa-globe" aria-hidden="true"></span>1235 Ipswich, Foxhall Road, USA
-					</li>
-					<li>
-						<span class="fa fa-envelope-o" aria-hidden="true"></span>
-						<a href="mailto:info@example.com">mail@example.com</a>
-					</li>
-					<li>
-						<span class="fa fa-phone" aria-hidden="true"></span>+001 234 5678
-					</li>
-				</ul>
-			</div>
-			-->
 			<div class="contact-grid agileits">
 				<h4>发 布 作 业</h4>
 				<form action="/homework" method="post">
 					<div class="">
 						<input type="text" name="taskTitle" placeholder="作业标题">
 					</div>
-					<div class="styled-input">
-							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    >
+					<div class="">
+						<input type="text" name="account.accountName" value="${sessionScope.account.accountName}" placeholder="发布老师">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    >
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 					</div>
 					<div class="">
 						<textarea name="taskContent" placeholder="内容..."></textarea>
@@ -213,82 +197,44 @@
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-				</div>
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
 				<div class="clearfix"></div>
 			</div>

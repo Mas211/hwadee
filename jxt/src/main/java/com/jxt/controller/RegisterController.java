@@ -50,7 +50,6 @@ public class RegisterController {
 	public @ResponseBody int check(String id) {
 		
 		int result = registerService.check2(id);
-		System.out.println("111");
 		return result;
 	}
 }

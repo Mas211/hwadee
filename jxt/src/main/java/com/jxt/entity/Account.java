@@ -1,14 +1,12 @@
 package com.jxt.entity;
 
-import java.util.List;
-
 public class Account {
 	private Integer accountId;
 	private Integer roleId;
 	private String accountPassword;
 	private String accountName;
 	private String accountSex;
-	private Integer accountPhone;
+	private String accountPhone;
 	private String accountAddress;
 	private Integer parId;
 	private Integer accountClassId;
@@ -44,10 +42,10 @@ public class Account {
 	public void setAccountSex(String accountSex) {
 		this.accountSex = accountSex;
 	}
-	public Integer getAccountPhone() {
+	public String getAccountPhone() {
 		return accountPhone;
 	}
-	public void setAccountPhone(Integer accountPhone) {
+	public void setAccountPhone(String accountPhone) {
 		this.accountPhone = accountPhone;
 	}
 	public String getAccountAddress() {
