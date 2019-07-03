@@ -59,4 +59,10 @@ public class TaskServiceImpl implements TaskService {
 		return message.getMessageId();
 	}
 
+	@Override
+	public int deleteMessage(int taskId) {
+		// TODO Auto-generated method stub
+		return taskMapper.deleteMessage(taskId);
+	}
+
 }

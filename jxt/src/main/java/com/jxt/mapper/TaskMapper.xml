@@ -21,6 +21,12 @@
 			task_id = #{value}
 	</delete>
 	
+	<delete id="deleteMessage" parameterType="int">
+		DELETE FROM message
+		WHERE
+			target_id = #{value}
+	</delete>
+	
 	 <!-- 需要修改的地方 -->
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Task">

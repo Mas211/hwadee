@@ -11,6 +11,8 @@ public interface TaskMapper {
 
 	// 删
 	int delete(int taskId);
+	
+	int deleteMessage(int taskId);
 
 	// 查
 	Task findById(int taskId);

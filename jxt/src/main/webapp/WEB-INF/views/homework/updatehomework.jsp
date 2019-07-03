@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>发布作业</title>
+	<title>更新作业</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,20 +34,6 @@
 	<div class="header-top">
 		<div class="container">
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
-					</a>
-				</div>
 				<div class="header-top-righ">
 					<a href="login.html">
 						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
@@ -70,7 +56,7 @@
 						</button>
 						<a class="navbar-brand" href="index.html">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
+								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -132,7 +118,7 @@
 					<a href="index.jsp">主页</a>
 					<span>| |</span>
 				</li>
-				<li>发布作业</li>
+				<li>更新作业</li>
 			</ul>
 		</div>
 	</div>
@@ -142,20 +128,13 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>发&nbsp;布&nbsp;</span>作&nbsp;业
+					<span>更&nbsp;新&nbsp;</span>作&nbsp;业
 				</h3>
 				<div class="tittle-style">
 				</div>
 			</div>
 			<div class="contact-row">
-				<div class="col-md-6 contact-text1">
-					<h4>Contact Our
-						<span>Best Study</span>
-					</h4>
-					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
-						volutpat. Duis vulputate tempus laoreet.
-					</p>
-				</div>
+				
 				<div class="col-md-6 contact-w3lsright">
 					<iframe></iframe>
 				</div>
@@ -166,24 +145,25 @@
 	<div class="contact-lsleft">
 		<div class="container">
 			<div class="contact-grid agileits">
-				<h4>发 布 作 业</h4>
-				<form action="/homework" method="post">
+				<h4>更 新 作 业</h4>
+				<form action="/homework/updatehomework" method="post">
 					<div class="">
-						<input type="text" name="taskTitle" placeholder="作业标题">
+						<input type="text" name="taskTitle" value="${task.taskTitle }" placeholder="作业标题">
 					</div>
 					<div class="">
-						<input type="text" name="taskTeacherId" value="${sessionScope.account.accountId}" placeholder="发布老师ID">
+						<input type="text" name="taskTeacherId" value="${task.taskTeacherId}" placeholder="发布老师ID">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 					</div>
 					<div class="styled-input">
 							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 					</div>
 					<div class="">
-						<textarea name="taskContent" placeholder="内容..."></textarea>
+						<textarea name="taskContent" placeholder="内容..." ></textarea>
 					</div>
-					<input type="submit" value="Submit">
+					
+					<input type="submit" value="更新">
 				</form>
 			</div>
 		</div>

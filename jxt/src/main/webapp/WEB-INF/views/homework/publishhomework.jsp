@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Homework</title>
+	<title>布置作业</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,7 +59,7 @@
 	</div>
 	<div class="header">
 		<div class="content white">
-			<nav class="navbar navbar-default" >
+			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -71,7 +70,7 @@
 						</button>
 						<a class="navbar-brand" href="index.html">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
+								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -81,12 +80,12 @@
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="index.html" class="effect-3">主页</a>
+									<a href="index.html" class="effect-3">Home</a>
 								</li>
 								<li>
 									<a href="about.html" class="effect-3">About Us</a>
 								</li>
-								<li class="active">
+								<li>
 									<a href="courses.html" class="effect-3">Courses</a>
 								</li>
 								<li>
@@ -108,7 +107,7 @@
 								<li>
 									<a href="Gallery.html" class="effect-3">Gallery</a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="contact.html" class="effect-3">Contact Us</a>
 								</li>
 							</ul>
@@ -130,57 +129,71 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">主页</a>
+					<a href="index.jsp">主页</a>
 					<span>| |</span>
 				</li>
-				<li>查看作业</li>
+				<li>
+					<a href="/homework/listhomework">查看作业</a>
+					<span>| |</span>
+				</li>
+				<li>布置作业</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- blog -->
-	<div class="blog-cource">
+	<!-- contact -->
+	<div class="contact">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>作 &nbsp;</span>业
+					<span>布&nbsp;置&nbsp;</span>作&nbsp;业
 				</h3>
 				<div class="tittle-style">
 				</div>
 			</div>
-			<div class="bs-docs-example">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>
-							<th>发布老师</th>
-							<th>班级</th>
-							<th>作业标题</th>
-							<th>发布时间</th>
-							<th>截止时间</th>
-							<th>内容</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${requestScope.tasks }" var="t">
-						<tr>
-							<td>${t.taskId }</td>
-							<td>${t.account.accountName }</td>
-							<td>${t.account.accountClassId }</td>
-							<td>${t.taskTitle }</td>
-							<td>${t.taskBeginTime }</td>
-							<td>${t.taskDeadline }</td>
-							<td>${t.taskContent }</td>
-							<td><a href="/homework/${t.taskId }">修改</a> | <a href="/homework/${t.taskId }?_method=DELETE">删除</a></td>
-						</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+			<div class="contact-row">
+				<div class="col-md-6 contact-text1">
+					<h4>Contact Our
+						<span>Best Study</span>
+					</h4>
+					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
+						volutpat. Duis vulputate tempus laoreet.
+					</p>
+				</div>
+				<div class="col-md-6 contact-w3lsright">
+					<iframe></iframe>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
-	<!-- //blog -->
+	<div class="contact-lsleft">
+		<div class="container">
+			<div class="contact-grid agileits">
+				<h4>布 置 作 业</h4>
+				<form action="/homework/publishhomework" method="post">
+					<div class="">
+						<input type="text" name="taskTitle" placeholder="作业标题">
+					</div>
+					<div class="">
+						<input type="text" name="taskTeacherId" value="${sessionScope.account.accountId}" placeholder="发布老师ID">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+					</div>
+					<div class="styled-input">
+							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+					</div>
+					<div class="">
+						<textarea name="taskContent" placeholder="内容..."></textarea>
+					</div>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -220,13 +233,12 @@
 						</li>
 					</ul>
 				</div>
-
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -236,12 +248,18 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src=/assets/js/jquery-2.1.4.min.js"></script>
+	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
-	<!-- stats numscroller-js-file -->
-	<script src="/assets/js/numscroller-1.0.js"></script>
-	<!-- //stats numscroller-js-file -->
+	<!-- Calendar -->
+	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>

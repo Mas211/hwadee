@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,22 +17,24 @@ import com.jxt.entity.Task;
 import com.jxt.service.TaskService;
 
 @Controller
+@RequestMapping("/homework")
 public class TaskController {
 	@Autowired
 	private TaskService taskService;
 
-	@GetMapping("/homework")
+	@GetMapping("/publishhomework")
 	public String get() {
-		return "homework";
+		return "/homework/publishhomework";
 	}
 	
-	@PostMapping("/homework")
+	@PostMapping("/publishhomework")
 	public String add(Task task) {
 		int rows = taskService.add(task);
 		if(rows != task.getTaskId()) {
 			throw new RuntimeException("添加失败");
 		}
 		else {
+			//将任务数据写入消息中
 			Message message = new Message();
 			message.setTargetId(task.getTaskId());
 			message.setSourceId(task.getTaskTeacherId());
@@ -47,29 +48,36 @@ public class TaskController {
 				throw new RuntimeException("添加失败");
 			}
 		}
-		return "homework";
+		return "/homework/publishhomework";
 	}
 	
-	@RequestMapping(value = "/listHomework", method = RequestMethod.GET)
+	@RequestMapping(value = "/listhomework", method = RequestMethod.GET)
 	public String list( Model model ) {
 		List<Task> tasks = taskService.tasks();
 		model.addAttribute("tasks", tasks);
-		return "listHomework";
+		return "/homework/listhomework";
 	}
 	
 	@GetMapping("/listhomework/{taskId}")
-	public String get(@PathVariable("taskId") int id, Model model) {
-		Task task = taskService.getTaskById(id);
-		model.addAttribute("task", task);
-		return "listHomework";
+	public String delete(@PathVariable("taskId") int id) {
+		taskService.delete(id);
+		taskService.deleteMessage(id);
+		return "redirect:/homework/listhomework";
 	}
 	
+	@GetMapping("/updatehomework/{taskId}")
+	public String updateString(@PathVariable("taskId") int id, Model model) {
+		Task task = taskService.getTaskById(id);
+		model.addAttribute("task",task);
+		return "homework/updatehomework";
+	}
 	
-	@DeleteMapping("/homework/{taskId}")
-	public String remove(@PathVariable("taskId") int id) {
-		
-		taskService.delete(id);
-		
-		return "listHomework";
+	@PostMapping("/updatehomework")
+	public String update(Task task) {
+		int rows = taskService.update(task);
+		if(rows != 1) {
+			throw new RuntimeException("更新失败");
+		}
+		return "redirect:/homework/listhomework";
 	}
 }
