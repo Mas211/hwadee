@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -152,14 +153,8 @@
 				<div class="tittle-style">
 
 				</div>
-			</div>
-			<div class="login-form">
-				<form action="#" method="post">
-					<input type="submit" value="查       询">
-					<div class="">
-						<p>直接调attendance数据库吧= =</p>
-						<p>最好能调用近几次的，全部调用是不是太...</p>
-					</div>
+			</div>	
+
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -169,24 +164,15 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach items="${requestScope.attendances}" var="t">
 							<tr>
-								<td>1</td>
-								<td>20164285</td>
-								<td>已出勤</td>
+								<td>${t.attendId }</td>
+								<td>${t.attendStuId }</td>
+								<td>${t.attendTime }</td>
 							</tr>
-									
-							<tr>
-								<td>2</td>
-								<td>20164285</td>
-								<td>缺勤</td>
-							</tr>
+							</c:forEach>
 						</tbody>
 					</table>
-					
-					
-				</form>
-			</div>
-
 		</div>
 	</div>
 
