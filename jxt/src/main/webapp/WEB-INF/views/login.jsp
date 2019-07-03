@@ -53,7 +53,7 @@
 					</a>
 				</div>
 				<div class="header-top-righ">
-					<a href="login.html"> <span class="fa fa-sign-out"
+					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -73,7 +73,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
 								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通 <label>Education
 									& Courses</label>
@@ -87,7 +87,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -116,7 +116,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.html">首页</a> <span>| |</span></li>
+				<li><a href="index.jsp">首页</a> <span>| |</span></li>
 				<li>登录</li>
 			</ul>
 		</div>
@@ -155,7 +155,7 @@
 					</label>
 					<div class="login-agileits-bottom wthree">
 						<h6>
-							<a href="#">忘记密码</a>
+							<a href="retrieve">忘记密码</a>
 						</h6>
 					</div>
 					<input type="submit" value="登录">
