@@ -56,14 +56,38 @@ public class LoginController {
 			role_id_int = 1;
 		}
 		Account account=registerService.check1(accountId_int);
+		int role_id_1 = account.getRoleId();
+		if(role_id_1==2 ||role_id_1==3)
+		{
+			role_id_1 = 3;
+		}
 		System.out.println(account.getRoleId());
 		System.out.println(role_id_int);
 		//二.调用业务逻辑 
-				if(account!=null && password.equalsIgnoreCase(account.getAccountPassword()) && account.getRoleId()==role_id_int){//根据用户名和密码找到了该用户
+				if(account!=null && password.equalsIgnoreCase(account.getAccountPassword()) && role_id_1==role_id_int){//根据用户名和密码找到了该用户
 					//登录成功
 					HttpSession session = request.getSession(true);
 					session.setAttribute("account", account);//把user对象存到session中 以后每个页面中都可以取出来使用
-					target = "redirect:/logout";
+					if(account.getRoleId()==1)
+					{
+						target = "redirect:/adminMenu";
+					}
+					else if(account.getRoleId()==2)
+					{
+						target = "redirect:/masterMenu";
+					}
+					else if(account.getRoleId()==3) 
+					{
+						target = "redirect:/teacherMenu";
+					}
+					else if(account.getRoleId()==4) 
+					{
+						target = "redirect:/parentMenu";
+					}
+					else if(account.getRoleId()==5) 
+					{
+						target = "redirect:/studentMenu";
+					}
 				}
 				else if(account.getRoleId()!=role_id_int) {
 					//登录失败 跳回登录页面 显示 "用户身份与选择身份不符"
