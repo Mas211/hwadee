@@ -150,11 +150,11 @@
 					<span>考勤</span>
 					<span></span>记录
 				</h3>
-				<div class="tittle-style">
-
-				</div>
+				<div class="tittle-style"></div>
 			</div>	
+                <div class="login-form">
 
+				    <p></p>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -172,7 +172,9 @@
 							</tr>
 							</c:forEach>
 						</tbody>
-					</table>
+						</table>
+
+			   </div>		
 		</div>
 	</div>
 

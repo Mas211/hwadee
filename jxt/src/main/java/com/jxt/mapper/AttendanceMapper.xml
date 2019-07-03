@@ -23,7 +23,7 @@
 		FROM
 			attendance
 		WHERE
-			attend_id = #{value}
+			attend_stu_id = #{attendStuId}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
@@ -68,6 +68,7 @@
 	FROM
 		account a
 	INNER JOIN attendance t ON a.account_id = t.attend_stu_id
+
 	
 	</select>
 </mapper>

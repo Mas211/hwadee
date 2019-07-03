@@ -12,7 +12,7 @@ public interface AttendanceMapper {
 	int delete(int attendanceId);
 
 	//查
-	Attendance findById(int attendanceId);
+	Attendance findById(int attendStuId);
 		
 	//改
 	int update(Attendance attendance);

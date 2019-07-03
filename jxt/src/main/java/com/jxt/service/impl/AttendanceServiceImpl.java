@@ -30,11 +30,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 		return attendanceMapper.delete(attendanceId);
 	}
 
-	@Override
-	public Attendance getAttendanceById(int attendanceId) {
-		// TODO Auto-generated method stub
-		return attendanceMapper.findById(attendanceId);
-	}
 
 	@Override
 	public int update(Attendance attendance) {
@@ -46,6 +41,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 	public List<Attendance> attendances() {
 		// TODO Auto-generated method stub
 		return attendanceMapper.findAll();
+	}
+
+	@Override
+	public Attendance getAttendanceById(int attendStuId) {
+		// TODO Auto-generated method stub
+		return attendanceMapper.findById(attendStuId);
 	}
 
 	

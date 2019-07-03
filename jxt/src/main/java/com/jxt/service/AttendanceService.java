@@ -12,7 +12,7 @@ public interface AttendanceService {
 	int delete(int attendanceId);
 
 	// 查
-	Attendance getAttendanceById(int attendanceId);
+	Attendance getAttendanceById(int attendStuId);
 
 	// 改
 	int update(Attendance attendance);
