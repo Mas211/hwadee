@@ -31,35 +31,31 @@
 
 <body>
 	<!-- header -->
+	<!-- header -->
 	<div class="header-top">
 		<div class="container">
 			<div class="bottom_header_left">
 				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
+					<a class="facebook" href="register.html"> <span
+						class="fa fa-facebook"></span>
+					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
+					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
+					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
 				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
 				</div>
-				<div class="clearfix"> </div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 	<div class="header">
@@ -67,11 +63,11 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index">
 							<h1>
@@ -81,40 +77,23 @@
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -125,8 +104,8 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
-
+	<div style="text-align:center">
+  		<image src="/assets/images/login.jpg" width=1000>
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -196,80 +175,46 @@
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
+				<div class="allah-copy">
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>
