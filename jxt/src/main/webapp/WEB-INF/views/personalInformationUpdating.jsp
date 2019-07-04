@@ -45,14 +45,6 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html"> <span
-						class="fa fa-facebook"></span>
-					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
-					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
-					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
-					</a>
-				</div>
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">

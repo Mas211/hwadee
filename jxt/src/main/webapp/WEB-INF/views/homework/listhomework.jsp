@@ -34,11 +34,28 @@
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
+			<div class="bottom_header_left">
+				<p>
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
+				</p>
+			</div>
 			<div class="bottom_header_right">
-				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
 				</div>
+				</c:when>
+				<c:otherwise>
+				<div class="header-top-righ">
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
