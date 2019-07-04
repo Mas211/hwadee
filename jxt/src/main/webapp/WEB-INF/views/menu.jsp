@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Login</title>
-	<!-- meta-tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script>
+<title>Login</title>
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -18,19 +19,23 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- //meta-tags -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome -->
-	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	<!-- fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	    rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //meta-tags -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- font-awesome -->
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+<!-- fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
 </head>
 
 <body>
-	<!-- header -->
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
@@ -48,11 +53,22 @@
 					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -112,63 +128,80 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li>
-					<a href="login.html">登录</a>
-					<span>| |</span>
-				</li>
-				<li>验证</li>
+				<li><a href="index.jsp">首页</a> <span>| |</span></li>
+				<li>功能列表</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div class="register-form-main">
-		<div class="container">
-			<div class="title-div">
-				<h3 class="tittle">
-					<span>验</span>
-					<span></span>证
-				</h3>
-				<div class="tittle-style">
-
-				</div>
-			</div>
-			<div class="login-form">
-				<form action="/studentCheck" method="post">
-					<div class="">
-						<p style = "color:red">*提示：注册前请先验证您子女的学生信息！</p>
-					</div>
-					<div class="">
-						<p>学生账号 </p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required=""  value="1"/><span></span>
-					</div>
-					<div class="">
-						<p>学生姓名</p>
-						<input type="text" class="name" name="accountName" required="" />
-					</div>
-					<div>${msg}</div>
-					<input type="submit" value="验证">
-				</form>
-				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-				<script type="text/javascript">
-					$(function(){
-						$("div > input[name=accountId]").blur(function(e){
-							var input = $( this );
-							$.get("/check3",{id :input.val(), t : new Date().getTime()}, function( data ){
-							if( data == 1 ){ 
-								input.next("span").html("*该账号存在且为学生账号").css("color", "red");
-							} else {
-								input.next("span").html("*该账号不存在或不是学生账号").css("color", "green");
-							}
-				}, "json");
-			});
-			
-		});
-	</script>
-			</div>
-
-		</div>
-	</div>
-
+	<c:choose>
+	<c:when test="${sessionScope.account.roleId eq 5 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">学生功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">学生功能3</a></li>
+		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
+	</c:when>
+	<c:when test="${sessionScope.account.roleId eq 4 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">家长功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
+		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>
+	</c:when>
+	<c:when test="${sessionScope.account.roleId eq 3 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">教师功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">教师功能3</a></li>
+		<li><a href="courses.html" class="effect-3">教师功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
+	</c:when>
+	
+	<c:when test="${sessionScope.account.roleId eq 2 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">master功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">master功能3</a></li>
+		<li><a href="courses.html" class="effect-3">master功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">master功能5</a></li>
+	</c:when>
+	<c:otherwise>
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">管理员功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">管理员功能3</a></li>
+		<li><a href="courses.html" class="effect-3">管理员功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">管理员功能5</a></li>
+	</c:otherwise>
+	</c:choose>
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
@@ -251,7 +284,7 @@
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-
+	<script src="/assets/js/canvas-nest.min.js"></script>
 </body>
 
 </html>

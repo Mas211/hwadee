@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Login</title>
+	<title>Register</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,10 +27,10 @@
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
 </head>
 
 <body>
-	<!-- header -->
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
@@ -113,10 +113,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="login.html">登录</a>
+					<a href="index.html">登录</a>
 					<span>| |</span>
 				</li>
-				<li>验证</li>
+				<li>找回</li>
 			</ul>
 		</div>
 	</div>
@@ -125,47 +125,39 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>验</span>
-					<span></span>证
+					<span>找</span>回 <span>密</span>码
 				</h3>
-				<div class="tittle-style">
-
-				</div>
+				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/studentCheck" method="post">
+				<form action="/retrieve" method="post">
 					<div class="">
-						<p style = "color:red">*提示：注册前请先验证您子女的学生信息！</p>
+						<p>用户账号 </p>
+						<input type="text" name="accountId" required="" /><span></span>
 					</div>
 					<div class="">
-						<p>学生账号 </p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required=""  value="1"/><span></span>
+						<p>绑定电话</p>
+						<input type="text" name="accountPhone" required="" />
+						<input type="button" value="获取验证码" onclick="alert('短信验证码已发送')" />
 					</div>
 					<div class="">
-						<p>学生姓名</p>
-						<input type="text" class="name" name="accountName" required="" />
+						<p>短信验证码</p>
+						<input type="text" name="check" required="" />
 					</div>
-					<div>${msg}</div>
-					<input type="submit" value="验证">
+					<div class="">
+						<p>密码</p>
+						<input type="password" class="password" name="accountPassword" id="password1" required="" />
+					</div>
+					<div class="">
+						<p>确认密码</p>
+						<input type="password" class="password" id="password2" required="" />
+					</div>
+					<input type="submit" value="找回">
 				</form>
-				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-				<script type="text/javascript">
-					$(function(){
-						$("div > input[name=accountId]").blur(function(e){
-							var input = $( this );
-							$.get("/check3",{id :input.val(), t : new Date().getTime()}, function( data ){
-							if( data == 1 ){ 
-								input.next("span").html("*该账号存在且为学生账号").css("color", "red");
-							} else {
-								input.next("span").html("*该账号不存在或不是学生账号").css("color", "green");
-							}
-				}, "json");
-			});
 			
-		});
-	</script>
+				
+					<div>${msg}</div>
 			</div>
-
 		</div>
 	</div>
 
@@ -250,6 +242,24 @@
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
+	<!-- password-script -->
+	<script>
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+	</script>
+	<!-- //password-script -->
 	<!-- //js-files -->
 
 </body>

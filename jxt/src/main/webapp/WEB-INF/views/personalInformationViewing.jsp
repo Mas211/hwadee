@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -52,11 +53,23 @@
 					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
+				
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -75,7 +88,7 @@
 						</button>
 						<a class="navbar-brand" href="index">
 							<h1>
-								<span ><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -116,11 +129,8 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li>
-					<a href="index.html">首页</a>
-					<span>| |</span>
-				</li>
-				<li>注册</li>
+				<li><a href="index">功能列表</a> <span>| |</span></li>
+				<li>查看个人信息</li>
 			</ul>
 		</div>
 	</div>
@@ -129,71 +139,167 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>注</span>
-					<span></span>册
+					<span>查</span> <span></span>看
 				</h3>
-				<div class="tittle-style">
-
-				</div>
+				<div class="tittle-style"></div>
 			</div>
-			<div class="login-form">
-				<form action="/register" method="post">
+			<c:choose>
+			<c:when test="${sessionScope.account.roleId eq 5 }">
+			<div class="login-form" id = "student">
+				<form action="/menu" method="get">
 					<div class="">
-						<p>家长账号 </p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountId" required="" /><span></span>
+						<p>账号</p>
+						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
 					</div>
 					<div class="">
-						<p>家长姓名</p>
-						<input type="text" name="accountName" required="" />
+						<p>姓名</p>
+						<input type="text" value = ${sessionScope.account.accountName } required="" />
 					</div>
 					<div class="">
 						<p>性别</p>
-						<input type="text" name="accountSex" required="" />
+						<input type="text" value = ${sessionScope.account.accountSex } required="" />
 					</div>
 					<div class="">
-						<p>手机/电话</p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountPhone" required="" />
+						<p>联系方式</p>
+						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
 					</div>
 					<div class="">
 						<p>家庭地址</p>
-						<input type="text" name="accountAddress" required="" />
+						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
 					</div>
 					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="accountPassword" id="password1" required="" />
+						<p>家长账号</p>
+						<input type="text" value = ${sessionScope.account.parId } required="" />
 					</div>
 					<div class="">
-						<p>确认密码</p>
-						<input type="password" class="password" id="password2" required="" />
+						<p>班级</p>
+						<input type="text" value = ${sessionScope.account.accountClassId } required="" />
 					</div>
-					<label class="anim">
-						<input type="checkbox" class="checkbox">
-						<span>接受服务条款</span>
-					</label>
-					<input type="submit" value="注册">
+					<input type="submit" value="退出查看">
 				</form>
-				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-				<script type="text/javascript">
-					$(function(){
-						$("div > input[name=accountId]").blur(function(e){
-							var input = $( this );
-							$.get("/check2",{id :input.val(), t : new Date().getTime()}, function( data ){
-							if( data == 1 ){ 
-								input.next("span").html("*该账号已存在").css("color", "red");
-							} else {
-								input.next("span").html("*该账号可以注册").css("color", "green");
-							}
-				}, "json");
-			});
-			
-		});
-	</script>
-			</div>
-
+				</div>
+			</c:when>
+			<c:when test="${sessionScope.account.roleId eq 4}">
+			<div class="login-form" id = "parent">
+				<form action="/menu" method="get">
+					<div class="">
+						<p>账号</p>
+						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" value = ${sessionScope.account.accountName } required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" value = ${sessionScope.account.accountSex } required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
+					</div>
+					<input type="submit" value="退出查看">
+				</form>
+				</div>
+			</c:when>
+			<c:when test="${sessionScope.account.roleId eq 3}">
+				<div class="login-form" id = "teacher">
+				<form action="/menu" method="get">
+					<div class="">
+						<p>账号</p>
+						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" value = ${sessionScope.account.accountName } required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" value = ${sessionScope.account.accountSex } required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
+					</div>
+					<div class="">
+						<p>科目</p>
+						<input type="text" value = ${sessionScope.account.tSubject } required="" />
+					</div>
+					<input type="submit" value="退出查看">
+				</form>
+				</div>
+			</c:when>
+						<c:when test="${sessionScope.account.roleId eq 2}">
+				<div class="login-form" id = "master">
+				<form action="/menu" method="get">
+					<div class="">
+						<p>账号</p>
+						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" value = ${sessionScope.account.accountName } required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" value = ${sessionScope.account.accountSex } required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
+					</div>
+					<div class="">
+						<p>科目</p>
+						<input type="text" value = ${sessionScope.account.tSubject } required="" />
+					</div>
+					<input type="submit" value="退出查看">
+				</form>
+				</div>
+			</c:when>
+			<c:otherwise>
+			<div class="login-form" id = "admin">
+				<form action="/menu" method="get">
+					<div class="">
+						<p>账号</p>
+						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" value = ${sessionScope.account.accountName } required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" value = ${sessionScope.account.accountSex } required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
+					</div>
+					<input type="submit" value="退出查看">
+				</form>
+				</div>
+			</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 
-		<!-- footer -->
+	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -222,19 +328,11 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-<<<<<<< HEAD
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-=======
-						</li>
-						<li>
-							<a href="courses.html">联系我们</a>
-						</li>
-						<li>
->>>>>>> 3238d242969cb954c3235bdd094799684330a67b
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
