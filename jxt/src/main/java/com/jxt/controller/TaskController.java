@@ -68,6 +68,7 @@ public class TaskController {
 		return "redirect:/homework/listhomework";
 	}
 	
+	//获取更新页面
 	@GetMapping("/updatehomework/{taskId}")
 	public String updateString(@PathVariable("taskId") int id, Model model) {
 		Task task = taskService.getTaskById(id);
@@ -75,12 +76,30 @@ public class TaskController {
 		return "homework/updatehomework";
 	}
 	
+	//获取报告页面
+	@GetMapping("/report/{taskId}")
+	public String reportString(@PathVariable("taskId") int id, Model model) {
+		Task task = taskService.getTaskById(id);
+		model.addAttribute("task",task);
+		return "homework/report";
+	}
+	
+	@PostMapping("/report")
+	public String report(Task task) {
+		int rows = taskService.update(task);
+		if(rows != 1) {
+			throw new RuntimeException("更新失败");
+		}
+		return "redirect:/homework/listhomework";
+	}
+	
+	//更新作业
 	@PostMapping("/updatehomework")
 	public String update(Task task) {
 		int rows = taskService.update(task);
-//		if(rows != 1) {
-//			throw new RuntimeException("更新失败");
-//		}
+		if(rows != 1) {
+			throw new RuntimeException("更新失败");
+		}
 		return "redirect:/homework/listhomework";
 	}
 }

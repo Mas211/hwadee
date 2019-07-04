@@ -6,8 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Task" useGeneratedKeys="true" keyProperty="taskId">
-		INSERT INTO task(task_id, task_title, task_content, task_begin_time, task_deadline, task_teacher_id) 
-		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline}, #{taskTeacherId})
+		INSERT INTO task(task_id, task_title, task_content, task_begin_time, task_deadline, task_teacher_id, task_is_finish) 
+		VALUES(#{taskId}, #{taskTitle}, #{taskContent}, #{taskBeginTime}, #{taskDeadline}, #{taskTeacherId}, #{taskIsFinish})
 	</insert>
 	
 	<insert id="insertMessage" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="messageId">
@@ -31,7 +31,7 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Task">
 		SELECT
-			task_id, task_title, task_content, task_begin_time, task_deadline, task_teacher_id
+			task_id, task_title, task_content, task_begin_time, task_deadline, task_teacher_id, task_is_finish
 		FROM
 			task
 		WHERE
@@ -40,7 +40,7 @@
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Task">
-		UPDATE task SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}, task_teacher_id=#{taskTeacherId}
+		UPDATE task SET task_title = #{taskTitle}, task_content=#{taskContent}, task_begin_time=#{taskBeginTime}, task_deadline=#{taskDeadline}, task_teacher_id=#{taskTeacherId}, task_is_finish=#{taskIsFinish}
 		WHERE
 			task_id = #{taskId}
 	</update>
@@ -52,6 +52,7 @@
 		<id column="task_begin_time" property="taskBeginTime" />
 		<id column="task_deadline" property="taskDeadline" />
 		<id column="task_teacher_id" property="taskTeacherId" />
+		<id column="task_is_finish" property="taskIsFinish" />
 		<association property="account" javaType="com.jxt.entity.Account">
 			<id column="account_id" property="accountId" />
 			<result column="role_id" property="roleId" />
@@ -82,7 +83,8 @@
 		t.task_teacher_id,
 		t.task_begin_time,
 		t.task_deadline,
-		t.task_content
+		t.task_content,
+		t.task_is_finish
 	FROM
 		account a
 	INNER JOIN task t ON a.account_id = t.task_teacher_id

@@ -34,20 +34,6 @@
 	<div class="header-top">
 		<div class="container">
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
-					</a>
-				</div>
 				<div class="header-top-righ">
 					<a href="login.html">
 						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
@@ -70,7 +56,7 @@
 						</button>
 						<a class="navbar-brand" href="index.html">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
+								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -173,20 +159,21 @@
 				<h4>布 置 作 业</h4>
 				<form action="/homework/publishhomework" method="post">
 					<div class="">
-						<input type="text" name="taskTitle" placeholder="作业标题" required="">
+						<input type="text" name="taskTitle" placeholder="作业标题" >
 					</div>
 					<div class="">
 						<input type="text" name="taskTeacherId" value="${sessionScope.account.accountId}" placeholder="发布老师ID">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" >
 					</div>
 					<div class="styled-input">
-							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" >
 					</div>
 					<div class="">
-						<textarea name="taskContent" placeholder="内容..." required=""></textarea>
+						<textarea name="taskContent" placeholder="内容..." ></textarea>
 					</div>
+					<input type="hidden" name="taskIsFinish" value="未完成">
 					<input type="submit" value="Submit">
 				</form>
 			</div>
