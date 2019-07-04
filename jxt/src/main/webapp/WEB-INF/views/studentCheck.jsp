@@ -160,7 +160,7 @@
 					</div>
 					<div class="">
 						<p>学生账号 </p>
-						<input type="text" name="accountId" required="" /><span></span>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required=""  value="1"/><span></span>
 					</div>
 					<div class="">
 						<p>学生姓名</p>
