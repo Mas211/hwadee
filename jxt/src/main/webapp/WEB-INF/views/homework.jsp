@@ -169,19 +169,19 @@
 				<h4>发 布 作 业</h4>
 				<form action="/homework" method="post">
 					<div class="">
-						<input type="text" name="taskTitle" placeholder="作业标题">
+						<input type="text" name="taskTitle" placeholder="作业标题" required="">
 					</div>
 					<div class="">
-						<input type="text" name="account.accountName" value="${sessionScope.account.accountName}" placeholder="发布老师">
+						<input type="text" name="account.accountName" value="${sessionScope.account.accountName}" placeholder="发布老师" required="">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
 					</div>
 					<div class="styled-input">
-							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
 					</div>
 					<div class="">
-						<textarea name="taskContent" placeholder="内容..."></textarea>
+						<textarea name="taskContent" placeholder="内容..." required=""></textarea>
 					</div>
 					<input type="submit" value="Submit">
 				</form>

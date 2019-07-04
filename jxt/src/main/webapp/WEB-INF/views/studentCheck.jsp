@@ -73,10 +73,10 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
-								<label>Education & Courses</label>
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
@@ -160,7 +160,7 @@
 					</div>
 					<div class="">
 						<p>学生账号 </p>
-						<input type="text" name="accountId" required="" /><span></span>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required=""  value="1"/><span></span>
 					</div>
 					<div class="">
 						<p>学生姓名</p>

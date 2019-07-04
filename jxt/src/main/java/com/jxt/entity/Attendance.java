@@ -7,6 +7,7 @@ public class Attendance {
 	private Integer attendId;
 	private Integer attendStuId;
 	private Timestamp attendTime;
+	private Account account;
 	
 	
 	public Integer getAttendId() {
@@ -26,6 +27,12 @@ public class Attendance {
 	}
 	public void setAttendTime(Timestamp attendTime) {
 		this.attendTime = attendTime;
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 }

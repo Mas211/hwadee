@@ -1,5 +1,7 @@
 package com.jxt.service;
 
+import java.util.List;
+
 import com.jxt.entity.Attendance;
 
 public interface AttendanceService {
@@ -10,8 +12,10 @@ public interface AttendanceService {
 	int delete(int attendanceId);
 
 	// 查
-	Attendance getAttendanceById(int attendanceId);
+	Attendance getAttendanceById(int attendStuId);
 
 	// 改
 	int update(Attendance attendance);
+	
+	List<Attendance> attendances();
 }

@@ -42,6 +42,8 @@
 			p.reply_id,
 			p.is_read,
 			p.time,
+			p.message_content,
+			p.message_path,
 			a.account_id "account.accountId",
 			a.account_name "account.accountName"
 		FROM
@@ -58,6 +60,8 @@
 			p.reply_id,
 			p.is_read,
 			p.time,
+			p.message_content,
+			p.message_path,
 			a.account_id "account.accountId",
 			a.account_name "account.accountName"
 		FROM

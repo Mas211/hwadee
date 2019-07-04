@@ -75,8 +75,8 @@
 						</button>
 						<a class="navbar-brand" href="index">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通 <label>Education
-									& Courses</label>
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
@@ -134,7 +134,7 @@
 				<form action="/login" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name="accountId" required="" /><span></span>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountId" required="" /><span></span>
 					</div>
 					<div class="">
 						<p>密码</p>
