@@ -154,7 +154,7 @@
 					<div class="carousel-caption">
 						<h6></h6>
 						<h3>
-							<span>可以加文字</span> </h3>
+							<span></span> </h3>
 						<p></p>
 					</div>
 				</div>
