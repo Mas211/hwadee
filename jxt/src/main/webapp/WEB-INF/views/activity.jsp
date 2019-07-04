@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>发布活动</title>
-	<!-- meta-tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script>
+<title>Login</title>
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -18,43 +18,48 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- //meta-tags -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome -->
-	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	<!-- fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	    rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //meta-tags -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- font-awesome -->
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+<!-- fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
 </head>
 
 <body>
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
+			<div class="bottom_header_left">
+				<p>
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
+				</p>
+			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
+					<a class="facebook" href="register.html"> <span
+						class="fa fa-facebook"></span>
+					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
+					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
+					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
 				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+					<a href="login.html"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
 				</div>
-				<div class="clearfix"> </div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 	<div class="header">
@@ -62,54 +67,37 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index.html">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
-								<label>Education & Courses</label>
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li class="active">
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -120,11 +108,11 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
-
+	<div style="text-align:center">
+  		<image src="/assets/images/login.jpg" width=1000>
 	</div>
-	<!--//banner -->
-	<!-- short-->
+	<!-- banner -->
+
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
@@ -152,8 +140,7 @@
 					<h4>Contact Our
 						<span>Best Study</span>
 					</h4>
-					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
-						volutpat. Duis vulputate tempus laoreet.
+					<p>
 					</p>
 				</div>
 				<div class="col-md-6 contact-w3lsright">
