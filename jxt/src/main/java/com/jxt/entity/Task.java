@@ -14,6 +14,7 @@ public class Task {
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date taskDeadline;
 	private Integer taskTeacherId;
+	private String taskIsFinish;
 	private Account account;
 	
 	public Integer getTaskId() {
@@ -59,11 +60,17 @@ public class Task {
 		this.account = account;
 	}
 	
-
+	public String getTaskIsFinish() {
+		return taskIsFinish;
+	}
+	public void setTaskIsFinish(String taskIsFinish) {
+		this.taskIsFinish = taskIsFinish;
+	}
+	
 	@Override
 	public String toString() {
 		return "Task [taskId=" + taskId + ", taskTitle=" + taskTitle + ", taskContent=" + taskContent
 				+ ", taskBeginTime=" + taskBeginTime + ", taskDeadline=" + taskDeadline + ", taskTeacherId="
-				+ taskTeacherId + ", account=" + account + "]";
+				+ taskTeacherId + ", taskIsFinish=" + taskIsFinish + ", account=" + account + "]";
 	}
 }

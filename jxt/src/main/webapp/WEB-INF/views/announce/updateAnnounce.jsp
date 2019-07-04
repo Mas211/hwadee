@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>发布作业</title>
+	<title>编辑公告</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,6 +18,14 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
+
+	<!-- UEditor配置文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+
+
+
 	<!-- //meta-tags -->
 	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -33,21 +41,19 @@
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
+			<div class="bottom_header_left">
+				<p>
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
+				</p>
+			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
-					</a>
-				</div>
+				
+				<div class="top-menu">
+            <ul class="pull-right top-menu">
+                <br>
+
+            </ul>
+        		</div>
 				<div class="header-top-righ">
 					<a href="login.html">
 						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
@@ -69,8 +75,9 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index.html">
-							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
+							<h1 >
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
+								<!--这里插入logo的路径-->
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -79,37 +86,19 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li class="active">
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -129,69 +118,55 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.jsp">主页</a>
+					<a href="index.html">主页</a>
 					<span>| |</span>
 				</li>
-				<li>发布作业</li>
+				<li>编辑公告</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- contact -->
-	<div class="contact">
+	<div class="register-form-main">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>发&nbsp;布&nbsp;</span>作&nbsp;业
+					编辑公告
 				</h3>
 				<div class="tittle-style">
+
 				</div>
 			</div>
-			<div class="contact-row">
-				<div class="col-md-6 contact-text1">
-					<h4>Contact Our
-						<span>Best Study</span>
-					</h4>
-					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
-						volutpat. Duis vulputate tempus laoreet.
-					</p>
-				</div>
-				<div class="col-md-6 contact-w3lsright">
-					<iframe></iframe>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-	<div class="contact-lsleft">
-		<div class="container">
-			<div class="contact-grid agileits">
-				<h4>发 布 作 业</h4>
-				<form action="/homework" method="post">
-					<div class="">
-						<input type="text" name="taskTitle" placeholder="作业标题" required="">
+			<div class="register-form" style="width: 70%">
+				<form action="#" method="post">
+					<div class="fields-grid">
+						<div class="styled-input">
+							<input type="hidden" name="announceId" value="${requestScope.announce.announceId}">
+							<label class="header">公告标题</label>
+							<input type="text" name="announceTitle" value="${requestScope.announce.announceTitle}">
+						</div>
+						
+						<div class="styled-input"  >
+							<label class="header">公告内容</label><br/>
+							<script id="container" name="newsContent" type="text/plain" style="height: 300px">
+							${requestScope.announce.announceContent}</script>
+							<!-- 配置文件 -->
+							<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+							<!-- 编辑器源码文件 -->
+							<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+							<!-- 实例化编辑器 -->
+							<script type="text/javascript">
+								var ue = UE.getEditor('container',{toolbars: [['undo', 'redo', 'bold','italic','underline']]});
+							</script>
+						</div>
+						<div class="clearfix"> </div>
 					</div>
-					<div class="">
-						<input type="text" name="account.accountName" value="${sessionScope.account.accountName}" placeholder="发布老师" required="">
-					</div>
-					<div class="styled-input">
-							<input id="datepicker" placeholder="开始时间" name="taskBeginTime" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-					</div>
-					<div class="styled-input">
-							<input id="datepicker1" placeholder="截止时间" name="taskDeadline" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-					</div>
-					<div class="">
-						<textarea name="taskContent" placeholder="内容..." required=""></textarea>
-					</div>
-					<input type="submit" value="Submit">
+					<input type="submit" value="提交修改">
 				</form>
 			</div>
 		</div>
 	</div>
-	<!-- //contact -->
 
-
-	<!-- footer -->
+<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -229,12 +204,13 @@
 						</li>
 					</ul>
 				</div>
+
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
 				</div>
 				<div class="clearfix"></div>
 			</div>

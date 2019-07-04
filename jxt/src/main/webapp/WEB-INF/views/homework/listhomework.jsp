@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Courses</title>
+	<title>作业</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -50,9 +50,14 @@
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
+<<<<<<< HEAD:jxt/src/main/webapp/WEB-INF/views/listHomework.jsp
+					<a href="login.html">
+						<span class="fa fa-sign-out" aria-hidden="true"></span>注销</a>
+=======
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
+>>>>>>> 14fafccce6c134e653c6201ae00e83b8c498c0b2:jxt/src/main/webapp/WEB-INF/views/homework/listhomework.jsp
 				</div>
 				</c:otherwise>
 				</c:choose>
@@ -74,7 +79,7 @@
 						</button>
 						<a class="navbar-brand" href="index.html">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
+								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -84,7 +89,7 @@
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="index.html" class="effect-3">Home</a>
+									<a href="index.html" class="effect-3">主页</a>
 								</li>
 								<li>
 									<a href="about.html" class="effect-3">About Us</a>
@@ -133,10 +138,14 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.html">主页</a>
 					<span>| |</span>
 				</li>
-				<li>Courses</li>
+				<li>
+					<a href="/homework/publishhomework">布置作业</a>
+					<span>| |</span>
+				</li>
+				<li>查看作业</li>
 			</ul>
 		</div>
 	</div>
@@ -146,64 +155,46 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>P</span>opular
-					<span>C</span>ourses
+					<span>作 &nbsp;</span>业
 				</h3>
 				<div class="tittle-style">
-
 				</div>
 			</div>
-			<div class="blog-info">
-				<div class="col-xs-4 blog-grid-img">
-					<img src="images/c2.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Web Technology</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum delectus in auctor sapien. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-agileinfo blog-info-mdl">
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Academic English</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="col-xs-4 blog-grid-img blog-img-rght">
-					<img src="images/c1.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-info">
-				<div class="col-xs-4 blog-grid-img">
-					<img src="images/c3.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="col-xs-8 blog-grid-text">
-					<h4>HR Management</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante rerum hic a sapiente delectus in auctor sapien. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="blog-agileinfo blog-info-mdl">
-				<div class="col-xs-8 blog-grid-text">
-					<h4>Process Engineering</h4>
-					<h6>Rerum Delectus</h6>
-					<p>Sed interdum interdum accumsan. Aenean nec purus ac orci finibus facilisis. In sit amet placerat nisl, in auctor sapien.
-						Donec ultricies faucibus ante in mattis earum rerum hic a sapiente delectus. </p>
-					<a class="button-style" href="join.html">Apply Now</a>
-				</div>
-				<div class="col-xs-4 blog-grid-img blog-img-rght">
-					<img src="images/c7.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="clearfix"> </div>
+			<div class="bs-docs-example">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th></th>
+							<th>发布老师</th>
+							<th>班级</th>
+							<th>作业标题</th>
+							<th>发布时间</th>
+							<th>截止时间</th>
+							<th>内容</th>
+							<th>完成情况</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${requestScope.tasks }" var="t">
+						<tr>
+							<td>${t.taskId }</td>
+							<td>${t.account.accountName }</td>
+							<td>${t.account.accountClassId }</td>
+							<td>${t.taskTitle }</td>
+							<td>${t.taskBeginTime }</td>
+							<td>${t.taskDeadline }</td>
+							<td>${t.taskContent }</td>
+							<td>${t.taskIsFinish }</td>
+							<td>
+								<a class="updateTask" href="/homework/updatehomework/${t.taskId }">修改</a> | 
+								<a class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a> |
+								<a class="report" href="/homework/report/${t.taskId }">完成</a>
+							</td>
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -215,82 +206,45 @@
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
+
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-				</div>
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -310,22 +264,49 @@
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
 	<script src="/assets/js/easing.js"></script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
 
+		});
+	</script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$( "table.table > tbody" ).on("click","a.deleteTask", function( e ){
+				e.preventDefault();
+				swal({
+					  title:'确定删除？',
+					  type:"warning",
+					  confirmButtonColor: "#DD6B55",
+					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
+					  showCancelButton: true,
+					  cancelButtonText:'取消'
+					});
+			});
+
+			$( "table.table > tbody" ).on("click","a.updateTask", function( e ){
+				e.preventDefault();
+				swal({
+				  title:'确定修改？',
+				  type:'question',
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
+				});
+			}); 
+			$( "table.table > tbody" ).on("click","a.report", function( e ){
+				e.preventDefault();
+				swal({
+				  title:'确定已完成？',
+				  type:'info',
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
+				});
+			}); 
 		});
 	</script>
 	<!-- //here ends scrolling icon -->

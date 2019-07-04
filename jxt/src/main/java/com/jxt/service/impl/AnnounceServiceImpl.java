@@ -1,4 +1,6 @@
 package com.jxt.service.impl;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +40,12 @@ public class AnnounceServiceImpl implements AnnounceService {
 	public int update(Announce announce) {
 		// TODO Auto-generated method stub
 		return announceMapper.update(announce);
+	}
+
+	@Override
+	public List<Announce> findAll() {
+		// TODO Auto-generated method stub
+		return announceMapper.findAll();
 	}
 
 }

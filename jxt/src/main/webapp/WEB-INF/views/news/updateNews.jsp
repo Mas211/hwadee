@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Register</title>
+	<title>编辑新闻</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
 	<script>
+
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -18,6 +19,42 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
+
+	<!-- UEditor配置文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+
+
+	<!-- 图片上传 -->
+	<script type="text/javascript">  
+		function uploadPic() {  
+      // 上传设置  
+      var form = new FormData(document.getElementById("form"));
+      $.ajax({  
+               // 规定把请求发送到那个URL  
+                url: "/uploadNewsCover",  
+                // 请求方式  
+                type: "post",  
+                data:form,
+                // 服务器响应的数据类型  
+                dataType: "json",  
+                cache: false,
+                processData: false,
+                contentType: false,
+                // 请求成功时执行的回调函数  
+                success: function(data, status, xhr) {  
+                    // 图片显示地址  
+                    $("#allUrl").attr("src", data.path);  
+                    $("#path").val(data.path);
+                },
+                error:function(e){
+                     alert("网络错误，请重试！！");
+                }  
+            });  
+        }  
+    </script>
+
 	<!-- //meta-tags -->
 	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -27,7 +64,6 @@
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
 </head>
 
 <body>
@@ -40,8 +76,16 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+				
+				<div class="top-menu">
+            <ul class="pull-right top-menu">
+                <br>
+
+            </ul>
+        		</div>
+
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="login.html"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -61,10 +105,12 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
-							<h1>
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
-								<label>Education& Courses</label>
+						<a class="navbar-brand" href="index.html">
+							<h1 >
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
+								<!--这里插入logo的路径-->
+								<label>Education & Courses</label>
+
 							</h1>
 						</a>
 					</div>
@@ -75,7 +121,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
+									<li><a href="index.html" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -100,60 +146,75 @@
   		<image src="/assets/images/login.jpg" width=1000>
 	</div>
 	<!--//banner -->
-	<!-- short-->
-	<div class="services-breadcrumb">
+	<!-- //short-->
+		<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">登录</a>
+					<a href="index.html">主页</a>
 					<span>| |</span>
 				</li>
-				<li>找回</li>
+				<li>编辑新闻</li>
 			</ul>
 		</div>
 	</div>
-	<!-- //short-->
 	<div class="register-form-main">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>找</span>回 <span>密</span>码
+					编辑新闻
 				</h3>
-				<div class="tittle-style"></div>
+				<div class="tittle-style">
+
+				</div>
 			</div>
-			<div class="login-form">
-				<form action="/retrieve" method="post">
-					<div class="">
-						<p>用户账号 </p>
-						<input type="text" name="accountId" required="" /><span></span>
-					</div>
-					<div class="">
-						<p>绑定电话</p>
-						<input type="text" name="accountPhone" required="" />
-						<input type="button" value="获取验证码" onclick="alert('短信验证码已发送')" />
-					</div>
-					<div class="">
-						<p>短信验证码</p>
-						<input type="text" name="check" required="" />
-					</div>
-					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="accountPassword" id="password1" required="" />
-					</div>
-					<div class="">
-						<p>确认密码</p>
-						<input type="password" class="password" id="password2" required="" />
-					</div>
-					<input type="submit" value="找回">
+			<div class="register-form" style="width: 70%">
+				<form action="" method="post" enctype="multipart/form-data" id="form">
+					<label class="header">*上传封面</label><br/>
+					<img width="200" height="200" id="allUrl" src="${requestScope.news.newsCoverPath}" />  
+					<!-- 在选择图片的时候添加事件，触发Ajax异步上传 -->  
+					<input name="pic" type="file" onchange="uploadPic()"/>
 				</form>
-			
-				
-					<div>${msg}</div>
+
+				<form action="#" method="post">
+					<div class="fields-grid">
+						<div class="styled-input">
+							<input type="hidden" name="newsId" value="${requestScope.news.newsId}">
+							<label class="header">标题</label>
+							<input type="text" name="newsTitle" value="${requestScope.news.newsTitle}">
+							<label class="header">发布人</label>
+							<input type="text" name="publisher" value="${requestScope.news.publisher}">
+						</div>
+						
+						<div class="styled-input"  >
+
+							<label class="header">简介</label>
+							<textarea name="newsIntro" style="height: 100px;width: 100%;">这里是新闻的简介</textarea>
+							<input type="hidden" name="newsCoverPath" id="path" >
+							<label class="header">正文</label>
+							<!-- 加载编辑器的容器 -->
+							<script id="container" name="newsContent" type="text/plain" style="height: 400px">
+							${requestScope.news.newsContent}</script>
+							<!-- 配置文件 -->
+							<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+							<!-- 编辑器源码文件 -->
+							<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+							<!-- 实例化编辑器 -->
+							<script type="text/javascript">
+								var ue = UE.getEditor('container');
+							</script>
+
+
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<input type="submit" value="提交修改">
+				</form>
 			</div>
 		</div>
 	</div>
 
-	<!-- footer -->
+<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -191,14 +252,14 @@
 						</li>
 					</ul>
 				</div>
+
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
 				</div>
-				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -210,6 +271,15 @@
 	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
+	<!-- Calendar -->
+	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
@@ -234,24 +304,6 @@
 	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
-	<!-- password-script -->
-	<script>
-		window.onload = function () {
-			document.getElementById("password1").onchange = validatePassword;
-			document.getElementById("password2").onchange = validatePassword;
-		}
-
-		function validatePassword() {
-			var pass2 = document.getElementById("password2").value;
-			var pass1 = document.getElementById("password1").value;
-			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-			else
-				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
-	</script>
-	<!-- //password-script -->
 	<!-- //js-files -->
 
 </body>
