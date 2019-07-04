@@ -22,7 +22,9 @@ public class LoginController {
 
 	@Autowired
 	private RegisterService registerService; 
+	String target = "";
 	
+	//登录部分
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String get(){
 		return "login";
@@ -32,7 +34,6 @@ public class LoginController {
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String login(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String target = "";
 		int role_id_int=0;
 		//一.填充数据
 		String accountId = request.getParameter("accountId");
@@ -99,8 +100,32 @@ public class LoginController {
 					request.setAttribute("msg", "用户名或密码错误,请重新输入");
 					target = "login";
 				}
-				return target;
+				return "redirect:/personalInformationViewing";
 	}
 	
+	
+	
+	//找回密码部分
+	@RequestMapping(value="/retrieve",method=RequestMethod.GET)
+	public String getretrieve(){
+		return "retrieve";
+	}
+	
+	
+	@RequestMapping(value="/retrieve",method=RequestMethod.POST)
+	public String login(Account account,HttpServletRequest request)
+			throws ServletException, IOException {
+		Account account_temp = registerService.check1(account.getAccountId());
+		if(account_temp.getAccountPhone().equalsIgnoreCase(account.getAccountPhone())) {
+			account_temp.setAccountPassword(account.getAccountPassword());
+			registerService.update(account_temp);
+			target = "redirect:/login";
+		}
+		else {
+			request.setAttribute("msg", "非绑定电话,请重新输入");
+			target =  "retrieve";
+		}
+		return target;
+	}
 
 }

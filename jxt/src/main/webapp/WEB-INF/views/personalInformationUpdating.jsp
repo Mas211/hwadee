@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -117,67 +118,175 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li><a href="index.jsp">首页</a> <span>| |</span></li>
-				<li>登录</li>
+				<li>查看个人信息</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<style>
-/* 下拉按钮样式 */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+	<div class="register-form-main">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>查</span> <span></span>看
+				</h3>
+				<div class="tittle-style"></div>
+			</div>
+			<c:choose>
+			<c:when test="${sessionScope.account.roleId eq 5 }">
+			<div class="login-form" id = "student">
+				<form action="/personalInformationUpdating" method="post">
+					<div class="">
+						<p>账号</p>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
+					</div>
+					<div class="">
+						<p>家长账号</p>
+						<input type="text" value = ${sessionScope.account.parId } required="" />
+					</div>
+					<div class="">
+						<p>班级</p>
+						<input type="text" name="accountClassId" required="" />
+					</div>
+					<input type="submit" value="修改" onclick="alert('修改成功')">
+				</form>
+				</div>
+			</c:when>
+			<c:when test="${sessionScope.account.roleId eq 4}">
+			<div class="login-form" id = "parent">
+				<form action="/personalInformationUpdating" method="post">
+					<div class="">
+						<p>账号</p>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
+					</div>
+					<input type="submit" value="修改" onclick="alert('修改成功')">
+				</form>
+				</div>
+			</c:when>
+			<c:when test="${sessionScope.account.roleId eq 3}">
+				<div class="login-form" id = "teacher">
+				<form action="/personalInformationUpdating" method="post">
+					<div class="">
+						<p>账号</p>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
+					</div>
+					<div class="">
+						<p>科目</p>
+						<input type="text" name="tSubject" required="" />
+					</div>
+					<input type="submit" value="修改" onclick="alert('修改成功')">
+				</form>
+				</div>
+			</c:when>
+			<c:when test="${sessionScope.account.roleId eq 2}">
+				<div class="login-form" id = "master">
+				<form action="/personalInformationUpdating" method="post">
+					<div class="">
+						<p>账号</p>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
+					</div>
+					<div class="">
+						<p>科目</p>
+						<input type="text" name="tSubject" required="" />
+					</div>
+					<input type="submit" value="修改" onclick="alert('修改成功')">
+				</form>
+				</div>
+			</c:when>
+			<c:otherwise>
+			<div class="login-form" id = "admin">
+				<form action="/personalInformationUpdating" method="post">
+					<div class="">
+						<p>账号</p>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>联系方式</p>
+						<input type="text" name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
+					</div>
+					<input type="submit" value="修改" onclick="alert('修改成功')">
+				</form>
+				</div>
+			</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
 
-/* 容器 <div> - 需要定位下拉内容 */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* 下拉内容 (默认隐藏) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-/* 下拉菜单的链接 */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* 鼠标移上去后修改下拉菜单链接颜色 */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-/* 在鼠标移上去后显示下拉菜单 */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* 当下拉内容显示后修改下拉按钮的背景颜色 */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-</style>
-
-<div class="dropdown">
-  <button class="dropbtn">下拉菜单</button>
-  <div class="dropdown-content">
-    <a href="#">菜鸟教程 1</a>
-    <a href="#">菜鸟教程 2</a>
-    <a href="#">菜鸟教程 3</a>
-  </div>
-</div>
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">

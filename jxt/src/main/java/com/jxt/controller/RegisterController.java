@@ -52,4 +52,10 @@ public class RegisterController {
 		int result = registerService.check2(id);
 		return result;
 	}
+	
+	
+	
+	
+	
+	
 }
