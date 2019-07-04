@@ -202,14 +202,6 @@
 		<li><a href="gallery.html" class="effect-3">管理员功能5</a></li>
 	</c:otherwise>
 	</c:choose>
-	
-	
-	
-	
-				
-				
-				
-
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
