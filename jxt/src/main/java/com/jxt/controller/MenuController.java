@@ -26,4 +26,8 @@ public class MenuController {
 	public String getStudent(){
 		return "studentMenu";
 	}
+	@RequestMapping(value="/menu",method=RequestMethod.GET)
+	public String getMenu(){
+		return "menu";
+	}
 }

@@ -39,8 +39,8 @@ public class StudentCheckController {
 					session.setAttribute("account", account);//把account对象存到session中 以后每个页面中都可以取出来使用
 					target = "redirect:/register";
 				}else{
-					//验证失败 跳回验证页面 显示 "账号与姓名不符错误
-					request.setAttribute("msg", "error");
+					//验证失败 跳回验证页面 显示 "账号与姓名不符"
+					request.setAttribute("msg", "账号与姓名不符");
 					target = "studentCheck";
 				}
 				return target;

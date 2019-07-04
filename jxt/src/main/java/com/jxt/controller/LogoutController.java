@@ -16,13 +16,13 @@ import com.jxt.entity.Account;
 @Controller
 public class LogoutController {
 
+	//@RequestMapping(value="/logout",method=RequestMethod.GET)
+	//public String get() {
+	//	return "logout";
+	//}
+	
+	
 	@RequestMapping(value="/logout",method=RequestMethod.GET)
-	public String get() {
-		return "logout";
-	}
-	
-	
-	@RequestMapping(value="/logout",method=RequestMethod.POST)
 	public String login(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException {
 		//false代表：不创建session对象，只是从request中获取。
@@ -36,7 +36,7 @@ public class LogoutController {
 			return target[3];
 		}
 		session.removeAttribute("account");
-		//重定向到index.jsp
-		return "redirect:/index.jsp";
+		//重定向到index
+		return "redirect:/index";
 	}
 }

@@ -69,7 +69,7 @@ public class LoginController {
 					//登录成功
 					HttpSession session = request.getSession(true);
 					session.setAttribute("account", account);//把user对象存到session中 以后每个页面中都可以取出来使用
-					if(account.getRoleId()==1)
+					/*if(account.getRoleId()==1)
 					{
 						target = "redirect:/adminMenu";
 					}
@@ -88,7 +88,8 @@ public class LoginController {
 					else if(account.getRoleId()==5) 
 					{
 						target = "redirect:/studentMenu";
-					}
+					}*/
+					target = "redirect:/menu";
 				}
 				else if(account.getRoleId()!=role_id_int) {
 					//登录失败 跳回登录页面 显示 "用户身份与选择身份不符"
@@ -100,7 +101,7 @@ public class LoginController {
 					request.setAttribute("msg", "用户名或密码错误,请重新输入");
 					target = "login";
 				}
-				return "redirect:/personalInformationViewing";
+				return target;
 	}
 	
 	

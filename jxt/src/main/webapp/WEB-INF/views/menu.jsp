@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -52,11 +53,22 @@
 					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -117,67 +129,87 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li><a href="index.jsp">首页</a> <span>| |</span></li>
-				<li>登录</li>
+				<li>功能列表</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<style>
-/* 下拉按钮样式 */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+	<c:choose>
+	<c:when test="${sessionScope.account.roleId eq 5 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="create_news">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">学生功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">学生功能3</a></li>
+		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
+	</c:when>
+	<c:when test="${sessionScope.account.roleId eq 4 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="create_news">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">家长功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
+		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>
+	</c:when>
+	<c:when test="${sessionScope.account.roleId eq 3 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="create_news">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">教师功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">教师功能3</a></li>
+		<li><a href="courses.html" class="effect-3">教师功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
+	</c:when>
+	
+	<c:when test="${sessionScope.account.roleId eq 2 }">
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="create_news">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">master功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">master功能3</a></li>
+		<li><a href="courses.html" class="effect-3">master功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">master功能5</a></li>
+	</c:when>
+	<c:otherwise>
+		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		data-toggle="dropdown">个人信息 <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/personalInformationViewing">查看</a></li>
+			<li><a href="create_news">修改</a></li>
+		</ul></li>
+		<li><a href="courses.html" class="effect-3">管理员功能2</a></li>
+		<li><a href="gallery.html" class="effect-3">管理员功能3</a></li>
+		<li><a href="courses.html" class="effect-3">管理员功能4</a></li>
+		<li><a href="gallery.html" class="effect-3">管理员功能5</a></li>
+	</c:otherwise>
+	</c:choose>
+	
+	
+	
+	
+				
+				
+				
 
-/* 容器 <div> - 需要定位下拉内容 */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* 下拉内容 (默认隐藏) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-/* 下拉菜单的链接 */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* 鼠标移上去后修改下拉菜单链接颜色 */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-/* 在鼠标移上去后显示下拉菜单 */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* 当下拉内容显示后修改下拉按钮的背景颜色 */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-</style>
-
-<div class="dropdown">
-  <button class="dropbtn">下拉菜单</button>
-  <div class="dropdown-content">
-    <a href="#">菜鸟教程 1</a>
-    <a href="#">菜鸟教程 2</a>
-    <a href="#">菜鸟教程 3</a>
-  </div>
-</div>
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
