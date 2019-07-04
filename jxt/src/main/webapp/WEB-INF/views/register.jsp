@@ -53,7 +53,7 @@
 					</a>
 				</div>
 				<div class="header-top-righ">
-					<a href="login.html"> <span class="fa fa-sign-out"
+					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -73,7 +73,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
 								<span ><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
@@ -87,7 +87,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -175,15 +175,14 @@
 				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 				<script type="text/javascript">
 					$(function(){
-						$("form > input[name=accountId]").blur(function( e ){
-							input.next("span").html("该账号已存在").css("color", "red");
-						var input = $( this );
-						$.get("/check",{accountId: input.val(), t : new Date().getTime()}, function( data ){
-						if( data == 1 ){
-							input.next("span").html("该账号已存在").css("color", "red");
-						} else {
-							input.next("span").html("该账号可以注册").css("color", "green");
-						}
+						$("div > input[name=accountId]").blur(function(e){
+							var input = $( this );
+							$.get("/check2",{id :input.val(), t : new Date().getTime()}, function( data ){
+							if( data == 1 ){ 
+								input.next("span").html("*该账号已存在").css("color", "red");
+							} else {
+								input.next("span").html("*该账号可以注册").css("color", "green");
+							}
 				}, "json");
 			});
 			
@@ -194,7 +193,7 @@
 		</div>
 	</div>
 
-	<!-- footer -->
+		<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -223,11 +222,19 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
+<<<<<<< HEAD
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
+=======
+						</li>
+						<li>
+							<a href="courses.html">联系我们</a>
+						</li>
+						<li>
+>>>>>>> 3238d242969cb954c3235bdd094799684330a67b
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
