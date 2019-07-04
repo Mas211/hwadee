@@ -23,7 +23,7 @@
 		FROM
 			attendance
 		WHERE
-			attend_id = #{value}
+			attend_stu_id = #{attendStuId}
 	</select>
 	
 	 <!-- 需要修改的地方 -->
@@ -32,4 +32,43 @@
 		WHERE
 			attend_id = #{attendId}
 	</update>
+	
+	
+	
+	<resultMap type="com.jxt.entity.Attendance" id="attendanceMap">
+		<id column="attend_id" property="attendId" />
+		<id column="attend_stu_id" property="attendStuId" />
+		<id column="attend_time" property="attendTime" />
+		<association property="account" javaType="com.jxt.entity.Account">
+		<id column="account_id" property="accountId" />
+			<result column="role_id" property="roleId" />
+			<result column="account_password" property="accountPassword" />
+			<result column="account_name" property="accountName" />
+			<result column="account_sex" property="accountSex" />
+			<result column="account_phone" property="accountPhone" />
+			<result column="account_address" property="accountAddress" />
+			<result column="par_id" property="parId" />
+			<result column="account_class_id" property="accountClassId" />
+			<result column="t_subject" property="tSubject" />
+		</association>
+	</resultMap>
+	<select id="findAll" resultMap="attendanceMap">
+	SELECT
+        a.account_id,
+		a.role_id,
+		a.account_name,
+		a.account_address,
+		a.account_class_id,
+		a.account_password,
+		a.account_phone,
+		a.account_sex,
+		a.t_subject,
+		a.par_id,
+		t.attend_id, t.attend_stu_id, t.attend_time
+	FROM
+		account a
+	INNER JOIN attendance t ON a.account_id = t.attend_stu_id
+
+	
+	</select>
 </mapper>

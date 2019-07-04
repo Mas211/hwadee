@@ -1,5 +1,7 @@
 package com.jxt.mapper;
 
+import java.util.List;
+
 import com.jxt.entity.Attendance;
 
 public interface AttendanceMapper {
@@ -10,8 +12,10 @@ public interface AttendanceMapper {
 	int delete(int attendanceId);
 
 	//查
-	Attendance findById(int attendanceId);
+	Attendance findById(int attendStuId);
 		
 	//改
 	int update(Attendance attendance);
+	
+	List<Attendance> findAll();
 }

@@ -5,6 +5,7 @@ public class Activity {
 	private Integer actPubberId;
 	private String actTitle;
 	private String imagePath;
+	private Account account;
 	
 	public Integer getActId() {
 		return actId;
@@ -29,5 +30,11 @@ public class Activity {
 	}
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 }

@@ -1,9 +1,11 @@
 package com.jxt.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.jxt.entity.Attendance;
+
 import com.jxt.mapper.AttendanceMapper;
 import com.jxt.service.AttendanceService;
 
@@ -28,16 +30,23 @@ public class AttendanceServiceImpl implements AttendanceService {
 		return attendanceMapper.delete(attendanceId);
 	}
 
-	@Override
-	public Attendance getAttendanceById(int attendanceId) {
-		// TODO Auto-generated method stub
-		return attendanceMapper.findById(attendanceId);
-	}
 
 	@Override
 	public int update(Attendance attendance) {
 		// TODO Auto-generated method stub
 		return attendanceMapper.update(attendance);
+	}
+	
+	@Override
+	public List<Attendance> attendances() {
+		// TODO Auto-generated method stub
+		return attendanceMapper.findAll();
+	}
+
+	@Override
+	public Attendance getAttendanceById(int attendStuId) {
+		// TODO Auto-generated method stub
+		return attendanceMapper.findById(attendStuId);
 	}
 
 	
