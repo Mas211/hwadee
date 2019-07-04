@@ -62,8 +62,6 @@ public class LoginController {
 		{
 			role_id_1 = 3;
 		}
-		System.out.println(account.getRoleId());
-		System.out.println(role_id_int);
 		//二.调用业务逻辑 
 				if(account!=null && password.equalsIgnoreCase(account.getAccountPassword()) && role_id_1==role_id_int){//根据用户名和密码找到了该用户
 					//登录成功

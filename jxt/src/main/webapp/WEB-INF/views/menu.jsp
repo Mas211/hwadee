@@ -141,7 +141,7 @@
 		</a>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="create_news">修改</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="courses.html" class="effect-3">学生功能2</a></li>
 		<li><a href="gallery.html" class="effect-3">学生功能3</a></li>
@@ -154,7 +154,7 @@
 		</a>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="create_news">修改</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="courses.html" class="effect-3">家长功能2</a></li>
 		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
@@ -167,7 +167,7 @@
 		</a>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="create_news">修改</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="courses.html" class="effect-3">教师功能2</a></li>
 		<li><a href="gallery.html" class="effect-3">教师功能3</a></li>
@@ -181,7 +181,7 @@
 		</a>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="create_news">修改</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="courses.html" class="effect-3">master功能2</a></li>
 		<li><a href="gallery.html" class="effect-3">master功能3</a></li>
@@ -194,7 +194,7 @@
 		</a>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="create_news">修改</a></li>
+			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="courses.html" class="effect-3">管理员功能2</a></li>
 		<li><a href="gallery.html" class="effect-3">管理员功能3</a></li>

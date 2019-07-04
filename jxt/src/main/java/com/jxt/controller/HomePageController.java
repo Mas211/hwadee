@@ -48,7 +48,6 @@ public class HomePageController {
 			account_temp.setAccountAddress(account.getAccountAddress());
 			account_temp.setAccountClassId(account.getAccountClassId());
 			registerService.update(account_temp);
-			target="redirect:/studentMenu";
 		}
 		else if(account_temp.getRoleId()==4)
 		{
@@ -57,7 +56,6 @@ public class HomePageController {
 			account_temp.setAccountPhone(account.getAccountPhone());
 			account_temp.setAccountAddress(account.getAccountAddress());
 			registerService.update(account_temp);
-			target="redirect:/parentMenu";
 		}
 		else if(account_temp.getRoleId()==3 || account_temp.getRoleId()==3)
 		{
@@ -67,8 +65,6 @@ public class HomePageController {
 			account_temp.setAccountAddress(account.getAccountAddress());
 			account_temp.settSubject(account.gettSubject());
 			registerService.update(account_temp);
-			if(account_temp.getRoleId()==3) {target="redirect:/teacherMenu";}
-			else {target="redirect:/masterMenu";}
 		}
 		else
 		{
@@ -77,21 +73,8 @@ public class HomePageController {
 			account_temp.setAccountPhone(account.getAccountPhone());
 			account_temp.setAccountAddress(account.getAccountAddress());
 			registerService.update(account_temp);
-			target="redirect:/adminMenu";
 		}
-		
-		
-		
-		return target;
+		session.setAttribute("account", account_temp);
+		return "redirect:/menu";
 	}
-	/*
-	@RequestMapping(value="/informationView",method=RequestMethod.POST)
-	public String login(HttpServletRequest request,HttpServletResponse response)
-			throws ServletException, IOException {
-		String target = "";
-		HttpSession session = request.getSession(false);
-		Account account = (Account)session.getAttribute("account");
-		
-		return target;
-	}*/
 }

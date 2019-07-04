@@ -146,7 +146,7 @@
 			<c:choose>
 			<c:when test="${sessionScope.account.roleId eq 5 }">
 			<div class="login-form" id = "student">
-				<form action="/studentMenu" method="get">
+				<form action="/menu" method="get">
 					<div class="">
 						<p>账号</p>
 						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
@@ -181,7 +181,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 4}">
 			<div class="login-form" id = "parent">
-				<form action="/parentMenu" method="get">
+				<form action="/menu" method="get">
 					<div class="">
 						<p>账号</p>
 						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
@@ -208,7 +208,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 3}">
 				<div class="login-form" id = "teacher">
-				<form action="/teacherMenu" method="get">
+				<form action="/menu" method="get">
 					<div class="">
 						<p>账号</p>
 						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
@@ -239,7 +239,7 @@
 			</c:when>
 						<c:when test="${sessionScope.account.roleId eq 2}">
 				<div class="login-form" id = "master">
-				<form action="/masterMenu" method="get">
+				<form action="/menu" method="get">
 					<div class="">
 						<p>账号</p>
 						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
@@ -270,7 +270,7 @@
 			</c:when>
 			<c:otherwise>
 			<div class="login-form" id = "admin">
-				<form action="/adminMenu" method="get">
+				<form action="/menu" method="get">
 					<div class="">
 						<p>账号</p>
 						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>

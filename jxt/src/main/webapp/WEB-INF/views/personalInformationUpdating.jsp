@@ -53,11 +53,22 @@
 					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -118,7 +129,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li><a href="index.jsp">首页</a> <span>| |</span></li>
-				<li>查看个人信息</li>
+				<li>修改个人信息</li>
 			</ul>
 		</div>
 	</div>
@@ -127,7 +138,7 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>查</span> <span></span>看
+					<span>修</span> <span></span>改
 				</h3>
 				<div class="tittle-style"></div>
 			</div>
