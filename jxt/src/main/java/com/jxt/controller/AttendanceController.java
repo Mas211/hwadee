@@ -34,6 +34,10 @@ public class AttendanceController {
 		model.addAttribute("attendances", attendances);
 		return "attend";
 	}
+	@RequestMapping(value="/vedio",method=RequestMethod.GET)
+	public String get(){
+		return "vedio";
+	}
 
 
 	
