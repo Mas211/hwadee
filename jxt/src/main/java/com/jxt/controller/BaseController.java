@@ -30,4 +30,8 @@ public class BaseController {
 	public String getIcons() {
 		return "/icons";
 	}
+	@GetMapping("/demo")
+	public String getDemo() {
+		return "/demo";
+	}
 }

@@ -147,6 +147,7 @@
 			<div class="contact-grid agileits">
 				<h4>更 新 作 业</h4>
 				<form action="/homework/updatehomework" method="post">
+					<input type="hidden" name="taskId" value="${task.taskId}"/>
 					<div class="">
 						<input type="text" name="taskTitle" value="${task.taskTitle }" placeholder="作业标题">
 					</div>

@@ -161,8 +161,8 @@
 							<td>${t.taskTitle }</td>
 							<td>${t.taskBeginTime }</td>
 							<td>${t.taskDeadline }</td>
-							<td>${t.taskContent }</td>
-							<td><a href="/homework/updatehomework/${t.taskId }">修改</a> | <a href="/homework/listhomework/${t.taskId }?_method=DELETE">删除</a></td>
+							<td>${t.taskContent }</td>				
+							<td><a class="updateTask" href="/homework/updatehomework/${t.taskId }">修改</a> | <a class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a></td>
 						</tr>
 						</c:forEach>
 					</tbody>
@@ -226,7 +226,7 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src=/assets/js/jquery-2.1.4.min.js"></script>
+	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
 	<!-- stats numscroller-js-file -->
@@ -236,22 +236,40 @@
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
 	<script src="/assets/js/easing.js"></script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
 
+		});
+	</script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$( "table.table > tbody" ).on("click","a.deleteTask", function( e ){
+				e.preventDefault();
+				swal({
+					  title:'确定删除？',
+					  type:"warning",
+					  confirmButtonColor: "#DD6B55",
+					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
+					  showCancelButton: true,
+					  cancelButtonText:'取消'
+					});
+			});
+
+			$( "table.table > tbody" ).on("click","a.updateTask", function( e ){
+				e.preventDefault();
+				swal({
+				  title:'确定修改？',
+				  type:'question',
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
+				});
+			}); 
 		});
 	</script>
 	<!-- //here ends scrolling icon -->

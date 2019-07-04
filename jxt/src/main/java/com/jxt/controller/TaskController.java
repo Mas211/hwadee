@@ -51,6 +51,8 @@ public class TaskController {
 		return "/homework/publishhomework";
 	}
 	
+	
+	//查看作业列表
 	@RequestMapping(value = "/listhomework", method = RequestMethod.GET)
 	public String list( Model model ) {
 		List<Task> tasks = taskService.tasks();
@@ -58,6 +60,7 @@ public class TaskController {
 		return "/homework/listhomework";
 	}
 	
+	//删除某个作业
 	@GetMapping("/listhomework/{taskId}")
 	public String delete(@PathVariable("taskId") int id) {
 		taskService.delete(id);
@@ -75,9 +78,9 @@ public class TaskController {
 	@PostMapping("/updatehomework")
 	public String update(Task task) {
 		int rows = taskService.update(task);
-		if(rows != 1) {
-			throw new RuntimeException("更新失败");
-		}
+//		if(rows != 1) {
+//			throw new RuntimeException("更新失败");
+//		}
 		return "redirect:/homework/listhomework";
 	}
 }
