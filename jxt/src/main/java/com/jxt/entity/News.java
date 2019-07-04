@@ -8,11 +8,32 @@ public class News {
 	private String newsTitle;
 	private Timestamp newsCreate;
 	private String newsContent;
-	private String newsWord;
 	private String publisher;
 	private Timestamp newsModified;
+	private String newsCoverPath;
+	private String newsIntro;
+	
+	public String getNewsCoverPath() {
+		return newsCoverPath;
+	}
+	public void setNewsCoverPath(String newsCoverPath) {
+		this.newsCoverPath = newsCoverPath;
+	}
+	public String getNewsIntro() {
+		return newsIntro;
+	}
+	public void setNewsIntro(String newsIntro) {
+		this.newsIntro = newsIntro;
+	}
+	private Account account;
 	
 	
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 	public Timestamp getNewsModified() {
 		return newsModified;
 	}
@@ -49,17 +70,17 @@ public class News {
 	public void setNewsContent(String newsContent) {
 		this.newsContent = newsContent;
 	}
-	public String getNewsWord() {
-		return newsWord;
-	}
-	public void setNewsWord(String newsWord) {
-		this.newsWord = newsWord;
-	}
 	public String getPublisher() {
 		return publisher;
 	}
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+	@Override
+	public String toString() {
+		return "News [newsId=" + newsId + ", editorId=" + editorId + ", newsTitle=" + newsTitle + ", newsCreate="
+				+ newsCreate + ", newsContent=" + newsContent + ", publisher=" + publisher + ", newsModified="
+				+ newsModified + ", account=" + account + "]";
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.jxt.service;
 
+import java.util.List;
+
 import com.jxt.entity.News;
 
 public interface NewsService {
@@ -11,7 +13,11 @@ public interface NewsService {
 
 	// 查
 	News getNewsById(int newsId);
+	
+	List<News> findAll();
 
 	// 改
 	int update(News news);
+	
+	List<News> getByEditor(int editorId);
 }
