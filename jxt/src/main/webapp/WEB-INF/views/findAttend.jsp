@@ -108,59 +108,44 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
-	<!-- //short-->
-		<div class="services-breadcrumb">
+	<!-- short-->
+	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.html">首页</a> <span>| |</span></li>
-				<li>新闻</li>
+				<li>
+					<a href="index.html">首页</a>
+					<span>| |</span>
+				</li>
+				<li>考勤记录</li>
 			</ul>
 		</div>
 	</div>
+	<!-- //short-->
 	<div class="register-form-main">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					发布新闻
+					<span>考勤</span>
+					<span></span>记录
 				</h3>
-				<div class="tittle-style">
+				<div class="tittle-style"></div>
+			</div>	
+                <div class="login-form">
 
-				</div>
-			</div>
-			<div class="register-form" style="width: 70%">
-				<form action="#" method="post">
-					<div class="fields-grid">
-						<div class="styled-input">
-							<label class="header">标题</label>
-							<input type="text" name="newsTitle" value="新闻标题">
-							<label class="header">发布人</label>
-							<input type="text" name="publisher" value="${sessionScope.account.accountName}">
-						</div>
-						
-						<div class="styled-input"  >
-							<label class="header">正文</label>
-							<!-- 加载编辑器的容器 -->
-							<script id="container" name="newsContent" type="text/plain" style="height: 400px">这里写你的初始化内容</script>
-							<!-- 配置文件 -->
-							<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-							<!-- 编辑器源码文件 -->
-							<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-							<!-- 实例化编辑器 -->
-							<script type="text/javascript">
-								var ue = UE.getEditor('container');
-							</script>
-
-
-						</div>
-						<div class="clearfix"> </div>
+				    <p></p>
+					<form action="/attend" method="post">
+				    <p></p>
+				    <div class="">
+						<input type="text" name="attendance.attendStuId" value="${sessionScope.attendance.attendStuId}" placeholder="输入学生id" required="">
 					</div>
-					<input type="submit" value="发布">
+					<input type="submit" value="查询出勤记录">
 				</form>
-			</div>
+
+			   </div>		
 		</div>
 	</div>
 
