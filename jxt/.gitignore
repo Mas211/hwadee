@@ -1,4 +1,5 @@
 /target/
 /.settings/
 !/src/main/webapp/WEB-INF/lib/*.jar
+/.classpath/
 /bin/

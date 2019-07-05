@@ -1,9 +1,12 @@
 package com.jxt.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jxt.entity.Activity;
+import com.jxt.entity.Message;
 import com.jxt.mapper.ActivityMapper;
 import com.jxt.service.ActivityService;
 
@@ -37,5 +40,27 @@ public class ActivityServiceImpl implements ActivityService {
 	public int update(Activity activity) {
 		// TODO Auto-generated method stub
 		return activityMapper.update(activity);
+	}
+
+	@Override
+	public int addMessage(Message message) {
+		// TODO Auto-generated method stub
+		int rows = activityMapper.insertMessage(message);
+		if( rows != 1) {
+			throw new RuntimeException("添加失败");
+		}
+		return message.getMessageId();
+	}
+
+	@Override
+	public int deleteMessage(int activityId) {
+		// TODO Auto-generated method stub
+		return activityMapper.deleteMessage(activityId);
+	}
+
+	@Override
+	public List<Activity> activities() {
+		// TODO Auto-generated method stub
+		return activityMapper.findAll();
 	}
 }

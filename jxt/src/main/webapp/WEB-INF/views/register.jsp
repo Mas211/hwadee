@@ -44,14 +44,6 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html"> <span
-						class="fa fa-facebook"></span>
-					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
-					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
-					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
-					</a>
-				</div>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
@@ -222,19 +214,11 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-<<<<<<< HEAD
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-=======
-						</li>
-						<li>
-							<a href="courses.html">联系我们</a>
-						</li>
-						<li>
->>>>>>> 3238d242969cb954c3235bdd094799684330a67b
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>

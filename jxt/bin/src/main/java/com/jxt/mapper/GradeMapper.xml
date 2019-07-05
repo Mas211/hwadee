@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.jxt.mapper.GradeMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Grade" useGeneratedKeys="true" keyProperty="gradeId">
+		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade) VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM grade
+		WHERE
+			grade_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="int"
+		resultType="com.jxt.entity.Grade">
+		SELECT
+			grade_id, grade_t_id, grade_stu_id, grade
+		FROM
+			grade
+		WHERE
+			grade_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Grade">
+		UPDATE grade SET grade_t_id = #{gradeTId}, grade_stu_id=#{gradeStuId}, grade=#{grade}
+		WHERE
+			grade_id = #{gradeId}
+	</update>
+</mapper>
