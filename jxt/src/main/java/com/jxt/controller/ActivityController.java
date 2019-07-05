@@ -43,7 +43,7 @@ public class ActivityController {
 				throw new RuntimeException("添加失败");
 			}
 		}
-		return "/activity/listactivity";
+		return "/activity/list";
 	}
 
 	//查看活动详情

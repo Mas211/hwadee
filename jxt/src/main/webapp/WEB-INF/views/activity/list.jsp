@@ -50,7 +50,7 @@
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
