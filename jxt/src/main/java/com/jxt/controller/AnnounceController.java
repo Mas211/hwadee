@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.jxt.entity.Announce;
-import com.jxt.entity.News;
 import com.jxt.service.AnnounceService;
 
 @Controller

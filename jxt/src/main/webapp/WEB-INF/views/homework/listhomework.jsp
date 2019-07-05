@@ -281,6 +281,12 @@
 					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
 					  showCancelButton: true,
 					  cancelButtonText:'取消'
+					}).then(function(){
+						swal({
+							title:"删除!",
+							text:"您选中的作业已删除！",
+							type:"success"
+						})
 					});
 			});
 
