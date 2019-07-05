@@ -46,11 +46,11 @@
 			</div>
 			<div class="bottom_header_right">
 				<div class="header-top-righ">
-<<<<<<< HEAD
-					<a href="login.html"> <span class="fa fa-sign-out"
-=======
+
+
+
 					<a href="login"> <span class="fa fa-sign-out"
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
+
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -77,6 +77,7 @@
 							</h1>
 						</a>
 					</div>
+					<br/>
 					<!--/.navbar-header-->
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -84,11 +85,11 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-<<<<<<< HEAD
-									<li><a href="index.html" class="">首页</a></li>
-=======
+
+
+
 									<li><a href="index" class="">首页</a></li>
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
+
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -109,9 +110,9 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
-	</div>
+	<div class="inner_page_agile">
+
+	</div>v
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
@@ -203,19 +204,19 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-<<<<<<< HEAD
+
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-=======
+
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
+
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>

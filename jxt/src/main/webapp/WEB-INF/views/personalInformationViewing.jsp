@@ -51,6 +51,10 @@
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
@@ -111,9 +115,10 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -164,7 +169,7 @@
 							
 						</tbody>
 						</table>
-					<input type="submit" value="退出查看">
+					<input type="submit" value="返   回">
 				</form>
 				</div>
 			</c:when>
@@ -192,7 +197,7 @@
 						</tbody>
 						</table>
 					
-					<input type="submit" value="退出查看">
+					<input type="submit" value="返   回">
 				</form>
 				</div>
 			</c:when>
@@ -221,7 +226,7 @@
 							</tr>
 						</tbody>
 						</table>
-					<input type="submit" value="退出查看">
+					<input type="submit" value="返   回">
 				</form>
 				</div>
 			</c:when>
@@ -251,7 +256,7 @@
 						</tbody>
 						</table>
 					
-					<input type="submit" value="退出查看">
+					<input type="submit" value="返   回">
 				</form>
 				</div>
 			</c:when>
@@ -278,7 +283,7 @@
 							</tr>
 						</tbody>
 						</table>
-					<input type="submit" value="退出查看">
+					<input type="submit" value="返   回">
 				</form>
 				</div>
 			</c:otherwise>
