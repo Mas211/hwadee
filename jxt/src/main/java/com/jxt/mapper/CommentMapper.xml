@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxt.mapper.CommentMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Account" useGeneratedKeys="true" keyProperty="commentId">
+		INSERT INTO comment(comment_id,teacher_name,student_name,comment) 
+		VALUES(#{commentId}, #{teacherName},#{studentName},#{comment})
+	</insert>
+	
+	<delete id="delete" parameterType="String" >
+		DELETE FROM comment
+		WHERE
+			comment_id=#{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findByCommentId" parameterType="String" resultType="com.jxt.entity.Comment">
+		SELECT
+			comment_id,teacher_name,student_name,comment
+		FROM
+			comment
+		WHERE
+			comment_id=#{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Comment">
+		UPDATE comment SET comment=#{comment}
+		WHERE
+			comment_id=#{value}
+	</update>
+	
+	<select id = "search" parameterType="String" resultType="com.jxt.entity.Comment">
+		SELECT
+			comment_id,teacher_name,student_name,comment
+		FROM
+			comment
+		WHERE
+			comment_id like CONCAT('%',#{value},'%')
+	
+	
+	
+	</select>
+</mapper>

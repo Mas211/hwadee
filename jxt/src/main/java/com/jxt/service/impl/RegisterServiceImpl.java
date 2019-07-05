@@ -58,4 +58,12 @@ public class RegisterServiceImpl implements RegisterService {
 		accountMapper.update(account);
 		return 0;
 	}
+	@Override
+	public Account search(int id) {
+		// TODO Auto-generated method stub
+		Account account = accountMapper.search(id);
+		return account;
+	}
+	
+	
 }

@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-<title>Login</title>
+<title>查询评语</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,6 +45,14 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+				<div class="bottom-social-icons">
+					<a class="facebook" href="register.html"> <span
+						class="fa fa-facebook"></span>
+					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
+					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
+					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
+					</a>
+				</div>
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
@@ -120,80 +128,30 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.jsp">首页</a> <span>| |</span></li>
-				<li>功能列表</li>
+				<li><a href="menu">功能菜单</a> <span>| |</span></li>
+				<li>查询评语</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<c:choose>
-	<c:when test="${sessionScope.account.roleId eq 5 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">查看评语</a></li>
-		<li><a href="gallery.html" class="effect-3">学生功能3</a></li>
-		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
-	</c:when>
-	<c:when test="${sessionScope.account.roleId eq 4 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">查看子女评语</a></li>
-		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
-		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>
-	</c:when>
-	<c:when test="${sessionScope.account.roleId eq 3 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">添加评语</a></li>
-		<li><a href="gallery.html" class="effect-3">教师功能3</a></li>
-		<li><a href="courses.html" class="effect-3">教师功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
-	</c:when>
-	
-	<c:when test="${sessionScope.account.roleId eq 2 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="courses.html" class="effect-3">master功能2</a></li>
-		<li><a href="gallery.html" class="effect-3">master功能3</a></li>
-		<li><a href="courses.html" class="effect-3">master功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">master功能5</a></li>
-	</c:when>
-	<c:otherwise>
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="courses.html" class="effect-3">管理员功能2</a></li>
-		<li><a href="gallery.html" class="effect-3">管理员功能3</a></li>
-		<li><a href="courses.html" class="effect-3">管理员功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">管理员功能5</a></li>
-	</c:otherwise>
-	</c:choose>
+	<div class="register-form-main">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>查</span>看 <span>评</span>语
+				</h3>
+				<div class="tittle-style"></div>
+			</div>
+			<div class="login-form">
+				<form action="/menu" method="get">
+					<c:forEach items="${requestScope.list}" var="list">
+					<input type="text" value = ${list.teacherName}老师说${list.studentName}同学:${list.comment}></br>
+					</c:forEach>
+					<input type="submit" value="退出查看">
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
