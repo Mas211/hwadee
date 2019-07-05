@@ -2,6 +2,7 @@ package com.jxt.service;
 
 import java.util.List;
 
+import com.jxt.entity.Message;
 import com.jxt.entity.Task;
 
 public interface TaskService {
@@ -10,6 +11,8 @@ public interface TaskService {
 
 	// 删
 	int delete(int taskId);
+	
+	int deleteMessage(int taskId);
 
 	// 查
 	Task getTaskById(int taskId);
@@ -18,4 +21,6 @@ public interface TaskService {
 	int update(Task task);
 	
 	List<Task> tasks();
+	
+	int addMessage(Message message);
 }
