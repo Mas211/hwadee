@@ -558,12 +558,12 @@
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Michael Paul</h5>
-								<p>Client 1</p>
+								<h5>三好学生</h5>
+								<p>赵欢</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我今年十岁现读于堎底下镇四年级现任班长一职。
+								我勤奋好学、品学兼优、乐观向上、爱好广泛、尊敬师长、团结同学、做事执着、有毅力、是一个德、智、体、美、劳全面发展的好学生。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -578,12 +578,13 @@
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Faul John</h5>
-								<p>Client 2</p>
+								<h5>文明儿童</h5>
+								<p>王瑞华</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我有一腔勇于负责的精神。
+								在学校里我是老师的得力小助手同学们的好服务员。
+								我有一颗善良真诚的心灵。我的语文、数学、英语学习成绩一直名列前茅。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -593,17 +594,17 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Richa Roy</h5>
-								<p>Client 3</p>
+								<h5>优秀学生</h5>
+								<p>过怡渲</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我爱学习、爱思考、勤于实践，坚持努力学好各门功课并且积极参加形式多样的课外活动。
+								了解社会有一定的实践能力。我善于观察勤学好问，根据自己的想象经常在家制作一些小东西，种植一些小植物，实践让我吸取了甘甜，拥有了丰润丰满了羽翼。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
