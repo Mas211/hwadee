@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-<title>Login</title>
+<title>Create_news</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +36,6 @@
 
 <body>
 	<!-- header -->
-	<!-- header -->
 	<div class="header-top">
 		<div class="container">
 			<div class="bottom_header_left">
@@ -45,13 +44,17 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+				<div class="bottom-social-icons">
+					<a class="facebook" href="register.html"> <span
+						class="fa fa-facebook"></span>
+					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
+					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
+					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
+					</a>
+				</div>
 				<div class="header-top-righ">
-<<<<<<< HEAD
 					<a href="login.html"> <span class="fa fa-sign-out"
-=======
-					<a href="login"> <span class="fa fa-sign-out"
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
-						aria-hidden="true"></span>登录
+						aria-hidden="true"></span>注销
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -70,7 +73,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="index.html">
 							<h1>
 								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
@@ -84,11 +87,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-<<<<<<< HEAD
 									<li><a href="index.html" class="">首页</a></li>
-=======
-									<li><a href="index" class="">首页</a></li>
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -109,8 +108,8 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -118,10 +117,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="login.html">登录</a>
+					<a href="index.html">首页</a>
 					<span>| |</span>
 				</li>
-				<li>验证</li>
+				<li>考勤记录</li>
 			</ul>
 		</div>
 	</div>
@@ -130,47 +129,23 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>验</span>
-					<span></span>证
+					<span>考勤</span>
+					<span></span>记录
 				</h3>
-				<div class="tittle-style">
+				<div class="tittle-style"></div>
+			</div>	
+                <div class="login-form">
 
-				</div>
-			</div>
-			<div class="login-form">
-				<form action="/studentCheck" method="post">
-					<div class="">
-						<p style = "color:red">*提示：注册前请先验证您子女的学生信息！</p>
+				    <p></p>
+					<form action="/attend" method="post">
+				    <p></p>
+				    <div class="">
+						<input type="text" name="attendance.attendStuId" value="${sessionScope.attendance.attendStuId}" placeholder="输入学生id" required="">
 					</div>
-					<div class="">
-						<p>学生账号 </p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required=""  value="1"/><span></span>
-					</div>
-					<div class="">
-						<p>学生姓名</p>
-						<input type="text" class="name" name="accountName" required="" />
-					</div>
-					<div>${msg}</div>
-					<input type="submit" value="验证">
+					<input type="submit" value="查询出勤记录">
 				</form>
-				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-				<script type="text/javascript">
-					$(function(){
-						$("div > input[name=accountId]").blur(function(e){
-							var input = $( this );
-							$.get("/check3",{id :input.val(), t : new Date().getTime()}, function( data ){
-							if( data == 1 ){ 
-								input.next("span").html("*该账号存在且为学生账号").css("color", "red");
-							} else {
-								input.next("span").html("*该账号不存在或不是学生账号").css("color", "green");
-							}
-				}, "json");
-			});
-			
-		});
-	</script>
-			</div>
 
+			   </div>		
 		</div>
 	</div>
 
@@ -203,19 +178,11 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-<<<<<<< HEAD
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-=======
-						</li>
-						<li>
-							<a href="courses.html">联系我们</a>
-						</li>
-						<li>
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>

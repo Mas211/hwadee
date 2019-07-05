@@ -50,9 +50,14 @@
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
+<<<<<<< HEAD:jxt/src/main/webapp/WEB-INF/views/listHomework.jsp
+					<a href="login.html">
+						<span class="fa fa-sign-out" aria-hidden="true"></span>注销</a>
+=======
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
+>>>>>>> 14fafccce6c134e653c6201ae00e83b8c498c0b2:jxt/src/main/webapp/WEB-INF/views/homework/listhomework.jsp
 				</div>
 				</c:otherwise>
 				</c:choose>

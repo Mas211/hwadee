@@ -138,34 +138,32 @@
 			<c:when test="${sessionScope.account.roleId eq 5 }">
 			<div class="login-form" id = "student">
 				<form action="/menu" method="get">
-					<div class="">
-						<p>账号</p>
-						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
-					</div>
-					<div class="">
-						<p>姓名</p>
-						<input type="text" value = ${sessionScope.account.accountName } required="" />
-					</div>
-					<div class="">
-						<p>性别</p>
-						<input type="text" value = ${sessionScope.account.accountSex } required="" />
-					</div>
-					<div class="">
-						<p>联系方式</p>
-						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
-					</div>
-					<div class="">
-						<p>家庭地址</p>
-						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
-					</div>
-					<div class="">
-						<p>家长账号</p>
-						<input type="text" value = ${sessionScope.account.parId } required="" />
-					</div>
-					<div class="">
-						<p>班级</p>
-						<input type="text" value = ${sessionScope.account.accountClassId } required="" />
-					</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>账号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>联系方式</th>
+								<th>家庭地址</th>
+								<th>家长账号</th>
+								<th>班级</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							<tr>
+								<td>${sessionScope.account.accountId }</td>
+								<td>${sessionScope.account.accountName}</td>
+								<td>${sessionScope.account.accountSex }</td>
+								<td>${sessionScope.account.accountPhone }</td>
+								<td>${sessionScope.account.accountAddress }</td>
+								<td>${sessionScope.account.parId }</td>
+								<td>${sessionScope.account.accountClassId }</td>
+							</tr>
+							
+						</tbody>
+						</table>
 					<input type="submit" value="退出查看">
 				</form>
 				</div>
@@ -173,26 +171,27 @@
 			<c:when test="${sessionScope.account.roleId eq 4}">
 			<div class="login-form" id = "parent">
 				<form action="/menu" method="get">
-					<div class="">
-						<p>账号</p>
-						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
-					</div>
-					<div class="">
-						<p>姓名</p>
-						<input type="text" value = ${sessionScope.account.accountName } required="" />
-					</div>
-					<div class="">
-						<p>性别</p>
-						<input type="text" value = ${sessionScope.account.accountSex } required="" />
-					</div>
-					<div class="">
-						<p>联系方式</p>
-						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
-					</div>
-					<div class="">
-						<p>家庭地址</p>
-						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
-					</div>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>账号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>联系方式</th>
+								<th>家庭地址</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${sessionScope.account.accountId }</td>
+								<td>${sessionScope.account.accountName}</td>
+								<td>${sessionScope.account.accountSex }</td>
+								<td>${sessionScope.account.accountPhone }</td>
+								<td>${sessionScope.account.accountAddress }</td>
+							</tr>
+						</tbody>
+						</table>
+					
 					<input type="submit" value="退出查看">
 				</form>
 				</div>
@@ -200,30 +199,28 @@
 			<c:when test="${sessionScope.account.roleId eq 3}">
 				<div class="login-form" id = "teacher">
 				<form action="/menu" method="get">
-					<div class="">
-						<p>账号</p>
-						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
-					</div>
-					<div class="">
-						<p>姓名</p>
-						<input type="text" value = ${sessionScope.account.accountName } required="" />
-					</div>
-					<div class="">
-						<p>性别</p>
-						<input type="text" value = ${sessionScope.account.accountSex } required="" />
-					</div>
-					<div class="">
-						<p>联系方式</p>
-						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
-					</div>
-					<div class="">
-						<p>家庭地址</p>
-						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
-					</div>
-					<div class="">
-						<p>科目</p>
-						<input type="text" value = ${sessionScope.account.tSubject } required="" />
-					</div>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>账号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>联系方式</th>
+								<th>家庭地址</th>
+								<th>科目</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${sessionScope.account.accountId }</td>
+								<td>${sessionScope.account.accountName}</td>
+								<td>${sessionScope.account.accountSex }</td>
+								<td>${sessionScope.account.accountPhone }</td>
+								<td>${sessionScope.account.accountAddress }</td>
+								<td>${sessionScope.account.tSubject }</td>
+							</tr>
+						</tbody>
+						</table>
 					<input type="submit" value="退出查看">
 				</form>
 				</div>
@@ -231,30 +228,29 @@
 						<c:when test="${sessionScope.account.roleId eq 2}">
 				<div class="login-form" id = "master">
 				<form action="/menu" method="get">
-					<div class="">
-						<p>账号</p>
-						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
-					</div>
-					<div class="">
-						<p>姓名</p>
-						<input type="text" value = ${sessionScope.account.accountName } required="" />
-					</div>
-					<div class="">
-						<p>性别</p>
-						<input type="text" value = ${sessionScope.account.accountSex } required="" />
-					</div>
-					<div class="">
-						<p>联系方式</p>
-						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
-					</div>
-					<div class="">
-						<p>家庭地址</p>
-						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
-					</div>
-					<div class="">
-						<p>科目</p>
-						<input type="text" value = ${sessionScope.account.tSubject } required="" />
-					</div>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>账号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>联系方式</th>
+								<th>家庭地址</th>
+								<th>科目</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${sessionScope.account.accountId }</td>
+								<td>${sessionScope.account.accountName}</td>
+								<td>${sessionScope.account.accountSex }</td>
+								<td>${sessionScope.account.accountPhone }</td>
+								<td>${sessionScope.account.accountAddress }</td>
+								<td>${sessionScope.account.tSubject }</td>
+							</tr>
+						</tbody>
+						</table>
+					
 					<input type="submit" value="退出查看">
 				</form>
 				</div>
@@ -262,26 +258,26 @@
 			<c:otherwise>
 			<div class="login-form" id = "admin">
 				<form action="/menu" method="get">
-					<div class="">
-						<p>账号</p>
-						<input type="text" value = ${sessionScope.account.accountId } required="" /><span></span>
-					</div>
-					<div class="">
-						<p>姓名</p>
-						<input type="text" value = ${sessionScope.account.accountName } required="" />
-					</div>
-					<div class="">
-						<p>性别</p>
-						<input type="text" value = ${sessionScope.account.accountSex } required="" />
-					</div>
-					<div class="">
-						<p>联系方式</p>
-						<input type="text" value = ${sessionScope.account.accountPhone } required="" />
-					</div>
-					<div class="">
-						<p>家庭地址</p>
-						<input type="text" value = ${sessionScope.account.accountAddress } required="" />
-					</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>账号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>联系方式</th>
+								<th>家庭地址</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${sessionScope.account.accountId }</td>
+								<td>${sessionScope.account.accountName}</td>
+								<td>${sessionScope.account.accountSex }</td>
+								<td>${sessionScope.account.accountPhone }</td>
+								<td>${sessionScope.account.accountAddress }</td>
+							</tr>
+						</tbody>
+						</table>
 					<input type="submit" value="退出查看">
 				</form>
 				</div>
