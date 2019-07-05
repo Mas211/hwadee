@@ -107,9 +107,10 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->

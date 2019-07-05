@@ -46,6 +46,10 @@
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>

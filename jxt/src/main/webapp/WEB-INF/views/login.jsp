@@ -107,16 +107,17 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.jsp">首页</a> <span>| |</span></li>
+				<li><a href="/index">首页</a> <span>| |</span></li>
 				<li>登录</li>
 			</ul>
 		</div>

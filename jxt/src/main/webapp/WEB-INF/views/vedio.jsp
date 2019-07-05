@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-<title>查看视频</title>
-<!-- meta-tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<script>
+	<title>Join Us</title>
+	<!-- meta-tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -18,20 +19,15 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-<!-- //meta-tags -->
-<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
-	media="all" />
-<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
-	media="all" />
-<!-- font-awesome -->
-<link href="/assets/css/font-awesome.css" rel="stylesheet">
-<!-- fonts -->
-<link
-	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
-<link
-	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-	rel="stylesheet">
+	<!-- //meta-tags -->
+	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- font-awesome -->
+	<link href="/assets/css/font-awesome.css" rel="stylesheet">
+	<!-- fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	    rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
 
 <body>
@@ -44,22 +40,29 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html"> <span
-						class="fa fa-facebook"></span>
-					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
-					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
-					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
-					</a>
-				</div>
-				<div class="header-top-righ">
-					<a href="login.html"> <span class="fa fa-sign-out"
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
-				<div class="clearfix"></div>
+				</c:when>
+				<c:otherwise>
+				<div class="header-top-righ">
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+				</div>
+				</c:otherwise>
+				</c:choose>
+				<div class="clearfix"> </div>
 			</div>
-			<div class="clearfix"></div>
+			<div class="clearfix"> </div>
 		</div>
 	</div>
 	<div class="header">
@@ -80,6 +83,7 @@
 							</h1>
 						</a>
 					</div>
+					<br/>
 					<!--/.navbar-header-->
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -108,8 +112,8 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
