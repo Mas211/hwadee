@@ -89,6 +89,7 @@
 						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
+<<<<<<< HEAD
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
 									<li><a href="/index" class="">首页</a></li>
@@ -96,6 +97,24 @@
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
+=======
+								<li>
+									<a href="/index" class="effect-3">主页</a>
+								</li>
+								<li>
+									<a href="about.html" class="effect-3">About Us</a>
+								</li>
+								<li class="active">
+									<a href="courses.html" class="effect-3">Courses</a>
+								</li>
+								<li>
+									<a href="join.html" class="effect-3">Join Us</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
+										<span class="caret"></span>
+									</a>
+>>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="/codes.html">公告</a></li>
 										<li><a href="/create_news">新闻</a></li>
@@ -121,7 +140,11 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
+<<<<<<< HEAD
 					<a href="/index.html">主页</a>
+=======
+					<a href="/index">主页</a>
+>>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 					<span>| |</span>
 				</li>
 				<li>
@@ -269,7 +292,20 @@
 					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
 					  showCancelButton: true,
 					  cancelButtonText:'取消'
+				}).then(function(){
+					swal({
+						title:"删除!",
+						text:"您选中的作业已删除！",
+						type:"success"
 					});
+				},function(dismiss){
+					if(dismiss == 'cancel'){
+						swal({
+							title:"已取消！",
+							type:"info"
+						});
+					}
+				})
 			});
 
 			$( "table.table > tbody" ).on("click","a.updateTask", function( e ){
@@ -277,7 +313,7 @@
 				swal({
 				  title:'确定修改？',
 				  type:'question',
-				  confirmButtonColor: "#DD6B55",
+				  confirmButtonColor: "#DD6B55",	
 				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
 				});
 			}); 

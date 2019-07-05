@@ -215,19 +215,11 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-<<<<<<< HEAD
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-=======
-						</li>
-						<li>
-							<a href="courses.html">联系我们</a>
-						</li>
-						<li>
->>>>>>> 3238d242969cb954c3235bdd094799684330a67b
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>

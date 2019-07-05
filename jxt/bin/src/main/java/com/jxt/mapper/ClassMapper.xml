@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.jxt.mapper.ClassMapper">
+	
+	 <!-- 需要修改的地方 -->
+	<insert id="insert" parameterType="com.jxt.entity.Class" useGeneratedKeys="true" keyProperty="classId">
+		INSERT INTO class(class_id, master_id, classroom, class_stu_count) VALUES(#{classId}, #{masterId}, #{classroom}, #{classStuCount})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM class
+		WHERE
+			class_id = #{value}
+	</delete>
+	
+	 <!-- 需要修改的地方 -->
+	<select id="findById" parameterType="int"
+		resultType="com.jxt.entity.Class">
+		SELECT
+			class_id, master_id, classroom, class_stu_count
+		FROM
+			class
+		WHERE
+			class_id = #{value}
+	</select>
+	
+	 <!-- 需要修改的地方 -->
+	<update id="update" parameterType="com.jxt.entity.Class">
+		UPDATE class SET master_id=#{masterId}, classroom=#{classromm}, class_stu_count=#{classStuCount}
+		WHERE
+			class_id = #{classId}
+	</update>
+</mapper>

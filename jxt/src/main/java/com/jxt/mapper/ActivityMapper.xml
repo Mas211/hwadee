@@ -6,12 +6,22 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Activity" useGeneratedKeys="true" keyProperty="actId">
-		INSERT INTO activity(act_id, act_pubber_id, act_title, image_path) 
-		VALUES(#{actId}, #{actPubberId}, #{actTitle} ,#{imagePath})
+		INSERT INTO activity(act_id, act_pubber_id, act_title, image_path, act_content) 
+		VALUES(#{actId}, #{actPubberId}, #{actTitle} ,#{imagePath}, #{actContent})
 	</insert>
+	<insert id="insertMessage" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="messageId">
+		INSERT INTO message(message_id, act_id, source_id, target_id, reply_id, is_read, message_type, comment_act_id) 
+		VALUES(#{messageId}, #{actId}, #{sourceId}, #{targetId}, #{replyId}, #{isRead}, #{messageType}, #{commentActId})
+	</insert>
+	
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM activity
+		WHERE
+			act_id = #{value}
+	</delete>
+	<delete id="deleteMessage" parameterType="int">
+		DELETE FROM message
 		WHERE
 			act_id = #{value}
 	</delete>
@@ -20,16 +30,58 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Activity">
 		SELECT
-			act_id, act_pubber_id, act_title, image_path
+			act_id, act_pubber_id, act_title, image_path, act_content
 		FROM
 			activity
 		WHERE
 			act_id = #{value}
 	</select>
 	
+	<resultMap type="com.jxt.entity.Activity" id="actMap">
+		<id column="act_id" property="actId" />
+		<id column="act_pubber_id" property="actPubberId" />
+		<id column="act_title" property="actTitle" />
+		<id column="image_path" property="imagePath" />
+		<id column="act_content" property="actContent" />
+		<association property="account" javaType="com.jxt.entity.Account">
+			<id column="account_id" property="accountId" />
+			<result column="role_id" property="roleId" />
+			<result column="account_password" property="accountPassword" />
+			<result column="account_name" property="accountName" />
+			<result column="account_sex" property="accountSex" />
+			<result column="account_phone" property="accountPhone" />
+			<result column="account_address" property="accountAddress" />
+			<result column="par_id" property="parId" />
+			<result column="account_class_id" property="accountClassId" />
+			<result column="t_subject" property="tSubject" />
+		</association>
+	</resultMap>
+	<select id="findAll" resultMap="actMap">
+	SELECT
+		a.account_id,
+		a.role_id,
+		a.account_name,
+		a.account_address,
+		a.account_class_id,
+		a.account_password,
+		a.account_phone,
+		a.account_sex,
+		a.t_subject,
+		a.par_id,
+		act.act_id,
+		act.act_pubber_id,
+		act.act_title,
+		act.image_path,
+		act.act_content
+	FROM
+		account a
+	INNER JOIN activity act ON a.account_id = act.act_pubber_id
+	</select>
+	
+	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Activity">
-		UPDATE activity SET act_pubber_id = #{actPubberId}, act_title=#{actTitle}, image_path=#{imagePath}
+		UPDATE activity SET act_pubber_id = #{actPubberId}, act_title=#{actTitle}, image_path=#{imagePath}, act_content=#{actContent}
 		WHERE
 			act_id = #{actId}
 	</update>

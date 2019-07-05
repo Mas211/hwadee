@@ -35,6 +35,12 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
+	public Account search(int parId) {
+		// TODO Auto-generated method stub
+		return accountMapper.search(parId);
+	}
+
+	@Override
 	public Account getAccountById(int accountId) {
 		// TODO Auto-generated method stub
 		return accountMapper.findById(accountId);

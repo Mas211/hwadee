@@ -4,22 +4,12 @@
 <html lang="zxx">
 
 <head>
-<<<<<<< HEAD:jxt/src/main/webapp/WEB-INF/views/newsEditor.jsp
-<title>Create_news</title>
-<!-- meta-tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<script>
-=======
 	<title>编辑新闻</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
 	<script>
-
->>>>>>> 14fafccce6c134e653c6201ae00e83b8c498c0b2:jxt/src/main/webapp/WEB-INF/views/news/newsEditor.jsp
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -260,20 +250,12 @@
 						</li>
 					</ul>
 				</div>
-<<<<<<< HEAD:jxt/src/main/webapp/WEB-INF/views/newsEditor.jsp
-=======
-
->>>>>>> 14fafccce6c134e653c6201ae00e83b8c498c0b2:jxt/src/main/webapp/WEB-INF/views/news/newsEditor.jsp
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-<<<<<<< HEAD:jxt/src/main/webapp/WEB-INF/views/newsEditor.jsp
 					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
-=======
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
->>>>>>> 14fafccce6c134e653c6201ae00e83b8c498c0b2:jxt/src/main/webapp/WEB-INF/views/news/newsEditor.jsp
 				</div>
 				
 				<div class="clearfix"></div>

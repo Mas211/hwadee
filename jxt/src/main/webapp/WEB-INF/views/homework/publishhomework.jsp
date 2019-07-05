@@ -133,7 +133,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.jsp">主页</a>
+					<a href="/index">主页</a>
 					<span>| |</span>
 				</li>
 				<li>
