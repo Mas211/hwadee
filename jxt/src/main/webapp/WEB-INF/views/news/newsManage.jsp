@@ -44,8 +44,6 @@
 				
 				<div class="top-menu">
             <ul class="pull-right top-menu">
-                <br>
-
             </ul>
         		</div>
 				<div class="header-top-righ">
@@ -84,14 +82,14 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/createNews">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -114,7 +112,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">主页</a>
+					<a href="/index">主页</a>
 					<span>| |</span>
 				</li>
 				<li>新闻列表</li>

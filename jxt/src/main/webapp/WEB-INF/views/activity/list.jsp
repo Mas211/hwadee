@@ -229,8 +229,6 @@
 
 		});
 	</script>
-
-	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->

@@ -89,38 +89,19 @@
 						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-<<<<<<< HEAD
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="/index" class="">首页</a></li>
-								<li><a href="/contact.html" class="">学校概况</a>
+									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
-=======
-								<li>
-									<a href="/index" class="effect-3">主页</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li class="active">
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
->>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="/codes.html">公告</a></li>
-										<li><a href="/create_news">新闻</a></li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="createNews">新闻</a></li>
 									</ul></li>
-								<li><a href="/courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="/gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -140,11 +121,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-<<<<<<< HEAD
-					<a href="/index.html">主页</a>
-=======
 					<a href="/index">主页</a>
->>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 					<span>| |</span>
 				</li>
 				<li>
