@@ -46,20 +46,28 @@ public class ActivityController {
 		return "/activity/listactivity";
 	}
 
-	@GetMapping("/activity/{actId}")
+	//查看活动详情
+	@GetMapping("/{actId}")
 	public String showNews(@PathVariable("actId") int id, Model model) {
 		Activity activity = activityService.getActivityById(id);
 		model.addAttribute("activity", activity);
-
-		return "activity/detail";
+		return "/activity/detail";
 	}
 	
+//	// 查看活动列表
+//	@GetMapping("/listactivity")
+//	public String listactivity(Model model) {
+//		List<Activity> activities = activityService.activities()
+//		model.addAttribute("activities", activities);
+//		return "/activity/listactivity";
+//	}
+	
 	// 查看活动列表
-	@GetMapping("/listactivity")
+	@GetMapping("/list")
 	public String list(Model model) {
 		List<Activity> activities = activityService.activities();
 		model.addAttribute("activities", activities);
-		return "/activity/listactivity";
+		return "/activity/list";
 	}
 	
 	// 删除某个活动

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>活动详情</title>
+	<title>活动</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,17 +40,22 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				
-				<div class="top-menu">
-            <ul class="pull-right top-menu">
-                <br>
-
-            </ul>
-        		</div>
-				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
 				</div>
+				</c:when>
+				<c:otherwise>
+				<div class="header-top-righ">
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
@@ -57,7 +63,7 @@
 	</div>
 	<div class="header">
 		<div class="content white">
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-default" >
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -66,7 +72,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="/index">
 							<h1 >
 								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
 								<!--这里插入logo的路径-->
@@ -75,7 +81,8 @@
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
@@ -113,34 +120,42 @@
 					<a href="/index">主页</a>
 					<span>| |</span>
 				</li>
-				<li>活动详情</li>
+				<li>
+					<a href="/activity/activity">发布活动</a>
+					<span>| |</span>
+				</li>
+				<li>查看活动</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div style="width: 800px; margin: 0 auto;">
-		<div class="title-div">
-			<h3 class="tittle"></h3>		
-		</div>
-		<div class="title-div">
-			<h3 class="tittle" style="font-size: 32px">
-				${activity.actTitle}
-			</h3>
-			<h4 style="font-family: 'Raleway', sans-serif;display: inline-block; padding: 0 0 50px 50px">发布者：</h4>
-			<div class="tittle-style">
-				<img width="100%" height="100%" src="${activity.imagePath }" alt="" title="${activity.actTitle }" />
-				
+	<!-- blog -->
+	<div class="blog-cource">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>活 &nbsp;</span>动
+				</h3>
+				<div class="tittle-style">
+				</div>
+			</div>
+			<div class="agileinfo-gallery-row">
+				<c:forEach items="${requestScope.activities }" var="act">
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="/activity/${act.actId  }" class="imghvr-hinge-right figure">
+						<img src="${act.imagePath }" alt="" title="${act.actTitle }" />
+						<div class="agile-figcaption">
+							<h4>${act.actTitle }</h4>
+						</div>
+					</a>
+				</div>
+				</c:forEach>
 			</div>
 		</div>
-		<h4 style="font-family: 'Raleway', sans-serif;display: inline-block; padding: 0 0 50px 50px">发布者：</h4>
-		<span style="font-family: 'Open Sans', sans-serif;color: #999;">${activity.account.accountName}</span><br />
-		<div style="width: 700px; margin: 0 auto;">
-			${activity.actContent}
-		</div>
-
 	</div>
+	<!-- //blog -->
 
-<!-- footer -->
+	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -197,41 +212,28 @@
 	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
-	<!-- Calendar -->
-	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
-	<script src="/assets/js/jquery-ui.js"></script>
-	<script>
-		$(function () {
-			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
-		});
-	</script>
-	<!-- //Calendar -->
+	<!-- stats numscroller-js-file -->
+	<script src="/assets/js/numscroller-1.0.js"></script>
+	<!-- //stats numscroller-js-file -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
 	<script src="/assets/js/easing.js"></script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
 
 		});
 	</script>
+
+	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-
 </body>
 
 </html>

@@ -118,7 +118,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-								<li><a href="index.html" class="">首页</a></li>
+								<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -147,7 +147,8 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.html">主页</a> <span>| |</span></li>
+				<li><a href="/index">主页</a> <span>| |</span></li>
+				<li><a href="/activity/list">查看活动</a> <span>| |</span></li>
 				<li>活动发布</li>
 
 			</ul>

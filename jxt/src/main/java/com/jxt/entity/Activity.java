@@ -1,4 +1,4 @@
-package com.jxt.entity;
+	package com.jxt.entity;
 
 public class Activity {
 	private Integer actId;
