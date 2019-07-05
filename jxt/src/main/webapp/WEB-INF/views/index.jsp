@@ -553,7 +553,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/te1.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu1.jpg" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
@@ -573,7 +573,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/te2.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu2.jpg" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
@@ -593,7 +593,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/te3.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
