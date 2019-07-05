@@ -45,13 +45,9 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="header-top-righ">
-<<<<<<< HEAD
-					<a href="login.html"> <span class="fa fa-sign-out"
-=======
-					<a href="login"> <span class="fa fa-sign-out"
->>>>>>> 2863bae69f6a531b25d072d5e175dd1378fd513e
-						aria-hidden="true"></span>登录
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
 					</a>
 				</div>
 				<div class="clearfix"></div>

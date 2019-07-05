@@ -50,14 +50,9 @@
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-<<<<<<< HEAD:jxt/src/main/webapp/WEB-INF/views/listHomework.jsp
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>注销</a>
-=======
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
->>>>>>> 14fafccce6c134e653c6201ae00e83b8c498c0b2:jxt/src/main/webapp/WEB-INF/views/homework/listhomework.jsp
 				</div>
 				</c:otherwise>
 				</c:choose>
@@ -89,7 +84,7 @@
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="index.html" class="effect-3">主页</a>
+									<a href="/index" class="effect-3">主页</a>
 								</li>
 								<li>
 									<a href="about.html" class="effect-3">About Us</a>
@@ -138,7 +133,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">主页</a>
+					<a href="/index">主页</a>
 					<span>| |</span>
 				</li>
 				<li>
@@ -286,13 +281,20 @@
 					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
 					  showCancelButton: true,
 					  cancelButtonText:'取消'
-					}).then(function(){
-						swal({
-							title:"删除!",
-							text:"您选中的作业已删除！",
-							type:"success"
-						})
+				}).then(function(){
+					swal({
+						title:"删除!",
+						text:"您选中的作业已删除！",
+						type:"success"
 					});
+				},function(dismiss){
+					if(dismiss == 'cancel'){
+						swal({
+							title:"已取消！",
+							type:"info"
+						});
+					}
+				})
 			});
 
 			$( "table.table > tbody" ).on("click","a.updateTask", function( e ){
@@ -300,7 +302,7 @@
 				swal({
 				  title:'确定修改？',
 				  type:'question',
-				  confirmButtonColor: "#DD6B55",
+				  confirmButtonColor: "#DD6B55",	
 				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
 				});
 			}); 

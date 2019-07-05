@@ -5,6 +5,7 @@ public class Activity {
 	private Integer actPubberId;
 	private String actTitle;
 	private String imagePath;
+	private String actContent;
 	private Account account;
 	
 	public Integer getActId() {
@@ -36,5 +37,11 @@ public class Activity {
 	}
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	public String getActContent() {
+		return actContent;
+	}
+	public void setActContent(String actContent) {
+		this.actContent = actContent;
 	}
 }
