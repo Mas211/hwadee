@@ -137,7 +137,7 @@
 			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="/commentadding" class="effect-3">查看评语</a></li>
-		<li><a href="gallery.html" class="effect-3">学生功能3</a></li>
+		<li><a href="/grade/liststudent" class="effect-3">查看成绩</a></li>
 		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
 		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
 	</c:when>
@@ -149,12 +149,8 @@
 			<li><a href="/personalInformationViewing">查看</a></li>
 			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
-<<<<<<< HEAD
-		<li><a href="/attend" class="effect-3">查看学生考勤</a></li>
-=======
 		<li><a href="/commentadding" class="effect-3">查看子女评语</a></li>
->>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
-		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
+		<li><a href="/grade/liststudent" class="effect-3">查看子女成绩</a></li>
 		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
 		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>
 	</c:when>
@@ -167,8 +163,8 @@
 			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="/commentadding" class="effect-3">添加评语</a></li>
-		<li><a href="gallery.html" class="effect-3">教师功能3</a></li>
-		<li><a href="courses.html" class="effect-3">教师功能4</a></li>
+		<li><a href="/grade/enterginggrade" class="effect-3">录入成绩</a></li>
+		<li><a href="/grade/listall" class="effect-3">查看所有成绩</a></li>
 		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
 	</c:when>
 	

@@ -28,6 +28,18 @@
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<style type="text/css">
+	.homework_page_agile {
+		text-align: center;
+		background: url(/assets/images/homework.jpg) no-repeat center;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-ms-background-size: cover;
+		min-height: 500px;
+	}
+	</style>
 </head>
 
 <body>
@@ -107,7 +119,7 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
+	<div class="homework_page_agile">
 
 	</div>
 	<!--//banner -->

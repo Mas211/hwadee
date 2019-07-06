@@ -6,7 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Grade" useGeneratedKeys="true" keyProperty="gradeId">
-		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade) VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade})
+		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name) 
+		VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade}, #{gradeSubject}, #{gradeStuName}, #{gradeTName})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -16,19 +17,63 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="int"
-		resultType="com.jxt.entity.Grade">
+	<select id="findById" parameterType="int" resultType="com.jxt.entity.Grade">
 		SELECT
-			grade_id, grade_t_id, grade_stu_id, grade
+			grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name
 		FROM
 			grade
 		WHERE
-			grade_id = #{value}
+			grade_stu_id = #{value}
+	</select>
+	
+	<resultMap type="com.jxt.entity.Grade" id="gradeMap">
+		<id column="grade_id" property="gradeId" />
+		<id column="grade_t_id" property="gradeTId" />
+		<id column="grade_stu_id" property="gradeStuId" />
+		<id column="grade" property="grade" />
+		<id column="grade_subject" property="gradeSubject" />
+		<id column="grade_stu_name" property="gradeStuName" />
+		<id column="grade_t_name" property="gradeTName" />
+		<association property="account" javaType="com.jxt.entity.Account">
+			<id column="account_id" property="accountId" />
+			<result column="role_id" property="roleId" />
+			<result column="account_password" property="accountPassword" />
+			<result column="account_name" property="accountName" />
+			<result column="account_sex" property="accountSex" />
+			<result column="account_phone" property="accountPhone" />
+			<result column="account_address" property="accountAddress" />
+			<result column="par_id" property="parId" />
+			<result column="account_class_id" property="accountClassId" />
+			<result column="t_subject" property="tSubject" />
+		</association>
+	</resultMap>
+	<select id="findAll" resultMap="gradeMap">
+	SELECT
+		a.account_id,
+		a.role_id,
+		a.account_name,
+		a.account_address,
+		a.account_class_id,
+		a.account_password,
+		a.account_phone,
+		a.account_sex,
+		a.t_subject,
+		a.par_id,
+		g.grade_id,
+		g.grade_t_id,
+		g.grade_stu_id,
+		g.grade,
+		g.grade_subject,
+		g.grade_stu_name,
+		g.grade_t_name
+	FROM
+		account a
+	INNER JOIN grade g ON a.account_id = g.grade_stu_id
 	</select>
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Grade">
-		UPDATE grade SET grade_t_id = #{gradeTId}, grade_stu_id=#{gradeStuId}, grade=#{grade}
+		UPDATE grade SET grade_t_id = #{gradeTId}, grade_stu_id=#{gradeStuId}, grade=#{grade}, grade_subject=#{gradeSubject}, grade_stu_name=#{gradeStuName}
 		WHERE
 			grade_id = #{gradeId}
 	</update>
