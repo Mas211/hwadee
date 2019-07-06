@@ -6,8 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Message" useGeneratedKeys="true" keyProperty="messageId">
-		INSERT INTO message(message_id, act_id, source_id, target_id, reple_id, is_read, message_type, comment_act_id) 
-		VALUES(#{messageId}, #{actId}, #{sourceId}, #{targetId}, #{replyId}, #{isRead}, #{messageType}, #{commentActId})
+		INSERT INTO message(message_id, act_id, source_id, target_id, reply_id, is_read, message_type, comment_act_id, time, message_content, message_path) 
+		VALUES(#{messageId}, #{actId}, #{sourceId}, #{targetId}, #{replyId}, #{isRead}, #{messageType}, #{commentActId}, #{time}, #{messageContent}, #{messagePath})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -34,6 +34,7 @@
 			message_id = #{messageId}
 	</update>
 	
+	<!-- 找出sourceId用户发出的所有留言该sourceId用户信息 -->
 	<select id="findBySourceId" parameterType="int" resultType="Message">
  		SELECT
 			p.message_id,
@@ -52,6 +53,7 @@
 			where source_id = #{sourceId}
 	</select>
 	
+	<!-- 找出所有给targetId用户留言的message和targetId用户的用户信息 -->
 	<select id="findByTargetId" parameterType="int" resultType="Message">
 		SELECT
 			p.message_id,
@@ -69,5 +71,88 @@
 			INNER JOIN (select * from message m where m.message_type = #{typeId} ) p ON p.target_id = a.account_id 
 			where target_id = #{targetId}
 	</select>
+	
+	<!-- 找出所有给targetId用户留言的消息和对应sourceId的用户信息 -->
+	<select id="findLeavMessages" parameterType="int" resultType="Message">
+		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			p.message_content,
+			p.message_path,
+			a.account_id "account.accountId",
+			a.account_name "account.accountName"
+		FROM
+			account a
+			INNER JOIN (select * from message m where m.message_type = #{typeId} ) p ON p.source_id = a.account_id 
+			where target_id = #{targetId}
+	</select>
+	
+	<!-- 查找所有留言的account -->
+	<select id="findLeavAccounts" parameterType="int" resultType="Message">
+		SELECT DISTINCT
+			p.source_id,
+			a.account_name "account.accountName"
+		FROM
+			account a
+		INNER JOIN (
+			SELECT
+				*
+			FROM
+				message m
+			WHERE
+				m.message_type = #{typeId}
+		) p ON p.source_id = a.account_id
+		WHERE
+			target_id = #{targetId}
+	</select>
+	
+	<!-- 查找两用户之间所有的聊天记录 -->
+	<!-- 第一条为最新纪录 -->
+	<select id="findAllByTargetAndSource" parameterType="int" resultType="Message">
+		(SELECT DISTINCT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			p.message_content,
+			p.message_path,
+			m.message_id "replyMessage.messageId",
+			m.message_content "replyMessage.messageContent",
+			m.time "replyMessage.time"
+		FROM
+			message p LEFT JOIN message m ON p.reply_id = m.message_id
+		WHERE
+			p.message_type = #{typeId} AND p.target_id = #{targetId} AND p.source_id = #{sourceId})order by p.time asc
+	</select>
+	
+	<update id="updateReply" parameterType="int">
+		UPDATE message SET reply_id=#{replyId} WHERE message_id = #{messageId}
+	</update>
+	
+	<select id="findNewsHomeworks" parameterType="int" resultType="Message">
+		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			p.message_content,
+			p.message_path
+		FROM
+			message p
+		where message_type = #{messageType}
+	</select>
 	 	
+	 <delete id="deleteChat" parameterType="int">
+		DELETE FROM message
+		WHERE
+			source_id = #{sourceId} AND target_id = #{targetId} AND message_type = 3;
+	</delete>
 </mapper>

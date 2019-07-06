@@ -1,5 +1,7 @@
 package com.jxt.entity;
 
+import java.util.List;
+
 public class Account {
 	private Integer accountId;
 	private Integer roleId;

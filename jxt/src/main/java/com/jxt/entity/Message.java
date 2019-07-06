@@ -17,6 +17,7 @@ public class Message {
 	private String messageContent;
 	//
 	private Account account;
+	private Message replyMessage;
 	
 	public String getTime() {
 		return time;
@@ -90,4 +91,20 @@ public class Message {
 	public void setCommentActId(Integer commentActId) {
 		this.commentActId = commentActId;
 	}
+	public Message getReplyMessage() {
+		return replyMessage;
+	}
+	public void setReplyMessage(Message replyMessage) {
+		this.replyMessage = replyMessage;
+	}
+	@Override
+	public String toString() {
+		return "Message [messageId=" + messageId + ", actId=" + actId + ", sourceId=" + sourceId + ", targetId="
+				+ targetId + ", replyId=" + replyId + ", isRead=" + isRead + ", messageType=" + messageType
+				+ ", commentActId=" + commentActId + ", time=" + time + ", messagePath=" + messagePath
+				+ ", messageContent=" + messageContent + ", account=" + account + ", replyMessage=" + replyMessage
+				+ "]";
+	}
+	
+	
 }

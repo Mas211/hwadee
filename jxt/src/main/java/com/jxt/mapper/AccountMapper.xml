@@ -33,4 +33,15 @@
 		WHERE
 			account_id = #{accountId}
 	</update>
+	
+	<select id="findClassId" parameterType="int" resultType="int">
+		SELECT
+			class_id
+		FROM
+			account_class
+		WHERE
+			account_id = #{accountId}
+	</select>
+	
+	
 </mapper>

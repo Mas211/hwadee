@@ -6,7 +6,8 @@ public class Value {
 	
 	private List<Message> news;
 	private List<Message> homeworks;
-	private List<Message> recMessages;
+	private List<Message> leavMessages;
+	private List<Message> leavMessagesAccountList;
 	private int flag;//1用于新闻，2用于作业，3用于留言
 	
 	
@@ -31,15 +32,17 @@ public class Value {
 	public void setNews(List<Message> news) {
 		this.news = news;
 	}
-
-	public List<Message> getRecMessages() {
-		return recMessages;
+	public List<Message> getLeavMessages() {
+		return leavMessages;
 	}
-
-	public void setRecMessages(List<Message> recMessages) {
-		this.recMessages = recMessages;
+	public void setLeavMessages(List<Message> leavMessages) {
+		this.leavMessages = leavMessages;
+	}
+	public List<Message> getLeavMessagesAccountList() {
+		return leavMessagesAccountList;
+	}
+	public void setLeavMessagesAccountList(List<Message> leavMessagesAccountList) {
+		this.leavMessagesAccountList = leavMessagesAccountList;
 	}
 	
-	
-
 }
