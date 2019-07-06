@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-<title>Login</title>
+<title>验证</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,19 +46,9 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-<<<<<<< HEAD
-				<div class="header-top-righ">
-
-
-
-					<a href="login"> <span class="fa fa-sign-out"
-
-						aria-hidden="true"></span>登录
-=======
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>注销
->>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -83,7 +74,6 @@
 							</h1>
 						</a>
 					</div>
-					<br/>
 					<!--/.navbar-header-->
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -91,15 +81,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-<<<<<<< HEAD
-
-
-
 									<li><a href="index" class="">首页</a></li>
-
-=======
-									<li><a href="index" class="">首页</a></li>
->>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -120,16 +102,17 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
+	<br/>
+    <div class="inner_page_agile">
 
-	</div>v
+	</div>
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="login.html">登录</a>
+					<a href="index">首页</a>
 					<span>| |</span>
 				</li>
 				<li>验证</li>
@@ -214,19 +197,11 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-
-						</li>
-						<li>
-							<a href="courses.html">联系我们</a>
-						</li>
-						<li>
-
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>

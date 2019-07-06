@@ -76,9 +76,9 @@
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;
+					<br/>    
 					<a href="/studentCheck"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>验证
+						aria-hidden="true"></span>注册验证
 					</a>
 				</div>
 				</c:otherwise>
