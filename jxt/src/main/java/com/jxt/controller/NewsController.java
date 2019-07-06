@@ -1,39 +1,23 @@
 package com.jxt.controller;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.jxt.entity.Account;
@@ -77,7 +61,7 @@ public class NewsController {
 	}
 
 	@GetMapping("/newsManage")
-	public String newsList(Model model, HttpServletRequest request) {
+	public String newsList(Model model) {
 		List<News> news = newsService.findAll();
 		model.addAttribute("news", news);
 
@@ -93,7 +77,7 @@ public class NewsController {
 	}
 	
 	@PostMapping("/updateNews/{id}")
-	public String checkUpdate(News news, HttpServletRequest request) {
+	public String checkUpdate(News news) {
 		//更新修改时间
 		news.setNewsModified(new Timestamp(System.currentTimeMillis()));
 		
@@ -103,10 +87,9 @@ public class NewsController {
 	}
 	
 	@GetMapping("/deleteNews/{id}")
-	public String deleteNews(@PathVariable("id") int id, HttpServletRequest request) {
+	public String deleteNews(@PathVariable("id") int id) {
 		
-		int rows = newsService.delete(id);
-		
+		newsService.delete(id);
 		
 		return "redirect:/newsManage";
 	}
@@ -165,5 +148,29 @@ public class NewsController {
             throw new RuntimeException("服务器繁忙，上传图片失败");  
         }  
     } 
+	
+	@GetMapping("/newsList/{pageId}")
+	public String newsList(@PathVariable("pageId") int pageId, Model model) {
+		
+		int rows = newsService.getRows();
+		float p = (float)rows / 10;
+		int pId = (int)Math.ceil(p);
+		
+		if (pageId > pId) {
+			return "redirect:/newsList/" + pId;
+		}
+		
+		int start = (pageId - 1) * 10;
+		if(start >= rows) {
+			start = rows - 10;
+		}
+		List<News> news = newsService.getPageNews(start);
+		
+		model.addAttribute("news", news);
+		model.addAttribute("pageId", pageId);
+		model.addAttribute("pId", pId);
+		
+		return "news/newsList";
+	}
 
 }

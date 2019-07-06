@@ -59,4 +59,20 @@
 			editor_id = #{value}
 	</select>
 	
+	<select id="getRows" resultType="int">
+		SELECT count(*)
+		FROM news
+	</select>
+	
+	<select id="getPageNews" parameterType="int"
+		resultType="com.jxt.entity.News">
+		SELECT
+			news_id, news_title, news_create, news_intro, news_cover_path, publisher
+		FROM
+			news
+		ORDER BY news_id DESC
+		LIMIT #{value}, 10
+	</select>
+	
+	
 </mapper>

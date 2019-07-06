@@ -5,9 +5,9 @@
   <mapper namespace="com.jxt.mapper.RewardAndPunishMapper">
 	
 	 <!-- 需要修改的地方 -->
-	<insert id="insert" parameterType="com.jxt.entity.RewardAndPunish" useGeneratedKeys="true" keyProperty="rewardAndPunisId">
-		INSERT INTO reward_and_punish(reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time) 
-		VALUES(#{rewardAndPunisId}, #{rewardOrPunis}, #{rpStuId}, #{rpContent}, #{rpTime})
+	<insert id="insert" parameterType="com.jxt.entity.RewardAndPunish" useGeneratedKeys="true" keyProperty="rewardAndPunishId">
+		INSERT INTO reward_and_punish(reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time, rp_t_id) 
+		VALUES(#{rewardAndPunishId}, #{rewardOrPunish}, #{rpStuId}, #{rpContent}, #{rpTime}, #{rpTId})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -20,17 +20,54 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.RewardAndPunish">
 		SELECT
-			reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time
+			reward_and_punish_id, reward_or_punish, rp_stu_id, rp_content, rp_time, rp_t_id
 		FROM
 			reward_and_punish
 		WHERE
 			reward_and_punish_id = #{value}
 	</select>
 	
+	<select id="getByTId" parameterType="int"
+		resultType="com.jxt.entity.RewardAndPunish">
+		SELECT
+			a.account_id "account.account_id",
+			a.account_name "account.account_name",
+			r.reward_and_punish_id, r.reward_or_punish, r.rp_stu_id, r.rp_content, r.rp_time, r.rp_t_id
+		FROM
+			account a INNER JOIN reward_and_punish r ON r.rp_stu_id = a.account_id
+		WHERE
+			rp_t_id = #{value}
+	</select>
+	
+	<select id="findByPar" parameterType="int"
+		resultType="com.jxt.entity.RewardAndPunish">
+		SELECT
+			a.account_id "account.account_id",
+			a.account_name "account.account_name",
+			a.par_id "account.par_id",
+			r.reward_and_punish_id, r.reward_or_punish, r.rp_stu_id, r.rp_content, r.rp_time, r.rp_t_id
+		FROM
+			account a INNER JOIN reward_and_punish r ON r.rp_stu_id = a.account_id
+		WHERE
+			a.par_id = #{value}
+	</select>
+	
+	<select id="findByStu" parameterType="int"
+		resultType="com.jxt.entity.RewardAndPunish">
+		SELECT
+			a.account_id "account.account_id",
+			a.account_name "account.account_name",
+			r.reward_and_punish_id, r.reward_or_punish, r.rp_stu_id, r.rp_content, r.rp_time, r.rp_t_id
+		FROM
+			account a INNER JOIN reward_and_punish r ON r.rp_stu_id = a.account_id
+		WHERE
+			r.rp_stu_id = #{value}
+	</select>
+	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.RewardAndPunish">
-		UPDATE reward_and_punish SET reward_or_punish = #{rewardOrPunis}, rp_stu_id=#{rpStuId}, rp_content=#{rpContent}, rp_time=#{rpTime}
+		UPDATE reward_and_punish SET reward_or_punish = #{rewardOrPunish}, rp_stu_id=#{rpStuId}, rp_content=#{rpContent}
 		WHERE
-			reward_and_punish_id = #{rewardAndPunisId}
+			reward_and_punish_id = #{rewardAndPunishId}
 	</update>
 </mapper>

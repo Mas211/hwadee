@@ -84,4 +84,27 @@ public class AnnounceController {
 		return "redirect:/announceManage";
 	}
 	
+	@GetMapping("/announceList/{pageId}")
+	public String newsList(@PathVariable("pageId") int pageId, Model model) {
+		
+		int rows = announceService.getRows();
+		float p = (float)rows / 10;
+		int pId = (int)Math.ceil(p);
+		
+		if (pageId > pId) {
+			return "redirect:/announceList/" + pId;
+		}
+		
+		int start = (pageId - 1) * 10;
+		if(start >= rows) {
+			start = rows - 10;
+		}
+		List<Announce> announce = announceService.getPageAnnounce(start);
+		
+		model.addAttribute("announce", announce);
+		model.addAttribute("pageId", pageId);
+		model.addAttribute("pId", pId);
+		
+		return "announce/announceList";
+	}
 }
