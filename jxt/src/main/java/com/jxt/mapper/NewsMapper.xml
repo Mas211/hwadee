@@ -22,7 +22,7 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.News">
 		SELECT
-			news_id, editor_id, news_title, news_create, news_content, publisher, news_modified, news_cover_path, news_intro
+			news_id, editor_id, news_title, news_create, news_content, publisher, news_modified, news_cover_path, news_intro, set_top
 		FROM
 			news
 		WHERE
@@ -35,7 +35,7 @@
 			a.account_id "account.account_id",
 			a.account_name "account.account_name",
 			n.news_id, n.editor_id, n.news_title, n.news_create,
-			n.publisher, n.news_modified, n.news_intro
+			n.publisher, n.news_modified, n.news_intro, n.set_top
 		FROM
 			account a INNER JOIN news n ON n.editor_id = a.account_id
 	</select>
@@ -49,10 +49,22 @@
 			news_id = #{newsId}
 	</update>
 	
+	<update id="setTop" parameterType="int">
+		UPDATE news SET set_top= 1
+		WHERE
+			news_id = #{value}
+	</update>
+	
+	<update id="cancelTop" parameterType="int">
+		UPDATE news SET set_top= 0
+		WHERE
+			news_id = #{value}
+	</update>
+	
 	<select id="getByEditor" parameterType="int"
 		resultType="com.jxt.entity.News">
 		SELECT
-			news_id, editor_id, news_title, news_create, news_content, publisher, news_modified, news_intro
+			news_id, editor_id, news_title, news_create, news_content, publisher, news_modified, news_intro, set_top
 		FROM
 			news
 		WHERE
@@ -72,6 +84,16 @@
 			news
 		ORDER BY news_id DESC
 		LIMIT #{value}, 10
+	</select>
+	
+	<select id="getTop"	resultType="com.jxt.entity.News">
+		SELECT
+			news_id, news_title,  news_intro, news_cover_path
+		FROM
+			news
+		WHERE set_top = 1
+		ORDER BY news_id DESC
+		LIMIT 0, 4
 	</select>
 	
 	

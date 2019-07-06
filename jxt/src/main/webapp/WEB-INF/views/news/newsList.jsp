@@ -129,7 +129,30 @@
 		</div>
 	</div>
 	<!-- //short-->
-	<div style="width: 700px; margin: 0 auto;">
+	<!-- 置顶新闻区域 -->
+	<div style="width: 80%; margin: 0 auto;">
+		<table>
+		<tbody>
+			<tr>
+			<c:forEach items="${ requestScope.topNews }" var="t">
+				<td style="width: 25%; padding: 0 20px; vertical-align: top;">
+				
+					<div>
+						<a href="/news/${t.newsId}" target="view_window">
+							<img src="${n.newsCoverPath}" width="100%" height="100%">
+							<h3>${t.newsTitle}</h3>
+							<p style="font-family: 'Open Sans', sans-serif; height: 80px; color: #999; overflow: hidden;">${t.newsIntro}</p>
+						</a>
+					</div>
+				
+				</td>
+			</c:forEach>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<!-- 新闻列表展示 -->
+	<div style="width: 60%; margin: 0 auto;">
 		
 		<c:forEach items="${ requestScope.news }" var="n">
 			<hr />

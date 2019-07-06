@@ -151,7 +151,7 @@
 							<th style="text-align: center;">新闻简介</th>
 							<th style="text-align: center;">发布时间</th>
 							<th style="text-align: center;">最后修改时间</th>
-							<th style="text-align: center;">操作</th>
+							<th style="text-align: center;">操作(最多4条置顶可显示)</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -160,11 +160,15 @@
 							<td>${n.newsId }</td>
 							<td>${n.account.accountName }</td>
 							<td>${n.publisher}</td>
-							<td><a href="/news/${n.newsId}">${n.newsTitle }</a></td>
-							<td>${n.newsIntro }</td>
+							<td style="width: 200px;"><a href="/news/${n.newsId}">${n.newsTitle }</a></td>
+							<td style="width: 200px;">${n.newsIntro }</td>
 							<td>${n.newsCreate }</td>
 							<td>${n.newsModified }</td>
-							<td><a href="/updateNews/${n.newsId}">修改</a>&nbsp;|&nbsp;<a href="/deleteNews/${n.newsId}">删除</a></td>
+							<td><a href="/updateNews/${n.newsId}">修改</a>|<a href="/deleteNews/${n.newsId}">删除</a>|
+							<c:if test="${n.setTop eq 1}"><a href="/cancelTop/${n.newsId}">取消置顶</a></c:if>
+							<c:if test="${n.setTop ne 1}"><a href="/setTop/${n.newsId}">置顶</a>&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>
+							</td>
 						</tr>
 						</c:forEach>
 					</tbody>

@@ -129,8 +129,21 @@
 		</div>
 	</div>
 	<!-- //short-->
-	<div style="width: 700px; margin: 0 auto;">
-		
+
+	
+	<div style="width: 70%; margin: 0 auto;">
+		<c:forEach items="${ requestScope.topAnnounce }" var="t">
+			<hr />	
+			<div class="clearfix">
+				<h4 style="display: inline-block;">
+				<a href="/announce/${t.announceId}" target="view_window">${t.announceTitle}</a></h4>
+				<span style="color: #959595;">[置顶]</span>
+				<span style="font-family: 'Open Sans', sans-serif;color: #999; float: right;">${t.announceTime}</span>
+			</div>
+						
+		</c:forEach>
+		<hr />	
+
 		<c:forEach items="${ requestScope.announce }" var="a">
 			<hr />
 			<div class="clearfix">

@@ -27,4 +27,9 @@ public interface NewsMapper {
 	//获得指定范围内的记录
 	List<News> getPageNews(int start);
 	
+	int setTop(int newsId);
+	int cancelTop(int newsId);
+	
+	List<News> getTop();
+	
 }

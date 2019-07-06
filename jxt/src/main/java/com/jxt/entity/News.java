@@ -12,7 +12,14 @@ public class News {
 	private Timestamp newsModified;
 	private String newsCoverPath;
 	private String newsIntro;
+	private int setTop;
 	
+	public int getSetTop() {
+		return setTop;
+	}
+	public void setSetTop(int setTop) {
+		this.setTop = setTop;
+	}
 	public String getNewsCoverPath() {
 		return newsCoverPath;
 	}
