@@ -137,7 +137,7 @@
 			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
 		<li><a href="/commentadding" class="effect-3">查看评语</a></li>
-		<li><a href="gallery.html" class="effect-3">学生功能3</a></li>
+		<li><a href="/attend" class="effect-3">查看考勤</a></li>
 		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
 		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
 	</c:when>

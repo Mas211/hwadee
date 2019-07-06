@@ -151,11 +151,11 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${requestScope.attendances}" var="t">
+							<c:forEach items="${requestScope.as}" var="as">
 							<tr>
-								<td>${t.attendId }</td>
-								<td>${t.attendStuId }</td>
-								<td>${t.attendTime }</td>
+								<td>${as.attendId }</td>
+								<td>${as.attendStuId }</td>
+								<td>${as.attendTime }</td>
 							</tr>
 							</c:forEach>
 						</tbody>

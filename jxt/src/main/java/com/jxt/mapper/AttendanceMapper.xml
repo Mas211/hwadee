@@ -52,23 +52,28 @@
 			<result column="t_subject" property="tSubject" />
 		</association>
 	</resultMap>
-	<select id="findAll" resultMap="attendanceMap">
+	<select id="findByPar" resultMap="attendanceMap">
 	SELECT
         a.account_id,
-		a.role_id,
-		a.account_name,
-		a.account_address,
-		a.account_class_id,
-		a.account_password,
-		a.account_phone,
-		a.account_sex,
-		a.t_subject,
 		a.par_id,
 		t.attend_id, t.attend_stu_id, t.attend_time
 	FROM
 		account a
 	INNER JOIN attendance t ON a.par_id = t.attend_stu_id
-
+	WHERE
+			a.par_id = #{value}
+	</select>
 	
+	
+	<select id="findByStu" resultMap="attendanceMap">
+	SELECT
+        a.account_id,
+		a.par_id,
+		t.attend_id, t.attend_stu_id, t.attend_time
+	FROM
+		account a
+	INNER JOIN attendance t ON a.account_id = t.attend_stu_id
+	WHERE
+			a.account_id = #{value}
 	</select>
 </mapper>
