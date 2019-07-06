@@ -89,8 +89,6 @@
 						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li><a href="" class="effect-3"></a></li>
-								<li><a href="" class="effect-3"></a></li>
 									<li><a href="index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
