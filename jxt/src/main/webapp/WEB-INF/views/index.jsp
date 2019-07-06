@@ -39,7 +39,9 @@
     left:-35px;
     z-index: 999;
     
-}
+}   
+
+
 </style>
 <!--这个style固定二维码位置-->
 </head>
@@ -74,6 +76,7 @@
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
+					<br/>
 					<a href="/studentCheck"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>验证
 					</a>
@@ -108,9 +111,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li><a href="" class="effect-3"></a></li>
-								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="index.html" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -131,9 +132,11 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+
 		<!-- Indicators -->
-		<ol class="carousel-indicators">
+		
+		<ol class="carousel-indicators" >
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
@@ -593,7 +596,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/stu3.jpg" alt=" " class="img-responsive" height="205" width="205"/>
+								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
