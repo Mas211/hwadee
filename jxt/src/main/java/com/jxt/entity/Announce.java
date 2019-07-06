@@ -9,6 +9,14 @@ public class Announce {
 	private String announceContent;
 	private Timestamp announceTime;
 	private Timestamp announceModified;
+	private int setTop;
+	
+	public int getSetTop() {
+		return setTop;
+	}
+	public void setSetTop(int setTop) {
+		this.setTop = setTop;
+	}
 	
 	public Timestamp getAnnounceModified() {
 		return announceModified;

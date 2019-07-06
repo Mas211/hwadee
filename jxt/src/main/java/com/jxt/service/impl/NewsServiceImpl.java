@@ -65,6 +65,24 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated method stub
 		return newsMapper.getPageNews(start);
 	}
+
+	@Override
+	public int setTop(int newsId) {
+		// TODO Auto-generated method stub
+		return newsMapper.setTop(newsId);
+	}
+
+	@Override
+	public int cancelTop(int newsId) {
+		// TODO Auto-generated method stub
+		return newsMapper.cancelTop(newsId);
+	}
+
+	@Override
+	public List<News> getTop() {
+		// TODO Auto-generated method stub
+		return newsMapper.getTop();
+	}
 	
 	
 	

@@ -1,5 +1,7 @@
 package com.jxt.service;
 
+import java.util.List;
+
 import com.jxt.entity.Grade;
 
 public interface GradeService {
@@ -10,7 +12,8 @@ public interface GradeService {
 	int delete(int gradeId);
 
 	// 查
-	Grade getGradeById(int gradeId);
+	List<Grade> getGradeById(int stuId);
+	List<Grade> grades();
 
 	// 改
 	int update(Grade grade);

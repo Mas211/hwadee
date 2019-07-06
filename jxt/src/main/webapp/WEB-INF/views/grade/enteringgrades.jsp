@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>公告详情</title>
-	<!-- meta-tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script>
+<title>成绩录入</title>
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -18,15 +19,20 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- //meta-tags -->
-	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome -->
-	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
-	<!-- fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	    rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //meta-tags -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- font-awesome -->
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+<!-- fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -45,10 +51,6 @@
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>个人中心
-					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
@@ -59,12 +61,12 @@
 				</div>
 				</c:otherwise>
 				</c:choose>
-				<div class="clearfix"> </div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
-    <div class="header">
+	<div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -89,14 +91,14 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="/announceList/1">公告</a></li>
-										<li><a href="/newsList/1">新闻</a></li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="createNews">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -120,43 +122,60 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">首页</a>
+					<a href="/index">主页</a>
 					<span>| |</span>
 				</li>
-				<li>公告详情</li>
+				<li>
+					<a href="/grade/listall">查看所有成绩</a>
+					<span>| |</span>
+				</li>
+				<li>成绩录入</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div style="width: 600px; margin: 0 auto;">
-		<div class="title-div">
-			<h3 class="tittle"></h3>		
-		</div>
-		<div class="title-div">
-			<h3 class="tittle" style="font-size: 32px">
-				${announce.announceTitle}
-			</h3>
-			<div class="tittle-style">
+	<div class="register-form-main">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>成</span>绩
+					<span>录</span>入
+				</h3>
+				<div class="tittle-style">
 
+				</div>
 			</div>
-			
-		</div>
-		
-		<h4 style="font-family: 'Raleway', sans-serif;display: inline-block;padding: 0 0 50px 0">发布时间：</h4>
-		<span style="font-family: 'Open Sans', sans-serif;color: #999;">${announce.announceTime}</span>
-
-		<div style="margin: 0 auto; ">
-			<div style="font-size: 20px">
-				${announce.announceContent}
+			<div class="register-form">
+				<form action="#" method="post">
+					<div class="fields-grid">
+						<div class="styled-input">
+							<input type="text" placeholder="学生学号" name="gradeStuId", required="required">
+						</div>
+						<div class="styled-input">
+							<input type="text" placeholder="学生姓名" name="gradeStuName", required="required">
+						</div>
+						<div class="styled-input agile-styled-input-top">
+							<select class="category2" required="required" name="gradeSubject">
+								<option value="">科目</option>
+								<option value="语文">语文</option>
+								<option value="数学">数学</option>
+								<option value="英语">英语</option>
+							</select>
+						</div>
+						<div class="styled-input">
+							<input type="text" placeholder="成绩" name="grade" required="required">
+						</div>
+						<input type="hidden" name="gradeTId" value="${sessionScope.account.accountId}"/>
+						<input type="hidden" name="gradeTName" value="${sessionScope.account.accountName}"/>
+						<div class="clearfix"> </div>
+					</div>
+					<input type="submit" value="提交">
+				</form>
 			</div>
-			<h4 style="font-family: 'Raleway', sans-serif;display: inline-block; padding: 50px 0">最后修改于：</h4>
-			<span style="font-family: 'Open Sans', sans-serif;color: #999;">${announce.announceModified}</span>
-
 		</div>
-
 	</div>
 
-<!-- footer -->
+	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -210,34 +229,20 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
-	<script src="js/bootstrap.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
 	<!-- Calendar -->
-	<link rel="stylesheet" href="css/jquery-ui.css" />
-	<script src="js/jquery-ui.js"></script>
-	<script>
-		$(function () {
-			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
-		});
-	</script>
+	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+	<script src="/assets/js/jquery-ui.js"></script>
 	<!-- //Calendar -->
 	<!-- smooth scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="/assets/js/SmoothScroll.min.js"></script>
+	<script src="/assets/js/move-top.js"></script>
+	<script src="/assets/js/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});

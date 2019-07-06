@@ -29,7 +29,7 @@
 	
 	<select id="findAll" resultType="com.jxt.entity.Announce">
 		SELECT
-			announce_id, announce_title, announce_content, announce_time, announce_modified
+			announce_id, announce_title, announce_content, announce_time, announce_modified, set_top
 		FROM
 			announce
 	</select>
@@ -56,4 +56,26 @@
 		WHERE
 			announce_id = #{announceId}
 	</update>
+	
+	<update id="setTop" parameterType="int">
+		UPDATE announce SET set_top= 1
+		WHERE
+			announce_id = #{value}
+	</update>
+	
+	<update id="cancelTop" parameterType="int">
+		UPDATE announce SET set_top= 0
+		WHERE
+			announce_id = #{value}
+	</update>
+	
+	<select id="getTop"	resultType="com.jxt.entity.Announce">
+		SELECT
+			announce_id, announce_title, announce_time
+		FROM
+			announce
+		WHERE set_top = 1
+		ORDER BY announce_id DESC
+		LIMIT 0, 4
+	</select>
 </mapper>

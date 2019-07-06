@@ -6,295 +6,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style type="text/css">
-		body{
-			margin:0px;
-			background-image: url(/assets/images/1.jpg);
-			font-family: Microsoft YaHei;
-			font-size: 13px;
-    		line-height: 12px;
-    		color: #666;
-		}
-
-		div{
-			display: block;
-		}
-
-		p, span {
-    		margin: 0;
-    		padding: 0;
-		}
-
-		a, img {
-    		color: inherit;
-    		border: 0;
-    		outline: 0;
-    		text-decoration: none;
-		}
-
-		a, button, input, select, textarea {
-    		-webkit-tap-highlight-color: rgba(0,0,0,.1);
-    		outline: 0;
-    		padding: 0;
-    		margin: 0;
-   	 		border: 0;
-    		background-color: transparent;
-    	}
-
-		.container{
-			height: 100vh;
-    		margin: 0 auto;
-    		max-width: 1143px;
-    		width:980px;
-		}
-
-		.container *{
-			box-sizing: border-box;
-		}
-		
-		.container>div{
-			display:inline-block;
-		}
-
-		.container .space-left{
-			float: left;
-			height: 100%;
-			width: 140px;
-			background-color:rgba(255,255,255,0.6);
-			
-		}
-
-		.container .space-right{
-			float: right;
-			height: 100%;
-			width: 840px;
-			background-color:rgba(255,255,255,0.4);
-		}
-
-		.space-left .side-bar{
-			font-size: 15px;
-    		font-weight: 700;
-			height:363px;
-			width: 100%;
-		}
-
-		.side-bar .title{
-			font-size: 18px;
-			height:62px;
-			width:100px;
-			margin:0 auto;
-		}
-
-		.side-bar .title div{
-			margin: 30px 0;
-			float: left;
-		}
-
-		.side-bar .title .icon{
-			width: 14px;
-    		height: 16px;
-    		margin-right: 10px;
-    		background-color: red;
-		}
-
-		.list li{
-			height: 40px;
-    		position: relative;
-		}
-
-		.list li a{
-			padding-left: 10px;
-    		line-height: 40px;
-   			flex: 1;
-    		text-decoration: none
-		}
-
-		.list>li a:hover{
-			color: #2faee3;
-			font-size: 18px;
-		}
-
-		.space-right .space-right-top{
-			height: 52px;
-			padding: 10px 10px 0;
-		}
-
-		.space-right .space-right-bottom{
-			height: calc(100% - 52px);
-			padding:10px;
-			overflow-y:auto;
-		}
-
-		.space-right-top .title{
-			height: 42px;
-    		box-shadow: 0 2px 4px 0 rgba(121,146,185,.54);
-    		flex-shrink: 0;
-    		display: flex;
-    		align-items: center;
-    		justify-content: space-between;
-    		padding: 0 16px;
-    		font-size: 15px;
-   	 		border-radius: 4px;
-   	 		background-color: white;
-		}
-
-		.card {
-    		padding: 24px 16px;
-    		background: rgba(255,255,255,0.9);
-    		margin-bottom: 10px;
-    		border-radius: 4px;
-    		box-shadow: 0 2px 4px 0 rgba(121,146,185,.54);
-		}
-
-		.new-item {
-    		line-height: 24px;
-    		position: relative;
-		}
-
-		.title{
-			color: #333;
-    		font-weight: 700;
-		}
-
-		.card .top .time{
-			color: #999;
-    		font-size: 12px;
-    		line-height: 22px;
-    		margin: 0 10px;
-		}
-		
-		.card .bottom{
-    		padding-left: 8px;
-		}
-
-		.im-dynamic-link {
-    		color: #0097d0;
-    		padding: 0 5px;
-    		text-decoration: none;
-		}
-
-		.action-menu{
-			position: absolute;
-			z-index: 2;
-		}
-
-		
-		.action-menu .menu-list{
-    		position: absolute;
-    		top: 35px;
-    		background: #fff;
-    		border: 1px solid #e9eaec;
-    		border-radius: 4px;
-    		padding: 10px;
-    		text-align: center;
-    		z-index: 2;
-    		transform-origin: 50% 0;
-    		left: calc(-54px + 50%);
-    		width: 106px;
-		}
-
-		.action-menu .menu-list:before {
-		    position: absolute;
-		    top: -6px;
-		    left: calc(50% - 5px);
-		    content: "";
-		    width: 10px;
-		    height: 10px;
-		    background-color: #fff;
-		    border: 1px solid #e9eaec;
-		    border-bottom-color: transparent;
-		    border-left-color: transparent;
-		    border-radius: 4px;
-		    transform: rotate(-45deg);
-		}
-
-		.action-menu .menu-list a {
-    		display: block;
-    		margin-bottom: 6px;
-    		line-height: 20px;
-   		 	font-size: 14px;
-    		color: #333;
-    		word-break: keep-all;
-		}		
-
-		.action-menu .menu-list a:last-child {
-    		margin-bottom: 0;
-		}
-
-		.action-menu a.bp-icon-font{
-    		display: inline-block;
-    		width: 30px;
-    		height: 30px;
-    		line-height: 30px;
-    		text-align: center;
-    		color: #999;
-    		cursor: pointer;
-		}
-
-		.bp-icon-font {
-    		font-family: "bp-icon-font" !important;
-    		font-size: 14px;
-    		font-style: normal;
-    		-webkit-font-smoothing: antialiased;
-    		-webkit-text-stroke-width: 0.2px;
-    		-moz-osx-font-smoothing: grayscale;
-    		display: inline-block;
-		}
-
-		.bp-icon-font.icon-more-1:before {
-    		content: "\E00F";
-		}
-		
-		a:-webkit-any-link {
-		    cursor: pointer;
-		}
-
-		.hide{
-			display: none;
-		}
-
-		.clearfix{ display: inline-block; }   
-		      /*  Hides from IE-mac  \*/         
-		*html .clearfix{ height:1%; }   
-		.clearfix{ display:block; }
-		.shoppingcar:hover>.car{
-			display: block;
-		}
-		
-		/*div 滚动条*/
-		.space-right-bottom::-webkit-scrollbar {
-           	width: 8px;
-        	height: 8px;
-        }
-                  
-		.space-right-bottom::-webkit-scrollbar-thumb {
-           	background-color: rgba(0, 0, 0, .05);
-            border-radius: 10px;
-           	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
-       	}
-                  
-        .space-right-bottom::-webkit-scrollbar-thumb {
-        	background-color: rgba(0, 0, 0, .2);
-          	border-radius: 10px;
-       		-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
-      	}
-                  
-      	.space-right-bottom::-webkit-scrollbar-thumb:hover {
-         	background-color: rgba(0, 0, 0, .4);
-          	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
-        }
-                  
- 		.space-right-bottom::-webkit-scrollbar-track {
-          	border-radius: 10px;
-        	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
-          	background-color: white;
-       	}
-                  
-      	.space-right-bottom::-webkit-scrollbar-track:hover {
-            	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .4);
-            	background-color: rgba(0, 0, 0, .01);
-        }
-	</style>
+	<link rel="stylesheet" type="text/css" href="/MessageCenter.css" />
+	
 </head>
 <body>
 	<div class="container ">
@@ -305,9 +18,10 @@
 					<div class="clearfix">消息中心</div>
 				</div>
 				<ul class="list ">
-					<li><a id="1" href="news">新闻通知</a></li>
-					<li><a id="2" href="homeworks">作业通知</a></li>
-					<li><a id="3" href="leavMessages">我的回复</a></li>
+					<li><a id="1" href="新闻通知">新闻通知</a></li>
+					<li><a id="2" href="作业通知">作业通知</a></li>
+					<li><a id="3" href="我的回复">我的回复</a></li>
+					<li><a id="4" href="我要留言">我要留言</a></li>
 				</ul>
 			</div>
 		</div>
@@ -327,29 +41,29 @@
 		
 		$(function(){
 			
-			$(".list a").click(function( e ){
+			$(".list a").click(function(e){
 				e.preventDefault();
 				var aChoose = $( this );
 				var bottom = $("div.space-right-bottom").empty();
-				var title = $("div.space-right-top .title").empty();
-				//$.get("/MyMessages/title",{id : aChoose.attr("id")},function(title){
-					//var divTitle = $("<div />").html(title);
-					//divTitle.appendTo(title);
-				//}, "json");
 				
+				
+				//标题
+				var title = $("div.space-right-top .title").empty();
+				var chooseTitle = $("<div />").html(aChoose.attr("href")); 
+				chooseTitle.appendTo(title);
 				
 				$.get("/MyMessages/classification",{typeId : aChoose.attr("id"), t : new Date().getTime()},function(value){
 					if(value.flag == 1){
-						var divTitle = $("<div>新闻通知</div>");
-						divTitle.appendTo(title);
+						/* var divTitle = $("<div>新闻通知</div>");
+						divTitle.appendTo(title); */
 						$.each(value.news, function(i,m){
 							var card = $("<div/>").attr("class","new-item card");
 						
-							//删除菜单
+							/* //删除菜单
 							var actionMenu = $("<div/>").attr("class","action-menu").attr("style","top:10px;right:5px");
 							var icon = $("<a/>").attr("class","bp-icon-font icon-more-1");
 							var menuList = $("<div/>").attr("class","menu-list hide").attr("style","width:58px;left:-16px;");
-							var menuListA = $("<a>删除</a>").attr("href","javascript:;");
+							var menuListA = $("<a>删除</a>").attr("href","javascript:;"); */
 							
 							var cardTop = $("<div/>").attr("class","top");
 							var cardBottom = $("<div/>").attr("class","bottom");
@@ -359,11 +73,11 @@
 							var cardA = $("<a>链接</a>").attr("href", m.messagePath).attr("class", "im-dynamic-link");
 							cardTop.append(cardTopTitle).append(cardTopTime).appendTo(card);
 							cardBottom.append(cardBottomContent).append(cardA).appendTo(card);
-							menuListA.appendTo(menuList);
-							actionMenu.append(icon).append(menuList).appendTo(card); 
+							/* menuListA.appendTo(menuList);
+							actionMenu.append(icon).append(menuList).appendTo(card);  */
 							card.appendTo(bottom);
 							
-							//判断删除键是否被按下
+						/* 	//判断删除键是否被按下
 							menuListA.on({
 					            "click": function(){
 					            	$.get("/MyMessages/delete",{messageId : m.messageId, t : new Date().getTime()},function(){
@@ -388,24 +102,252 @@
 					            "click": function(e){
 					            	menuList.hide();
 					            }
-					        });
+					        }); */
 							
 						});
 					}
 					else if(value.flag == 2){
-						var divTitle = $("<div>作业通知</div>");
-						divTitle.appendTo(title);
+						$.each(value.homeworks, function(i,m){
+							var card = $("<div/>").attr("class","new-item card");
+						
+							var cardTop = $("<div/>").attr("class","top");
+							var cardBottom = $("<div/>").attr("class","bottom");
+							var cardTopTitle = $("<span>你有一条作业通知</span>").attr("class","title");
+							var cardTopTime = $("<span/>").attr("class","time").html(m.time);
+							var cardBottomContent = $("<span/>").html(m.messageContent);
+							var cardA = $("<a>链接</a>").attr("href", m.messagePath).attr("class", "im-dynamic-link");
+							cardTop.append(cardTopTitle).append(cardTopTime).appendTo(card);
+							cardBottom.append(cardBottomContent).append(cardA).appendTo(card);
+							card.appendTo(bottom);
+	
+						}); 
 					}
 					else if(value.flag == 3){
-						var divTitle = $("<div>我的留言</div>");
-						divTitle.appendTo(title);
+						var cardWhisper = $("<div />").attr("class", "card whisper");
+						var leavingList = $("<div />").attr("class", "leaving-list");
+						var dialog = $("<div />").attr("class" , "dialog");
+						var listTitle = $("<div>近期通知</div>").attr("class", "list-title");
+						var listContent = $("<div />").attr("class", "list-content ps");
+						var listContentDiv = $("<div />");
+						var dialogTitle = $("<div />").attr("class","title");
+						var messageList = $("<div />").attr("class","message-list ps");
+						listContentDiv.appendTo(listContent);
+						leavingList.append(listTitle).append(listContent).appendTo(cardWhisper);
+						dialog.append(dialogTitle).append(messageList).appendTo(cardWhisper);
+						cardWhisper.appendTo(bottom);
+						
+						$.each(value.leavMessagesAccountList, function(i,m){
+							var listItem = $("<a/>").attr("class", "list-item").attr("href","javascript:void(0);").attr("name",m.account.accountName);
+							var avatar = $("<div />").attr("class", "avatar");
+							var nameBox = $("<div />").attr("class", "name-bax");
+							var name = $("<div />").attr("class", "name").html(m.account.accountName);
+							/* $.get("/MyMessages/findLastMessage",{sourceId : m.sourceId, t : new Date().getTime()},function(lastMessageContent){
+								var lastWord = $("<div />").html(lastMessageContent).attr("class", "last-word");
+								nameBox.append(name).append(lastWord);
+								listItem.append(avatar).append(nameBox).appendTo(listContentDiv);
+							}); */
+							var lastWord = $("<div>没有最新留言</div>").attr("class", "last-word");
+							var close = $("<div />").attr("class","close").attr("style","display:none");
+							var closeIcon = $("<div />").attr("class","close-icon").attr("style","background-color:black");
+							close.append(closeIcon).appendTo(listItem);
+								
+							nameBox.append(name).append(lastWord);
+							listItem.append(avatar).append(nameBox).appendTo(listContentDiv);
+							
+							listItem.children("div").hover(function( e ){
+								close.show();
+							});
+							
+							listItem.children("div").mouseout(function( e ){
+								close.hide();
+							});
+							
+							closeIcon.click(function( e ){
+								e.stopPropagation();
+								listItem.empty();
+								var sourceId =  m.account.accountId;
+								/*屏蔽listItem的点击事件*/
+								/* $.get("/MyMessages/delete",{sourceId :sourceId,t : new Date().getTime()},function(){
+				            		
+				            	}); */
+							}); 
+			
+							
+							listItem.on({
+					            "click": function(e){
+					            	e.preventDefault();
+					            	dialogTitle.empty();
+					            	/*var dialogTitle = $("<div />").attr("class","title");*/
+					            	var dialogTitleSpan = $("<span />").html($(this).attr("name"));
+					            	dialogTitle.append(dialogTitleSpan);
+					            	messageList.empty();
+					            	$.get("/MyMessages/findMessages",{sourceId : m.sourceId, t : new Date().getTime()},function(chatList){
+					            		$.each(chatList, function(i,n){
+					            			var messageTime = $("<div />").attr("class","message-time");
+					            			var mTime = $("<span />").html(n.time).attr("class","time");
+					            			var messageCard = $("<div />").attr("class","card");
+					            			var leavMessage = $("<div />").attr("class","message");
+					            			var messageTitle = $("<div>你有一条新的留言</div>").attr("class","message-content");
+					            			var messageDetails = $("<div />").attr("class","message");
+					            			var details = $("<div />").attr("class","details").html(n.messageContent);
+					            			messageDetails.append(details);
+					            			var linkMessage = $("<div />").attr("class", "message");
+					            			var recLink = $("<a>查看我的回复</a>").attr("class","rec-leav");
+					            			var leavLink = $("<a>查看留言详情</a>").attr("class","rec-leav");
+					            			
+					            			var recCard = $("<div />").attr("class","card").attr("style","display:none;");
+					            			var recArea = $("<textarea />").attr("placeholder","留言内容").attr("maxlength","200").attr("autofocus","autofocus").attr("class","recarea");
+					            			var rowRight = $("<div />").attr("class","row right");
+					            			var button = $("<button>发送</button>").attr("class","btn-box send-btn");
+					            			rowRight.append(button);
+					            			recCard.append(recArea).append(rowRight);
+					            			
+					            			linkMessage.append(recLink).append(leavLink);
+					        				
+					            			messageTime.append(mTime).appendTo(messageList);
+						            		leavMessage.append(messageTitle).append(messageDetails).append(linkMessage).appendTo(messageCard);
+					
+						            		messageCard.appendTo(messageList);
+						            		recCard.appendTo(messageList);
+						            		
+						            		
+						            		leavLink.on({
+									            "click": function(){
+									            	details.removeClass("details");
+									            	details.addClass("details-content");
+									            	leavLink.empty();
+									            }
+									        });
+						            		recLink.on({
+									            "click": function(){
+									            	var recDetails = $("<div />").attr("class","details-content").html("我的回复:"+n.replyMessage.messageContent).attr("id","leav");
+									            	recDetails.appendTo(messageDetails);
+									            	recLink.empty();
+									            	
+									            }
+									        });
+						            		messageDetails.on('click','a#leav.rec-leav',function(){	
+						            			recCard.show();
+						            		});
+						            		button.on('click',function(){
+						            			var recContent = recArea.val();
+								            	var targetId = n.sourceId;
+								            	var messageId = n.messageId;
+								            	
+						            			$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, session:$.session, t:new Date()},function(message){
+						            				var replyId = message.messageId;
+						            				
+									            	recCard.hide();
+									            	var recDetails = messageDetails.find("div#leav.details-content");
+									            	recDetails.html("我的回复:"+recContent);
+						            				$.get("/MyMessages/setReply",{replyId:replyId, beReplyId:messageId,t:new Date()},function(){
+						            					
+						            				},"json");
+						            			},"json");
+						            		});
+						            		
+
+					            		});
+									},"json");
+					            }
+					        }); 
+								
+						});
+						
 					}
-					
-					
+					else if(value.flag == 4){
+						var cardLeav= $("<div />").attr("class","card leav-message");
+						var leavCardMessage= $("<div />").attr("class","leav-message-card").attr("style","padding:0px;");
+						var card1= $("<div />").attr("class","card").attr("style","width:70%");
+						var input= $("<input />").attr("class","content").attr("placeholder","用户名").attr("maxlength","30").attr("autofocus","autofocus").attr("id","accountId");
+						card1.append(input);
+						var card2= $("<div />").attr("class","card").attr("style","margin-left:2px;width:29%");
+						var selInput= $("<div />").attr("class","sel-input select");
+						var text= $("<input />").attr("class","text").attr("readonly","readonly");
+						var scroll= $("<div />").attr("class","sel-list scroll").attr("tabindex","99");
+						var scrollCon= $("<ul />").attr("class","scroll-con").attr("style","display:none");
+						var li1=$("<li>老师</li>").attr("id","老师");
+						var li2=$("<li>学生</li>").attr("id","学生");
+						var li3=$("<li>学校</li>").attr("id","学校");
+						scrollCon.append(li1).append(li2).append(li3).appendTo(scroll);
+						selInput.append(text).append(scroll).appendTo(card2);
+						leavCardMessage.append(card1).append(card2).appendTo(cardLeav);
+						
+						var leavCardMessage2 = $("<div />").attr("class","leav-message-card card");
+						var input2 = $("<input />").attr("placeholder", "标题").attr("maxlength","30").attr("autofocus","autofocus").attr("class","content");
+						leavCardMessage2.append(input2).appendTo(cardLeav);
+						
+						var leavCardMessage3 = $("<div />").attr("class","leav-message-card card message-content");
+						var textarea = $("<textarea />").attr("placeholder", "留言内容").attr("maxlength","500").attr("autofocus","autofocus").attr("class","textarea");
+						var indicator = $("<div />").attr("class","indicator").attr("style","bottom: 110px; right: 280px;");
+						var span1 = $("<span>0</span>");
+						var span2 = $("<span>/500</span>");
+						indicator.append(span1).append(span2);
+						leavCardMessage3.append(textarea).append(indicator).appendTo(cardLeav);
+						
+						var rowRight = $("<div />").attr("class", "row right"); 
+						var button = $("<button>发送</button>").attr("class","btn-box send-btn")/* .attr("title","enter发送") */;
+						rowRight.append(button).appendTo(cardLeav);
+						bottom.append(cardLeav);
+						
+						selInput.on({
+				            "click": function(){
+				            	if (scrollCon.is(":hidden")){
+				            		scrollCon.show();
+				            		return false;
+				            	}
+				            	else{
+				            		scrollCon.hide();
+				            	}
+				            }
+				        }); 
+				        $(document).on({
+				            "click": function(e){
+				            	scrollCon.hide();
+				            }
+				        });
+						
+				        $(".scroll-con li").on({
+				            "click": function(){
+				            	var choose = $(this).attr("id");
+				            	text.attr("value",choose);
+				            }
+				        }); 
+				        
+				        textarea.keyup(function(){    
+				        	var ud = $(this).val();
+				        	var len = ud.length;
+				        	span1.html(len);
+			        		
+				        });
+				        
+				        button.on({
+				            "click": function(e){
+				            	var messageContent = textarea.val();
+				            	var targetId = input.val();
+				            	
+				            	$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:messageContent, session:$.session, t:new Date().getTime()},function(isLeav){
+				            			if(isLeav){
+				            				textarea.val('');
+											input.val('');
+											input2.val('');
+											text.val('');
+				            			}
+				            		
+				            	},"json"); 
+				            }
+				        });
+				        
+					}
+			
 				}, "json");
 				
 			});
 		});
+		
+    	
+    	
+
 	
 	</script>
 

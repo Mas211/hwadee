@@ -76,7 +76,7 @@
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
-					<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/studentCheck"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>验证
 					</a>
@@ -117,8 +117,8 @@
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
