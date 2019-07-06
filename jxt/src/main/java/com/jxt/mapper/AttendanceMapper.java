@@ -17,5 +17,7 @@ public interface AttendanceMapper {
 	//改
 	int update(Attendance attendance);
 	
-	List<Attendance> findAll();
+    List<Attendance> findByPar(int parId);
+	
+	List<Attendance> findByStu(int stuId);
 }

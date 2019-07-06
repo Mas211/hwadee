@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-<title>作业</title>
+<title>成绩</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,18 +33,6 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
 	rel="stylesheet">
-<style type="text/css">
-.homework_page_agile {
-	text-align: center;
-	background: url(/assets/images/homework.jpg) no-repeat center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	min-height: 500px;
-}
-</style>
 </head>
 
 <body>
@@ -60,14 +48,14 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -103,7 +91,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -124,7 +112,7 @@
 		</div>
 	</div>
 	<br/>
-	<div class="homework_page_agile">
+	<div class="inner_page_agile">
 
 	</div>
 	<!--//banner -->
@@ -137,10 +125,14 @@
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/homework/publishhomework">布置作业</a>
+					<a href="/grade/enteringgrades">录入成绩</a>
 					<span>| |</span>
 				</li>
-				<li>查看作业</li>
+				<li>
+					<a href="/grade/listall">查看所有成绩</a>
+					<span>| |</span>
+				</li>
+				<li>查看单科成绩</li>
 			</ul>
 		</div>
 	</div>
@@ -150,45 +142,87 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>作 &nbsp;</span>业
+					<span>单 </span>科
+					<span>成 </span>绩
 				</h3>
 				<div class="tittle-style">
 				</div>
 			</div>
 			<div class="bs-docs-example">
+				<h1>语文</h1>
 				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th></th>
-							<th>发布老师</th>
-							<th>班级</th>
-							<th>作业标题</th>
-							<th>发布时间</th>
-							<th>截止时间</th>
-							<th>内容</th>
-							<th>完成情况</th>
-							<th>操作</th>
+							<th>学生姓名</th>
+							<th>学生学号</th>
+							<th>任课老师</th>
+							<th>成绩</th>
 						</tr>
 					</thead>
-					<tbody>
-						<c:forEach items="${requestScope.tasks }" var="t">
+					<c:forEach items="${requestScope.grades }" var="g">
+						<c:if test="${g.gradeSubject == '语文'}">
+							<tbody>
+								<tr>
+									<td>${g.gradeId }</td>
+									<td>${g.gradeStuName}</td>
+									<td>${g.gradeStuId }</td>
+									<td>${g.gradeTName }</td>
+									<td>${g.grade }</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+				<h1>数学</h1>
+				<table class="table table-striped">
+					<thead>
 						<tr>
-							<td>${t.taskId }</td>
-							<td>${t.account.accountName }</td>
-							<td>${t.account.accountClassId }</td>
-							<td>${t.taskTitle }</td>
-							<td>${t.taskBeginTime }</td>
-							<td>${t.taskDeadline }</td>
-							<td>${t.taskContent }</td>
-							<td>${t.taskIsFinish }</td>
-							<td>
-								<a class="updateTask" href="/homework/updatehomework/${t.taskId }">修改</a> | 
-								<a class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a> |
-								<a class="report" href="/homework/report/${t.taskId }">完成</a>
-							</td>
+							<th></th>
+							<th>学生姓名</th>
+							<th>学生学号</th>
+							<th>任课老师</th>
+							<th>成绩</th>
 						</tr>
-						</c:forEach>
-					</tbody>
+					</thead>
+					<c:forEach items="${requestScope.grades }" var="g">
+						<c:if test="${g.gradeSubject == '数学'}">
+							<tbody>
+								<tr>
+									<td>${g.gradeId }</td>
+									<td>${g.gradeStuName}</td>
+									<td>${g.gradeStuId }</td>
+									<td>${g.gradeTName }</td>
+									<td>${g.grade }</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+				<h1>英语</h1>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th></th>
+							<th>学生姓名</th>
+							<th>学生学号</th>
+							<th>任课老师</th>
+							<th>成绩</th>
+						</tr>
+					</thead>
+					<c:forEach items="${requestScope.grades }" var="g">
+						<c:if test="${g.gradeSubject == '英语'}">
+							<tbody>
+								<tr>
+									<td>${g.gradeId }</td>
+									<td>${g.gradeStuName}</td>
+									<td>${g.gradeStuId }</td>
+									<td>${g.gradeTName }</td>
+									<td>${g.grade }</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
 				</table>
 			</div>
 		</div>

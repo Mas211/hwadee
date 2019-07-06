@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-<title>作业</title>
+<title>成绩录入</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,18 +33,6 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
 	rel="stylesheet">
-<style type="text/css">
-.homework_page_agile {
-	text-align: center;
-	background: url(/assets/images/homework.jpg) no-repeat center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	min-height: 500px;
-}
-</style>
 </head>
 
 <body>
@@ -103,7 +91,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -124,7 +112,8 @@
 		</div>
 	</div>
 	<br/>
-	<div class="homework_page_agile">
+	<!-- banner -->
+	<div class="inner_page_agile">
 
 	</div>
 	<!--//banner -->
@@ -137,63 +126,54 @@
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/homework/publishhomework">布置作业</a>
+					<a href="/grade/listall">查看所有成绩</a>
 					<span>| |</span>
 				</li>
-				<li>查看作业</li>
+				<li>成绩录入</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- blog -->
-	<div class="blog-cource">
+	<div class="register-form-main">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>作 &nbsp;</span>业
+					<span>成</span>绩
+					<span>录</span>入
 				</h3>
 				<div class="tittle-style">
+
 				</div>
 			</div>
-			<div class="bs-docs-example">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>
-							<th>发布老师</th>
-							<th>班级</th>
-							<th>作业标题</th>
-							<th>发布时间</th>
-							<th>截止时间</th>
-							<th>内容</th>
-							<th>完成情况</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${requestScope.tasks }" var="t">
-						<tr>
-							<td>${t.taskId }</td>
-							<td>${t.account.accountName }</td>
-							<td>${t.account.accountClassId }</td>
-							<td>${t.taskTitle }</td>
-							<td>${t.taskBeginTime }</td>
-							<td>${t.taskDeadline }</td>
-							<td>${t.taskContent }</td>
-							<td>${t.taskIsFinish }</td>
-							<td>
-								<a class="updateTask" href="/homework/updatehomework/${t.taskId }">修改</a> | 
-								<a class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a> |
-								<a class="report" href="/homework/report/${t.taskId }">完成</a>
-							</td>
-						</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+			<div class="register-form">
+				<form action="#" method="post">
+					<div class="fields-grid">
+						<div class="styled-input">
+							<input type="text" placeholder="学生学号" name="gradeStuId", required="required">
+						</div>
+						<div class="styled-input">
+							<input type="text" placeholder="学生姓名" name="gradeStuName", required="required">
+						</div>
+						<div class="styled-input agile-styled-input-top">
+							<select class="category2" required="required" name="gradeSubject">
+								<option value="">科目</option>
+								<option value="语文">语文</option>
+								<option value="数学">数学</option>
+								<option value="英语">英语</option>
+							</select>
+						</div>
+						<div class="styled-input">
+							<input type="text" placeholder="成绩" name="grade" required="required">
+						</div>
+						<input type="hidden" name="gradeTId" value="${sessionScope.account.accountId}"/>
+						<input type="hidden" name="gradeTName" value="${sessionScope.account.accountName}"/>
+						<div class="clearfix"> </div>
+					</div>
+					<input type="submit" value="提交">
+				</form>
 			</div>
 		</div>
 	</div>
-	<!-- //blog -->
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -252,14 +232,14 @@
 	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
-	<!-- stats numscroller-js-file -->
-	<script src="/assets/js/numscroller-1.0.js"></script>
-	<!-- //stats numscroller-js-file -->
+	<!-- Calendar -->
+	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+	<script src="/assets/js/jquery-ui.js"></script>
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
 	<script src="/assets/js/easing.js"></script>
-	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
@@ -267,54 +247,6 @@
 				easingType: 'easeOutQuart'
 			});
 
-		});
-	</script>
-	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$( "table.table > tbody" ).on("click","a.deleteTask", function( e ){
-				e.preventDefault();
-				swal({
-					  title:'确定删除？',
-					  type:"warning",
-					  confirmButtonColor: "#DD6B55",
-					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
-					  showCancelButton: true,
-					  cancelButtonText:'取消'
-				}).then(function(){
-					swal({
-						title:"删除!",
-						text:"您选中的作业已删除！",
-						type:"success"
-					});
-				},function(dismiss){
-					if(dismiss == 'cancel'){
-						swal({
-							title:"已取消！",
-							type:"info"
-						});
-					}
-				})
-			});
-
-			$( "table.table > tbody" ).on("click","a.updateTask", function( e ){
-				e.preventDefault();
-				swal({
-				  title:'确定修改？',
-				  type:'question',
-				  confirmButtonColor: "#DD6B55",	
-				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
-				});
-			}); 
-			$( "table.table > tbody" ).on("click","a.report", function( e ){
-				e.preventDefault();
-				swal({
-				  title:'确定已完成？',
-				  type:'info',
-				  confirmButtonColor: "#DD6B55",
-				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
-				});
-			}); 
 		});
 	</script>
 	<!-- //here ends scrolling icon -->
