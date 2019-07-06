@@ -2,6 +2,9 @@ package com.jxt.service;
 
 import java.util.List;
 
+import javax.swing.ListModel;
+
+import com.jxt.entity.Account;
 import com.jxt.entity.Message;
 
 public interface MessageService {
@@ -26,10 +29,20 @@ public interface MessageService {
 	
 	//列出作业通知
 	//typeId=2
-	List<Message> listHomeWorksMessages(int targetId);
+	List<Message> listHomeWorksMessages(int accountId);
 	
 	//列出新闻通知
 	//typeId=1
-	List<Message> listNewsMessages(int targetId);
-
+	List<Message> listNewsMessages();
+	
+	//列出所有的留言用户(无重复)
+	List<Message> listLeavAccounts(int targetId);
+	
+	//列出两个用户之间所有的聊天记录
+	List<Message> listAllChatRecord(int targetId, int sourceId);
+	
+	int updateReply(int messageId, int replyId);
+	
+	int deleteChat(int sourceId,int targetId);
+	
 }

@@ -20,4 +20,10 @@ public interface NewsService {
 	int update(News news);
 	
 	List<News> getByEditor(int editorId);
+	
+	//获得表内记录的条数
+	int getRows();
+	
+	//获得指定范围内的记录
+	List<News> getPageNews(int start);
 }

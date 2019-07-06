@@ -39,7 +39,9 @@
     left:-35px;
     z-index: 999;
     
-}
+}   
+
+
 </style>
 <!--这个style固定二维码位置-->
 </head>
@@ -109,9 +111,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li><a href="" class="effect-3"></a></li>
-								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="index.html" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -132,10 +132,12 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+
 		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		
+		<ol class="carousel-indicators" >
+			<li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
 			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="3" class=""></li>

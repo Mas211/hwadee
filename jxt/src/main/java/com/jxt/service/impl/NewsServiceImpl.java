@@ -53,6 +53,19 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated method stub
 		return newsMapper.getByEditor(editorId);
 	}
+
+	@Override
+	public int getRows() {
+		// TODO Auto-generated method stub
+		return newsMapper.getRows();
+	}
+
+	@Override
+	public List<News> getPageNews(int start) {
+		// TODO Auto-generated method stub
+		return newsMapper.getPageNews(start);
+	}
+	
 	
 	
 

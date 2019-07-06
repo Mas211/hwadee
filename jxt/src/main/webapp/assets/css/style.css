@@ -2463,6 +2463,7 @@ h2.typoh2 {
     ul.pagination li a {
         font-size: 14px;
         padding: 5px 11px;
+        text-align:center;
     }
     .list-group {
         margin-bottom: 10px;

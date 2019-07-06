@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.jxt.entity.Attendance;
-
 import com.jxt.mapper.AttendanceMapper;
 import com.jxt.service.AttendanceService;
 
@@ -37,17 +36,24 @@ public class AttendanceServiceImpl implements AttendanceService {
 		return attendanceMapper.update(attendance);
 	}
 	
+
+
 	@Override
-	public List<Attendance> attendances() {
+	public List<Attendance> findByPar(int parId) {
 		// TODO Auto-generated method stub
-		return attendanceMapper.findAll();
+		return attendanceMapper.findByPar(parId);
+	}
+	
+	@Override
+	public List<Attendance> findByStu(int stuId) {
+		// TODO Auto-generated method stub
+		return attendanceMapper.findByStu(stuId);
 	}
 
 	@Override
 	public Attendance getAttendanceById(int attendStuId) {
 		// TODO Auto-generated method stub
-		return attendanceMapper.findById(attendStuId);
+		return null;
 	}
-
 	
 }

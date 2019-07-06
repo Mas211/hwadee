@@ -63,7 +63,7 @@ public class NewsController {
 	}
 
 	@GetMapping("/newsManage")
-	public String newsList(Model model, HttpServletRequest request) {
+	public String newsList(Model model) {
 		List<News> news = newsService.findAll();
 		model.addAttribute("news", news);
 
@@ -79,7 +79,7 @@ public class NewsController {
 	}
 	
 	@PostMapping("/updateNews/{id}")
-	public String checkUpdate(News news, HttpServletRequest request) {
+	public String checkUpdate(News news) {
 		//更新修改时间
 		news.setNewsModified(new Timestamp(System.currentTimeMillis()));
 		
@@ -89,10 +89,9 @@ public class NewsController {
 	}
 	
 	@GetMapping("/deleteNews/{id}")
-	public String deleteNews(@PathVariable("id") int id, HttpServletRequest request) {
+	public String deleteNews(@PathVariable("id") int id) {
 		
-		int rows = newsService.delete(id);
-		
+		newsService.delete(id);
 		
 		return "redirect:/newsManage";
 	}
@@ -151,5 +150,29 @@ public class NewsController {
             throw new RuntimeException("服务器繁忙，上传图片失败");  
         }  
     } 
+	
+	@GetMapping("/newsList/{pageId}")
+	public String newsList(@PathVariable("pageId") int pageId, Model model) {
+		
+		int rows = newsService.getRows();
+		float p = (float)rows / 10;
+		int pId = (int)Math.ceil(p);
+		
+		if (pageId > pId) {
+			return "redirect:/newsList/" + pId;
+		}
+		
+		int start = (pageId - 1) * 10;
+		if(start >= rows) {
+			start = rows - 10;
+		}
+		List<News> news = newsService.getPageNews(start);
+		
+		model.addAttribute("news", news);
+		model.addAttribute("pageId", pageId);
+		model.addAttribute("pId", pId);
+		
+		return "news/newsList";
+	}
 
 }

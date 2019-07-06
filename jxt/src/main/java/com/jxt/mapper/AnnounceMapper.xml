@@ -34,6 +34,21 @@
 			announce
 	</select>
 	
+	<select id="getRows" resultType="int">
+		SELECT count(*)
+		FROM announce
+	</select>
+	
+	<select id="getPageAnnounce" parameterType="int"
+		resultType="com.jxt.entity.Announce">
+		SELECT
+			announce_id, announce_title, announce_time
+		FROM
+			announce
+		ORDER BY announce_id DESC
+		LIMIT #{value}, 20
+	</select>
+	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Announce">
 		UPDATE announce SET announce_title = #{announceTitle}, announce_content=#{announceContent},

@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-<title>Login</title>
+<title>修改奖罚信息</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,22 +44,11 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<c:choose>
-				<c:when test="${!empty sessionScope.account}">
-					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>注销
-					</a>
-				</div>
-				</c:when>
-				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
-				</c:otherwise>
-				</c:choose>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -79,7 +67,7 @@
 						</button>
 						<a class="navbar-brand" href="index">
 							<h1>
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span ><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -111,94 +99,50 @@
 			</nav>
 		</div>
 	</div>
-	<br/>
 	<!-- banner -->
-	<div class="inner_page_agile">
-
+	<div style="text-align:center">
+  		<image src="/assets/images/login.jpg" width=1000>
 	</div>
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index">首页</a> <span>| |</span></li>
-				<li>功能列表</li>
+				<li>
+					<a href="index.html">主页</a>
+					<span>| |</span>
+				</li>
+				<li>编辑奖罚</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<c:choose>
-	<c:when test="${sessionScope.account.roleId eq 5 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">查看评语</a></li>
-		<li><a href="/grade/liststudent" class="effect-3">查看成绩</a></li>
-		<li><a href="/attend" class="effect-3">查看考勤</a></li>
-		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
-	</c:when>
-	<c:when test="${sessionScope.account.roleId eq 4 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/attend" class="effect-3">查看学生考勤</a></li>
-		<li><a href="/commentadding" class="effect-3">查看子女评语</a></li>
-		<li><a href="/grade/liststudent" class="effect-3">查看子女成绩</a></li>
-		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
-		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>
-	</c:when>
-	<c:when test="${sessionScope.account.roleId eq 3 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">添加评语</a></li>
-		<li><a href="/grade/enterginggrade" class="effect-3">录入成绩</a></li>
-		<li><a href="/grade/listall" class="effect-3">查看所有成绩</a></li>
-		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
-	</c:when>
-	
-	<c:when test="${sessionScope.account.roleId eq 2 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="courses.html" class="effect-3">master功能2</a></li>
-		<li><a href="gallery.html" class="effect-3">master功能3</a></li>
-		<li><a href="courses.html" class="effect-3">master功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">master功能5</a></li>
-	</c:when>
-	<c:otherwise>
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="courses.html" class="effect-3">管理员功能2</a></li>
-		<li><a href="gallery.html" class="effect-3">管理员功能3</a></li>
-		<li><a href="courses.html" class="effect-3">管理员功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">管理员功能5</a></li>
-	</c:otherwise>
-	</c:choose>
-	<!-- footer -->
+	<div class="register-form-main">
+		<div class="container">
+			<div class="login-form">
+				<form action="" method="post">
+					<div class="">
+						<input type="hidden" name="rewardAndPunishId" value="${requestScope.rp.rewardAndPunishId}">
+						<label>学生学号：</label>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" value="${requestScope.rp.rpStuId}" />
+						<label>学生姓名：</label>
+						<input type="text" name="stuName" id="stuName" value="${requestScope.stuName}">
+					</div>
+					<input type="radio" name="rewardOrPunish" value="1" checked="checked">奖
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="rewardOrPunish" value="0">罚<br>
+					<label>奖罚内容：</label><br/>
+					<textarea name="rpContent" style="width: 100%; height: 100px;">${requestScope.rp.rpContent}</textarea>
+
+					
+					<input type="submit" value="提交">
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+		<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
