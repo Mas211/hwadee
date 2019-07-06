@@ -69,7 +69,7 @@ public class AnnounceController {
 		//更新修改时间
 		announce.setAnnounceModified(new Timestamp(System.currentTimeMillis()));
 		
-		int rows = announceService.update(announce);
+		announceService.update(announce);
 		
 		return "redirect:/announceManage";
 	}
@@ -77,8 +77,7 @@ public class AnnounceController {
 	@GetMapping("/deleteAnnounce/{id}")
 	public String deleteNews(@PathVariable("id") int id, HttpServletRequest request) {
 		
-		int rows = announceService.delete(id);
-		
+		announceService.delete(id);
 		
 		return "redirect:/announceManage";
 	}
@@ -100,10 +99,27 @@ public class AnnounceController {
 		}
 		List<Announce> announce = announceService.getPageAnnounce(start);
 		
+		List<Announce> topAnnounce = announceService.getTop();
+		
 		model.addAttribute("announce", announce);
 		model.addAttribute("pageId", pageId);
 		model.addAttribute("pId", pId);
+		model.addAttribute("topAnnounce", topAnnounce);
 		
 		return "announce/announceList";
+	}
+	
+	@GetMapping("/setAnnounceTop/{id}")
+	public String setTop(@PathVariable("id") int id) {
+		
+		announceService.setTop(id);
+		return "redirect:/announceManage";
+	}
+	
+	@GetMapping("/cancelAnnounceTop/{id}")
+	public String cancelTop(@PathVariable("id") int id) {
+		
+		announceService.cancelTop(id);
+		return "redirect:/announceManage";
 	}
 }

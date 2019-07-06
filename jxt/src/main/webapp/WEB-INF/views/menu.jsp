@@ -152,6 +152,7 @@
 		</ul></li>
 		<li><a href="/attend" class="effect-3">查看学生考勤</a></li>
 		<li><a href="/commentadding" class="effect-3">查看子女评语</a></li>
+		<li><a href="/stuRp" class="effect-3">查看子女奖罚信息</a></li>
 		<li><a href="/grade/liststudent" class="effect-3">查看子女成绩</a></li>
 		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
 		<li><a href="courses.html" class="effect-3">家长功能4</a></li>

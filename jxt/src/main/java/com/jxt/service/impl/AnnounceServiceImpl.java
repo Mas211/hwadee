@@ -60,4 +60,22 @@ public class AnnounceServiceImpl implements AnnounceService {
 		return announceMapper.getPageAnnounce(start);
 	}
 
+	@Override
+	public int setTop(int announceId) {
+		// TODO Auto-generated method stub
+		return announceMapper.setTop(announceId);
+	}
+
+	@Override
+	public int cancelTop(int announceId) {
+		// TODO Auto-generated method stub
+		return announceMapper.cancelTop(announceId);
+	}
+
+	@Override
+	public List<Announce> getTop() {
+		// TODO Auto-generated method stub
+		return announceMapper.getTop();
+	}
+
 }

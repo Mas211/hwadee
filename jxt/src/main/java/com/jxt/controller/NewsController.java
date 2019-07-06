@@ -168,11 +168,28 @@ public class NewsController {
 		}
 		List<News> news = newsService.getPageNews(start);
 		
+		List<News> topNews = newsService.getTop();
+		
 		model.addAttribute("news", news);
 		model.addAttribute("pageId", pageId);
 		model.addAttribute("pId", pId);
+		model.addAttribute("topNews", topNews);
 		
 		return "news/newsList";
+	}
+	
+	@GetMapping("/setTop/{id}")
+	public String setTop(@PathVariable("id") int id) {
+		
+		newsService.setTop(id);
+		return "redirect:/newsManage";
+	}
+	
+	@GetMapping("/cancelTop/{id}")
+	public String cancelTop(@PathVariable("id") int id) {
+		
+		newsService.cancelTop(id);
+		return "redirect:/newsManage";
 	}
 
 }
