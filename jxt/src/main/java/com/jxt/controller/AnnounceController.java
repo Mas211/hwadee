@@ -37,7 +37,7 @@ public class AnnounceController {
 				
 		int rows = announceService.add(announce);
 		
-		return "redirect:/homework";
+		return "redirect:/announceManage";
 	}
 	
 	@GetMapping("/announce/{id}")

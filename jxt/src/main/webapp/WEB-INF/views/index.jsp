@@ -596,7 +596,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" height="205" width="205"/>
+								<img src="../assets/images/stu3.jpg" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
