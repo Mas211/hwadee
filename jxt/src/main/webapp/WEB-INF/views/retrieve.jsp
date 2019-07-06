@@ -68,6 +68,7 @@
 							</h1>
 						</a>
 					</div>
+					<br/>
 					<!--/.navbar-header-->
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -96,8 +97,8 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->

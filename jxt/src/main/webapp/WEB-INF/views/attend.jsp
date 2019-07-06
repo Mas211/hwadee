@@ -46,6 +46,10 @@
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
@@ -61,59 +65,42 @@
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="header">
+    <div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
-								<label>Education & Courses</label>
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -123,6 +110,7 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
@@ -151,6 +139,7 @@
 				<div class="tittle-style"></div>
 			</div>	
                 <div class="login-form">
+                <form action="/menu" method="get">
 
 				    <p></p>
 					<table class="table table-bordered">
@@ -171,6 +160,8 @@
 							</c:forEach>
 						</tbody>
 						</table>
+						<input type="submit" value="返   回">
+				</form>
 
 			   </div>		
 		</div>

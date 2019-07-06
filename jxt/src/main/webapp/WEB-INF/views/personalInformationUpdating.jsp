@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-<title>Login</title>
+<title>个人信息修改</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -111,10 +111,12 @@
 			</nav>
 		</div>
 	</div>
-	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<br/>
+	<div class="inner_page_agile">
+
 	</div>
+	<!-- banner -->
+
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
@@ -140,7 +142,7 @@
 				<form action="/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled /><span></span>
 					</div>
 					<div class="">
 						<p>姓名</p>
@@ -160,7 +162,7 @@
 					</div>
 					<div class="">
 						<p>家长账号</p>
-						<input type="text" value = ${sessionScope.account.parId } required="" />
+						<input type="text" value = ${sessionScope.account.parId }  />
 					</div>
 					<div class="">
 						<p>班级</p>
@@ -175,7 +177,7 @@
 				<form action="/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled/><span></span>
 					</div>
 					<div class="">
 						<p>姓名</p>
@@ -202,7 +204,7 @@
 				<form action="/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled /><span></span>
 					</div>
 					<div class="">
 						<p>姓名</p>
@@ -233,7 +235,7 @@
 				<form action="/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled /><span></span>
 					</div>
 					<div class="">
 						<p>姓名</p>
@@ -264,7 +266,7 @@
 				<form action="/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } required="" /><span></span>
+						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled/><span></span>
 					</div>
 					<div class="">
 						<p>姓名</p>

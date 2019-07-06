@@ -10,7 +10,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
 	<script>
-
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -87,7 +86,7 @@
 
 				<div class="header-top-righ">
 					<a href="login.html"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>登录
+						aria-hidden="true"></span>注销
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -251,14 +250,14 @@
 						</li>
 					</ul>
 				</div>
-
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -270,15 +269,6 @@
 	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
-	<!-- Calendar -->
-	<link rel="stylesheet" href="/assets/css/jquery-ui.css" />
-	<script src="/assets/js/jquery-ui.js"></script>
-	<script>
-		$(function () {
-			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
-		});
-	</script>
-	<!-- //Calendar -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
@@ -304,7 +294,7 @@
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-
+	<script src="/assets/js/canvas-nest.min.js"></script>
 </body>
 
 </html>

@@ -47,7 +47,9 @@ public class NewsController {
 		news.setNewsModified(time);
 		
 		int rows = newsService.add(news);
-		
+		if(rows != news.getNewsId()) {
+			throw new RuntimeException("添加失败");
+		}
 		return "redirect:/myNews";
 	}
 	

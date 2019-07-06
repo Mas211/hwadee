@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Login</title>
-	<!-- meta-tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script>
+<title>Login</title>
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -18,15 +18,20 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- //meta-tags -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome -->
-	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	<!-- fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	    rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //meta-tags -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- font-awesome -->
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+<!-- fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -40,9 +45,19 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+<<<<<<< HEAD
 				<div class="header-top-righ">
+
+
+
 					<a href="login"> <span class="fa fa-sign-out"
+
 						aria-hidden="true"></span>登录
+=======
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+>>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -68,6 +83,7 @@
 							</h1>
 						</a>
 					</div>
+					<br/>
 					<!--/.navbar-header-->
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -75,7 +91,15 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
+<<<<<<< HEAD
+
+
+
 									<li><a href="index" class="">首页</a></li>
+
+=======
+									<li><a href="index" class="">首页</a></li>
+>>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -96,9 +120,9 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
-	</div>
+	<div class="inner_page_agile">
+
+	</div>v
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
@@ -190,11 +214,19 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
+
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
+
+						</li>
+						<li>
+							<a href="courses.html">联系我们</a>
+						</li>
+						<li>
+
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
@@ -243,7 +275,7 @@
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-
+	<script src="/assets/js/canvas-nest.min.js"></script>
 </body>
 
 </html>

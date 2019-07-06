@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-<title>Login</title>
+<title>register</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -93,6 +93,7 @@
 							</ul>
 						</nav>
 					</div>
+					<br/>
 					<!--/.navbar-collapse-->
 					<!--/.navbar-->
 				</div>
@@ -100,8 +101,8 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -214,19 +215,11 @@
 					<ul>
 						<li>
 							<a href="about.html">关于我们</a>
-<<<<<<< HEAD
 						</li>
 						<li>
 							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-=======
-						</li>
-						<li>
-							<a href="courses.html">联系我们</a>
-						</li>
-						<li>
->>>>>>> 3238d242969cb954c3235bdd094799684330a67b
 							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>

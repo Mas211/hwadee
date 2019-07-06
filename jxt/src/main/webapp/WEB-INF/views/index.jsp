@@ -32,11 +32,11 @@
 
 	<style type="text/css">
 	#div1{
-    width:200px;
-    height:350px;
+    width:0px;
+    height:300px;
     position:fixed;
     bottom:0;
-    left:0;
+    left:-35px;
     z-index: 999;
     
 }
@@ -47,7 +47,7 @@
 <body>
 
 
-	<div id="div1"><img src="..\assets\images\erweima.png"></div><!--这个是二维码地址-->
+	<div id="div1"><img src="..\assets\images\erweima2.gif" height="205" width="205" ></div><!--这个是二维码地址-->
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
@@ -63,12 +63,20 @@
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
+					</a>
+					<br/>
+					<a href="/studentCheck"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>验证
 					</a>
 				</div>
 				</c:otherwise>
@@ -160,7 +168,7 @@
 					<div class="carousel-caption">
 						<h6></h6>
 						<h3>
-							<span>可以加文字</span> </h3>
+							<span></span> </h3>
 						<p></p>
 					</div>
 				</div>
@@ -201,10 +209,24 @@
 			</div>
 			<div class="welcome-sub-wthree">
 				<div class="col-md-6 banner_bottom_left">
-					<h4>关于
-						<span>家校通</span>
+					<h4>新
+						<span>闻</span>
 					</h4>
-					<p>注意里文本不要写太长，写点就换行。不然会被挡= =</p>
+					<p>？？</p>
+					<p>！</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+				</div>
+				<div class="col-md-6 banner_bottom_left">
+					<h4>公
+						<span>告</span>
+					</h4>
+					<p>= =</p>
 					<p>介绍介绍……</p>
 					<p>介绍介绍……</p>
 					<p>介绍介绍……</p>
@@ -215,29 +237,7 @@
 					<p>介绍介绍……</p>
 				</div>
 				<!-- Stats-->
-				<div class="col-md-6 stats-info-agile">
-					<div class="col-xs-6 stats-grid stat-border">
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='768' data-delay='.5' data-increment="1">768</div>
-						<p>注册学校</p>
-					</div>
-					<div class="col-xs-6 stats-grid">
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='678' data-delay='.5' data-increment="1">678</div>
-						<p>使用课程</p>
-					</div>
-					<div class="clearfix"></div>
-					<div class="child-stat">
-						<div class="col-xs-6 stats-grid stat-border border-st2">
-							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='800' data-delay='.5' data-increment="1">800</div>
-							<p>注册教师</p>
-						</div>
-						<div class="col-xs-6 stats-grid">
-							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='4850' data-delay='.5' data-increment="10">4850</div>
-							<!--data-increment是数据的增速，数据大的可以改大些-->
-							<p>受益学生</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
+				
 				<!-- //Stats -->
 				<div class="clearfix"> </div>
 			</div>
@@ -255,7 +255,7 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>我们</span> 学校
+					<span>趣味</span>活动
 				</h3>
 				<div class="tittle-style">
 
@@ -263,74 +263,50 @@
 			</div>
 			<div class="agileinfo-gallery-row">
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g7.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g7.jpg" alt="" title="Our Library" />
+					<a href="../assets/images/ffz.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/ffz.jpg" alt="" title="跟小伙伴们放风筝真开心~~" />
 						<div class="agile-figcaption">
-							<h4>Library</h4>
+							<h4>放风筝</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g9.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g9.jpg" alt="" title="Volleyball Sports" />
+					<a href="../assets/images/气球.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/气球.jpg" alt="" title="阳光下的气球真美啊" />
 						<div class="agile-figcaption">
-							<h4>Volleyball</h4>
+							<h4>放气球</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g3.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g3.jpg" alt="" title="Our Computer Lab" />
+					<a href="../assets/images/数字.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/数字.jpg" alt="" title="我们一起跳一跳" />
 						<div class="agile-figcaption">
-							<h4>Computer Lab</h4>
+							<h4>兔子跳</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g4.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g4.jpg" alt="" title="Meditation" />
+					<a href="../assets/images/踢足球.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/踢足球.jpg" alt="" title="注意了，我要射门了！" />
 						<div class="agile-figcaption">
-							<h4>Meditation</h4>
+							<h4>足球比赛</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g1.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g1.jpg" alt="" title="Science" />
+					<a href="../assets/images/纸飞机.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/纸飞机.jpg" alt="" title="带上纸飞机奔跑吧！" />
 						<div class="agile-figcaption">
-							<h4>Science</h4>
+							<h4>纸飞机</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g6.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g6.jpg" alt="" title="Group Discussion" />
+					<a href="../assets/images/讲课.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/讲课.jpg" alt="" title="跟小伙伴们一起学习呀~" />
 						<div class="agile-figcaption">
-							<h4>Group Discussion</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g2.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g2.jpg" alt="" title="Chemical Lab" />
-						<div class="agile-figcaption">
-							<h4>Chemical Lab</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g5.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g5.jpg" alt="" title="Our Sports" />
-						<div class="agile-figcaption">
-							<h4>Sports</h4>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/g8.jpg" class="imghvr-hinge-right figure">
-						<img src="../assets/images/g8.jpg" alt="" title="Our Excellent Seminar" />
-						<div class="agile-figcaption">
-							<h4>Seminar</h4>
+							<h4>师生讨论</h4>
 						</div>
 					</a>
 				</div>
@@ -391,7 +367,7 @@
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
 							<div class="news-left-top-text text-color2">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
+								<a href="#" data-toggle="modal" data-target="#myModal1">Integer viverra eleifend neque</a>
 							</div>
 							<div class="date-grid">
 								<div class="admin">
@@ -421,7 +397,7 @@
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
 							<div class="news-left-top-text text-color3">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
+								<a href="#" data-toggle="modal" data-target="#myModal2">Integer viverra eleifend neque</a>
 							</div>
 							<div class="date-grid">
 								<div class="admin">
@@ -448,7 +424,7 @@
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
 							<div class="news-left-top-text text-color4">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
+								<a href="#" data-toggle="modal" data-target="#myModal3">Integer viverra eleifend neque</a>
 							</div>
 							<div class="date-grid">
 								<div class="admin">
@@ -487,18 +463,78 @@
 				<div class="modal-body">
 					<div class="model-img-info">
 						<img src="images/e1.jpg" alt="" />
-						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque
-							ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis
-							porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper. Cras tempor massa
-							luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
+						<p>你在看你🐎呢</p>
 					</div>
 				</div>
 			</div>
+			
+		</div>
+	</div>
+	<div class="modal about-modal fade" id="myModal1" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Best
+						<span>Study</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="model-img-info">
+						<img src="images/e1.jpg" alt="" />
+						<p>你在看你🐎111呢</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="modal about-modal fade" id="myModal2" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Best
+						<span>Study</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="model-img-info">
+						<img src="images/e1.jpg" alt="" />
+						<p>你在看你🐎222呢</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="modal about-modal fade" id="myModal3" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Best
+						<span>Study</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="model-img-info">
+						<img src="images/e1.jpg" alt="" />
+						<p>你在看你🐎333呢</p>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</div>
 	<!-- //modal -->
 	<!-- //news -->
-	<!-- middle section -->
 
 	<!-- //middle section -->
 	<!-- testimonials -->
@@ -506,7 +542,7 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>学生</span>说
+					<span>优秀</span>学生展
 				</h3>
 				<div class="tittle-style">
 
@@ -517,17 +553,17 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/te1.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu1.jpg" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Michael Paul</h5>
-								<p>Client 1</p>
+								<h5>三好学生</h5>
+								<p>赵欢</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我今年十岁现读于堎底下镇四年级现任班长一职。
+								我勤奋好学、品学兼优、乐观向上、爱好广泛、尊敬师长、团结同学、做事执着、有毅力、是一个德、智、体、美、劳全面发展的好学生。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -537,17 +573,18 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/te2.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu2.jpg" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Faul John</h5>
-								<p>Client 2</p>
+								<h5>文明儿童</h5>
+								<p>王瑞华</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我有一腔勇于负责的精神。
+								在学校里我是老师的得力小助手同学们的好服务员。
+								我有一颗善良真诚的心灵。我的语文、数学、英语学习成绩一直名列前茅。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -557,17 +594,17 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/te3.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Richa Roy</h5>
-								<p>Client 3</p>
+								<h5>优秀学生</h5>
+								<p>过怡渲</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我爱学习、爱思考、勤于实践，坚持努力学好各门功课并且积极参加形式多样的课外活动。
+								了解社会有一定的实践能力。我善于观察勤学好问，根据自己的想象经常在家制作一些小东西，种植一些小植物，实践让我吸取了甘甜，拥有了丰润丰满了羽翼。
 							</p>
 						</div>
 						<div class="clearfix"> </div>

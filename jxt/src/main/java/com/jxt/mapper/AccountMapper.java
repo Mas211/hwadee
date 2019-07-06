@@ -14,4 +14,6 @@ public interface AccountMapper {
 
 	// 改
 	int update(Account account);
+	
+	Account search(int parId);
 }
