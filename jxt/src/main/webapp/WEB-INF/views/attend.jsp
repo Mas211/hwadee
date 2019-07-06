@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -35,86 +36,71 @@
 		<div class="container">
 			<div class="bottom_header_left">
 				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html">
-						<span class="fa fa-facebook"></span>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
 					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="index.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>注销</a>
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
 				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="header">
+    <div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
-								<label>Education & Courses</label>
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -124,6 +110,7 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
@@ -149,17 +136,12 @@
 					<span>考勤</span>
 					<span></span>记录
 				</h3>
-				<div class="tittle-style">
+				<div class="tittle-style"></div>
+			</div>	
+                <div class="login-form">
+                <form action="/menu" method="get">
 
-				</div>
-			</div>
-			<div class="login-form">
-				<form action="#" method="post">
-					<input type="submit" value="查       询">
-					<div class="">
-						<p>直接调attendance数据库吧= =</p>
-						<p>最好能调用近几次的，全部调用是不是太...</p>
-					</div>
+				    <p></p>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -169,24 +151,19 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach items="${requestScope.as}" var="as">
 							<tr>
-								<td>1</td>
-								<td>20164285</td>
-								<td>已出勤</td>
+								<td>${as.attendId }</td>
+								<td>${as.attendStuId }</td>
+								<td>${as.attendTime }</td>
 							</tr>
-									
-							<tr>
-								<td>2</td>
-								<td>20164285</td>
-								<td>缺勤</td>
-							</tr>
+							</c:forEach>
 						</tbody>
-					</table>
-					
-					
+						</table>
+						<input type="submit" value="返   回">
 				</form>
-			</div>
 
+			   </div>		
 		</div>
 	</div>
 

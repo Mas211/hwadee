@@ -1,5 +1,7 @@
 package com.jxt.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +41,32 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated method stub
 		return newsMapper.update(news);
 	}
+
+	@Override
+	public List<News> findAll() {
+		// TODO Auto-generated method stub
+		return newsMapper.findAll();
+	}
+
+	@Override
+	public List<News> getByEditor(int editorId) {
+		// TODO Auto-generated method stub
+		return newsMapper.getByEditor(editorId);
+	}
+
+	@Override
+	public int getRows() {
+		// TODO Auto-generated method stub
+		return newsMapper.getRows();
+	}
+
+	@Override
+	public List<News> getPageNews(int start) {
+		// TODO Auto-generated method stub
+		return newsMapper.getPageNews(start);
+	}
+	
+	
+	
 
 }

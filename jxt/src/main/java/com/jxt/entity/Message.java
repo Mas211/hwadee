@@ -1,7 +1,5 @@
 package com.jxt.entity;
 
-import java.sql.Time;
-
 //消息
 public class Message {
 	private Integer messageId;

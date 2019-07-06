@@ -24565,9 +24565,42 @@ UE.plugin.register('simpleupload', function (){
                     return;
                 }
 
-                domUtils.on(iframe, 'load', callback);
-                form.action = utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
-                form.submit();
+                 domUtils.on(iframe, 'load', callback);
+                 form.action = utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
+                 form.submit();
+                
+                /*var formdata = new FormData(form);
+                var arr,reg=new RegExp("(^| )_token=([^;]*)(;|$)");
+
+                var myForm = document.getElementById("myForm");
+                var xhr= new XMLHttpRequest();
+                xhr.open("POST", me.getOpt('serverUrl')+'?action=uploadimage', true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4)
+                        if ((xhr.status >=200 && xhr.status < 300) || xhr.status == 304)
+                            alert(xhr.responseText);
+                }
+                xhr.send(formdata);
+
+                xhr.onreadystatechange = function () {
+                    if(xhr.readyState == 4) {
+                        console.log(xhr.responseText);
+                        var response = JSON.parse(xhr.responseText);
+                        if(response.state =='SUCCESS'){
+                            loader = me.document.getElementById(loadingId);
+                            loader.setAttribute('src', response.url);
+                            loader.setAttribute('_src', response.url);
+                            loader.setAttribute('title', response.title || '');
+                            loader.setAttribute('alt', response.original || '');
+                            loader.removeAttribute('id');
+                            domUtils.removeClasses(loader, 'loadingclass');
+                        }else
+                        {
+                            showErrorLoader && showErrorLoader(response.state);
+                        }
+                    }
+                }*/
+
             });
 
             var stateTimer;

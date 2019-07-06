@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>模板</title>
+	<title>公告详情</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,10 +19,10 @@
 		}
 	</script>
 	<!-- //meta-tags -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome -->
-	<link href="/assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
@@ -36,14 +35,20 @@
 		<div class="container">
 			<div class="bottom_header_left">
 				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>CQU, China
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
 			<div class="bottom_header_right">
 				
+				<div class="top-menu">
+            <ul class="pull-right top-menu">
+                <br>
+
+            </ul>
+        		</div>
 				<div class="header-top-righ">
 					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>注销</a>
+						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -62,22 +67,39 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index.html">
-							<h1>
-								<span ><img src="images\graduate.png" height="60" width="60"></span>家校通
+							<h1 >
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
 								<!--这里插入logo的路径-->
 								<label>Education & Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<nav class="link-effect-2" id="link-effect-2">
+							<ul class="nav navbar-nav">
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+							</ul>
+						</nav>
+					</div>
 					<!--/.navbar-collapse-->
 					<!--/.navbar-->
 				</div>
 			</nav>
 		</div>
 	</div>
-	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
@@ -91,40 +113,40 @@
 					<a href="index.html">主页</a>
 					<span>| |</span>
 				</li>
-				<li>该页面的功能</li>
+				<li>公告详情</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!--在此写自己功能模块的html-->
-	<p>需要的模块可以去其他html里面找哟~~</p>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
+	<div style="width: 600px; margin: 0 auto;">
+		<div class="title-div">
+			<h3 class="tittle"></h3>		
+		</div>
+		<div class="title-div">
+			<h3 class="tittle" style="font-size: 32px">
+				${announce.announceTitle}
+			</h3>
+			<div class="tittle-style">
 
+			</div>
+			
+		</div>
+		
+		<h4 style="font-family: 'Raleway', sans-serif;display: inline-block;padding: 0 0 50px 0">发布时间：</h4>
+		<span style="font-family: 'Open Sans', sans-serif;color: #999;">${announce.announceTime}</span>
 
+		<div style="margin: 0 auto; ">
+			<div style="font-size: 20px">
+				${announce.announceContent}
+			</div>
+			<h4 style="font-family: 'Raleway', sans-serif;display: inline-block; padding: 50px 0">最后修改于：</h4>
+			<span style="font-family: 'Open Sans', sans-serif;color: #999;">${announce.announceModified}</span>
 
+		</div>
 
+	</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -134,49 +156,42 @@
 						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>联系 我们:</h4>
+						<h4>联系我们:</h4>
 						<p>
 							<span>电话 : </span>800 820 8820</p>
 						<p>
 							<span>邮箱 : </span>
-							mail@jxt.com
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>开放 时间</h4>
-						<p>24小时</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
+							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>欢迎访问家校通</h2>
-				</div>
-				<!-- footer-button-info -->
+
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学  <a href="http://www.cqu.edu.cn/" target="_blank" title="点击访问…">重大官网</a> </p>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
 				</div>
-				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -188,44 +203,19 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="js/bootstrap.js"></script>
-	<!-- stats numscroller-js-file -->
-	<script src="js/numscroller-1.0.js"></script>
-	<!-- //stats numscroller-js-file -->
-
-	<!-- Flexslider-js for-testimonials -->
+	<!-- Calendar -->
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script src="js/jquery-ui.js"></script>
 	<script>
-		$(window).load(function () {
-			$("#flexiselDemo1").flexisel({
-				visibleItems: 1,
-				animationSpeed: 1000,
-				autoPlay: false,
-				autoPlaySpeed: 3000,
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: {
-					portrait: {
-						changePoint: 480,
-						visibleItems: 1
-					},
-					landscape: {
-						changePoint: 640,
-						visibleItems: 1
-					},
-					tablet: {
-						changePoint: 768,
-						visibleItems: 1
-					}
-				}
-			});
-
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
 		});
 	</script>
-	<script src="/assets/js/jquery.flexisel.js"></script>
-	<!-- //Flexslider-js for-testimonials -->
+	<!-- //Calendar -->
 	<!-- smooth scrolling -->
-	<script src="/assets/js/SmoothScroll.min.js"></script>
-	<script src="/assets/js/move-top.js"></script>
-	<script src="/assets/js/easing.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script src="js/move-top.js"></script>
+	<script src="js/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {

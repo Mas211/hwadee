@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Homework</title>
+	<title>奖罚列表</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,85 +32,69 @@
 
 <body>
 	<!-- header -->
+	<!-- header -->
 	<div class="header-top">
 		<div class="container">
-			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
-					</a>
-				</div>
-				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
-				</div>
-				<div class="clearfix"> </div>
+			<div class="bottom_header_left">
+				<p>
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
+				</p>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="bottom_header_right">
+				
+				<div class="top-menu">
+            <ul class="pull-right top-menu">
+                <br>
+
+            </ul>
+        		</div>
+				<div class="header-top-righ">
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 	<div class="header">
 		<div class="content white">
-			<nav class="navbar navbar-default" >
+			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index.html">
-							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
+							<h1 >
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
+								<!--这里插入logo的路径-->
 								<label>Education & Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">主页</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li class="active">
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -121,8 +105,8 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
-
+	<div style="text-align:center">
+  		<image src="/assets/images/login.jpg" width=1000>
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -133,7 +117,7 @@
 					<a href="index.html">主页</a>
 					<span>| |</span>
 				</li>
-				<li>查看作业</li>
+				<li>奖罚列表</li>
 			</ul>
 		</div>
 	</div>
@@ -143,38 +127,48 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>作 &nbsp;</span>业
+					<span>奖</span>罚<span>信</span>息
 				</h3>
 				<div class="tittle-style">
 				</div>
+
 			</div>
 			<div class="bs-docs-example">
-				<table class="table table-striped">
+				<table class="table table-striped"  >
 					<thead>
-						<tr>
-							<th></th>
-							<th>发布老师</th>
-							<th>班级</th>
-							<th>作业标题</th>
-							<th>发布时间</th>
-							<th>截止时间</th>
-							<th>内容</th>
+						<tr >
+							<th style="text-align: center;">奖罚编号</th>
+							<th style="text-align: center;">编辑人</th>
+							<th style="text-align: center;">学生姓名</th>
+							<th style="text-align: center;">奖罚类型</th>
+							<th style="text-align: center;">奖罚内容</th>
+							<th style="text-align: center;">建立时间</th>
+							<th style="text-align: center;">操作</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${requestScope.tasks }" var="t">
-						<tr>
-							<td>${t.taskId }</td>
-							<td>${t.account.accountName }</td>
-							<td>${t.account.accountClassId }</td>
-							<td>${t.taskTitle }</td>
-							<td>${t.taskBeginTime }</td>
-							<td>${t.taskDeadline }</td>
-							<td>${t.taskContent }</td>
+						<c:forEach items="${requestScope.rp }" var="rp">
+						<tr style="text-align: center;">
+							<td>${rp.rewardAndPunishId }</td>
+							<td>${rp.rpTId }</td>
+							<td>${rp.account.accountName}</td>
+							<c:if test="${rp.rewardOrPunish == 1}">
+								<td>奖</td>
+							</c:if>
+							<c:if test="${rp.rewardOrPunish == 0} ">
+								<td>罚</td>
+							</c:if>
+							<c:if test="${rp.rewardOrPunish == null}">
+								<td></td>
+							</c:if>							
+							<td>${rp.rpContent }</td>
+							<td>${rp.rpTime }</td>
+							<td><a href="/updateRp/${rp.rewardAndPunishId}">修改</a>&nbsp;|&nbsp;<a href="/deleteRp/${rp.rewardAndPunishId}">删除</a></td>
 						</tr>
 						</c:forEach>
 					</tbody>
 				</table>
+
 			</div>
 		</div>
 	</div>
@@ -225,7 +219,9 @@
 			<div class="container">
 				<div class="allah-copy">
 					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
+
 				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>

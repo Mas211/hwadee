@@ -17,4 +17,7 @@ public interface AccountMapper {
 	
 	//查班级id
 	int findClassId(int accountId);
+
+	Account search(int parId);
+
 }

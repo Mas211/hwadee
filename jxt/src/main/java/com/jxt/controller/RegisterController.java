@@ -33,7 +33,6 @@ public class RegisterController {
 	public String register(Account account,HttpServletRequest request) throws Exception{
 		if(registerService.check1(account.getAccountId())!=null){
 			//注册失败
-			System.out.println("111");
 			target = "register";
 		}else{
 			//注册成功
@@ -47,11 +46,16 @@ public class RegisterController {
 		return target;
 	}
 	
-	@GetMapping("/check")
-	public @ResponseBody int check(int id) {
+	@GetMapping("/check2")
+	public @ResponseBody int check(String id) {
 		
-		int result = registerService.check(id);
-		
+		int result = registerService.check2(id);
 		return result;
 	}
+	
+	
+	
+	
+	
+	
 }

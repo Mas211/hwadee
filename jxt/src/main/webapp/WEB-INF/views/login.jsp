@@ -53,7 +53,7 @@
 					</a>
 				</div>
 				<div class="header-top-righ">
-					<a href="login.html"> <span class="fa fa-sign-out"
+					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -73,10 +73,10 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通 <label>Education
-									& Courses</label>
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
@@ -87,7 +87,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -107,16 +107,17 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.html">首页</a> <span>| |</span></li>
+				<li><a href="/index">首页</a> <span>| |</span></li>
 				<li>登录</li>
 			</ul>
 		</div>
@@ -134,7 +135,7 @@
 				<form action="/login" method="post">
 					<div class="">
 						<p>账号</p>
-						<input type="text" name="accountId" required="" /><span></span>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountId" required="" /><span></span>
 					</div>
 					<div class="">
 						<p>密码</p>
@@ -143,7 +144,7 @@
 					</div>
 					<div>${msg}</div>
 					<div>
-						<select style="width: 100%;">
+						<select style="width: 100%;" name="choose">
 							<option value="学生">学生</option>
 							<option value="教师">教师</option>
 							<option value="家长">家长</option>
@@ -155,7 +156,7 @@
 					</label>
 					<div class="login-agileits-bottom wthree">
 						<h6>
-							<a href="#">忘记密码</a>
+							<a href="retrieve">忘记密码</a>
 						</h6>
 					</div>
 					<input type="submit" value="登录">

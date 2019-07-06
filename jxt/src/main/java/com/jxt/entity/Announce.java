@@ -8,7 +8,14 @@ public class Announce {
 	private String announceTitle;
 	private String announceContent;
 	private Timestamp announceTime;
+	private Timestamp announceModified;
 	
+	public Timestamp getAnnounceModified() {
+		return announceModified;
+	}
+	public void setAnnounceModified(Timestamp announceModified) {
+		this.announceModified = announceModified;
+	}
 	public Integer getAnnounceId() {
 		return announceId;
 	}

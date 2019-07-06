@@ -6,7 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Announce" useGeneratedKeys="true" keyProperty="announceId">
-		INSERT INTO announce(announce_id, announce_title, announce_content, announce_time) VALUES(#{announceId}, #{announceTitle}, #{announceContent}, #{announceTime})
+		INSERT INTO announce(announce_id, announce_title, announce_content, announce_time, announce_modified) 
+		VALUES(#{announceId}, #{announceTitle}, #{announceContent}, #{announceTime}, #{announceModified})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -19,16 +20,39 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Announce">
 		SELECT
-			announce_id, announce_title, announce_content, announce_time
+			announce_id, announce_title, announce_content, announce_time, announce_modified
 		FROM
 			announce
 		WHERE
 			announce_id = #{value}
 	</select>
 	
+	<select id="findAll" resultType="com.jxt.entity.Announce">
+		SELECT
+			announce_id, announce_title, announce_content, announce_time, announce_modified
+		FROM
+			announce
+	</select>
+	
+	<select id="getRows" resultType="int">
+		SELECT count(*)
+		FROM announce
+	</select>
+	
+	<select id="getPageAnnounce" parameterType="int"
+		resultType="com.jxt.entity.Announce">
+		SELECT
+			announce_id, announce_title, announce_time
+		FROM
+			announce
+		ORDER BY announce_id DESC
+		LIMIT #{value}, 20
+	</select>
+	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.Announce">
-		UPDATE announce SET announce_title = #{announceTitle}, announce_content=#{announceContent}, announce_time=#{announceTime}
+		UPDATE announce SET announce_title = #{announceTitle}, announce_content=#{announceContent},
+			announce_modified=#{announceModified}
 		WHERE
 			announce_id = #{announceId}
 	</update>

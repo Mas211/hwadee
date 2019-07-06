@@ -6,8 +6,10 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.News" useGeneratedKeys="true" keyProperty="newsId">
-		INSERT INTO news(news_id, editor_id, news_title, news_create, news_content, news_word, publisher, news_modified) 
-		VALUES(#{newsId}, #{editorId}, #{newsTitle}, #{newsCreate}, #{newsContent}, #{newsWord}, #{publisher}, #{newsModified})
+		INSERT INTO news(news_id, editor_id, news_title, news_create, news_content, publisher, news_modified,
+			news_cover_path, news_intro) 
+		VALUES(#{newsId}, #{editorId}, #{newsTitle}, #{newsCreate}, #{newsContent}, #{publisher}, #{newsModified}, 
+			#{newsCoverPath}, #{newsIntro})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -20,19 +22,57 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.News">
 		SELECT
-			news_id, editor_id, news_title, news_create, news_content, news_word, publisher, news_modified
+			news_id, editor_id, news_title, news_create, news_content, publisher, news_modified, news_cover_path, news_intro
 		FROM
 			news
 		WHERE
 			news_id = #{value}
 	</select>
+
+	
+	<select id="findAll" resultType="com.jxt.entity.News">
+		SELECT
+			a.account_id "account.account_id",
+			a.account_name "account.account_name",
+			n.news_id, n.editor_id, n.news_title, n.news_create,
+			n.publisher, n.news_modified, n.news_intro
+		FROM
+			account a INNER JOIN news n ON n.editor_id = a.account_id
+	</select>
+	
 	
 	 <!-- 需要修改的地方 -->
 	<update id="update" parameterType="com.jxt.entity.News">
 		UPDATE news SET news_title = #{newsTitle}, news_modified=#{newsModified}, publisher=#{publisher}, 
-			news_content=#{newsContent}, news_word=#{newsWord}
+			news_content=#{newsContent}, news_cover_path=#{newsCoverPath}, news_intro=#{newsIntro}
 		WHERE
 			news_id = #{newsId}
 	</update>
+	
+	<select id="getByEditor" parameterType="int"
+		resultType="com.jxt.entity.News">
+		SELECT
+			news_id, editor_id, news_title, news_create, news_content, publisher, news_modified, news_intro
+		FROM
+			news
+		WHERE
+			editor_id = #{value}
+	</select>
+	
+	<select id="getRows" resultType="int">
+		SELECT count(*)
+		FROM news
+	</select>
+	
+	<select id="getPageNews" parameterType="int"
+		resultType="com.jxt.entity.News">
+		SELECT
+			news_id, news_title, news_create, news_intro, news_cover_path, publisher
+		FROM
+			news
+		ORDER BY news_id DESC
+		LIMIT #{value}, 10
+	</select>
+	
 	
 </mapper>

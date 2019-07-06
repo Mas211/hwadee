@@ -4,29 +4,46 @@ import java.sql.Timestamp;
 
 //奖罚
 public class RewardAndPunish {
-	private Integer rewardAndPunisId;
-	private Integer rewardOrPunis;			//奖 还是 罚
+	private Integer rewardAndPunishId;
+	private Integer rewardOrPunish;			//奖 还是 罚
 	private Integer rpStuId;
+	private Integer rpTId;
 	private String rpContent;
 	private Timestamp rpTime;
 	
-	public Integer getRewardAndPunisId() {
-		return rewardAndPunisId;
+	private Account account;
+	
+	
+	public Account getAccount() {
+		return account;
 	}
-	public void setRewardAndPunisId(Integer rewardAndPunisId) {
-		this.rewardAndPunisId = rewardAndPunisId;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
-	public Integer getRewardOrPunis() {
-		return rewardOrPunis;
+	
+	public Integer getRewardAndPunishId() {
+		return rewardAndPunishId;
 	}
-	public void setRewardOrPunis(Integer rewardOrPunis) {
-		this.rewardOrPunis = rewardOrPunis;
+	public void setRewardAndPunishId(Integer rewardAndPunishId) {
+		this.rewardAndPunishId = rewardAndPunishId;
+	}
+	public Integer getRewardOrPunish() {
+		return rewardOrPunish;
+	}
+	public void setRewardOrPunish(Integer rewardOrPunish) {
+		this.rewardOrPunish = rewardOrPunish;
 	}
 	public Integer getRpStuId() {
 		return rpStuId;
 	}
 	public void setRpStuId(Integer rpStuId) {
 		this.rpStuId = rpStuId;
+	}
+	public Integer getRpTId() {
+		return rpTId;
+	}
+	public void setRpTId(Integer rpTId) {
+		this.rpTId = rpTId;
 	}
 	public String getRpContent() {
 		return rpContent;
@@ -40,4 +57,6 @@ public class RewardAndPunish {
 	public void setRpTime(Timestamp rpTime) {
 		this.rpTime = rpTime;
 	}
+	
+	
 }

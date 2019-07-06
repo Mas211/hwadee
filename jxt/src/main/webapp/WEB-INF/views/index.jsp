@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Home</title>
+	<title>欢迎访问家校通</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,36 +28,61 @@
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+
+	<style type="text/css">
+	#div1{
+    width:0px;
+    height:300px;
+    position:fixed;
+    bottom:0;
+    left:-35px;
+    z-index: 999;
+    
+}   
+
+
+</style>
+<!--这个style固定二维码位置-->
 </head>
 
 <body>
+
+
+	<div id="div1"><img src="..\assets\images\erweima2.gif" height="205" width="205" ></div><!--这个是二维码地址-->
 	<!-- header -->
 	<div class="header-top">
 		<div class="container">
 			<div class="bottom_header_left">
 				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
 					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+					<br/>
+					<a href="/studentCheck"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>验证
+					</a>
 				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
@@ -74,8 +100,9 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index.html">
-							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
+							<h1 >
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
+								<!--这里插入logo的路径-->
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -84,37 +111,17 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li class="active">
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -125,10 +132,12 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+
 		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		
+		<ol class="carousel-indicators" >
+			<li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
 			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="3" class=""></li>
@@ -137,43 +146,43 @@
 			<div class="item active">
 				<div class="container">
 					<div class="carousel-caption">
-						<h6>Welcome To Best Study</h6>
-						<h3>Leading
-							<span>University</span>
+						<h6></h6>
+						<h3>
+							<span></span>
 						</h3>
-						<p>Create an all-encompassing website for your school with ease.</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
 			<div class="item item2">
 				<div class="container">
 					<div class="carousel-caption">
-						<h6>Welcome To Best Study</h6>
-						<h3>Most Popular
-							<span>Education</span>
+						<h6></h6>
+						<h3>
+							<span></span>
 						</h3>
-						<p>Create an all-encompassing website for your school with ease.</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
 			<div class="item item3">
 				<div class="container">
 					<div class="carousel-caption">
-						<h6>Welcome To Best Study</h6>
-						<h3>We Can
-							<span>Teach</span> You</h3>
-						<p>Create an all-encompassing website for your school with ease.</p>
+						<h6></h6>
+						<h3>
+							<span></span> </h3>
+						<p></p>
 					</div>
 				</div>
 			</div>
 			<div class="item item4">
 				<div class="container">
 					<div class="carousel-caption">
-						<h6>Welcome To Best Study</h6>
-						<h3>Most Popular
-							<span>Education</span>
+						<h6 ></h6>
+						<h3>
+							<span></span>
 						</h3>
-						<p>Create an all-encompassing website for your school with ease.</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
@@ -194,7 +203,7 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>W</span>elcome
+					<span>欢迎访问</span>家校通
 				</h3>
 				<div class="tittle-style">
 
@@ -202,37 +211,35 @@
 			</div>
 			<div class="welcome-sub-wthree">
 				<div class="col-md-6 banner_bottom_left">
-					<h4>About
-						<span>Best Study</span>
+					<h4>新
+						<span>闻</span>
 					</h4>
-					<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit, Nulla viverra pharetra sem eget.</p>
-					<p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-						pulvinar neque pharetra ac.Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla
-						viverra pharetra sem.</p>
+					<p>？？</p>
+					<p>！</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+				</div>
+				<div class="col-md-6 banner_bottom_left">
+					<h4>公
+						<span>告</span>
+					</h4>
+					<p>= =</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
+					<p>介绍介绍……</p>
 				</div>
 				<!-- Stats-->
-				<div class="col-md-6 stats-info-agile">
-					<div class="col-xs-6 stats-grid stat-border">
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='768' data-delay='.5' data-increment="1">768</div>
-						<p>Faculties</p>
-					</div>
-					<div class="col-xs-6 stats-grid">
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='678' data-delay='.5' data-increment="1">678</div>
-						<p>Approved Courses</p>
-					</div>
-					<div class="clearfix"></div>
-					<div class="child-stat">
-						<div class="col-xs-6 stats-grid stat-border border-st2">
-							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='800' data-delay='.5' data-increment="1">800</div>
-							<p>Certified Teachers</p>
-						</div>
-						<div class="col-xs-6 stats-grid">
-							<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='485' data-delay='.5' data-increment="1">485</div>
-							<p>Happy Students</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
+				
 				<!-- //Stats -->
 				<div class="clearfix"> </div>
 			</div>
@@ -240,76 +247,86 @@
 	</div>
 	<!-- //about -->
 	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网站建设</a></div>
-	<!-- services -->
-	<div class="services">
+
+	<!-- news -->
+
+
+
+
+	<div class="gallery">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>O</span>ur
-					<span>S</span>ervices
+					<span>趣味</span>活动
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="services-moksrow">
-				<div class="col-xs-4 services-grids-w3l">
-					<div class="servi-shadow">
-						<span class="fa fa-bullhorn icon" aria-hidden="true"></span>
-						<h4>Popular Courses</h4>
-						<p>Phasellus at placerat ante nulla adipiscing elit</p>
-					</div>
+			<div class="agileinfo-gallery-row">
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="../assets/images/ffz.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/ffz.jpg" alt="" title="跟小伙伴们放风筝真开心~~" />
+						<div class="agile-figcaption">
+							<h4>放风筝</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-4 services-grids-w3l">
-					<div class="servi-shadow">
-						<span class="fa fa-certificate icon" aria-hidden="true"></span>
-						<h4>Certification</h4>
-						<p>Phasellus at placerat ante nulla adipiscing elit</p>
-					</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="../assets/images/气球.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/气球.jpg" alt="" title="阳光下的气球真美啊" />
+						<div class="agile-figcaption">
+							<h4>放气球</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-4 services-grids-w3l">
-					<div class="servi-shadow">
-						<span class="fa fa-book icon" aria-hidden="true"></span>
-						<h4>Book Library</h4>
-						<p>Phasellus at placerat ante nulla adipiscing elit</p>
-					</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="../assets/images/数字.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/数字.jpg" alt="" title="我们一起跳一跳" />
+						<div class="agile-figcaption">
+							<h4>兔子跳</h4>
+						</div>
+					</a>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="services-moksrow">
-				<div class="col-xs-4 services-grids-w3l">
-					<div class="servi-shadow">
-						<span class="fa fa-users icon" aria-hidden="true"></span>
-						<h4>Best Teachers</h4>
-						<p>Phasellus at placerat ante nulla adipiscing elit</p>
-					</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="../assets/images/踢足球.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/踢足球.jpg" alt="" title="注意了，我要射门了！" />
+						<div class="agile-figcaption">
+							<h4>足球比赛</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-4 services-grids-w3l">
-					<div class="servi-shadow">
-						<span class="fa fa-bus icon" aria-hidden="true"></span>
-						<h4>Transport Facility</h4>
-						<p>Phasellus at placerat ante nulla adipiscing elit</p>
-					</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="../assets/images/纸飞机.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/纸飞机.jpg" alt="" title="带上纸飞机奔跑吧！" />
+						<div class="agile-figcaption">
+							<h4>纸飞机</h4>
+						</div>
+					</a>
 				</div>
-				<div class="col-xs-4 services-grids-w3l">
-					<div class="servi-shadow">
-						<span class="fa fa-laptop icon" aria-hidden="true"></span>
-						<h4>Excellent Lab</h4>
-						<p>Phasellus at placerat ante nulla adipiscing elit</p>
-					</div>
+				<div class="col-xs-4 w3gallery-grids">
+					<a href="../assets/images/讲课.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="../assets/images/讲课.jpg" alt="" title="跟小伙伴们一起学习呀~" />
+						<div class="agile-figcaption">
+							<h4>师生讨论</h4>
+						</div>
+					</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!-- //services -->
-	<!-- news -->
+
+
+
+
+
 	<div class="news" id="news">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>O</span>ur
-					<span> E</span>vents
+					<span>相关</span>事件
+
 				</h3>
 				<div class="tittle-style">
 
@@ -320,7 +337,7 @@
 					<div class="col-md-6 yaallahaa-news-left">
 						<div class="col-xs-6 news-left-img">
 							<div class="news-left-text color-event1">
-								<h5>20 Dec</h5>
+								<h5>学校介绍</h5>
 							</div>
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
@@ -347,12 +364,12 @@
 					<div class="col-md-6 yaallahaa-news-left">
 						<div class="col-xs-6 news-left-img news-left-img1">
 							<div class="news-left-text color-event2">
-								<h5>27 Dec</h5>
+								<h5>学生活动</h5>
 							</div>
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
 							<div class="news-left-top-text text-color2">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
+								<a href="#" data-toggle="modal" data-target="#myModal1">Integer viverra eleifend neque</a>
 							</div>
 							<div class="date-grid">
 								<div class="admin">
@@ -377,12 +394,12 @@
 					<div class="col-md-6 yaallahaa-news-left">
 						<div class="col-xs-6 news-left-img news-left-img2">
 							<div class="news-left-text color-event3">
-								<h5>28 Dec</h5>
+								<h5>教师介绍</h5>
 							</div>
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
 							<div class="news-left-top-text text-color3">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
+								<a href="#" data-toggle="modal" data-target="#myModal2">Integer viverra eleifend neque</a>
 							</div>
 							<div class="date-grid">
 								<div class="admin">
@@ -404,12 +421,12 @@
 					<div class="col-md-6 yaallahaa-news-left">
 						<div class="col-xs-6 news-left-img news-left-img3">
 							<div class="news-left-text color-event4">
-								<h5>30 Dec</h5>
+								<h5>相关新闻</h5>
 							</div>
 						</div>
 						<div class="col-xs-6 news-grid-info-bottom-w3ls">
 							<div class="news-left-top-text text-color4">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
+								<a href="#" data-toggle="modal" data-target="#myModal3">Integer viverra eleifend neque</a>
 							</div>
 							<div class="date-grid">
 								<div class="admin">
@@ -448,69 +465,86 @@
 				<div class="modal-body">
 					<div class="model-img-info">
 						<img src="images/e1.jpg" alt="" />
-						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque
-							ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis
-							porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper. Cras tempor massa
-							luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
+						<p>你在看你🐎呢</p>
 					</div>
 				</div>
 			</div>
+			
+		</div>
+	</div>
+	<div class="modal about-modal fade" id="myModal1" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Best
+						<span>Study</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="model-img-info">
+						<img src="images/e1.jpg" alt="" />
+						<p>你在看你🐎111呢</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="modal about-modal fade" id="myModal2" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Best
+						<span>Study</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="model-img-info">
+						<img src="images/e1.jpg" alt="" />
+						<p>你在看你🐎222呢</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="modal about-modal fade" id="myModal3" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Best
+						<span>Study</span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="model-img-info">
+						<img src="images/e1.jpg" alt="" />
+						<p>你在看你🐎333呢</p>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</div>
 	<!-- //modal -->
 	<!-- //news -->
-	<!-- middle section -->
-	<div class="middle-sec-agile">
-		<div class="container">
-			<h4>Our
-				<span>Best Study</span> Institute</h4>
-			<ul>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Select A Course You Like And Explore It!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Join A Seminar To Know More About It!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Get Enrolled And Start Better Future With Us!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-			</ul>
-			<a class="button-style" href="join.html">Join Now</a>
-		</div>
-		<div class="pencil-img">
-			<img src="images/bg5.png" alt="" />
-		</div>
-	</div>
+
 	<!-- //middle section -->
 	<!-- testimonials -->
 	<div class="testimonials">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>O</span>ur
-					<span>C</span>lient's
-					<span>S</span>ay
+					<span>优秀</span>学生展
 				</h3>
 				<div class="tittle-style">
 
@@ -521,17 +555,17 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="images/te1.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu1.jpg" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Michael Paul</h5>
-								<p>Client 1</p>
+								<h5>三好学生</h5>
+								<p>赵欢</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我今年十岁现读于堎底下镇四年级现任班长一职。
+								我勤奋好学、品学兼优、乐观向上、爱好广泛、尊敬师长、团结同学、做事执着、有毅力、是一个德、智、体、美、劳全面发展的好学生。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -541,17 +575,18 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="images/te2.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu2.jpg" alt=" " class="img-responsive" />
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Faul John</h5>
-								<p>Client 2</p>
+								<h5>文明儿童</h5>
+								<p>王瑞华</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我有一腔勇于负责的精神。
+								在学校里我是老师的得力小助手同学们的好服务员。
+								我有一颗善良真诚的心灵。我的语文、数学、英语学习成绩一直名列前茅。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -561,17 +596,17 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="images/te3.jpg" alt=" " class="img-responsive" />
+								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
 							<div class="three_testimonials_grid1">
-								<h5>Richa Roy</h5>
-								<p>Client 3</p>
+								<h5>优秀学生</h5>
+								<p>过怡渲</p>
 							</div>
 							<p>
-								Donec laoreet eu purus eu viverra. Vestibulum sed convallis massa, eu aliquet massa. Suspendisse lacinia rutrum tincidunt.
-								Integer id erat porta, convallis.
+								我爱学习、爱思考、勤于实践，坚持努力学好各门功课并且积极参加形式多样的课外活动。
+								了解社会有一定的实践能力。我善于观察勤学好问，根据自己的想象经常在家制作一些小东西，种植一些小植物，实践让我吸取了甘甜，拥有了丰润丰满了羽翼。
 							</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -588,83 +623,46 @@
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>四川省成都市郫都区红旗大道北段146号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系 我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组 <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
-				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -673,11 +671,11 @@
 
 	<!-- js files -->
 	<!-- js -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
-	<script src="js/bootstrap.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
 	<!-- stats numscroller-js-file -->
-	<script src="js/numscroller-1.0.js"></script>
+	<script src="assets/js/numscroller-1.0.js"></script>
 	<!-- //stats numscroller-js-file -->
 
 	<!-- Flexslider-js for-testimonials -->
@@ -708,12 +706,12 @@
 
 		});
 	</script>
-	<script src="/assets/js/jquery.flexisel.js"></script>
+	<script src="assets/js/jquery.flexisel.js"></script>
 	<!-- //Flexslider-js for-testimonials -->
 	<!-- smooth scrolling -->
-	<script src="/assets/js/SmoothScroll.min.js"></script>
-	<script src="/assets/js/move-top.js"></script>
-	<script src="/assets/js/easing.js"></script>
+	<script src="assets/js/SmoothScroll.min.js"></script>
+	<script src="assets/js/move-top.js"></script>
+	<script src="assets/js/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {

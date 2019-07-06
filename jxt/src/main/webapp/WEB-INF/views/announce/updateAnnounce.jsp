@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Join Us</title>
+	<title>编辑公告</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,9 +22,8 @@
 	<!-- UEditor配置文件 -->
 	<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
 	<!-- 编辑器源码文件 -->
-	<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-	<!-- 解析器源码文件 -->
-	<script type="text/javascript" src="/ueditor/ueditor.parse.min.js"></script>
+	<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+
 
 
 	<!-- //meta-tags -->
@@ -44,24 +43,17 @@
 		<div class="container">
 			<div class="bottom_header_left">
 				<p>
-					<span class="fa fa-map-marker" aria-hidden="true"></span>New Kampshire Mshinon, USA
+					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="#">
-						<span class="fa fa-facebook"></span>
-					</a>
-					<a class="twitter" href="#">
-						<span class="fa fa-twitter"></span>
-					</a>
-					<a class="pinterest" href="#">
-						<span class="fa fa-pinterest-p"></span>
-					</a>
-					<a class="linkedin" href="#">
-						<span class="fa fa-linkedin"></span>
-					</a>
-				</div>
+				
+				<div class="top-menu">
+            <ul class="pull-right top-menu">
+                <br>
+
+            </ul>
+        		</div>
 				<div class="header-top-righ">
 					<a href="login.html">
 						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
@@ -83,8 +75,9 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="index.html">
-							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
+							<h1 >
+								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
+								<!--这里插入logo的路径-->
 								<label>Education & Courses</label>
 							</h1>
 						</a>
@@ -93,37 +86,19 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li>
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li class="active">
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="index.html" class="">首页</a></li>
+								<li><a href="contact.html" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="codes.html">公告</a></li>
+										<li><a href="create_news">新闻</a></li>
+									</ul></li>
+								<li><a href="courses.html" class="effect-3">校园风采</a></li>
+								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -143,10 +118,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.html">主页</a>
 					<span>| |</span>
 				</li>
-				<li>Join Us</li>
+				<li>编辑公告</li>
 			</ul>
 		</div>
 	</div>
@@ -155,7 +130,7 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					发布新闻
+					编辑公告
 				</h3>
 				<div class="tittle-style">
 
@@ -165,117 +140,77 @@
 				<form action="#" method="post">
 					<div class="fields-grid">
 						<div class="styled-input">
-							<label class="header">标题</label>
-							<input type="text" name="newsTitle" value="新闻标题">
-							<label class="header">发布人</label>
-							<input type="text" name="publisher" value="${sessionScope.account.accountName}">
+							<input type="hidden" name="announceId" value="${requestScope.announce.announceId}">
+							<label class="header">公告标题</label>
+							<input type="text" name="announceTitle" value="${requestScope.announce.announceTitle}">
 						</div>
 						
 						<div class="styled-input"  >
-							<label class="header">正文</label>
-							<!-- 加载编辑器的容器 -->
-							<script id="container" name="newsContent" type="text/plain" style="height: 400px">这里写你的初始化内容</script>
+							<label class="header">公告内容</label><br/>
+							<script id="container" name="newsContent" type="text/plain" style="height: 300px">
+							${requestScope.announce.announceContent}</script>
 							<!-- 配置文件 -->
 							<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
 							<!-- 编辑器源码文件 -->
 							<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
 							<!-- 实例化编辑器 -->
 							<script type="text/javascript">
-								var ue = UE.getEditor('container');
+								var ue = UE.getEditor('container',{toolbars: [['undo', 'redo', 'bold','italic','underline']]});
 							</script>
-
-
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<input type="submit" value="发布">
+					<input type="submit" value="提交修改">
 				</form>
 			</div>
 		</div>
 	</div>
 
-	<!-- footer -->
+<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="courses.html">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="join.html">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
+
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-				</div>
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
 				</div>
 				<div class="clearfix"></div>
 			</div>
