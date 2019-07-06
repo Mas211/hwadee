@@ -167,7 +167,7 @@
 		<li><a href="/commentadding" class="effect-3">添加评语</a></li>
 		<li><a href="/grade/enterginggrade" class="effect-3">录入成绩</a></li>
 		<li><a href="/grade/listall" class="effect-3">查看所有成绩</a></li>
-		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
+		<li><a href="/attend" class="effect-3">查看考勤</a></li>
 	</c:when>
 	
 	<c:when test="${sessionScope.account.roleId eq 2 }">
