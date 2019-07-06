@@ -67,7 +67,7 @@
 		t.attend_id, t.attend_stu_id, t.attend_time
 	FROM
 		account a
-	INNER JOIN attendance t ON a.account_id = t.attend_stu_id
+	INNER JOIN attendance t ON a.par_id = t.attend_stu_id
 
 	
 	</select>

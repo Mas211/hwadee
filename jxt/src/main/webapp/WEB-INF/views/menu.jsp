@@ -121,7 +121,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index.jsp">首页</a> <span>| |</span></li>
+				<li><a href="index">首页</a> <span>| |</span></li>
 				<li>功能列表</li>
 			</ul>
 		</div>
@@ -149,11 +149,11 @@
 			<li><a href="/personalInformationViewing">查看</a></li>
 			<li><a href="/personalInformationUpdating">修改</a></li>
 		</ul></li>
-<<<<<<< HEAD
+
 		<li><a href="/attend" class="effect-3">查看学生考勤</a></li>
-=======
+
 		<li><a href="/commentadding" class="effect-3">查看子女评语</a></li>
->>>>>>> 4287cd5c7788eac002176fcfbb34bf326fdde143
+
 		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
 		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
 		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>

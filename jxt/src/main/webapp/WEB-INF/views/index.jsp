@@ -74,7 +74,6 @@
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
-					<br/>
 					<a href="/studentCheck"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>验证
 					</a>
@@ -594,7 +593,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/stu3.png" alt=" " class="img-responsive" height="205" width="205"/>
+								<img src="../assets/images/stu3.jpg" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">
