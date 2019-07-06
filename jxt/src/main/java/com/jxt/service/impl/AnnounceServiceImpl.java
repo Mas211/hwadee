@@ -48,4 +48,16 @@ public class AnnounceServiceImpl implements AnnounceService {
 		return announceMapper.findAll();
 	}
 
+	@Override
+	public int getRows() {
+		// TODO Auto-generated method stub
+		return announceMapper.getRows();
+	}
+
+	@Override
+	public List<Announce> getPageAnnounce(int start) {
+		// TODO Auto-generated method stub
+		return announceMapper.getPageAnnounce(start);
+	}
+
 }

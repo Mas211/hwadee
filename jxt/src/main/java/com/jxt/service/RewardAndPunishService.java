@@ -1,5 +1,7 @@
 package com.jxt.service;
 
+import java.util.List;
+
 import com.jxt.entity.RewardAndPunish;
 
 public interface RewardAndPunishService {
@@ -14,4 +16,12 @@ public interface RewardAndPunishService {
 
 	// 改
 	int update(RewardAndPunish rewardAndPunish);
+	
+	String getName(int id);
+	
+	List<RewardAndPunish> getByTId(int rpTId);
+	
+	List<RewardAndPunish> findByPar(int parId);
+	
+	List<RewardAndPunish> findByStu(int stuId);
 }

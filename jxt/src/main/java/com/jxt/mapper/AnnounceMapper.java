@@ -18,4 +18,8 @@ public interface AnnounceMapper {
 	int update(Announce announce);
 	
 	List<Announce> findAll();
+	
+	int getRows();
+
+	List<Announce> getPageAnnounce(int start);
 }
