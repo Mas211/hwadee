@@ -1,14 +1,10 @@
 package com.jxt.controller;
 
 
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jxt.entity.Account;
 import com.jxt.entity.RewardAndPunish;
+import com.jxt.service.AccountService;
 import com.jxt.service.RewardAndPunishService;
 
 @Controller
@@ -27,6 +25,9 @@ public class RPController {
 
 	@Autowired
 	private RewardAndPunishService rps;
+	
+	@Autowired
+	private AccountService as;
 	
 	@GetMapping("/newRp")
 	public String newRp() {
@@ -99,5 +100,17 @@ public class RPController {
 		model.addAttribute("rp", rp);
 		return "RP/stuRp";
 	}
+	
+	@RequestMapping(value = "/getName", method = RequestMethod.GET, produces = "text/html;charset=utf-8")
+	public @ResponseBody String getName(String id) {
+		int idInt = Integer.parseInt(id);
+		
+		Account a = as.getAccountById(idInt);
+		
+		String result = a.getAccountName() + "|" + a.getRoleId();
+		
+		return result;
+	}
+
 	
 }

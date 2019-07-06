@@ -159,15 +159,11 @@
 							<td>${rp.rewardAndPunishId }</td>
 							<td>${rp.rpTId }</td>
 							<td>${rp.account.accountName}</td>
-							<c:if test="${rp.rewardOrPunish == 1}">
-								<td>奖</td>
-							</c:if>
-							<c:if test="${rp.rewardOrPunish == 0} ">
-								<td>罚</td>
-							</c:if>
-							<c:if test="${rp.rewardOrPunish == null}">
-								<td></td>
-							</c:if>							
+							<c:choose>
+								<c:when test="${rp.rewardOrPunish eq 1}"><td style="color:green">奖</td></c:when>
+								<c:when test="${rp.rewardOrPunish eq 0}"><td style="color:yellow">罚</td></c:when>
+								<c:otherwise><td>-</td></c:otherwise>
+							</c:choose>				
 							<td>${rp.rpContent }</td>
 							<td>${rp.rpTime }</td>
 							<td><a href="/updateRp/${rp.rewardAndPunishId}">修改</a>&nbsp;|&nbsp;<a href="/deleteRp/${rp.rewardAndPunishId}">删除</a></td>

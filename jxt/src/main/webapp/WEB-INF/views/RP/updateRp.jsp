@@ -140,7 +140,7 @@
 					<div class="">
 						<input type="hidden" name="rewardAndPunishId" value="${requestScope.rp.rewardAndPunishId}">
 						<label>学生学号：</label>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" value="${requestScope.rp.rpStuId}" />
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" value="${requestScope.rp.rpStuId}" required="" /><span></span><br/>
 						<label>学生姓名：</label>
 						<input type="text" name="stuName" id="stuName" value="${requestScope.stuName}">
 					</div>
@@ -154,7 +154,33 @@
 					<input type="submit" value="提交">
 				</form>
 			</div>
-
+			<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+			<script type="text/javascript">
+				$(function(){
+				$("div > input[name=rpStuId]").blur(function(e){
+					var input = $( this );
+					$.ajax({
+						url:"/getName",
+						type:"GET",
+						scriptCharset:"utf-8",
+						dataType:"text",
+						data: {id: input.val()},
+						contentType:"application/json;charset=UTF-8",
+						success:function(data, textStatus, jqXHR){
+							var result = new Array();
+							result = data.split("|");
+							if(result[1] == "5"){
+								input.next("span").html("");
+							}
+							else{
+								input.next("span").html("!请输入学生学号").css("color", "red");
+							}
+							$("#stuName").val(result[0]);
+						}
+					});
+				});
+			});
+			</script>
 		</div>
 	</div>
 
