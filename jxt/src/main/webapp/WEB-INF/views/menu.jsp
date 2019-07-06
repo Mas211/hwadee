@@ -48,14 +48,14 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -91,7 +91,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
