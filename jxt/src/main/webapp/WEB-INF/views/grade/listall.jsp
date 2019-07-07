@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-<title>成绩</title>
+<title>所有成绩</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,12 +44,13 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<a href="/menu"> <span class="fa fa-sign-out"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -69,7 +70,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="/index">
 							<h1>
 								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
@@ -84,7 +85,7 @@
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
 									<li><a href="/index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
@@ -92,8 +93,8 @@
 										<li><a href="/announceList/1">公告</a></li>
 										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -113,15 +114,15 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">首页</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/grade/enteringgrades">录入成绩</a>
+					<a href="/u/t/grade/enteringgrades">录入成绩</a>
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/grade/listsingle">查看单科成绩</a>
+					<a href="/u/t/grade/listsingle">查看单科成绩</a>
 					<span>| |</span>
 				</li>
 				<li>查看所有成绩</li>
@@ -148,6 +149,7 @@
 							<th>学生姓名</th>
 							<th>学生学号</th>
 							<th>科目</th>
+							<th>班级</th>
 							<th>任课老师</th>
 							<th>成绩</th>
 						</tr>
@@ -159,6 +161,7 @@
 							<td>${g.gradeStuName}</td>
 							<td>${g.gradeStuId }</td>
 							<td>${g.gradeSubject}</td>
+							<td>${g.gradeClassId}</td>
 							<td>${g.gradeTName }</td>
 							<td>${g.grade }</td>
 						</tr>
@@ -198,13 +201,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

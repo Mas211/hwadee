@@ -46,23 +46,15 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
-				<c:choose>
-				<c:when test="${!empty sessionScope.account}">
-					<div class="header-top-righ">
+			<div class="bottom_header_right"  style="width: 40%;">
+				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
+					</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
-				</c:when>
-				<c:otherwise>
-				<div class="header-top-righ">
-					<a href="/login"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>登录
-					</a>
-				</div>
-				</c:otherwise>
-				</c:choose>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
@@ -79,7 +71,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="/index">
 							<h1>
 								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
@@ -94,7 +86,7 @@
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="/index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
@@ -102,8 +94,8 @@
 										<li><a href="/announceList/1">公告</a></li>
 										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -123,7 +115,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index">首页</a> <span>| |</span></li>
+				<li><a href="/index">首页</a> <span>| |</span></li>
 				<li>功能列表</li>
 			</ul>
 		</div>
@@ -142,41 +134,41 @@
 				<c:choose>
 					<c:when test="${sessionScope.account.roleId eq 5 }">
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/personalInformationViewing" target="view_window"> 
+							<a class="agile-icon" href="/u/s/personalInformationViewing" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-user" aria-hidden="true"></i>查看个人信息
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/personalInformationUpdating" target="view_window"> 
+							<a class="agile-icon" href="/u/s/personalInformationUpdating" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-cog" aria-hidden="true"></i>修改个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/grade/liststudent" target="view_window">
+						<a class="agile-icon" href="/u/s/grade/liststudent" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								 <i class="fa fa-th-list" aria-hidden="true"></i>查看成绩
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/commentadding" target="view_window">
+						<a class="agile-icon" href="/u/s/commentadding" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-book" aria-hidden="true"></i>查看评语
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/attend" target="view_window">
+						<a class="agile-icon" href="/u/s/attend" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-calendar" aria-hidden="true"></i>查看考勤
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/homework/listhomework" target="view_window"> 
+						<a class="agile-icon" href="/u/s/homework/listhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-edit" aria-hidden="true"></i>查看作业
 								
@@ -194,49 +186,49 @@
 					</c:when>
 					<c:when test="${sessionScope.account.roleId eq 4 }">
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationViewing" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationViewing" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-user" aria-hidden="true"></i>查看个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationUpdating" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationUpdating" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-cog" aria-hidden="true"></i>修改个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/grade/liststudent" target="view_window"> 
+						<a class="agile-icon" href="/u/s/grade/liststudent" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-th-list" aria-hidden="true"></i>查看子女成绩
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/commentadding" target="view_window"> 
+						<a class="agile-icon" href="/u/s/commentadding" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-book" aria-hidden="true"></i>查看子女评语
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/attend" target="view_window"> 
+						<a class="agile-icon" href="/u/s/attend" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-calendar" aria-hidden="true"></i>查看子女考勤
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/homework/listhomework" target="view_window"> 
+						<a class="agile-icon" href="/u/s/homework/listhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-edit" aria-hidden="true"></i>查看作业
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/stuRp" target="view_window"> 
+						<a class="agile-icon" href="/u/s/stuRp" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-trophy" aria-hidden="true"></i>查看子女奖罚信息
 								
@@ -249,40 +241,49 @@
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
 									<div class="point" style="float:left"></div>
 								</c:if>
+
 							</div></a>
 						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/s/vedio" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>查看视频
+								
+							</div></a>
+						</div>
+
 					</c:when>
 					<c:when test="${sessionScope.account.roleId eq 3 }">
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationViewing" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationViewing" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-user" aria-hidden="true"></i>查看个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationUpdating" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationUpdating" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-cog" aria-hidden="true"></i>修改个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/grade/enterginggrade" target="view_window"> 
+						<a class="agile-icon" href="/u/t/grade/enterginggrade" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/grade/listall" target="view_window"> 
+						<a class="agile-icon" href="/u/t/grade/listall" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-th-list" aria-hidden="true"></i>查看所有成绩
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/commentadding" target="view_window"> 
+						<a class="agile-icon" href="/u/t/commentadding" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-book" aria-hidden="true"></i>添加评语
 								
@@ -290,49 +291,49 @@
 						</div>
 						
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/newRp" target="view_window"> 
+						<a class="agile-icon" href="/u/t/newRp" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-star-o" aria-hidden="true"></i>记录奖罚
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/rpManage" target="view_window"> 
+						<a class="agile-icon" href="/u/s/rpManage" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-calendar" aria-hidden="true"></i>查看奖罚
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/homework/listhomework" target="view_window"> 
+						<a class="agile-icon" href="/u/s/homework/listhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-edit" aria-hidden="true"></i>查看作业
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/homework/publishhomework" target="view_window"> 
+						<a class="agile-icon" href="/u/t/homework/publishhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>布置作业
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/createNews" target="view_window"> 
+						<a class="agile-icon" href="/u/t/createNews" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-plus" aria-hidden="true"></i>发布新闻
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/newsManage" target="view_window">
+							<a class="agile-icon" href="/u/t/newsManage" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								 <i	class="fa fa-file-text-o" aria-hidden="true"></i>我发布的新闻
 							</div>
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/activity/activity" target="view_window"> 
+						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
 								
@@ -351,63 +352,63 @@
 
 					<c:when test="${sessionScope.account.roleId eq 2 }">
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationViewing" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationViewing" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-user" aria-hidden="true"></i>查看个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationUpdating" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationUpdating" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-cog" aria-hidden="true"></i>修改个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/grade/listall" target="view_window"> 
+						<a class="agile-icon" href="/u/t/grade/listall" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-th-list" aria-hidden="true"></i>查看所有成绩
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/commentadding" target="view_window"> 
+						<a class="agile-icon" href="/u/t/commentadding" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-book" aria-hidden="true"></i>添加评语
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/grade/enterginggrade" target="view_window"> 
+						<a class="agile-icon" href="/u/t/grade/enterginggrade" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/homework/listhomework" target="view_window"> 
+						<a class="agile-icon" href="/u/s/homework/listhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-edit" aria-hidden="true"></i>查看作业
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/homework/publishhomework" target="view_window"> 
+						<a class="agile-icon" href="/u/t/homework/publishhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>布置作业
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/createNews" target="view_window"> 
+						<a class="agile-icon" href="/u/t/createNews" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-plus" aria-hidden="true"></i>发布新闻
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/newsManage" target="view_window">
+							<a class="agile-icon" href="/u/t/newsManage" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								 <i	class="fa fa-file-text-o" aria-hidden="true"></i>我发布的新闻
 							</div>
@@ -425,58 +426,65 @@
 					</c:when>
 					<c:otherwise>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationViewing" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationViewing" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-user" aria-hidden="true"></i>查看个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/personalInformationUpdating" target="view_window"> 
+						<a class="agile-icon" href="/u/s/personalInformationUpdating" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-cog" aria-hidden="true"></i>修改个人信息
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/createNews" target="view_window"> 
+						<a class="agile-icon" href="/u/t/createNews" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-plus" aria-hidden="true"></i>发布新闻
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/newsManage" target="view_window">
+							<a class="agile-icon" href="/u/newsManage" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								 <i	class="fa fa-file-text-o" aria-hidden="true"></i>管理新闻
 							</div>
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/createAnnounce" target="view_window"> 
+						<a class="agile-icon" href="/u/createAnnounce" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bullhorn" aria-hidden="true"></i>发布公告
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/announceManage" target="view_window"> 
+						<a class="agile-icon" href="/u/announceManage" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-file-text" aria-hidden="true"></i>管理公告
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/activity/activity" target="view_window"> 
+						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
 								
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/createNews" target="view_window"> 
+						<a class="agile-icon" href="/u/accountadding" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-bell-o" aria-hidden="true"></i>管理活动照片
+								<i class="fa fa-snapchat-ghost" aria-hidden="true"></i>创建新用户
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/adminupdating" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-info" aria-hidden="true"></i>修改用户信息
 								
 							</div></a>
 						</div>
@@ -526,13 +534,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

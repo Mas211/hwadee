@@ -11,8 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.jxt.entity.Account;
-
 @Controller
 public class LogoutController {
 
@@ -33,7 +31,7 @@ public class LogoutController {
 		String target[] = temp.split("/");
 		if(session.getAttribute("account")  ==null){
 			//session为空时，返回请求页面，即不能注销
-			return target[3];
+			return "redirect:/index";
 		}
 		session.removeAttribute("account");
 		//重定向到index

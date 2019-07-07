@@ -6,8 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Grade" useGeneratedKeys="true" keyProperty="gradeId">
-		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name) 
-		VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade}, #{gradeSubject}, #{gradeStuName}, #{gradeTName})
+		INSERT INTO grade(grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name, grade_class_id) 
+		VALUES(#{gradeId}, #{gradeTId}, #{gradeStuId}, #{grade}, #{gradeSubject}, #{gradeStuName}, #{gradeTName} ,#{gradeClassId})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -28,7 +28,7 @@
 	</select>
 	<select id="findById" parameterType="int" resultType="com.jxt.entity.Grade">
 		SELECT
-			grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name
+			grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name, grade_class_id
 		FROM
 			grade
 		WHERE
@@ -43,6 +43,7 @@
 		<id column="grade_subject" property="gradeSubject" />
 		<id column="grade_stu_name" property="gradeStuName" />
 		<id column="grade_t_name" property="gradeTName" />
+		<id column="grade_class_id" property="gradeClassId" />
 		<association property="account" javaType="com.jxt.entity.Account">
 			<id column="account_id" property="accountId" />
 			<result column="role_id" property="roleId" />
@@ -74,7 +75,8 @@
 		g.grade,
 		g.grade_subject,
 		g.grade_stu_name,
-		g.grade_t_name
+		g.grade_t_name,
+		g.grade_class_id
 	FROM
 		account a
 	INNER JOIN grade g ON a.account_id = g.grade_stu_id

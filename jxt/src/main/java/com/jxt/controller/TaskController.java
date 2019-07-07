@@ -1,6 +1,5 @@
 package com.jxt.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -18,17 +17,16 @@ import com.jxt.entity.Task;
 import com.jxt.service.TaskService;
 
 @Controller
-@RequestMapping("/homework")
 public class TaskController {
 	@Autowired
 	private TaskService taskService;
 
-	@GetMapping("/publishhomework")
+	@GetMapping("/u/t/homework/publishhomework")
 	public String get() {
 		return "/homework/publishhomework";
 	}
 	
-	@PostMapping("/publishhomework")
+	@PostMapping("/u/t/homework/publishhomework")
 	public String add(Task task) {
 		int rows = taskService.add(task);
 		if(rows != task.getTaskId()) {
@@ -52,7 +50,7 @@ public class TaskController {
 	
 	
 	//查看作业列表
-	@RequestMapping(value = "/listhomework", method = RequestMethod.GET)
+	@RequestMapping(value = "/u/s/homework/listhomework", method = RequestMethod.GET)
 	public String list( Model model ) {
 		List<Task> tasks = taskService.tasks();
 		model.addAttribute("tasks", tasks);
@@ -60,15 +58,15 @@ public class TaskController {
 	}
 	
 	//删除某个作业
-	@GetMapping("/listhomework/{taskId}")
+	@GetMapping("/u/t/homework/listhomework/{taskId}")
 	public String delete(@PathVariable("taskId") int id) {
 		taskService.delete(id);
 		taskService.deleteMessage(id);
-		return "redirect:/homework/listhomework";
+		return "redirect:/u/s/homework/listhomework";
 	}
 	
 	//获取更新页面
-	@GetMapping("/updatehomework/{taskId}")
+	@GetMapping("/u/t/homework/updatehomework/{taskId}")
 	public String updateString(@PathVariable("taskId") int id, Model model) {
 		Task task = taskService.getTaskById(id);
 		model.addAttribute("task",task);
@@ -76,29 +74,29 @@ public class TaskController {
 	}
 	
 	//获取报告页面
-	@GetMapping("/report/{taskId}")
+	@GetMapping("/u/t/homework/report/{taskId}")
 	public String reportString(@PathVariable("taskId") int id, Model model) {
 		Task task = taskService.getTaskById(id);
 		model.addAttribute("task",task);
 		return "homework/report";
 	}
 	
-	@PostMapping("/report")
+	@PostMapping("/u/t/homework/report")
 	public String report(Task task) {
 		int rows = taskService.update(task);
 		if(rows != 1) {
 			throw new RuntimeException("更新失败");
 		}
-		return "redirect:/homework/listhomework";
+		return "redirect:/u/s/homework/listhomework";
 	}
 	
 	//更新作业
-	@PostMapping("/updatehomework")
+	@PostMapping("/u/t/homework/updatehomework")
 	public String update(Task task) {
 		int rows = taskService.update(task);
 		if(rows != 1) {
 			throw new RuntimeException("更新失败");
 		}
-		return "redirect:/homework/listhomework";
+		return "redirect:/u/s/homework/listhomework";
 	}
 }

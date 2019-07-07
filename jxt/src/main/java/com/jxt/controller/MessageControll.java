@@ -1,8 +1,6 @@
 package com.jxt.controller;
 
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,7 +23,6 @@ import com.jxt.entity.Value;
 import com.jxt.service.MessageService;
 
 @Controller
-@RequestMapping(value = "/MyMessages")
 public class MessageControll {
 	
 	@Autowired
@@ -48,7 +45,7 @@ public class MessageControll {
 	}
 	
 	
-	@GetMapping("/classification")
+	@GetMapping("/MyMessages/classification")
 	public @ResponseBody Value news(int typeId, HttpSession httpSession) {
 
 		System.out.println(typeId);
@@ -69,7 +66,7 @@ public class MessageControll {
 		return value;
 	}
 	
-	@GetMapping("/delete")
+	@GetMapping("/u/s/MyMessages/delete")
 	public @ResponseBody void delete(int sourceId,HttpSession session) {
 		Account account = (Account) session.getAttribute("account");
 		int targetId = account.getAccountId();
@@ -78,7 +75,7 @@ public class MessageControll {
 	}
 	
 	//检查是否有未读
-	@GetMapping("/checkAccountNotRead")
+	@GetMapping("/u/s/MyMessages/checkAccountNotRead")
 	public @ResponseBody boolean haveNotRead(HttpSession session, int sourceId) {
 		Account account = (Account) session.getAttribute("account");
 		int targetId = account.getAccountId();
@@ -90,7 +87,7 @@ public class MessageControll {
 	
 	
 	//做了两次查询，待优化
-	@GetMapping("/findMessages")
+	@GetMapping("/u/s/MyMessages/findMessages")
 	public @ResponseBody List<Message> findAll(HttpSession session, int sourceId) {
 		Account account = (Account) session.getAttribute("account");
 		int targetId = account.getAccountId();
@@ -100,7 +97,7 @@ public class MessageControll {
 	
 	
 	//test
-	@RequestMapping(value = "/MessageCenter",method = RequestMethod.GET)
+	@RequestMapping(value = "/u/s/MessageCenter",method = RequestMethod.GET)
 	public String login(HttpSession session) throws ParseException {
 	
 		return "MessageCenter/news";
@@ -110,7 +107,7 @@ public class MessageControll {
 	//返回是否提交成功(判断是否存在留言目标用户)
 	//warning:我要留言的留言replyId指向一个初始留言(暂且假定为1号留言)
 	//留言类型和title还没用上
-	@GetMapping("/messageCommit")
+	@GetMapping("/u/s/MyMessages/messageCommit")
 	public @ResponseBody Message messageCommit(int targetId,String messageContent,HttpSession session) {
 		
 		Account account = (Account) session.getAttribute("account");
@@ -131,7 +128,7 @@ public class MessageControll {
 	}
 	
 	//更新留言的replyId
-	@GetMapping("/setReply")
+	@GetMapping("/u/s/MyMessages/setReply")
 	public @ResponseBody void haveReply(int replyId,int beReplyId) {
 		System.out.println("更新中"+replyId+beReplyId);
 		messageService.updateReply(beReplyId, replyId);
@@ -140,7 +137,7 @@ public class MessageControll {
 	
 	
 
-	@GetMapping("/test")
+	@GetMapping("/u/s/MyMessages/test")
 	public @ResponseBody void test(int sourceId){
 		System.out.println(sourceId);
 		System.out.println("我被按了");

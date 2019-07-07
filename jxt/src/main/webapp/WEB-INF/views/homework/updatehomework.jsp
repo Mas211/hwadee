@@ -51,26 +51,15 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
-				<c:choose>
-				<c:when test="${!empty sessionScope.account}">
-					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+			<div class="bottom_header_right" style="width: 40%;">
+				<div class="header-top-righ">
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<a href="/menu"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>个人中心
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks" aria-hidden="true"></span>个人中心
 					</a>
 				</div>
-				</c:when>
-				<c:otherwise>
-				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>登录
-					</a>
-				</div>
-				</c:otherwise>
-				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
@@ -87,7 +76,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="/index">
 							<h1>
 								<span class="fa fa-leanpub" aria-hidden="true"></span>家校通
 								<label>Education & Courses</label>
@@ -102,7 +91,7 @@
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
 									<li><a href="/index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
@@ -110,8 +99,8 @@
 										<li><a href="/announceList/1">公告</a></li>
 										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -131,7 +120,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">首页</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>更新作业</li>
@@ -162,7 +151,7 @@
 		<div class="container">
 			<div class="contact-grid agileits">
 				<h4>更 新 作 业</h4>
-				<form action="/homework/updatehomework" method="post">
+				<form action="/u/t/homework/updatehomework" method="post">
 					<input type="hidden" name="taskId" value="${task.taskId}"/>
 					<div class="">
 						<input type="text" name="taskTitle" value="${task.taskTitle }" placeholder="作业标题">
@@ -216,13 +205,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

@@ -2,8 +2,6 @@ package com.jxt.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,7 +51,81 @@ public class RegisterController {
 		return result;
 	}
 	
-	
+	//添加用户
+		@RequestMapping(value="/u/accountadding",method=RequestMethod.GET)
+		public String getadding(){
+			return "accountadding";
+		}
+		
+		@RequestMapping(value="/u/accountadding",method=RequestMethod.POST)
+		public String adding(Account account,HttpServletRequest request) throws Exception{
+			String role_id = request.getParameter("choose");
+			int role_id_int=0;
+			if(registerService.check1(account.getAccountId())!=null){
+				//注册失败
+				target = "accountadding";
+			}else{
+				//注册成功
+				if("学生".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 5;
+				}
+				else if("教师".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 3;
+				}
+				else if("家长".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 4;
+				}
+				else if("管理员".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 1;
+				}
+				account.setRoleId(role_id_int);
+				registerService.register(account);
+				target = "menu";
+			}		
+			return target;
+		}
+		
+		//修改用户
+		@RequestMapping(value="/u/adminupdating",method=RequestMethod.GET)
+		public String getadminupdating(){
+			return "adminupdating";
+		}
+		
+		@RequestMapping(value="/u/adminupdating",method=RequestMethod.POST)
+		public String updating(Account account,HttpServletRequest request) throws Exception{
+			String role_id = request.getParameter("choose");
+			int role_id_int=0;
+			if(registerService.check1(account.getAccountId())==null){
+				//注册失败
+				target = "adminupdating";
+			}else{
+				//注册成功
+				if("学生".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 5;
+				}
+				else if("教师".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 3;
+				}
+				else if("家长".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 4;
+				}
+				else if("管理员".equalsIgnoreCase(role_id))
+				{
+					role_id_int = 1;
+				}
+				account.setRoleId(role_id_int);
+				registerService.update(account);
+				target = "menu";
+			}		
+			return target;
+		}
 	
 	
 	

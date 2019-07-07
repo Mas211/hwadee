@@ -35,14 +35,14 @@ public class NewsController {
 	@Autowired
 	private MessageService ms;
 	
-	@GetMapping("/createNews")
+	@GetMapping("/u/t/createNews")
 	public String get() {
 		
 		return "news/newsEditor";
 		
 	}
 	
-	@PostMapping("/createNews")
+	@PostMapping("/u/t/createNews")
 	public String insertNews(News news, HttpServletRequest request) {
 		
 		news.setEditorId(((Account) (request.getSession().getAttribute("account"))).getAccountId());
@@ -64,7 +64,7 @@ public class NewsController {
 		m.setTime(date);
 		ms.add(m);
 		
-		return "redirect:/myNews";
+		return "redirect:/u/t/myNews";
 	}
 	
 	
@@ -76,7 +76,7 @@ public class NewsController {
 		return "news/newsDetail";
 	}
 
-	@GetMapping("/newsManage")
+	@GetMapping("/u/newsManage")
 	public String newsList(Model model) {
 		List<News> news = newsService.findAll();
 		model.addAttribute("news", news);
@@ -84,7 +84,7 @@ public class NewsController {
 		return "news/newsManage";
 	}
 	
-	@GetMapping("/updateNews/{id}")
+	@GetMapping("/u/t/updateNews/{id}")
 	public String updateNews(@PathVariable("id") int id, Model model) {
 		News news = newsService.getNewsById(id);
 		model.addAttribute("news", news);
@@ -92,25 +92,25 @@ public class NewsController {
 		return "news/updateNews";
 	}
 	
-	@PostMapping("/updateNews/{id}")
+	@PostMapping("/u/t/updateNews/{id}")
 	public String checkUpdate(News news) {
 		//更新修改时间
 		news.setNewsModified(new Timestamp(System.currentTimeMillis()));
 		
 		int rows = newsService.update(news);
 		
-		return "redirect:/newsManage";
+		return "redirect:/u/newsManage";
 	}
 	
-	@GetMapping("/deleteNews/{id}")
+	@GetMapping("/u/t/deleteNews/{id}")
 	public String deleteNews(@PathVariable("id") int id) {
 		
 		newsService.delete(id);
 		
-		return "redirect:/newsManage";
+		return "redirect:/u/admin/newsManage";
 	}
 	
-	@GetMapping("/myNews")
+	@GetMapping("/u/t/myNews")
 	public String myNews(HttpServletRequest request, Model model) {
 		int editorId = ((Account) (request.getSession().getAttribute("account"))).getAccountId();
 		
@@ -192,18 +192,18 @@ public class NewsController {
 		return "news/newsList";
 	}
 	
-	@GetMapping("/setTop/{id}")
+	@GetMapping("/u/setTop/{id}")
 	public String setTop(@PathVariable("id") int id) {
 		
 		newsService.setTop(id);
-		return "redirect:/newsManage";
+		return "redirect:/u/newsManage";
 	}
 	
-	@GetMapping("/cancelTop/{id}")
+	@GetMapping("/u/cancelTop/{id}")
 	public String cancelTop(@PathVariable("id") int id) {
 		
 		newsService.cancelTop(id);
-		return "redirect:/newsManage";
+		return "redirect:/u/newsManage";
 	}
 
 }

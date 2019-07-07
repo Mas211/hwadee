@@ -15,14 +15,14 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
-	<select id="findById" parameterType="int"
+	<select id="findByRoleId" parameterType="int"
 		resultType="com.jxt.entity.Auth">
 		SELECT
-			auth_id, auth_path
+			a.auth_id, a.auth_path
 		FROM
-			auth
+			auth a INNER JOIN auth_role r ON r.auth_id = a.auth_id
 		WHERE
-			auth_id = #{value}
+			r.role_id = #{value}
 	</select>
 	
 	 <!-- 需要修改的地方 -->

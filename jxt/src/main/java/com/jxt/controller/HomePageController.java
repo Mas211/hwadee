@@ -20,22 +20,23 @@ public class HomePageController {
 	String target="";
 	@Autowired
 	private RegisterService registerService; 
-	@RequestMapping(value="/personalInformationViewing",method=RequestMethod.GET)
+	
+	@RequestMapping(value="/u/s/personalInformationViewing",method=RequestMethod.GET)
 	public String getview(){
 		return "personalInformationViewing";
 	}
 	
-	@RequestMapping(value="/updateinformation",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/updateinformation",method=RequestMethod.POST)
 	public String getupdateinformation(){
 		return "redirect:/personalInformationUpdating";
 	}
 	
-	@RequestMapping(value="/personalInformationUpdating",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/personalInformationUpdating",method=RequestMethod.GET)
 	public String getupdate(){
 		return "personalInformationUpdating";
 	}
 	
-	@RequestMapping(value="/personalInformationUpdating",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/personalInformationUpdating",method=RequestMethod.POST)
 	public String getupdateimpl(Account account,HttpServletRequest request)throws ServletException, IOException{
 		HttpSession session = request.getSession(false);
 		Account account_temp = (Account)session.getAttribute("account");
@@ -74,6 +75,6 @@ public class HomePageController {
 			registerService.update(account_temp);
 		}
 		session.setAttribute("account", account_temp);
-		return "redirect:/menu";
+		return "redirect:/u/s/menu";
 	}
 }
