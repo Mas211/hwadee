@@ -28,7 +28,7 @@ public class MessageControll {
 	@Autowired
 	private MessageService messageService;
 	
-	@GetMapping("/setRead")
+	@GetMapping("/MyMessages/setRead")
 	public @ResponseBody void setRead(int messageType, HttpSession httpSession) {
 		if (messageType == 1) {
 			System.out.println("新闻已读");
