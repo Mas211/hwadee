@@ -49,6 +49,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 		// TODO Auto-generated method stub
 		return attendanceMapper.findByStu(stuId);
 	}
+	
+	@Override
+	public List<Attendance> findByClass(int classId) {
+		// TODO Auto-generated method stub
+		return attendanceMapper.findByClass(classId);
+	}
 	@Override
 	public List<Attendance> findAll() {
 		// TODO Auto-generated method stub
