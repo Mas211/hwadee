@@ -84,6 +84,7 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public List<Message> listAllChatRecord(int targetId, int sourceId) {
 		// TODO Auto-generated method stub
+		messageMapper.updateIsRead(sourceId, targetId);
 		return messageMapper.findAllByTargetAndSource(targetId,sourceId,3);
 	}
 
@@ -97,6 +98,25 @@ public class MessageServiceImpl implements MessageService {
 	public int deleteChat(int sourceId, int targetId) {
 		// TODO Auto-generated method stub
 		return messageMapper.deleteChat(sourceId, targetId);
+	}
+
+	@Override
+	public int toRead(int sourceId, int targetId) {
+		// TODO Auto-generated method stub
+		return messageMapper.updateIsRead(sourceId, targetId);
+	}
+
+	@Override
+	public boolean haveNotRead(int sourceId, int targetId) {
+		// TODO Auto-generated method stub
+		List<Message> messages = messageMapper.findIsRead(sourceId, targetId);
+		return messages.isEmpty();
+	}
+
+	@Override
+	public boolean haveNotReadA(int targetId) {
+		List<Message> messages = messageMapper.findIsReadByTargetId(targetId);
+		return messages.isEmpty();
 	}
 	
 	/*

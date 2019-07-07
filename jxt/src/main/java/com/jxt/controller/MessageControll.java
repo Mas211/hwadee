@@ -49,21 +49,23 @@ public class MessageControll {
 	
 	@GetMapping("/delete")
 	public @ResponseBody void delete(int sourceId,HttpSession session) {
-		int targetId = (int) session.getAttribute("id");
+		Integer targetId = (Integer) session.getAttribute("id");
 		System.out.println(sourceId+"和"+targetId+"已被删除");
-		/* messageService.deleteChat(sourceId, targetId); */
+		messageService.deleteChat(sourceId, targetId);
 		/* messageService.delete(messageId); */
 	}
 	
-	@GetMapping("/findLastMessage")
-	public @ResponseBody String find(HttpSession session, int sourceId) {
-		int targetId = (int) session.getAttribute("id");
-		List<Message> chatList = messageService.listAllChatRecord(targetId, sourceId);
-		String lastMessageContent = chatList.get(0).getMessageContent();
-		return lastMessageContent;
+	//检查是否有未读
+	@GetMapping("/checkAccountNotRead")
+	public @ResponseBody boolean haveNotRead(HttpSession session, int sourceId) {
+		Integer targetId = (Integer) session.getAttribute("id");
+		System.out.println(messageService.haveNotRead(sourceId, targetId));
+		return messageService.haveNotRead(sourceId, targetId);
 	}
 	
 
+	
+	
 	//做了两次查询，待优化
 	@GetMapping("/findMessages")
 	public @ResponseBody List<Message> findAll(HttpSession session, int sourceId) {
@@ -76,7 +78,15 @@ public class MessageControll {
 	//test
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
 	public String login(HttpSession session) {
-		session.setAttribute("id", 1);
+		int accountId = 1;
+		session.setAttribute("id", accountId);
+		//给session添加一个留言是否全部已读的bool值
+		Integer targetId = (Integer) session.getAttribute("id");
+		session.setAttribute("messageAllRead",messageService.haveNotReadA(targetId));
+		/*
+		 * //给session添加一个用户上次登录时间 String lastLogTime =
+		 */
+		
 		return "MessageCenter/news";
 	}
 	
@@ -87,9 +97,9 @@ public class MessageControll {
 	@GetMapping("/messageCommit")
 	public @ResponseBody Message messageCommit(int targetId,String messageContent,HttpSession session) {
 		
-		int sourceId = (int) session.getAttribute("id");
+		Integer sourceId = (Integer) session.getAttribute("id");
 		Date date = new Date();
-		SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		System.out.println(date.getClass());
 		//后面这里再加判断用户是否存在*************************
 		Message message = new Message();
 		message.setTargetId(targetId);
@@ -115,8 +125,8 @@ public class MessageControll {
 	
 
 	@GetMapping("/test")
-	public @ResponseBody void test(String rec,int tarId,int mId){
-		System.out.println(rec+tarId+mId);
+	public @ResponseBody void test(int sourceId){
+		System.out.println(sourceId);
 		System.out.println("我被按了");
 	}
 	

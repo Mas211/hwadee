@@ -1,5 +1,7 @@
 package com.jxt.entity;
 
+import java.sql.Time;
+
 //消息
 public class Message {
 	private Integer messageId;
@@ -10,17 +12,17 @@ public class Message {
 	private Integer isRead;
 	private Integer messageType;
 	private Integer commentActId;
-	private String time;
+	private Time time;
 	private String messagePath;
 	private String messageContent;
 	//
 	private Account account;
 	private Message replyMessage;
 	
-	public String getTime() {
+	public Time getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+	public void setTime(Time time) {
 		this.time = time;
 	}
 	public String getMessagePath() {

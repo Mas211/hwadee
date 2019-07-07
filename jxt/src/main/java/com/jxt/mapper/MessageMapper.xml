@@ -95,7 +95,8 @@
 	<select id="findLeavAccounts" parameterType="int" resultType="Message">
 		SELECT DISTINCT
 			p.source_id,
-			a.account_name "account.accountName"
+			a.account_name "account.accountName",
+			a.account_id "account.accountId"
 		FROM
 			account a
 		INNER JOIN (
@@ -153,6 +154,35 @@
 	 <delete id="deleteChat" parameterType="int">
 		DELETE FROM message
 		WHERE
-			source_id = #{sourceId} AND target_id = #{targetId} AND message_type = 3;
+			source_id = #{sourceId} AND target_id = #{targetId} AND message_type = 3
 	</delete>
+	
+	<update id="updateIsRead" parameterType="int">
+		UPDATE message SET is_read=1
+		WHERE
+			source_id = #{sourceId} AND target_id = #{targetId} AND message_type = 3 AND is_read = 0
+	</update>
+	
+	<select id="findIsRead" parameterType="int" resultType="Message">
+		SELECT
+			p.message_id,
+			p.source_id,
+			p.target_id,
+			p.reply_id,
+			p.is_read,
+			p.time,
+			p.message_content,
+			p.message_path
+		FROM
+			message p
+		where source_id = #{sourceId} AND target_id = #{targetId} AND message_type = 3 AND is_read = 0
+	</select>
+	
+	<select  id="findIsReadByTargetId" parameterType="int" resultType="Message">
+		SELECT
+				p.message_id
+			FROM
+				message p
+			where target_id = #{targetId} AND message_type = 3 AND is_read = 0
+	</select>
 </mapper>

@@ -45,4 +45,10 @@ public interface MessageService {
 	
 	int deleteChat(int sourceId,int targetId);
 	
+	int toRead(int sourceId,int targetId);
+	
+	boolean haveNotRead(int sourceId,int targetId);
+	
+	boolean haveNotReadA(int targetId);
+	
 }
