@@ -17,6 +17,15 @@
 	</delete>
 	
 	 <!-- 需要修改的地方 -->
+	 <select id="findByParId" parameterType="int"
+		resultType="int">
+		SELECT DISTINCT
+			a.account_id
+		FROM
+			account a INNER JOIN grade g ON g.grade_stu_id = a.account_id
+		WHERE
+			a.par_id = #{value}
+	</select>
 	<select id="findById" parameterType="int" resultType="com.jxt.entity.Grade">
 		SELECT
 			grade_id, grade_t_id, grade_stu_id, grade, grade_subject, grade_stu_name, grade_t_name
