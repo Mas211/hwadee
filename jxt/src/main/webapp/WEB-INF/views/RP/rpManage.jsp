@@ -32,7 +32,6 @@
 
 <body>
 	<!-- header -->
-	<!-- header -->
 	<div class="header-top">
 		<div class="container">
 			<div class="bottom_header_left">
@@ -41,24 +40,32 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				
-				<div class="top-menu">
-            <ul class="pull-right top-menu">
-                <br>
-
-            </ul>
-        		</div>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="/logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
-				<div class="clearfix"></div>
+				</c:otherwise>
+				</c:choose>
+				<div class="clearfix"> </div>
 			</div>
-			<div class="clearfix"></div>
+			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="header">
+    <div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -69,11 +76,10 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
-							<h1 >
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
-								<!--这里插入logo的路径-->
-								<label>Education & Courses</label>
+						<a class="navbar-brand" href="index">
+							<h1>
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
@@ -84,14 +90,14 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -104,9 +110,10 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -114,7 +121,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">主页</a>
+					<a href="/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>奖罚列表</li>
@@ -152,15 +159,11 @@
 							<td>${rp.rewardAndPunishId }</td>
 							<td>${rp.rpTId }</td>
 							<td>${rp.account.accountName}</td>
-							<c:if test="${rp.rewardOrPunish == 1}">
-								<td>奖</td>
-							</c:if>
-							<c:if test="${rp.rewardOrPunish == 0} ">
-								<td>罚</td>
-							</c:if>
-							<c:if test="${rp.rewardOrPunish == null}">
-								<td></td>
-							</c:if>							
+							<c:choose>
+								<c:when test="${rp.rewardOrPunish eq 1}"><td style="color:green">奖</td></c:when>
+								<c:when test="${rp.rewardOrPunish eq 0}"><td style="color:yellow">罚</td></c:when>
+								<c:otherwise><td>-</td></c:otherwise>
+							</c:choose>				
 							<td>${rp.rpContent }</td>
 							<td>${rp.rpTime }</td>
 							<td><a href="/updateRp/${rp.rewardAndPunishId}">修改</a>&nbsp;|&nbsp;<a href="/deleteRp/${rp.rewardAndPunishId}">删除</a></td>

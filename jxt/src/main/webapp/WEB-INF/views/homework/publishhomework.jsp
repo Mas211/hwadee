@@ -28,6 +28,18 @@
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<style type="text/css">
+	.homework_page_agile {
+		text-align: center;
+		background: url(/assets/images/homework.jpg) no-repeat center;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-ms-background-size: cover;
+		min-height: 500px;
+	}
+	</style>
 </head>
 
 <body>
@@ -45,6 +57,9 @@
 					<div class="header-top-righ">
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
+					</a>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				</c:when>
@@ -92,8 +107,8 @@
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="/createNews">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -107,7 +122,7 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div class="inner_page_agile">
+	<div class="homework_page_agile">
 
 	</div>
 	<!--//banner -->
@@ -116,7 +131,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">主页</a>
+					<a href="/index">首页</a>
 					<span>| |</span>
 				</li>
 				<li>
@@ -139,14 +154,6 @@
 				</div>
 			</div>
 			<div class="contact-row">
-				<div class="col-md-6 contact-text1">
-					<h4>Contact Our
-						<span>Best Study</span>
-					</h4>
-					<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat volutpat. Duis vulputate tempus laoreet.Aliquam erat
-						volutpat. Duis vulputate tempus laoreet.
-					</p>
-				</div>
 				<div class="col-md-6 contact-w3lsright">
 					<iframe></iframe>
 				</div>
@@ -255,15 +262,6 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});

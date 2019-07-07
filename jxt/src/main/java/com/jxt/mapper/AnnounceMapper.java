@@ -22,4 +22,9 @@ public interface AnnounceMapper {
 	int getRows();
 
 	List<Announce> getPageAnnounce(int start);
+	
+	int setTop(int announceId);
+	int cancelTop(int announceId);
+	
+	List<Announce> getTop();
 }

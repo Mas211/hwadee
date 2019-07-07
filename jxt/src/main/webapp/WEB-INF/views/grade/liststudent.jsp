@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-<title>Create_news</title>
+<title>成绩</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,17 +45,12 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html"> <span
-						class="fa fa-facebook"></span>
-					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
-					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
-					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
-					</a>
-				</div>
 				<div class="header-top-righ">
-					<a href="login.html"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
+					</a>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -73,9 +69,9 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -87,14 +83,14 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -107,7 +103,7 @@
 			</nav>
 		</div>
 	</div>
-	<!-- banner -->
+	<br/>
 	<div class="inner_page_agile">
 
 	</div>
@@ -117,37 +113,51 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">首页</a>
+					<a href="/index">首页</a>
 					<span>| |</span>
 				</li>
-				<li>考勤记录</li>
+				<li>查看成绩</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div class="register-form-main">
+	<!-- blog -->
+	<div class="blog-cource">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>考勤</span>
-					<span></span>记录
+					<span>学 </span>生
+					<span>成 </span>绩
 				</h3>
-				<div class="tittle-style"></div>
-			</div>	
-                <div class="login-form">
-
-				    <p></p>
-					<form action="/attend" method="post">
-				    <p></p>
-				    <div class="">
-						<input type="text" name="attendance.attendStuId" value="${sessionScope.attendance.attendStuId}" placeholder="输入学生id" required="">
-					</div>
-					<input type="submit" value="查询出勤记录">
-				</form>
-
-			   </div>		
+				<div class="tittle-style">
+				</div>
+			</div>
+			<div class="bs-docs-example">
+			<h2>${requestScope.grades[0].gradeStuName}的成绩单</h2>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th></th>
+							<th>科目</th>
+							<th>任课老师</th>
+							<th>成绩</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${requestScope.grades }" var="g">
+						<tr>
+							<td>${g.gradeId }</td>
+							<td>${g.gradeSubject}</td>
+							<td>${g.gradeTName }</td>
+							<td>${g.grade }</td>
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
+	<!-- //blog -->
 
 	<!-- footer -->
 	<div class="mkl_footer">
@@ -187,14 +197,14 @@
 						</li>
 					</ul>
 				</div>
+
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>				
 				</div>
-				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -206,32 +216,75 @@
 	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
+	<!-- stats numscroller-js-file -->
+	<script src="/assets/js/numscroller-1.0.js"></script>
+	<!-- //stats numscroller-js-file -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
 	<script src="/assets/js/easing.js"></script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
 
 		});
 	</script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$( "table.table > tbody" ).on("click","a.deleteTask", function( e ){
+				e.preventDefault();
+				swal({
+					  title:'确定删除？',
+					  type:"warning",
+					  confirmButtonColor: "#DD6B55",
+					  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">删除</a>',
+					  showCancelButton: true,
+					  cancelButtonText:'取消'
+				}).then(function(){
+					swal({
+						title:"删除!",
+						text:"您选中的作业已删除！",
+						type:"success"
+					});
+				},function(dismiss){
+					if(dismiss == 'cancel'){
+						swal({
+							title:"已取消！",
+							type:"info"
+						});
+					}
+				})
+			});
+
+			$( "table.table > tbody" ).on("click","a.updateTask", function( e ){
+				e.preventDefault();
+				swal({
+				  title:'确定修改？',
+				  type:'question',
+				  confirmButtonColor: "#DD6B55",	
+				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
+				});
+			}); 
+			$( "table.table > tbody" ).on("click","a.report", function( e ){
+				e.preventDefault();
+				swal({
+				  title:'确定已完成？',
+				  type:'info',
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText:'<a style="color:white;" href="' + $(this).attr('href') + '">确定</a>',
+				});
+			}); 
+		});
+	</script>
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-	<script src="/assets/js/canvas-nest.min.js"></script>
+
 </body>
 
 </html>

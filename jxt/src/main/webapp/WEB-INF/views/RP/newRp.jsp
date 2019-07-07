@@ -44,17 +44,32 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
-				<div class="clearfix"></div>
+				</c:otherwise>
+				</c:choose>
+				<div class="clearfix"> </div>
 			</div>
-			<div class="clearfix"></div>
+			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="header">
+    <div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -67,7 +82,7 @@
 						</button>
 						<a class="navbar-brand" href="index">
 							<h1>
-								<span ><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -85,8 +100,8 @@
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -99,9 +114,10 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
+	<div class="inner_page_agile">
+
 	</div>
 	<!--//banner -->
 	<!-- short-->
@@ -109,7 +125,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">主页</a>
+					<a href="/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>新建奖罚</li>
@@ -123,7 +139,9 @@
 				<form action="" method="post">
 					<div class="">
 						<label>学生学号：</label>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" />
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " 
+						onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" required="" />
+						<span></span><br/>
 						<label>学生姓名：</label>
 						<input type="text" name="stuName" id="stuName">
 					</div>
@@ -131,12 +149,41 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="radio" name="rewardOrPunish" value="0">罚<br>
 					<label>奖罚内容：</label><br/>
-					<textarea name="rpContent" style="width: 100%; height: 100px;"></textarea>
+					<textarea name="rpContent" style="width: 100%; height: 100px;" required="" ></textarea>
 
 					
 					<input type="submit" value="提交">
 				</form>
 			</div>
+
+
+			<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+			<script type="text/javascript">
+				$(function(){
+				$("div > input[name=rpStuId]").blur(function(e){
+					var input = $( this );
+					$.ajax({
+						url:"/getName",
+						type:"GET",
+						scriptCharset:"utf-8",
+						dataType:"text",
+						data: {id: input.val()},
+						contentType:"application/json;charset=UTF-8",
+						success:function(data, textStatus, jqXHR){
+							var result = new Array();
+							result = data.split("|");
+							if(result[1] == "5"){
+								input.next("span").html("");
+							}
+							else{
+								input.next("span").html("!请输入学生学号").css("color", "red");
+							}
+							$("#stuName").val(result[0]);
+						}
+					});
+				});
+			});
+			</script>
 
 		</div>
 	</div>

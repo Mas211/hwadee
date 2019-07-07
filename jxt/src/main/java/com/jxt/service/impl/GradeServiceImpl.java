@@ -1,5 +1,7 @@
 package com.jxt.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,15 +31,27 @@ public class GradeServiceImpl implements GradeService {
 	}
 
 	@Override
-	public Grade getGradeById(int gradeId) {
+	public List<Grade> getGradeById(int stuId) {
 		// TODO Auto-generated method stub
-		return gradeMapper.findById(gradeId);
+		return gradeMapper.findById(stuId);
 	}
 
 	@Override
 	public int update(Grade grade) {
 		// TODO Auto-generated method stub
 		return gradeMapper.update(grade);
+	}
+
+	@Override
+	public List<Grade> grades() {
+		// TODO Auto-generated method stub
+		return gradeMapper.findAll();
+	}
+
+	@Override
+	public int getStuIdByParId(int parId) {
+		// TODO Auto-generated method stub
+		return gradeMapper.findByParId(parId);
 	}
 
 }

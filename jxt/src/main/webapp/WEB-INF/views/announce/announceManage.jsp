@@ -20,10 +20,6 @@
 		}
 	</script>
 
-	
-	<!-- 编辑器解码文件 -->
-	<script type="text/javascript" src="/ueditor/ueditor.parse.js"></script>
-
 
 
 	<!-- //meta-tags -->
@@ -47,55 +43,64 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				
-				<div class="top-menu">
-            <ul class="pull-right top-menu">
-                <br>
-
-            </ul>
-        		</div>
-				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
+				<c:choose>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
+				</c:when>
+				<c:otherwise>
+				<div class="header-top-righ">
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+				</div>
+				</c:otherwise>
+				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="header">
+    <div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
-							<h1 >
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
-								<!--这里插入logo的路径-->
-								<label>Education & Courses</label>
+						<a class="navbar-brand" href="index">
+							<h1>
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index.html" class="">首页</a></li>
+									<li><a href="index" class="">首页</a></li>
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -108,6 +113,7 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
@@ -118,7 +124,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">主页</a>
+					<a href="/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>公告管理</li>
@@ -137,7 +143,7 @@
 				</div>
 			</div>
 			<div class="bs-docs-example">
-				<table class="table table-striped"  >
+				<table class="table table-striped" style=" overflow: hidden;" >
 					<thead>
 						<tr >
 							<th style="text-align: center;">公告编号</th>
@@ -150,17 +156,18 @@
 					</thead>
 					<tbody>
 						<c:forEach items="${requestScope.announce }" var="a">
-						<tr style="text-align: center; vertical-align: middle;">
+						<tr style="text-align: center; vertical-align: middle; ">
 							<td style="vertical-align: middle;">${a.announceId }</td>
-							<td style="vertical-align: middle;"><a href="/announce/${a.announceId}">${a.announceTitle }</a></td>
-							<td width="400px" id="parse"  style="vertical-align: middle;">
-							${a.announceContent}</td>							
+							<td width="150px" style="vertical-align: middle;"><a href="/announce/${a.announceId}">${a.announceTitle }</a></td>
+							<td width="180px" style="vertical-align: middle; ">
+							<p id="parse" style=" overflow: hidden; height: 100px;">${a.announceWord}</p></td>							
 							<td  style="vertical-align: middle;">${a.announceTime }</td>
 							<td  style="vertical-align: middle;">${a.announceModified }</td>
-							<td  style="vertical-align: middle;"><a href="/updateAnnounce/${a.announceId}">修改</a>&nbsp;|&nbsp;<a href="/deleteAnnounce/${a.announceId}">删除</a></td>
-							<script type="text/javascript"> 
-								uparse("parse")
-							</script>
+							<td  style="vertical-align: middle;"><a href="/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
+							<c:if test="${a.setTop eq 1}"><a href="/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
+							<c:if test="${a.setTop ne 1}"><a href="/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>
+							</td>
 						</tr>
 						</c:forEach>
 					</tbody>
