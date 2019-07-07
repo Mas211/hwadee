@@ -14,6 +14,7 @@ public interface GradeService {
 	// 查
 	List<Grade> getGradeById(int stuId);
 	List<Grade> grades();
+	int getStuIdByParId(int parId);
 
 	// 改
 	int update(Grade grade);

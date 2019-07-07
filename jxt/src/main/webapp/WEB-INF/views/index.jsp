@@ -65,24 +65,28 @@
 			</div>
 			<div class="bottom_header_right">
 				<c:choose>
-					<c:when test="${!empty sessionScope.account}">
-						<div class="header-top-righ">
-							<a href="logout"> <span class="fa fa-sign-out"
-								aria-hidden="true"></span>注销
-							</a> <br /> <a href="/menu"> <span class="fa fa-sign-out"
-								aria-hidden="true"></span>个人中心
-							</a>
-						</div>
-					</c:when>
-					<c:otherwise>
-						<div class="header-top-righ">
-							<a href="login"> <span class="fa fa-sign-out"
-								aria-hidden="true"></span>登录
-							</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/studentCheck"> <span
-								class="fa fa-sign-out" aria-hidden="true"></span>验证
-							</a>
-						</div>
-					</c:otherwise>
+				<c:when test="${!empty sessionScope.account}">
+					<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
+				</div>
+				</c:when>
+				<c:otherwise>
+				<div class="header-top-righ">
+					<a href="login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
+					</a>
+					<br/>    
+					<a href="/studentCheck"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注册验证
+					</a>
+				</div>
+				</c:otherwise>
 				</c:choose>
 				<div class="clearfix"></div>
 			</div>
@@ -331,36 +335,35 @@
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/数字.jpg" class="imghvr-hinge-right figure"
-						target="_blank"> <img src="../assets/images/数字.jpg" alt=""
-						title="我们一起跳一跳" />
+
+					<a href="/assets/images/数字.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="/assets/images/数字.jpg" alt="" title="我们一起跳一跳" />
 						<div class="agile-figcaption">
 							<h4>兔子跳</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/踢足球.jpg"
-						class="imghvr-hinge-right figure" target="_blank"> <img
-						src="../assets/images/踢足球.jpg" alt="" title="注意了，我要射门了！" />
+
+					<a href="/assets/images/踢足球.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="/assets/images/踢足球.jpg" alt="" title="注意了，我要射门了！" />
+
 						<div class="agile-figcaption">
 							<h4>足球比赛</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/纸飞机.jpg"
-						class="imghvr-hinge-right figure" target="_blank"> <img
-						src="../assets/images/纸飞机.jpg" alt="" title="带上纸飞机奔跑吧！" />
+					<a href="/assets/images/纸飞机.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="/assets/images/纸飞机.jpg" alt="" title="带上纸飞机奔跑吧！" />
 						<div class="agile-figcaption">
 							<h4>纸飞机</h4>
 						</div>
 					</a>
 				</div>
 				<div class="col-xs-4 w3gallery-grids">
-					<a href="../assets/images/讲课.jpg" class="imghvr-hinge-right figure"
-						target="_blank"> <img src="../assets/images/讲课.jpg" alt=""
-						title="跟小伙伴们一起学习呀~" />
+					<a href="/assets/images/讲课.jpg" class="imghvr-hinge-right figure" target="_blank">
+						<img src="/assets/images/讲课.jpg" alt="" title="跟小伙伴们一起学习呀~" />
 						<div class="agile-figcaption">
 							<h4>师生讨论</h4>
 						</div>
@@ -525,8 +528,7 @@
 					<div class="three_testimonials_grid_main">
 						<div class="col-xs-3 three_testimonials_grid_pos">
 							<div class="grid-test-allah-agile">
-								<img src="../assets/images/stu3.png" alt=" "
-									class="img-responsive" height="205" width="205" />
+								<img src="/assets/images/stu3.jpg" alt=" " class="img-responsive" height="205" width="205"/>
 							</div>
 						</div>
 						<div class="col-xs-9 three_testimonials_grid">

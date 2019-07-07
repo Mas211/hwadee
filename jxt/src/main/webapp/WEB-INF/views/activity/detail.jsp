@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -39,20 +40,27 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				
-				<div class="top-menu">
-            <ul class="pull-right top-menu">
-                <br>
-
-            </ul>
-        		</div>
-				<div class="header-top-righ">
-					<a href="login.html">
-						<span class="fa fa-sign-out" aria-hidden="true"></span>登录</a>
-				</div>
-				<div class="clearfix"> </div>
+				<c:choose>
+					<c:when test="${!empty sessionScope.account}">
+						<div class="header-top-righ">
+							<a href="/logout"> <span class="fa fa-sign-out"
+								aria-hidden="true"></span>注销
+							</a> <br /> <a href="/menu"> <span class="fa fa-sign-out"
+								aria-hidden="true"></span>个人中心
+							</a>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="header-top-righ">
+							<a href="/login"> <span class="fa fa-sign-out"
+								aria-hidden="true"></span>登录
+							</a>
+						</div>
+					</c:otherwise>
+				</c:choose>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 	<div class="header">
@@ -86,8 +94,8 @@
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -110,7 +118,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">主页</a>
+					<a href="/index">首页</a>
 					<span>| |</span>
 				</li>
 				<li>活动详情</li>

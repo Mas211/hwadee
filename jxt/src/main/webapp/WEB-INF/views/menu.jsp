@@ -48,14 +48,14 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -79,7 +79,7 @@
 						</button>
 						<a class="navbar-brand" href="index">
 							<h1>
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -89,16 +89,20 @@
 						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li><a href="" class="effect-3"></a></li>
-								<li><a href="" class="effect-3"></a></li>
+<<<<<<< HEAD
 									<li><a href="index" class="">首页</a></li>
+=======
+								<li><a href="" class="effect-3"></a></li>
+								<li><a href="" class="effect-3"></a></li>
+									<li><a href="/index" class="">首页</a></li>
+>>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -127,6 +131,7 @@
 		</div>
 	</div>
 	<!-- //short-->
+<<<<<<< HEAD
 	<c:choose>
 	<c:when test="${sessionScope.account.roleId eq 5 }">
 		<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -169,36 +174,276 @@
 		<li><a href="/commentadding" class="effect-3">添加评语</a></li>
 		<li><a href="/grade/enterginggrade" class="effect-3">录入成绩</a></li>
 		<li><a href="/grade/listall" class="effect-3">查看所有成绩</a></li>
-		<li><a href="gallery.html" class="effect-3">教师功能5</a></li>
+		<li><a href="/attend" class="effect-3">查看考勤</a></li>
 	</c:when>
+=======
+	<div class="contact">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>个&nbsp;人&nbsp;</span>中&nbsp;心
+				</h3>
+				<div class="tittle-style">
+				</div>
+			</div>
+			<div class="contact-row">
+				<c:choose>
+					<c:when test="${sessionScope.account.roleId eq 5 }">
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationViewing"> <i
+									class="fa fa-user" aria-hidden="true"></i>查看个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationUpdating"> <i
+									class="fa fa-cog" aria-hidden="true"></i>修改个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/liststudent"> <i
+									class="fa fa-th-list" aria-hidden="true"></i>查看成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/commentadding"> <i
+									class="fa fa-book" aria-hidden="true"></i>查看评语
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/attend"> <i
+									class="fa fa-calendar" aria-hidden="true"></i>查看考勤
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/listhomework"> <i
+									class="fa fa-edit" aria-hidden="true"></i>查看作业
+								</a>
+							</div>
+						</div>
+					</c:when>
+					<c:when test="${sessionScope.account.roleId eq 4 }">
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationViewing"> <i
+									class="fa fa-user" aria-hidden="true"></i>查看个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationUpdating"> <i
+									class="fa fa-cog" aria-hidden="true"></i>修改个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/liststudent"> <i
+									class="fa fa-th-list" aria-hidden="true"></i>查看子女成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/commentadding"> <i
+									class="fa fa-book" aria-hidden="true"></i>查看子女评语
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/attend"> <i
+									class="fa fa-calendar" aria-hidden="true"></i>查看子女考勤
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/listhomework"> <i
+									class="fa fa-edit" aria-hidden="true"></i>查看作业
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/stuRp"> <i
+									class="fa fa-trophy" aria-hidden="true"></i>查看子女奖罚信息
+								</a>
+							</div>
+						</div>
+					</c:when>
+					<c:when test="${sessionScope.account.roleId eq 3 }">
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationViewing"> <i
+									class="fa fa-user" aria-hidden="true"></i>查看个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationUpdating"> <i
+									class="fa fa-cog" aria-hidden="true"></i>修改个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/listall"> <i
+									class="fa fa-th-list" aria-hidden="true"></i>查看所有成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/commentadding"> <i
+									class="fa fa-book" aria-hidden="true"></i>添加评语
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/enterginggrade"> <i
+									class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/listhomework"> <i
+									class="fa fa-edit" aria-hidden="true"></i>查看作业
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/publishhomework"> <i
+									class="fa fa-bell-o" aria-hidden="true"></i>布置作业
+								</a>
+							</div>
+						</div>
+					</c:when>
+
+					<c:when test="${sessionScope.account.roleId eq 2 }">
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationViewing"> <i
+									class="fa fa-user" aria-hidden="true"></i>查看个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationUpdating"> <i
+									class="fa fa-cog" aria-hidden="true"></i>修改个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/listall"> <i
+									class="fa fa-th-list" aria-hidden="true"></i>查看所有成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/commentadding"> <i
+									class="fa fa-book" aria-hidden="true"></i>添加评语
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/enterginggrade"> <i
+									class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/listhomework"> <i
+									class="fa fa-edit" aria-hidden="true"></i>查看作业
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/publishhomework"> <i
+									class="fa fa-bell-o" aria-hidden="true"></i>布置作业
+								</a>
+							</div>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationViewing"> <i
+									class="fa fa-user" aria-hidden="true"></i>查看个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/personalInformationUpdating"> <i
+									class="fa fa-cog" aria-hidden="true"></i>修改个人信息
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/listall"> <i
+									class="fa fa-th-list" aria-hidden="true"></i>查看所有成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/commentadding"> <i
+									class="fa fa-book" aria-hidden="true"></i>添加评语
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/grade/enterginggrade"> <i
+									class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/listhomework"> <i
+									class="fa fa-edit" aria-hidden="true"></i>查看作业
+								</a>
+							</div>
+						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/homework/publishhomework"> <i
+									class="fa fa-bell-o" aria-hidden="true"></i>布置作业
+								</a>
+							</div>
+						</div>
+					</c:otherwise>
+				</c:choose>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+>>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 	
-	<c:when test="${sessionScope.account.roleId eq 2 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="courses.html" class="effect-3">master功能2</a></li>
-		<li><a href="gallery.html" class="effect-3">master功能3</a></li>
-		<li><a href="courses.html" class="effect-3">master功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">master功能5</a></li>
-	</c:when>
-	<c:otherwise>
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="courses.html" class="effect-3">管理员功能2</a></li>
-		<li><a href="gallery.html" class="effect-3">管理员功能3</a></li>
-		<li><a href="courses.html" class="effect-3">管理员功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">管理员功能5</a></li>
-	</c:otherwise>
-	</c:choose>
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
@@ -263,14 +508,6 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
 
 			$().UItoTop({
 				easingType: 'easeOutQuart'
