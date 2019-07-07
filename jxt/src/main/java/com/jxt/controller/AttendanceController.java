@@ -27,14 +27,18 @@ public class AttendanceController {
 		List<Attendance> as;
 		
 		Account user = (Account) (request.getSession().getAttribute("account"));
-		int id = user.getParId();
+		int id = user.getAccountClassId();
 		int id2 = user.getAccountId();
 		if (user.getRoleId() == 4) {
-			as = attendanceService.findByPar(id);
+			as = attendanceService.findByPar(id2);
 		}
-		else {
+		else if(user.getRoleId() == 5){
 			as = attendanceService.findByStu(id2);
 		}
+		else if(user.getRoleId() == 3){
+			as = attendanceService.findByClass(id);
+		}
+		else as=attendanceService.findAll();
 		
 		model.addAttribute("as", as);
 		return "attend";

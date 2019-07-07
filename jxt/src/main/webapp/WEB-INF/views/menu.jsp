@@ -283,6 +283,13 @@
 								</a>
 							</div>
 						</div>
+						<div class="fontawesome-icon-list">
+							<div class="icon-box col-md-3 col-sm-4">
+								<a class="agile-icon" href="/attend"> <i
+									class="fa fa-calendar" aria-hidden="true"></i>查看本班考勤
+								</a>
+							</div>
+						</div>
 					</c:when>
 
 					<c:when test="${sessionScope.account.roleId eq 2 }">

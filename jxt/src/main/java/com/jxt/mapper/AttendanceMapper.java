@@ -20,4 +20,8 @@ public interface AttendanceMapper {
     List<Attendance> findByPar(int parId);
 	
 	List<Attendance> findByStu(int stuId);
+	
+	List<Attendance> findByClass(int classId);
+	
+	List<Attendance> findByAll();
 }
