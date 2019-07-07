@@ -123,7 +123,7 @@
 				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/retrieve" method="post">
+				<form action="/u/s/retrieve" method="post">
 					<div class="">
 						<p>用户账号 </p>
 						<input type="text" name="accountId" required="" /><span></span>

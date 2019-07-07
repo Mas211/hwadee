@@ -27,7 +27,7 @@ public class MessageControll {
 	private MessageService messageService;
 	
 	
-	@GetMapping("/u/s/MyMessages/classification")
+	@GetMapping("/MyMessages/classification")
 	public @ResponseBody Value news(int typeId, HttpSession httpSession) {
 
 		System.out.println(typeId);
@@ -76,7 +76,7 @@ public class MessageControll {
 	
 	
 	//test
-	@RequestMapping(value = "/login",method = RequestMethod.GET)
+	@RequestMapping(value = "/u/s/MessageCenter",method = RequestMethod.GET)
 	public String login(HttpSession session) throws ParseException {
 		int accountId = 1;
 		session.setAttribute("id", accountId);

@@ -50,7 +50,7 @@
 						aria-hidden="true"></span>注销
 					</a>
 					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -124,7 +124,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>公告管理</li>
@@ -163,9 +163,9 @@
 							<p id="parse" style=" overflow: hidden; height: 100px;">${a.announceWord}</p></td>							
 							<td  style="vertical-align: middle;">${a.announceTime }</td>
 							<td  style="vertical-align: middle;">${a.announceModified }</td>
-							<td  style="vertical-align: middle;"><a href="/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
-							<c:if test="${a.setTop eq 1}"><a href="/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
-							<c:if test="${a.setTop ne 1}"><a href="/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
+							<td  style="vertical-align: middle;"><a href="/u/t/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
+							<c:if test="${a.setTop eq 1}"><a href="/u/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
+							<c:if test="${a.setTop ne 1}"><a href="/u/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>
 							</td>
 						</tr>

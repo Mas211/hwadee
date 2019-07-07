@@ -48,7 +48,7 @@
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
-					</a> <br /> <a href="/menu"> <span class="fa fa-tasks"
+					</a> <br /> <a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -113,7 +113,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>新建奖罚</li>

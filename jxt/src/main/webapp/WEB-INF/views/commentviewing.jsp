@@ -52,7 +52,7 @@
 						aria-hidden="true"></span>注销
 					</a>
 					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -122,7 +122,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="/menu">功能菜单</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">功能菜单</a> <span>| |</span></li>
 				<li>查询评语</li>
 			</ul>
 		</div>
@@ -137,7 +137,7 @@
 				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 					<c:forEach items="${requestScope.list}" var="list">
 					<input type="text" value = ${list.teacherName}老师说${list.studentName}同学:${list.comment}></br>
 					</c:forEach>

@@ -47,7 +47,7 @@
 						aria-hidden="true"></span>注销
 					</a>
 					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -121,7 +121,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>新闻列表</li>
@@ -164,9 +164,9 @@
 							<td style="width: 200px;">${n.newsIntro }</td>
 							<td>${n.newsCreate }</td>
 							<td>${n.newsModified }</td>
-							<td><a href="/updateNews/${n.newsId}">修改</a>|<a href="/deleteNews/${n.newsId}">删除</a>|
-							<c:if test="${n.setTop eq 1}"><a href="/cancelTop/${n.newsId}">取消置顶</a></c:if>
-							<c:if test="${n.setTop ne 1}"><a href="/setTop/${n.newsId}">置顶</a>&nbsp;&nbsp;
+							<td><a href="/u/t/updateNews/${n.newsId}">修改</a>|<a href="/u/t/deleteNews/${n.newsId}">删除</a>|
+							<c:if test="${n.setTop eq 1}"><a href="/u/cancelTop/${n.newsId}">取消置顶</a></c:if>
+							<c:if test="${n.setTop ne 1}"><a href="/u/setTop/${n.newsId}">置顶</a>&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>
 							</td>
 						</tr>

@@ -13,9 +13,7 @@
 	media="all" />
 	<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
 		media="all" />
-	font-awesome
 	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	fonts
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 		rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
@@ -37,11 +35,15 @@
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<br/>
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="/login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-in"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -107,7 +109,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index">首页</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">个人中心</a> <span>| |</span></li>
 				<li>消息中心</li>
 			</ul>
 		</div>
@@ -185,13 +187,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="">反馈建议</a>
 						</li>
 					</ul>
 				</div>
@@ -358,7 +360,7 @@
 								messageList.empty();
 								dialogTitle.empty();
 								
-								$.get("/MyMessages/delete",{sourceId :m.account.accountId, session:$.session, t:new Date().getTime()},function(){
+								$.get("/u/s/MyMessages/delete",{sourceId :m.account.accountId, session:$.session, t:new Date().getTime()},function(){
 				            		
 				            	},"json");
 							}); 
@@ -378,7 +380,7 @@
 					            	var dialogTitleSpan = $("<span />").html($(this).attr("name"));
 					            	dialogTitle.append(dialogTitleSpan);
 					            	messageList.empty();
-					            	$.get("/MyMessages/findMessages",{sourceId : m.sourceId, t : new Date().getTime()},function(chatList){
+					            	$.get("/u/s/MyMessages/findMessages",{sourceId : m.sourceId, t : new Date().getTime()},function(chatList){
 					            		$.each(chatList, function(i,n){
 					            			var messageTime = $("<div />").attr("class","message-time");
 					            			var mTime = $("<span />").html(n.time).attr("class","time");
@@ -431,13 +433,13 @@
 								            	var targetId = n.sourceId;
 								            	var messageId = n.messageId;
 								            	
-						            			$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, t:new Date()},function(message){
+						            			$.get("/u/s/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, t:new Date()},function(message){
 						            				var replyId = message.messageId;
 						            				
 									            	recCard.hide();
 									            	var recDetails = messageDetails.find("div#leav.details-content");
 									            	recDetails.html("我的回复:"+recContent);
-						            				$.get("/MyMessages/setReply",{replyId:replyId, beReplyId:messageId,t:new Date()},function(){
+						            				$.get("/u/s/MyMessages/setReply",{replyId:replyId, beReplyId:messageId,t:new Date()},function(){
 						            					
 						            				},"json");
 						            			},"json");
@@ -523,7 +525,7 @@
 				            	var messageContent = textarea.val();
 				            	var targetId = input.val();
 				            	
-				            	$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:messageContent, session:$.session, t:new Date().getTime()},function(isLeav){
+				            	$.get("/u/s/MyMessages/messageCommit",{targetId:targetId, messageContent:messageContent, session:$.session, t:new Date().getTime()},function(isLeav){
 				            			if(isLeav){
 				            				textarea.val('');
 											input.val('');

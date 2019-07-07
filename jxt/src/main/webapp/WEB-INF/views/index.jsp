@@ -71,7 +71,7 @@
 						aria-hidden="true"></span>注销
 					</a>
 					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -295,10 +295,6 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
-	</div>
-	<!-- //about -->
-	<div class="tlinks">
-		Collect from <a href="http://www.cssmoban.com/">网站建设</a>
 	</div>
 
 	<!-- news -->

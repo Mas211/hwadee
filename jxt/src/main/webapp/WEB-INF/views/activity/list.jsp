@@ -46,7 +46,7 @@
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a><br />
-					<a href="/menu"> <span class="fa fa-tasks"
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -138,7 +138,7 @@
 							<span>| |</span>
 						</li>
 						<li>
-							<a href="/activity/activity">发布活动</a>
+							<a href="/u/t/activity/activity">发布活动</a>
 							<span>| |</span>
 						</li>
 					</c:otherwise>

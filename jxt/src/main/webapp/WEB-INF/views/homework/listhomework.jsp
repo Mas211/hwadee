@@ -60,7 +60,7 @@
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
-					</a> <br /> <a href="/menu"> <span class="fa fa-tasks"
+					</a> <br /> <a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -126,23 +126,23 @@
 				<c:choose>
 					<c:when test="${sessionScope.account.roleId eq 4 }">
 						<li>
-							<a href="/menu">个人中心</a>
+							<a href="/u/s/menu">个人中心</a>
 							<span>| |</span>
 						</li>
 					</c:when>
 					<c:when test="${sessionScope.account.roleId eq 5 }">
 						<li>
-							<a href="/menu">个人中心</a>
+							<a href="/u/s/menu">个人中心</a>
 							<span>| |</span>
 						</li>
 					</c:when>
 					<c:otherwise>
 						<li>
-							<a href="/menu">个人中心</a>
+							<a href="/u/s/menu">个人中心</a>
 							<span>| |</span>
 						</li>
 						<li>
-							<a href="/homework/publishhomework">布置作业</a>
+							<a href="/u/t/homework/publishhomework">布置作业</a>
 							<span>| |</span>
 						</li>
 					</c:otherwise>
@@ -191,9 +191,9 @@
 									<td>${t.taskContent }</td>
 									<td>${t.taskIsFinish }</td>
 									<td><a class="updateTask"
-										href="/homework/updatehomework/${t.taskId }">修改</a> | <a
-										class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a>
-										| <a class="report" href="/homework/report/${t.taskId }">完成</a>
+										href="/u/t/homework/updatehomework/${t.taskId }">修改</a> | <a
+										class="deleteTask" href="/u/t/homework/listhomework/${t.taskId }">删除</a>
+										| <a class="report" href="/u/t/homework/report/${t.taskId }">完成</a>
 									</td>
 								</tr>
 							</c:forEach>
