@@ -119,17 +119,17 @@
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
-			<ul class="short_ls">
-				<li>
-					<a href="/menu">个人中心</a>
-					<span>| |</span>
-				</li>
-				<li>
-					<a href="/newsList/1">返回列表</a>
-					<span>| |</span>
-				</li>
-				<li>新闻详情</li>
-			</ul>
+			<ul>
+						<li>
+							<a href="/about">关于我们</a>
+						</li>
+						<li>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
+						</li>
+						<li>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
+						</li>
+					</ul>
 		</div>
 	</div>
 	<!-- //short-->

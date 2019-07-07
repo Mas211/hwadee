@@ -45,12 +45,7 @@
 			</div>
 			<div class="bottom_header_right">
 				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html"> <span
-						class="fa fa-facebook"></span>
-					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
-					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
-					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
-					</a>
+					
 				</div>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
@@ -245,7 +240,7 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
 							<a href="https://github.com/Mas211/hwadee">联系我们</a>

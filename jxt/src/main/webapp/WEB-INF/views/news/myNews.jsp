@@ -188,13 +188,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="#">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="#">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="#">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>
