@@ -132,13 +132,13 @@ public class LoginController {
 	
 	
 	//找回密码部分
-	@RequestMapping(value="/u/s/retrieve",method=RequestMethod.GET)
+	@RequestMapping(value="/retrieve",method=RequestMethod.GET)
 	public String getretrieve(){
 		return "retrieve";
 	}
 	
 	
-	@RequestMapping(value="/u/s/retrieve",method=RequestMethod.POST)
+	@RequestMapping(value="/retrieve",method=RequestMethod.POST)
 	public String login(Account account,HttpServletRequest request)
 			throws ServletException, IOException {
 		Account account_temp = registerService.check1(account.getAccountId());
