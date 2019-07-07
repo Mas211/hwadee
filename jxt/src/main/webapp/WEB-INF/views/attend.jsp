@@ -5,7 +5,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Attend</title>
+	<title>考勤信息</title>
 	<!-- meta-tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

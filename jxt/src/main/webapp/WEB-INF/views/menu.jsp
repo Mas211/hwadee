@@ -269,7 +269,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/grade/enterginggrade" target="view_window"> 
+						<a class="agile-icon" href="/u/t/grade/enteringgrades" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
 								
@@ -283,7 +283,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/commentadding" target="view_window"> 
+						<a class="agile-icon" href="/u/s/commentadding" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-book" aria-hidden="true"></i>添加评语
 								
@@ -314,7 +314,7 @@
 						<div class="fontawesome-icon-list">
 						<a class="agile-icon" href="/u/t/homework/publishhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-bell-o" aria-hidden="true"></i>布置作业
+								<i class="fa fa-pencil" aria-hidden="true"></i>布置作业
 								
 							</div></a>
 						</div>
@@ -326,16 +326,16 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/u/t/newsManage" target="view_window">
+							<a class="agile-icon" href="/u/t/myNews" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								 <i	class="fa fa-file-text-o" aria-hidden="true"></i>我发布的新闻
 							</div>
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
+						<a class="agile-icon" href="/u/t/activity/createActivity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
+								<i class="fa fa-puzzle-piece" aria-hidden="true"></i>发布活动照片
 								
 							</div></a>
 						</div>
@@ -366,7 +366,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/grade/enterginggrade" target="view_window"> 
+						<a class="agile-icon" href="/u/t/grade/enteringgrade" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
 								
@@ -380,7 +380,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/commentadding" target="view_window"> 
+						<a class="agile-icon" href="/u/s/commentadding" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-book" aria-hidden="true"></i>添加评语
 								
@@ -411,7 +411,7 @@
 						<div class="fontawesome-icon-list">
 						<a class="agile-icon" href="/u/t/homework/publishhomework" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-bell-o" aria-hidden="true"></i>布置作业
+								<i class="fa  fa-pencil" aria-hidden="true"></i>布置作业
 								
 							</div></a>
 						</div>
@@ -423,16 +423,16 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-							<a class="agile-icon" href="/u/t/newsManage" target="view_window">
+							<a class="agile-icon" href="/u/t/myNews" target="view_window">
 							<div class="icon-box col-md-3 col-sm-4">
 								 <i	class="fa fa-file-text-o" aria-hidden="true"></i>我发布的新闻
 							</div>
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
+						<a class="agile-icon" href="/u/t/activity/createActivity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
+								<i class="fa fa-puzzle-piece" aria-hidden="true"></i>发布活动照片
 								
 							</div></a>
 						</div>
@@ -490,9 +490,9 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
+						<a class="agile-icon" href="/u/t/activity/createActivity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
+								<i class="fa fa-puzzle-piece" aria-hidden="true"></i>发布活动照片
 								
 							</div></a>
 						</div>

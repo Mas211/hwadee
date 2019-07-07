@@ -25,7 +25,7 @@ public class GradeController {
 		return "/grade/enteringgrades";
 	}
 	
-	@PostMapping("/u/t/grade/enteringgrade")
+	@PostMapping("/u/t/grade/enteringgrades")
 	public String addGrade(Grade grade) {
 		int rows = gradeService.add(grade);
 		if (rows != grade.getGradeId()) {
