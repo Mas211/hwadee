@@ -16,4 +16,6 @@ public interface AccountService {
 	int update(Account account);
 	
 	Account search(int parId);
+	
+	int updateTime(Account account);
 }

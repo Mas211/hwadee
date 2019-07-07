@@ -7,6 +7,7 @@
 <head>
 <title>个人中心</title>
 <!-- meta-tags -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -20,6 +21,7 @@
 		}
 	</script>
 <!-- //meta-tags -->
+<link rel="stylesheet" type="text/css" href="/MessageCenter.css" />
 <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="/assets/css/style.css" rel="stylesheet" type="text/css"
@@ -172,6 +174,15 @@
 								
 							</div></a>
 						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
+								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
+									<div class="point" style="float:left"></div>
+								</c:if>
+							</div></a>
+						</div>
 					</c:when>
 					<c:when test="${sessionScope.account.roleId eq 4 }">
 						<div class="fontawesome-icon-list">
@@ -224,12 +235,23 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
+								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
+									<div class="point" style="float:left"></div>
+								</c:if>
+
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
 						<a class="agile-icon" href="/u/s/vedio" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>查看视频
 								
 							</div></a>
 						</div>
+
 					</c:when>
 					<c:when test="${sessionScope.account.roleId eq 3 }">
 						<div class="fontawesome-icon-list">
@@ -317,6 +339,15 @@
 								
 							</div></a>
 						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
+								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
+									<div class="point" style="float:left"></div>
+								</c:if>
+							</div></a>
+						</div>
 					</c:when>
 
 					<c:when test="${sessionScope.account.roleId eq 2 }">
@@ -383,6 +414,15 @@
 							</div>
 							</a>
 						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
+								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
+									<div class="point" style="float:left"></div>
+								</c:if>
+							</div></a>
+						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="fontawesome-icon-list">
@@ -448,6 +488,17 @@
 								
 							</div></a>
 						</div>
+						
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
+								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
+									<div class="point" style="float:left"></div>
+								</c:if>
+							</div></a>
+						</div>
+						
 					</c:otherwise>
 				</c:choose>
 				<div class="clearfix"></div>

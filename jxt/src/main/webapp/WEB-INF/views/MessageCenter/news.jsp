@@ -220,14 +220,6 @@
 				var aChoose = $( this );
 				
 				var bottom = $("div.space-right-bottom").empty();
-				/* $.get("/MyMessages/checkNotReadA",function(haveNotRead){
-					if(!haveNotRead){
-						$("div#3.point").show();
-					}
-					else{
-						$("div#3.point").hide();
-					}
-				},"json"); */
 				
 				//标题
 				var title = $("div.space-right-top .title").empty();
@@ -236,6 +228,10 @@
 				
 				$.get("/MyMessages/classification",{typeId : aChoose.attr("id"), t : new Date().getTime()},function(value){
 					if(value.flag == 1){
+						
+		   				$("div#1.point").hide();
+		   				/* $.session.set('newsAllRead', 'true'); */
+		   				$.get("/MyMessages/setRead",{messageType:"1",t:new Date().getTime()},function(){});
 						/* var divTitle = $("<div>新闻通知</div>");
 						divTitle.appendTo(title); */
 						$.each(value.news, function(i,m){
@@ -290,6 +286,8 @@
 					}
 					else if(value.flag == 2){
 						$.each(value.homeworks, function(i,m){
+							$("div#2.point").hide();
+							$.get("/MyMessages/setRead",{messageType:"2",t:new Date().getTime()},function(){});
 							var card = $("<div/>").attr("class","new-item card");
 						
 							var cardTop = $("<div/>").attr("class","top");
@@ -370,6 +368,7 @@
 					            "click": function(e){
 					   				if($(".avatar div.point").is(":hidden")){
 					   					$("div#3.point").hide();
+					   					$.get("/MyMessages/setRead",{messageType:"3",t:new Date().getTime()},function(){});
 					   				}
 					   				
 					            	e.preventDefault();
