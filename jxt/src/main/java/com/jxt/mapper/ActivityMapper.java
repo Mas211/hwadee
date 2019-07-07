@@ -17,6 +17,7 @@ public interface ActivityMapper {
 	// 查
 	Activity findById(int activityId);
 	List<Activity> findAll();
+	String findNameById(int pubberId);
 	
 	// 改
 	int update(Activity activity);

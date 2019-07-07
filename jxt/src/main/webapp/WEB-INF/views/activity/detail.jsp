@@ -43,9 +43,9 @@
 				<c:choose>
 					<c:when test="${!empty sessionScope.account}">
 						<div class="header-top-righ">
-							<a href="/logout"> <span class="fa fa-sign-out"
+							<a href="/index"> <span class="fa fa-sign-out"
 								aria-hidden="true"></span>注销
-							</a> <br /> <a href="/menu"> <span class="fa fa-sign-out"
+							</a> <br /> <a href="/menu"> <span class="fa fa-tasks"
 								aria-hidden="true"></span>个人中心
 							</a>
 						</div>
@@ -76,7 +76,7 @@
 						</button>
 						<a class="navbar-brand" href="index.html">
 							<h1 >
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通
 								<!--这里插入logo的路径-->
 								<label>Education & Courses</label>
 							</h1>
@@ -89,7 +89,7 @@
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
 									<li><a href="/index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
@@ -97,8 +97,8 @@
 										<li><a href="/announceList/1">公告</a></li>
 										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -135,13 +135,12 @@
 				${activity.actTitle}
 			</h3>
 			<h4 style="font-family: 'Raleway', sans-serif;display: inline-block; padding: 0 0 50px 50px">发布者：</h4>
+			<span style="font-family: 'Open Sans', sans-serif;color: #999;">${activity.account.accountName}</span><br />
 			<div class="tittle-style">
 				<img width="100%" height="100%" src="${activity.imagePath }" alt="" title="${activity.actTitle }" />
 				
 			</div>
 		</div>
-		<h4 style="font-family: 'Raleway', sans-serif;display: inline-block; padding: 0 0 50px 50px">发布者：</h4>
-		<span style="font-family: 'Open Sans', sans-serif;color: #999;">${activity.account.accountName}</span><br />
 		<div style="width: 700px; margin: 0 auto;">
 			${activity.actContent}
 		</div>
@@ -176,17 +175,16 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="#">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="#">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="#">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-
 			</div>
 		</div>
 		<div class="footer-copy-right">
@@ -221,14 +219,6 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
 
 			$().UItoTop({
 				easingType: 'easeOutQuart'

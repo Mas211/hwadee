@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.jxt.entity.Account;
 import com.jxt.entity.Activity;
 import com.jxt.entity.Message;
 import com.jxt.service.ActivityService;
@@ -50,6 +51,11 @@ public class ActivityController {
 	@GetMapping("/{actId}")
 	public String showNews(@PathVariable("actId") int id, Model model) {
 		Activity activity = activityService.getActivityById(id);
+		int pubber = activity.getActPubberId();
+		String nameString = activityService.getNameById(pubber);
+		Account user = new Account();
+		user.setAccountName(nameString);
+		activity .setAccount(user);
 		model.addAttribute("activity", activity);
 		return "/activity/detail";
 	}

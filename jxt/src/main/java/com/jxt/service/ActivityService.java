@@ -17,7 +17,7 @@ public interface ActivityService {
 	// 查
 	Activity getActivityById(int activityId);
 	List<Activity> activities();
-
+	String getNameById(int pubberId);
 	// 改
 	int update(Activity activity);
 
