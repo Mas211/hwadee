@@ -63,4 +63,10 @@ public class ActivityServiceImpl implements ActivityService {
 		// TODO Auto-generated method stub
 		return activityMapper.findAll();
 	}
+
+	@Override
+	public String getNameById(int pubberId) {
+		// TODO Auto-generated method stub
+		return activityMapper.findNameById(pubberId);
+	}
 }

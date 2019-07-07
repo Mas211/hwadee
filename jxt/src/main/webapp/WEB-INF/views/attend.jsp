@@ -43,18 +43,18 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
 					<br/>
-					<a href="/menu"> <span class="fa fa-sign-out"
+					<a href="/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-in"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -76,9 +76,9 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="/index">
 							<h1>
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -90,17 +90,17 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+									<li><a href="/index" class="">首页</a></li>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -121,7 +121,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="index.html">首页</a>
+					<a href="/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>考勤记录</li>
@@ -166,87 +166,53 @@
 			   </div>		
 		</div>
 	</div>
-
+	
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="#">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="#">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="#">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
+				<div class="allah-copy">
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -265,15 +231,6 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
