@@ -9,6 +9,7 @@ public class Grade {
 	private String gradeSubject;
 	private String gradeStuName;
 	private String gradeTName;
+	private Integer gradeClassId;
 	private Account account;
 	
 	public Integer getGradeId() {
@@ -58,5 +59,11 @@ public class Grade {
 	}
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	public Integer getGradeClassId() {
+		return gradeClassId;
+	}
+	public void setGradeClassId(Integer gradeClassId) {
+		this.gradeClassId = gradeClassId;
 	}
 }

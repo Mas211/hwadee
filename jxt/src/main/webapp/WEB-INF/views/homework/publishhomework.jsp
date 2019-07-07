@@ -154,6 +154,15 @@
 				</div>
 			</div>
 			<div class="contact-row">
+				<div class="col-md-6 contact-text1">
+					<h4>
+						<span>孔子</span>曰：
+					</h4>
+					<p>“学而时习之，不亦说乎？</br>
+						有朋自远方来，不亦乐乎？</br>
+						人不知而不愠，不亦君子乎？”</p>
+					
+				</div>
 				<div class="col-md-6 contact-w3lsright">
 					<iframe></iframe>
 				</div>

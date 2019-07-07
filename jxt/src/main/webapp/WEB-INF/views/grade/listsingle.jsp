@@ -141,74 +141,26 @@
 				</div>
 			</div>
 			<div class="bs-docs-example">
-				<h1>语文</h1>
+				<h1>${sessionScope.account.tSubject}</h1>
 				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th></th>
 							<th>学生姓名</th>
 							<th>学生学号</th>
+							<th>班级</th>
 							<th>任课老师</th>
 							<th>成绩</th>
 						</tr>
 					</thead>
 					<c:forEach items="${requestScope.grades }" var="g">
-						<c:if test="${g.gradeSubject == '语文'}">
+						<c:if test="${g.gradeSubject == sessionScope.account.tSubject}">
 							<tbody>
 								<tr>
 									<td>${g.gradeId }</td>
 									<td>${g.gradeStuName}</td>
 									<td>${g.gradeStuId }</td>
-									<td>${g.gradeTName }</td>
-									<td>${g.grade }</td>
-								</tr>
-							</tbody>
-						</c:if>
-					</c:forEach>
-				</table>
-				<h1>数学</h1>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>
-							<th>学生姓名</th>
-							<th>学生学号</th>
-							<th>任课老师</th>
-							<th>成绩</th>
-						</tr>
-					</thead>
-					<c:forEach items="${requestScope.grades }" var="g">
-						<c:if test="${g.gradeSubject == '数学'}">
-							<tbody>
-								<tr>
-									<td>${g.gradeId }</td>
-									<td>${g.gradeStuName}</td>
-									<td>${g.gradeStuId }</td>
-									<td>${g.gradeTName }</td>
-									<td>${g.grade }</td>
-								</tr>
-							</tbody>
-						</c:if>
-					</c:forEach>
-				</table>
-				<h1>英语</h1>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>
-							<th>学生姓名</th>
-							<th>学生学号</th>
-							<th>任课老师</th>
-							<th>成绩</th>
-						</tr>
-					</thead>
-					<c:forEach items="${requestScope.grades }" var="g">
-						<c:if test="${g.gradeSubject == '英语'}">
-							<tbody>
-								<tr>
-									<td>${g.gradeId }</td>
-									<td>${g.gradeStuName}</td>
-									<td>${g.gradeStuId }</td>
+									<td>${g.gradeClassId}</td>
 									<td>${g.gradeTName }</td>
 									<td>${g.grade }</td>
 								</tr>

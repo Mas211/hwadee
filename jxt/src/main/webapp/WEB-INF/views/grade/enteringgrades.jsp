@@ -141,10 +141,10 @@
 				<form action="#" method="post">
 					<div class="fields-grid">
 						<div class="styled-input">
-							<input type="text" placeholder="学生学号" name="gradeStuId", required="required">
+							<input type="text" placeholder="学生学号" name="gradeStuId" required="required">
 						</div>
 						<div class="styled-input">
-							<input type="text" placeholder="学生姓名" name="gradeStuName", required="required">
+							<input type="text" placeholder="学生姓名" name="gradeStuName" required="required">
 						</div>
 						<div class="styled-input agile-styled-input-top">
 							<select class="category2" required="required" name="gradeSubject">

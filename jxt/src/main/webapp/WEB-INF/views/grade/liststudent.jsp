@@ -139,6 +139,7 @@
 						<tr>
 							<th></th>
 							<th>科目</th>
+							<th>班级</th>
 							<th>任课老师</th>
 							<th>成绩</th>
 						</tr>
@@ -148,6 +149,7 @@
 						<tr>
 							<td>${g.gradeId }</td>
 							<td>${g.gradeSubject}</td>
+							<td>${g.gradeClassId}</td>
 							<td>${g.gradeTName }</td>
 							<td>${g.grade }</td>
 						</tr>
