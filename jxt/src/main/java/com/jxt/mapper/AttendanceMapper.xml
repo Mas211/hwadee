@@ -80,17 +80,14 @@
 	<select id="findByClass" resultMap="attendanceMap">
 	SELECT
         a.account_id,
-		a.account_class_id,
+		a.par_id,
 		t.attend_id, t.attend_stu_id, t.attend_time
 	FROM
 		account a
 	INNER JOIN attendance t ON a.account_id = t.attend_stu_id
 	WHERE
-			a.account_class_id =  #{value}
+			a.account_class_id = #{value}
 	</select>
-	
-	
-	
 	<select id="findAll" resultMap="attendanceMap">
 	SELECT
         a.account_id,

@@ -4,7 +4,7 @@
 <html lang="zxx">
 
 <head>
-<title>注册</title>
+<title>关于我们</title>
 <!-- meta-tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,8 +44,11 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+				<div class="bottom-social-icons">
+					
+				</div>
 				<div class="header-top-righ">
-					<a href="/login"> <span class="fa fa-sign-in"
+					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -65,9 +68,9 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/index">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span ><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -77,29 +80,27 @@
 						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li><a href="" class="effect-3"></a></li>
-								<li><a href="" class="effect-3"></a></li>
-									<li><a href="/index" class="">首页</a></li>
-								<li><a href="#" class="">学校概况</a>
+									<li><a href="index" class="">首页</a></li>
+									<li><a href="" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="/announceList/1">公告</a></li>
-										<li><a href="/newsList/1">新闻</a></li>
+										<li><a href="">公告</a></li>
+										<li><a href="">新闻</a></li>
 									</ul></li>
-								<li><a href="#" class="effect-3">校园风采</a></li>
-								<li><a href="#" class="effect-3">师资队伍</a></li>
+								<li><a href="" class="effect-3">校园风采</a></li>
+								<li><a href="" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
-					<br/>
 					<!--/.navbar-collapse-->
 					<!--/.navbar-->
 				</div>
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
@@ -109,84 +110,109 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li>
-					<a href="/index">首页</a>
-					<span>| |</span>
-				</li>
-				<li>注册</li>
+				<li><a href="/index">首页</a> <span>| |</span></li>
+				<li>关于我们</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<div class="register-form-main">
+	<div class="about-sec" id="about">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>注</span>
-					<span></span>册
+					<span>关</span>于
+					<span>我</span>们
 				</h3>
 				<div class="tittle-style">
 
 				</div>
 			</div>
-			<div class="login-form">
-				<form action="/register" method="post">
-					<div class="">
-						<p>家长账号 </p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountId" required="" /><span></span>
-					</div>
-					<div class="">
-						<p>家长姓名</p>
-						<input type="text" name="accountName" required="" />
-					</div>
-					<div class="">
-						<p>性别</p>
-						<input type="text" name="accountSex" required="" />
-					</div>
-					<div class="">
-						<p>手机/电话</p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountPhone" required="" />
-					</div>
-					<div class="">
-						<p>家庭地址</p>
-						<input type="text" name="accountAddress" required="" />
-					</div>
-					<div class="">
-						<p>密码</p>
-						<input type="password" class="password" name="accountPassword" id="password1" required="" />
-					</div>
-					<div class="">
-						<p>确认密码</p>
-						<input type="password" class="password" id="password2" required="" />
-					</div>
-					<label class="anim">
-						<input type="checkbox" class="checkbox">
-						<span>接受服务条款</span>
-					</label>
-					<input type="submit" value="注册">
-				</form>
-				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-				<script type="text/javascript">
-					$(function(){
-						$("div > input[name=accountId]").blur(function(e){
-							var input = $( this );
-							$.get("/check2",{id :input.val(), t : new Date().getTime()}, function( data ){
-							if( data == 1 ){ 
-								input.next("span").html("*该账号已存在").css("color", "red");
-							} else {
-								input.next("span").html("*该账号可以注册").css("color", "green");
-							}
-				}, "json");
-			});
-			
-		});
-	</script>
+			<div class="about-sub">
+				<div class="col-md-6 about_bottom_left">
+					<h4>家校通
+						<span>简介</span>
+					</h4>
+					
+					<p>   ————家校通（ Families School Communication，简写：FSC）是指利用无线通信技术和网络技术搭建的家校互通平台
+					，为家校之间提供充分、准确、及时的沟通方式，为全面监控学生和学生成长提供有效的途径，该平台运行于移动终端，
+					家长、学生、教师、领导都可以通过智能手机、平板电脑等媒介进行沟通和信息传递。</p>
+					<a class="button-style" href="https://github.com/Mas211/hwadee">加入我们</a>
+				</div>
+				<!-- Stats-->
+				<div class="col-md-6 about2-info">
+					<img src="images/graduate.png" alt="" />
+				</div>
+				<!-- //Stats -->
+				<div class="clearfix"> </div>
 			</div>
+		</div>
+	</div>
+	
+	
+	<div class="aitsresumethree">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>我们</span>的
+					<span>进</span>展
+				</h3>
+				<div class="tittle-style">
 
+				</div>
+			</div>
+			<div class="load_more">
+				<ul id="myList">
+					<li class="aitsaitsresumewthreeli-1">
+						<div class="l_g">
+							<div class="l_g_r g_r">
+								<div class="work">
+									<div class="work-info">
+										<div class="col-xs-6 work-grid work-left">
+											<h4>6.28-6.30</h4>
+										</div>
+										<div class="col-xs-6 work-grid work-right">
+											<h5>需求分析与设计</h5>
+											<p> 选题：家校通。需求分析：项目人员对项目需求进行熟悉，讨论出大家都能接受的设计方案。
+											设计：利用Powerdesigner完成数据流图，时序图，ER图等的设计，
+											navicat for mysql进行数据库的设计，利用css/js进行网页架构的设计。</p>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+									<div class="work-info">
+										<div class="col-xs-6 work-grid work-right work-right2">
+											<h4>6.30-7.6</h4>
+										</div>
+										<div class="col-xs-6 work-grid work-left work-left2">
+											<h5>编码阶段</h5>
+											<p>小组成员利用github进行项目管理，辅助工具TortoiseGit可以避免繁杂的命令输入，
+											界面化更方便的进行版本管理。利用maven，tomcat，spring等设计后台框架，编写类和mapper，
+											与前端逐渐结合，开始逐渐实现项目需求。</p>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+									<div class="work-info">
+										<div class="col-xs-6 work-grid work-left">
+											<h4>6.30-7.8</h4>
+										</div>
+										<div class="col-xs-6 work-grid work-right">
+											<h5 class="comp">测试阶段</h5>
+											<p>对单个功能模块进行单元测试，主要由开发人员完成，集成和系统测试由测试人员完成。
+											测试人员在需求分析时就应该介入，写文档，设计用例，协助开发完成一些功能的实现，定位bug，
+											提交bug给开发并且协助开发修复bug。之后进行回归测试，兼容性测试，性能测试。
+											</p>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
-		<!-- footer -->
+	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
