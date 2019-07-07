@@ -1,5 +1,6 @@
 package com.jxt.mapper;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -52,5 +53,11 @@ public interface MessageMapper {
 	List<Message> findIsRead(@Param("sourceId")int sourceId,@Param("targetId")int targetId);
 	
 	List<Message>findIsReadByTargetId(@Param("targetId")int targetId);
+	
+	//找出用户上次登陆之后更新的新闻
+	List<Message>findNewsByTime(@Param("date")Date date);
+	
+	//找出用户上次登陆之后更新的作业通知
+	List<Message>findHomeworksByTime(Message message);
 	
 }

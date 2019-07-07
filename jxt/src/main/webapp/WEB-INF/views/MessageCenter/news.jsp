@@ -19,11 +19,15 @@
 				</div>
 				<ul class="list ">
 					<li>
-						<div class="point" style="float:left;display:none"></div>
+						<c:if test="${sessionScope.newsAllRead == false}">
+							<div id="3" class="point" style="float:left"></div>
+						</c:if>
 						<a id="1" href="新闻通知">新闻通知</a>
 					</li>
 					<li>
-						<div class="point" style="float:left;display:none"></div>
+						<c:if test="${sessionScope.homeworksAllRead == false}">
+							<div id="3" class="point" style="float:left"></div>
+						</c:if>
 						<a id="2" href="作业通知">作业通知</a>
 					</li>
 					<li>

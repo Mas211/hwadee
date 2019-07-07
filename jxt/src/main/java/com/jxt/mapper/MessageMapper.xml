@@ -185,4 +185,33 @@
 				message p
 			where target_id = #{targetId} AND message_type = 3 AND is_read = 0
 	</select>
+	
+	<select id="findNewsByTime" parameterType="java.util.Date" resultType="Message">
+		select 
+			message_id,
+			source_id,
+			target_id,
+			reply_id,
+			is_read,
+			time,
+			message_content,
+			message_path
+		from message
+		where time>=#{date} and message_type = 1
+	</select>
+	
+	<select id="findHomeworksByTime" parameterType="Message" resultType="Message">
+		select 
+			message_id,
+			source_id,
+			target_id,
+			reply_id,
+			is_read,
+			time,
+			message_content,
+			message_path
+		from message
+		where time>=#{time} and message_type=2 and target_id = #{targetId}
+	</select>
+	
 </mapper>

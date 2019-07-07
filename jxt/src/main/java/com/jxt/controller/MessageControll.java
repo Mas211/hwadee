@@ -1,6 +1,9 @@
 package com.jxt.controller;
 
 
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -77,15 +80,21 @@ public class MessageControll {
 	
 	//test
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
-	public String login(HttpSession session) {
+	public String login(HttpSession session) throws ParseException {
 		int accountId = 1;
 		session.setAttribute("id", accountId);
 		//给session添加一个留言是否全部已读的bool值
 		Integer targetId = (Integer) session.getAttribute("id");
 		session.setAttribute("messageAllRead",messageService.haveNotReadA(targetId));
-		/*
-		 * //给session添加一个用户上次登录时间 String lastLogTime =
-		 */
+		//给session添加一个用户上次登录时间
+		Date lastLogTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2019-07-07 08:00:00");
+		boolean newsAllRead=messageService.listNotReadNews(lastLogTime).isEmpty();
+		System.out.println("newsAllRead:"+newsAllRead);
+		boolean homeworksAllRead = messageService.listNotReadHomeworks(lastLogTime, targetId).isEmpty();
+		System.out.println("homeworksAllRead:"+homeworksAllRead);
+		session.setAttribute("newsAllRead", newsAllRead);
+		session.setAttribute("homeworksAllRead", homeworksAllRead);
+		
 		
 		return "MessageCenter/news";
 	}
@@ -98,8 +107,7 @@ public class MessageControll {
 	public @ResponseBody Message messageCommit(int targetId,String messageContent,HttpSession session) {
 		
 		Integer sourceId = (Integer) session.getAttribute("id");
-		Date date = new Date();
-		System.out.println(date.getClass());
+		
 		//后面这里再加判断用户是否存在*************************
 		Message message = new Message();
 		message.setTargetId(targetId);
@@ -108,7 +116,7 @@ public class MessageControll {
 		message.setReplyId(1);//初始id，表示这条留言没有回复留言
 		message.setIsRead(0);
 		message.setMessageContent(messageContent);
-		message.setTime(dateFormat.format(date));
+		message.setTime(new Date());
 		messageService.add(message);  
 
 		return message;

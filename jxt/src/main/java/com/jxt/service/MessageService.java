@@ -1,9 +1,11 @@
 package com.jxt.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.ListModel;
 
+import com.ctc.wstx.io.ISOLatinReader;
 import com.jxt.entity.Account;
 import com.jxt.entity.Message;
 
@@ -50,5 +52,9 @@ public interface MessageService {
 	boolean haveNotRead(int sourceId,int targetId);
 	
 	boolean haveNotReadA(int targetId);
+	
+	List<Message> listNotReadNews(Date date);
+	
+	List<Message> listNotReadHomeworks(Date date,int targetId);
 	
 }
