@@ -10,7 +10,14 @@ public class Announce {
 	private Timestamp announceTime;
 	private Timestamp announceModified;
 	private int setTop;
+	private String announceWord;
 	
+	public String getAnnounceWord() {
+		return announceWord;
+	}
+	public void setAnnounceWord(String announceWord) {
+		this.announceWord = announceWord;
+	}
 	public int getSetTop() {
 		return setTop;
 	}

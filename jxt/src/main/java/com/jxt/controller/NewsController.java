@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.jxt.entity.Account;
+import com.jxt.entity.Message;
 import com.jxt.entity.News;
+import com.jxt.service.MessageService;
 import com.jxt.service.NewsService;
 
 @Controller
@@ -29,6 +31,9 @@ public class NewsController {
 	
 	@Autowired
 	private NewsService newsService;
+	
+	@Autowired
+	private MessageService ms;
 	
 	@GetMapping("/createNews")
 	public String get() {
@@ -50,6 +55,15 @@ public class NewsController {
 		if(rows != news.getNewsId()) {
 			throw new RuntimeException("添加失败");
 		}
+		
+		Message m = new Message();
+		m.setMessageType(1);
+		m.setMessageContent(news.getNewsContent());
+		m.setMessagePath("/news/" + news.getNewsId());
+		Date date = news.getNewsCreate();
+		m.setTime(date);
+		ms.add(m);
+		
 		return "redirect:/myNews";
 	}
 	
