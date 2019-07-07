@@ -1,5 +1,7 @@
 package com.jxt.service;
 
+import java.util.List;
+
 import com.jxt.entity.Auth;
 
 public interface AuthService {
@@ -10,7 +12,7 @@ public interface AuthService {
 	int delete(int authId);
 
 	// 查
-	Auth getAuthById(int authId);
+	List<Auth> getAuthByRoleId(int authId);
 
 	// 改
 	int update(Auth auth);

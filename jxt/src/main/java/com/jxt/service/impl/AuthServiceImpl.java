@@ -1,5 +1,7 @@
 package com.jxt.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +31,9 @@ public class AuthServiceImpl implements AuthService {
 	}
 
 	@Override
-	public Auth getAuthById(int authId) {
+	public List<Auth> getAuthByRoleId(int authId) {
 		// TODO Auto-generated method stub
-		return authMapper.findById(authId);
+		return authMapper.findByRoleId(authId);
 	}
 
 	@Override

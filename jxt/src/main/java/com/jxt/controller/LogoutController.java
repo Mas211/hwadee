@@ -22,7 +22,7 @@ public class LogoutController {
 	//}
 	
 	
-	@RequestMapping(value="/logout",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/logout",method=RequestMethod.GET)
 	public String login(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException {
 		//false代表：不创建session对象，只是从request中获取。
@@ -33,7 +33,7 @@ public class LogoutController {
 		String target[] = temp.split("/");
 		if(session.getAttribute("account")  ==null){
 			//session为空时，返回请求页面，即不能注销
-			return target[3];
+			return "redirect:/index";
 		}
 		session.removeAttribute("account");
 		//重定向到index

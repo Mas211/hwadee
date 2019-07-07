@@ -436,7 +436,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/createNews" target="view_window"> 
+						<a class="agile-icon" href="" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>管理活动照片
 								
@@ -477,13 +477,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="">反馈建议</a>
 						</li>
 					</ul>
 				</div>

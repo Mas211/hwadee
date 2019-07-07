@@ -86,7 +86,7 @@ public class LoginController {
 					{
 						target = "redirect:/studentMenu";
 					}*/
-					target = "redirect:/menu";
+					target = "redirect:/u/s/menu";
 				}
 				else if(account.getRoleId()!=role_id_int) {
 					//登录失败 跳回登录页面 显示 "用户身份与选择身份不符"
@@ -104,13 +104,13 @@ public class LoginController {
 	
 	
 	//找回密码部分
-	@RequestMapping(value="/retrieve",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/retrieve",method=RequestMethod.GET)
 	public String getretrieve(){
 		return "retrieve";
 	}
 	
 	
-	@RequestMapping(value="/retrieve",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/retrieve",method=RequestMethod.POST)
 	public String login(Account account,HttpServletRequest request)
 			throws ServletException, IOException {
 		Account account_temp = registerService.check1(account.getAccountId());
