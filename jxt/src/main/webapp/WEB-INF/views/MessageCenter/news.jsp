@@ -130,12 +130,13 @@
 							</c:if>
 							<a id="1" href="新闻通知">新闻通知</a>
 						</li>
+						<c:if test="${sessionScope.account.roleId ne 1 }">
 						<li>
 							<c:if test="${sessionScope.homeworksAllRead == false}">
 								<div id="3" class="point" style="float:left"></div>
 							</c:if>
 							<a id="2" href="作业通知">作业通知</a>
-						</li>
+						</li></c:if>
 						<li>
 							<c:if test="${sessionScope.messageAllRead == false}">
 								<div id="3" class="point" style="float:left"></div>
@@ -327,7 +328,7 @@
 							var lastWord = $("<div>没有新的留言</div>").attr("class", "last-word");
 							var close = $("<div />").attr("class","close").attr("style","display:none");
 							var closeIcon = $("<div />").attr("class","close-icon").attr("style","background-color:black");
-							$.get("/MyMessages/checkAccountNotRead",{sourceId : m.account.accountId, t : new Date().getTime()},function(havaNotRead){
+							$.get("/u/s/MyMessages/checkAccountNotRead",{sourceId : m.account.accountId, t : new Date().getTime()},function(havaNotRead){
 								if(havaNotRead == false){
 									point.show();
 									lastWord.html("你有新的留言");

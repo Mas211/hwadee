@@ -175,7 +175,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -235,7 +235,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -298,7 +298,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/s/rpManage" target="view_window"> 
+						<a class="agile-icon" href="/u/t/rpManage" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-calendar" aria-hidden="true"></i>查看奖罚
 								
@@ -340,7 +340,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -366,6 +366,13 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/t/grade/enterginggrade" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
 						<a class="agile-icon" href="/u/t/grade/listall" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-th-list" aria-hidden="true"></i>查看所有成绩
@@ -379,10 +386,18 @@
 								
 							</div></a>
 						</div>
+						
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/u/t/grade/enterginggrade" target="view_window"> 
+						<a class="agile-icon" href="/u/t/newRp" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
-								<i class="fa fa-keyboard-o" aria-hidden="true"></i>录入成绩
+								<i class="fa fa-star-o" aria-hidden="true"></i>记录奖罚
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/t/rpManage" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-calendar" aria-hidden="true"></i>查看奖罚
 								
 							</div></a>
 						</div>
@@ -415,7 +430,14 @@
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -490,7 +512,7 @@
 						</div>
 						
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">

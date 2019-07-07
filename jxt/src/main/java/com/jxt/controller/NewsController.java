@@ -107,7 +107,7 @@ public class NewsController {
 		
 		newsService.delete(id);
 		
-		return "redirect:/u/admin/newsManage";
+		return "redirect:/u/newsManage";
 	}
 	
 	@GetMapping("/u/t/myNews")
