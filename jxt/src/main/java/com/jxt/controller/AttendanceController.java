@@ -21,7 +21,7 @@ public class AttendanceController {
 
 
 	
-	@GetMapping("/attend")
+	@GetMapping("/u/s/attend")
 	public String attend(HttpServletRequest request, Model model) {
 		
 		List<Attendance> as;
@@ -48,14 +48,10 @@ public class AttendanceController {
 	
 	
 	
-	@RequestMapping(value="/vedio",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/vedio",method=RequestMethod.GET)
 	public String get(){
 		return "vedio";
 	}
-
-
-	
-
 
 	
 }

@@ -13,9 +13,7 @@
 	media="all" />
 	<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
 		media="all" />
-	font-awesome
 	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	fonts
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 		rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
@@ -30,18 +28,22 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="/login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-in"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -107,7 +109,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="index">首页</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">个人中心</a> <span>| |</span></li>
 				<li>消息中心</li>
 			</ul>
 		</div>
@@ -128,12 +130,13 @@
 							</c:if>
 							<a id="1" href="新闻通知">新闻通知</a>
 						</li>
+						<c:if test="${sessionScope.account.roleId ne 1 }">
 						<li>
 							<c:if test="${sessionScope.homeworksAllRead == false}">
 								<div id="3" class="point" style="float:left"></div>
 							</c:if>
 							<a id="2" href="作业通知">作业通知</a>
-						</li>
+						</li></c:if>
 						<li>
 							<c:if test="${sessionScope.messageAllRead == false}">
 								<div id="3" class="point" style="float:left"></div>
@@ -218,14 +221,6 @@
 				var aChoose = $( this );
 				
 				var bottom = $("div.space-right-bottom").empty();
-				/* $.get("/MyMessages/checkNotReadA",function(haveNotRead){
-					if(!haveNotRead){
-						$("div#3.point").show();
-					}
-					else{
-						$("div#3.point").hide();
-					}
-				},"json"); */
 				
 				//标题
 				var title = $("div.space-right-top .title").empty();
@@ -234,6 +229,10 @@
 				
 				$.get("/MyMessages/classification",{typeId : aChoose.attr("id"), t : new Date().getTime()},function(value){
 					if(value.flag == 1){
+						
+		   				$("div#1.point").hide();
+		   				/* $.session.set('newsAllRead', 'true'); */
+		   				$.get("/MyMessages/setRead",{messageType:"1",t:new Date().getTime()},function(){});
 						/* var divTitle = $("<div>新闻通知</div>");
 						divTitle.appendTo(title); */
 						$.each(value.news, function(i,m){
@@ -288,6 +287,8 @@
 					}
 					else if(value.flag == 2){
 						$.each(value.homeworks, function(i,m){
+							$("div#2.point").hide();
+							$.get("/MyMessages/setRead",{messageType:"2",t:new Date().getTime()},function(){});
 							var card = $("<div/>").attr("class","new-item card");
 						
 							var cardTop = $("<div/>").attr("class","top");
@@ -327,7 +328,7 @@
 							var lastWord = $("<div>没有新的留言</div>").attr("class", "last-word");
 							var close = $("<div />").attr("class","close").attr("style","display:none");
 							var closeIcon = $("<div />").attr("class","close-icon").attr("style","background-color:black");
-							$.get("/MyMessages/checkAccountNotRead",{sourceId : m.account.accountId, t : new Date().getTime()},function(havaNotRead){
+							$.get("/u/s/MyMessages/checkAccountNotRead",{sourceId : m.account.accountId, t : new Date().getTime()},function(havaNotRead){
 								if(havaNotRead == false){
 									point.show();
 									lastWord.html("你有新的留言");
@@ -358,7 +359,7 @@
 								messageList.empty();
 								dialogTitle.empty();
 								
-								$.get("/MyMessages/delete",{sourceId :m.account.accountId, session:$.session, t:new Date().getTime()},function(){
+								$.get("/u/s/MyMessages/delete",{sourceId :m.account.accountId, session:$.session, t:new Date().getTime()},function(){
 				            		
 				            	},"json");
 							}); 
@@ -368,6 +369,7 @@
 					            "click": function(e){
 					   				if($(".avatar div.point").is(":hidden")){
 					   					$("div#3.point").hide();
+					   					$.get("/MyMessages/setRead",{messageType:"3",t:new Date().getTime()},function(){});
 					   				}
 					   				
 					            	e.preventDefault();
@@ -378,7 +380,7 @@
 					            	var dialogTitleSpan = $("<span />").html($(this).attr("name"));
 					            	dialogTitle.append(dialogTitleSpan);
 					            	messageList.empty();
-					            	$.get("/MyMessages/findMessages",{sourceId : m.sourceId, t : new Date().getTime()},function(chatList){
+					            	$.get("/u/s/MyMessages/findMessages",{sourceId : m.sourceId, t : new Date().getTime()},function(chatList){
 					            		$.each(chatList, function(i,n){
 					            			var messageTime = $("<div />").attr("class","message-time");
 					            			var mTime = $("<span />").html(n.time).attr("class","time");
@@ -431,13 +433,13 @@
 								            	var targetId = n.sourceId;
 								            	var messageId = n.messageId;
 								            	
-						            			$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, t:new Date()},function(message){
+						            			$.get("/u/s/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, t:new Date()},function(message){
 						            				var replyId = message.messageId;
 						            				
 									            	recCard.hide();
 									            	var recDetails = messageDetails.find("div#leav.details-content");
 									            	recDetails.html("我的回复:"+recContent);
-						            				$.get("/MyMessages/setReply",{replyId:replyId, beReplyId:messageId,t:new Date()},function(){
+						            				$.get("/u/s/MyMessages/setReply",{replyId:replyId, beReplyId:messageId,t:new Date()},function(){
 						            					
 						            				},"json");
 						            			},"json");
@@ -523,7 +525,7 @@
 				            	var messageContent = textarea.val();
 				            	var targetId = input.val();
 				            	
-				            	$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:messageContent, session:$.session, t:new Date().getTime()},function(isLeav){
+				            	$.get("/u/s/MyMessages/messageCommit",{targetId:targetId, messageContent:messageContent, session:$.session, t:new Date().getTime()},function(isLeav){
 				            			if(isLeav){
 				            				textarea.val('');
 											input.val('');

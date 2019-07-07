@@ -75,11 +75,11 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
-					</a> <br /> <a href="/menu"> <span class="fa fa-tasks"
+					</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -144,7 +144,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>新闻发布</li>

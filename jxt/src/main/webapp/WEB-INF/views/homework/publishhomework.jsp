@@ -51,13 +51,13 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right"  style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br />
-					 <a href="/menu"> <span class="fa fa-tasks" aria-hidden="true"></span>个人中心
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					 <a href="/u/s/menu"> <span class="fa fa-tasks" aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				<div class="clearfix"> </div>
@@ -120,11 +120,11 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/homework/listhomework">查看作业</a>
+					<a href="/u/s/homework/listhomework">查看作业</a>
 					<span>| |</span>
 				</li>
 				<li>布置作业</li>
@@ -163,7 +163,7 @@
 		<div class="container">
 			<div class="contact-grid agileits">
 				<h4>布 置 作 业</h4>
-				<form action="/homework/publishhomework" method="post">
+				<form action="/u/t/homework/publishhomework" method="post">
 					<div class="">
 						<input type="text" name="taskTitle" placeholder="作业标题" >
 					</div>

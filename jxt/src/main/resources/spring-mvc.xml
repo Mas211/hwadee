@@ -17,14 +17,14 @@
 	
 	<context:component-scan base-package="com.jxt.controller" />
 	
-	<!-- 拦截器 
+	<!-- 拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/*" />
-			<bean class="cn.edu.uestc.ssm.interceptor.AuthInterceptor" ></bean>
+			<mvc:mapping path="/u/*" />
+			<bean class="com.jxt.interceptor.AuthInterceptor" ></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
-	-->
+	
 	<!-- 视图 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />

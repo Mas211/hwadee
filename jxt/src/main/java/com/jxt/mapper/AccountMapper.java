@@ -19,5 +19,7 @@ public interface AccountMapper {
 	int findClassId(int accountId);
 
 	Account search(int parId);
+	
+	int updateTime(Account account);
 
 }

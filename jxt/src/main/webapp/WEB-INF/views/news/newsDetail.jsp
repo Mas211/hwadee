@@ -39,15 +39,15 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -119,17 +119,17 @@
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
-			<ul>
-						<li>
-							<a href="/about">关于我们</a>
-						</li>
-						<li>
-							<a href="https://github.com/Mas211/hwadee">联系我们</a>
-						</li>
-						<li>
-							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
-						</li>
-					</ul>
+			<ul class="short_ls">
+				<li>
+					<a href="/u/s/menu">个人中心</a>
+					<span>| |</span>
+				</li>
+				<li>
+					<a href="/newsList/1">返回列表</a>
+					<span>| |</span>
+				</li>
+				<li>新闻详情</li>
+			</ul>
 		</div>
 	</div>
 	<!-- //short-->
@@ -189,13 +189,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="#">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="#">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="#">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

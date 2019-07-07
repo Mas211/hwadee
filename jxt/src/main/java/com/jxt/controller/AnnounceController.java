@@ -27,14 +27,14 @@ public class AnnounceController {
 	@Autowired
 	private MessageService ms;
 	
-	@GetMapping("/createAnnounce")
+	@GetMapping("/u/createAnnounce")
 	public String get() {
 		
 		return "announce/announceEditor";
 		
 	}
 	
-	@PostMapping("/createAnnounce")
+	@PostMapping("/u/createAnnounce")
 	public String insertNews(Announce announce) {
 		
 		Timestamp time = new Timestamp(System.currentTimeMillis());
@@ -51,7 +51,7 @@ public class AnnounceController {
 		m.setTime(date);
 		ms.add(m);
 		
-		return "redirect:/announceManage";
+		return "redirect:/u/announceManage";
 	}
 	
 	@GetMapping("/announce/{id}")
@@ -62,7 +62,7 @@ public class AnnounceController {
 		return "announce/announceDetail";
 	}
 	
-	@GetMapping("/announceManage")
+	@GetMapping("/u/announceManage")
 	public String newsList(Model model) {
 		List<Announce> announce = announceService.findAll();
 		model.addAttribute("announce", announce);
@@ -70,7 +70,7 @@ public class AnnounceController {
 		return "announce/announceManage";
 	}
 	
-	@GetMapping("/updateAnnounce/{id}")
+	@GetMapping("/u/updateAnnounce/{id}")
 	public String updateNews(@PathVariable("id") int id, Model model) {
 		Announce announce = announceService.getAnnounceById(id);
 		model.addAttribute("announce", announce);
@@ -78,22 +78,22 @@ public class AnnounceController {
 		return "announce/updateAnnounce";
 	}
 	
-	@PostMapping("/updateAnnounce/{id}")
+	@PostMapping("/u/updateAnnounce/{id}")
 	public String checkUpdate(Announce announce, HttpServletRequest request) {
 		//更新修改时间
 		announce.setAnnounceModified(new Timestamp(System.currentTimeMillis()));
 		
 		announceService.update(announce);
 		
-		return "redirect:/announceManage";
+		return "redirect:/u/announceManage";
 	}
 	
-	@GetMapping("/deleteAnnounce/{id}")
+	@GetMapping("/u/deleteAnnounce/{id}")
 	public String deleteNews(@PathVariable("id") int id, HttpServletRequest request) {
 		
 		announceService.delete(id);
 		
-		return "redirect:/announceManage";
+		return "redirect:/u/announceManage";
 	}
 	
 	@GetMapping("/announceList/{pageId}")
@@ -123,17 +123,17 @@ public class AnnounceController {
 		return "announce/announceList";
 	}
 	
-	@GetMapping("/setAnnounceTop/{id}")
+	@GetMapping("/u/setAnnounceTop/{id}")
 	public String setTop(@PathVariable("id") int id) {
 		
 		announceService.setTop(id);
-		return "redirect:/announceManage";
+		return "redirect:/u/announceManage";
 	}
 	
-	@GetMapping("/cancelAnnounceTop/{id}")
+	@GetMapping("/u/cancelAnnounceTop/{id}")
 	public String cancelTop(@PathVariable("id") int id) {
 		
 		announceService.cancelTop(id);
-		return "redirect:/announceManage";
+		return "redirect:/u/announceManage";
 	}
 }

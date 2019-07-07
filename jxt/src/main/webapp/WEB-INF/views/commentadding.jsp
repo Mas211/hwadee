@@ -44,15 +44,15 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -122,7 +122,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="/menu">个人中心</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">个人中心</a> <span>| |</span></li>
 				<li>评语管理</li>
 			</ul>
 		</div>
@@ -139,7 +139,7 @@
 				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/commentstudentviewing" method="post">
+				<form action="/u/s/commentstudentviewing" method="post">
 				<input type="submit" value="请查询">
 				</form>
 			</div>
@@ -152,7 +152,7 @@
 				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/commentparentviewing" method="post">
+				<form action="/u/s/commentparentviewing" method="post">
 				<input type="submit" value="请查询">
 				</form>
 			</div>
@@ -165,7 +165,7 @@
 				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/commentadding" method="post">
+				<form action="/u/t/commentadding" method="post">
 					<div class="">
 						<p>学生账号</p>
 						<input type="text" name="studentId" required="" />

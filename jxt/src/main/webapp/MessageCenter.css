@@ -674,7 +674,7 @@
 	background-color: #f4f4f4;
 }
 
-.messages-center .container .point {
+.point {
 	width: 7px;
 	height: 7px;
 	-moz-border-radius: 15px;

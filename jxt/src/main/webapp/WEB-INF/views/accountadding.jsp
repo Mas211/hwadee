@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Attend</title>
-	<!-- meta-tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script>
+<title>添加用户</title>
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -19,15 +19,20 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- //meta-tags -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome -->
-	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	<!-- fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	    rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //meta-tags -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- font-awesome -->
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+<!-- fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -39,33 +44,31 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right" style="width: 40%;">
+			<div class="bottom_header_right">
+				<div class="header-top-righ">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					&nbsp;&nbsp;&nbsp;&nbsp; 
-					<a href="/u/s/menu"> <span class="fa fa-tasks"
-						aria-hidden="true"></span>个人中心
-					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="/login"> <span class="fa fa-sign-in"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
 				</c:otherwise>
 				</c:choose>
-				<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
-    <div class="header">
+	<div class="header">
 		<div class="content white">
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -78,7 +81,7 @@
 						</button>
 						<a class="navbar-brand" href="/index">
 							<h1>
-								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
+								<span ><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -104,13 +107,13 @@
 							</ul>
 						</nav>
 					</div>
+					<br/>
 					<!--/.navbar-collapse-->
 					<!--/.navbar-->
 				</div>
 			</nav>
 		</div>
 	</div>
-	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
@@ -121,10 +124,10 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/u/s/menu">个人中心</a>
+					<a href="/u/s/menu">功能菜单</a>
 					<span>| |</span>
 				</li>
-				<li>考勤记录</li>
+				<li>添加用户</li>
 			</ul>
 		</div>
 	</div>
@@ -133,41 +136,87 @@
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>考勤</span>
-					<span></span>记录
+					<span>添</span>
+					<span></span>加
 				</h3>
-				<div class="tittle-style"></div>
-			</div>	
-                <div class="login-form">
-                <form action="/u/s/menu" method="get">
+				<div class="tittle-style">
 
-				    <p></p>
-					<table class="table table-bordered">
-						<thead>
-							<tr>
-								<th>出勤编号</th>
-								<th>学生学号</th>
-								<th>出勤时间</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${requestScope.as}" var="as">
-							<tr>
-								<td>${as.attendId }</td>
-								<td>${as.attendStuId }</td>
-								<td>${as.attendTime }</td>
-							</tr>
-							</c:forEach>
-						</tbody>
-						</table>
-						<input type="submit" value="返   回">
+				</div>
+			</div>
+			<div class="login-form">
+				<form action="/u/accountadding" method="post">
+					<div class="">
+						<p>账号 </p>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountId" required="" /><span></span>
+					</div>
+					<div class="">
+						<p>姓名</p>
+						<input type="text" name="accountName" required="" />
+					</div>
+					<div class="">
+						<p>性别</p>
+						<input type="text" name="accountSex" required="" />
+					</div>
+					<div class="">
+						<p>手机/电话</p>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="accountPhone" required="" />
+					</div>
+					<div class="">
+						<p>家庭地址</p>
+						<input type="text" name="accountAddress" required="" />
+					</div>
+					<div class="">
+						<p>科目</p>
+						<input type="text" name="tSubject"/>
+					</div>
+					<div class="">
+						<p>班级</p>
+						<input type="text" name="accountClassId"/>
+					</div>
+					<div class="">
+						<p>密码</p>
+						<input type="password" class="password" name="accountPassword" id="password1" required="" />
+					</div>
+					<div class="">
+						<p>确认密码</p>
+						<input type="password" class="password" id="password2" required="" />
+					</div>
+					<div>${msg}</div>
+					<div>
+						<select style="width: 100%;" name="choose">
+							<option value="学生">学生</option>
+							<option value="教师">教师</option>
+							<option value="管理员">管理员</option>
+						</select>
+					</div>
+					<label class="anim">
+						<input type="checkbox" class="checkbox">
+						<span>接受服务条款</span>
+					</label>
+					<input type="submit" value="注册">
 				</form>
+				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(function(){
+						$("div > input[name=accountId]").blur(function(e){
+							var input = $( this );
+							$.get("/check2",{id :input.val(), t : new Date().getTime()}, function( data ){
+							if( data == 1 ){ 
+								input.next("span").html("*该账号已存在").css("color", "red");
+							} else {
+								input.next("span").html("*该账号可以注册").css("color", "green");
+							}
+				}, "json");
+			});
+			
+		});
+	</script>
+			</div>
 
-			   </div>		
 		</div>
 	</div>
-	
-	<!-- footer -->
+
+		<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
@@ -231,6 +280,15 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
@@ -240,7 +298,7 @@
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-
+	<script src="/assets/js/canvas-nest.min.js"></script>
 </body>
 
 </html>

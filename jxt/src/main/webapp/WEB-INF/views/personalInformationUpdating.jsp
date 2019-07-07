@@ -44,13 +44,13 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -132,7 +132,7 @@
 			<c:choose>
 			<c:when test="${sessionScope.account.roleId eq 5 }">
 			<div class="login-form" id = "student">
-				<form action="/personalInformationUpdating" method="post">
+				<form action="/u/s/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
 						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled /><span></span>
@@ -167,7 +167,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 4}">
 			<div class="login-form" id = "parent">
-				<form action="/personalInformationUpdating" method="post">
+				<form action="/u/s/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
 						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled/><span></span>
@@ -194,7 +194,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 3}">
 				<div class="login-form" id = "teacher">
-				<form action="/personalInformationUpdating" method="post">
+				<form action="/u/s/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
 						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled /><span></span>
@@ -225,7 +225,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 2}">
 				<div class="login-form" id = "master">
-				<form action="/personalInformationUpdating" method="post">
+				<form action="/u/s/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
 						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled /><span></span>
@@ -256,7 +256,7 @@
 			</c:when>
 			<c:otherwise>
 			<div class="login-form" id = "admin">
-				<form action="/personalInformationUpdating" method="post">
+				<form action="/u/s/personalInformationUpdating" method="post">
 					<div class="">
 						<p>账号</p>
 						<input type="text" name ="accountId" value = ${sessionScope.account.accountId } disabled/><span></span>
