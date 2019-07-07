@@ -37,6 +37,15 @@
 			act_id = #{value}
 	</select>
 	
+	<select id="findNameById" parameterType="int"
+		resultType="String">
+		SELECT DISTINCT
+			a.account_name
+		FROM
+			account a
+		INNER JOIN activity act ON a.account_id = #{value}
+	</select>
+	
 	<resultMap type="com.jxt.entity.Activity" id="actMap">
 		<id column="act_id" property="actId" />
 		<id column="act_pubber_id" property="actPubberId" />

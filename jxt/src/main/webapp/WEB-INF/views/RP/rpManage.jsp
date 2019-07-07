@@ -40,26 +40,13 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<c:choose>
-				<c:when test="${!empty sessionScope.account}">
-					<div class="header-top-righ">
+				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
-					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-sign-out"
+					</a> <br /> <a href="/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
-				</c:when>
-				<c:otherwise>
-				<div class="header-top-righ">
-					<a href="/login"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>登录
-					</a>
-				</div>
-				</c:otherwise>
-				</c:choose>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>
@@ -76,7 +63,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="/index">
 							<h1>
 								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
@@ -90,8 +77,8 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+									<li><a href="/index" class="">首页</a></li>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
@@ -99,8 +86,8 @@
 										<li><a href="/announceList/1">公告</a></li>
 										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -205,13 +192,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="#">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="#">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="#">反馈建议</a>
 						</li>
 					</ul>
 				</div>
@@ -246,15 +233,6 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});

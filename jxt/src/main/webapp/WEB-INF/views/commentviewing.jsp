@@ -45,25 +45,21 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<div class="bottom-social-icons">
-					<a class="facebook" href="register.html"> <span
-						class="fa fa-facebook"></span>
-					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
-					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
-					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
-					</a>
-				</div>
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
+					</a>
+					<br/>
+					<a href="/menu"> <span class="fa fa-tasks"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-in"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -85,9 +81,9 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="/index">
 							<h1>
-								<span><img src="..\assets\images\graduate.png" height="60" width="60"></span>家校通 
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
 							</h1>
 						</a>
@@ -99,17 +95,17 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
-								<li><a href="contact.html" class="">学校概况</a>
+									<li><a href="/index" class="">首页</a></li>
+								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
-								<li><a href="courses.html" class="effect-3">校园风采</a></li>
-								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
+								<li><a href="#" class="effect-3">校园风采</a></li>
+								<li><a href="#" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -120,15 +116,13 @@
 		</div>
 	</div>
 	<!-- banner -->
-	<div style="text-align:center">
-  		<image src="/assets/images/login.jpg" width=1000>
-	</div>
+	<div class="inner_page_agile"></div>
 	<!--//banner -->
 	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="menu">功能菜单</a> <span>| |</span></li>
+				<li><a href="/menu">功能菜单</a> <span>| |</span></li>
 				<li>查询评语</li>
 			</ul>
 		</div>
@@ -180,13 +174,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="#">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="#">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="#">反馈建议</a>
 						</li>
 					</ul>
 				</div>

@@ -1,8 +1,6 @@
 package com.jxt.controller;
 
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
