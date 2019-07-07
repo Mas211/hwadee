@@ -48,4 +48,10 @@ public class GradeServiceImpl implements GradeService {
 		return gradeMapper.findAll();
 	}
 
+	@Override
+	public int getStuIdByParId(int parId) {
+		// TODO Auto-generated method stub
+		return gradeMapper.findByParId(parId);
+	}
+
 }

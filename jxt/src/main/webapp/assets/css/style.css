@@ -2019,8 +2019,12 @@ h3.agileits-icons-title {
 }
 
 .icon-box i {
+	/*
     margin-right: 10px !important;
     font-size: 20px !important;
+    */
+    margin-right: 50px !important;
+    font-size: 50px !important;
     color: #282a2b !important;
 }
 

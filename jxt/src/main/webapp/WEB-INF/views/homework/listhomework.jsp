@@ -60,14 +60,17 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
+					</a>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
 				<div class="header-top-righ">
-					<a href="login"> <span class="fa fa-sign-out"
+					<a href="/login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
@@ -109,8 +112,8 @@
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="createNews">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -132,14 +135,30 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li>
-					<a href="/index">主页</a>
-					<span>| |</span>
-				</li>
-				<li>
-					<a href="/homework/publishhomework">布置作业</a>
-					<span>| |</span>
-				</li>
+				<c:choose>
+					<c:when test="${sessionScope.account.roleId eq 4 }">
+						<li>
+							<a href="/index">首页</a>
+							<span>| |</span>
+						</li>
+					</c:when>
+					<c:when test="${sessionScope.account.roleId eq 5 }">
+						<li>
+							<a href="/index">首页</a>
+							<span>| |</span>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li>
+							<a href="/index">首页</a>
+							<span>| |</span>
+						</li>
+						<li>
+							<a href="/homework/publishhomework">布置作业</a>
+							<span>| |</span>
+						</li>
+					</c:otherwise>
+				</c:choose>
 				<li>查看作业</li>
 			</ul>
 		</div>
@@ -156,40 +175,104 @@
 				</div>
 			</div>
 			<div class="bs-docs-example">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th></th>
-							<th>发布老师</th>
-							<th>班级</th>
-							<th>作业标题</th>
-							<th>发布时间</th>
-							<th>截止时间</th>
-							<th>内容</th>
-							<th>完成情况</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${requestScope.tasks }" var="t">
-						<tr>
-							<td>${t.taskId }</td>
-							<td>${t.account.accountName }</td>
-							<td>${t.account.accountClassId }</td>
-							<td>${t.taskTitle }</td>
-							<td>${t.taskBeginTime }</td>
-							<td>${t.taskDeadline }</td>
-							<td>${t.taskContent }</td>
-							<td>${t.taskIsFinish }</td>
-							<td>
-								<a class="updateTask" href="/homework/updatehomework/${t.taskId }">修改</a> | 
-								<a class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a> |
-								<a class="report" href="/homework/report/${t.taskId }">完成</a>
-							</td>
-						</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+			<c:choose>
+				<c:when test="${sessionScope.account.roleId eq 3 }">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>发布老师</th>
+								<th>班级</th>
+								<th>作业标题</th>
+								<th>发布时间</th>
+								<th>截止时间</th>
+								<th>内容</th>
+								<th>完成情况</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${requestScope.tasks }" var="t">
+								<tr>
+									<td>${t.taskId }</td>
+									<td>${t.account.accountName }</td>
+									<td>${t.account.accountClassId }</td>
+									<td>${t.taskTitle }</td>
+									<td>${t.taskBeginTime }</td>
+									<td>${t.taskDeadline }</td>
+									<td>${t.taskContent }</td>
+									<td>${t.taskIsFinish }</td>
+									<td><a class="updateTask"
+										href="/homework/updatehomework/${t.taskId }">修改</a> | <a
+										class="deleteTask" href="/homework/listhomework/${t.taskId }">删除</a>
+										| <a class="report" href="/homework/report/${t.taskId }">完成</a>
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</c:when>
+				<c:when test="${sessionScope.account.roleId eq 4 }">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>发布老师</th>
+								<th>班级</th>
+								<th>作业标题</th>
+								<th>发布时间</th>
+								<th>截止时间</th>
+								<th>内容</th>
+								<th>完成情况</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${requestScope.tasks }" var="t">
+								<tr>
+									<td>${t.taskId }</td>
+									<td>${t.account.accountName }</td>
+									<td>${t.account.accountClassId }</td>
+									<td>${t.taskTitle }</td>
+									<td>${t.taskBeginTime }</td>
+									<td>${t.taskDeadline }</td>
+									<td>${t.taskContent }</td>
+									<td>${t.taskIsFinish }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</c:when>
+				<c:when test="${sessionScope.account.roleId eq 5 }">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>发布老师</th>
+								<th>班级</th>
+								<th>作业标题</th>
+								<th>发布时间</th>
+								<th>截止时间</th>
+								<th>内容</th>
+								<th>完成情况</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${requestScope.tasks }" var="t">
+								<tr>
+									<td>${t.taskId }</td>
+									<td>${t.account.accountName }</td>
+									<td>${t.account.accountClassId }</td>
+									<td>${t.taskTitle }</td>
+									<td>${t.taskBeginTime }</td>
+									<td>${t.taskDeadline }</td>
+									<td>${t.taskContent }</td>
+									<td>${t.taskIsFinish }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</c:when>
+				</c:choose>
 			</div>
 		</div>
 	</div>

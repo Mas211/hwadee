@@ -46,9 +46,15 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
+<<<<<<< HEAD
 					<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
+=======
+				<div class="header-top-righ">
+					<a href="logout"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>注销
+>>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -81,14 +87,18 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
+<<<<<<< HEAD
 									<li><a href="index" class="">首页</a></li>
+=======
+								<li><a href="/index" class="">首页</a></li>
+>>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="create_news">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -112,7 +122,11 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
+<<<<<<< HEAD
 					<a href="index">首页</a>
+=======
+					<a href="/login">登录</a>
+>>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 					<span>| |</span>
 				</li>
 				<li>验证</li>

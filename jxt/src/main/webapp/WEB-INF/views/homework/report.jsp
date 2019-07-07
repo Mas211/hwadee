@@ -58,6 +58,9 @@
 					<a href="logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
+					<a href="/menu"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>个人中心
+					</a>
 				</div>
 				</c:when>
 				<c:otherwise>
@@ -104,8 +107,8 @@
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
 								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="codes.html">公告</a></li>
-										<li><a href="/createNews">新闻</a></li>
+										<li><a href="/announceList/1">公告</a></li>
+										<li><a href="/newsList/1">新闻</a></li>>
 									</ul></li>
 								<li><a href="courses.html" class="effect-3">校园风采</a></li>
 								<li><a href="gallery.html" class="effect-3">师资队伍</a></li>
@@ -128,7 +131,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">主页</a>
+					<a href="/index">首页</a>
 					<span>| |</span>
 				</li>
 				<li>
@@ -262,14 +265,6 @@
 	<!-- here stars scrolling icon -->
 	<script>
 		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
 
 			$().UItoTop({
 				easingType: 'easeOutQuart'
