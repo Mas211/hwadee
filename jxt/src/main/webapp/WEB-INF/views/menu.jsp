@@ -89,13 +89,9 @@
 						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-<<<<<<< HEAD
-									<li><a href="index" class="">首页</a></li>
-=======
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
 									<li><a href="/index" class="">首页</a></li>
->>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 								<li><a href="contact.html" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
@@ -131,52 +127,6 @@
 		</div>
 	</div>
 	<!-- //short-->
-<<<<<<< HEAD
-	<c:choose>
-	<c:when test="${sessionScope.account.roleId eq 5 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">查看评语</a></li>
-		<li><a href="/grade/liststudent" class="effect-3">查看成绩</a></li>
-		<li><a href="/attend" class="effect-3">查看考勤</a></li>
-		<li><a href="courses.html" class="effect-3">学生功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">学生功能5</a></li>
-	</c:when>
-	<c:when test="${sessionScope.account.roleId eq 4 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/attend" class="effect-3">查看学生考勤</a></li>
-		<li><a href="/commentadding" class="effect-3">查看子女评语</a></li>
-		<li><a href="/stuRp" class="effect-3">查看子女奖罚信息</a></li>
-		<li><a href="/grade/liststudent" class="effect-3">查看子女成绩</a></li>
-		<li><a href="gallery.html" class="effect-3">家长功能3</a></li>
-		<li><a href="courses.html" class="effect-3">家长功能4</a></li>
-		<li><a href="gallery.html" class="effect-3">家长功能5</a></li>
-	</c:when>
-	<c:when test="${sessionScope.account.roleId eq 3 }">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-		data-toggle="dropdown">个人信息 <span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href="/personalInformationViewing">查看</a></li>
-			<li><a href="/personalInformationUpdating">修改</a></li>
-		</ul></li>
-		<li><a href="/commentadding" class="effect-3">添加评语</a></li>
-		<li><a href="/grade/enterginggrade" class="effect-3">录入成绩</a></li>
-		<li><a href="/grade/listall" class="effect-3">查看所有成绩</a></li>
-		<li><a href="/attend" class="effect-3">查看考勤</a></li>
-	</c:when>
-=======
 	<div class="contact">
 		<div class="container">
 			<div class="title-div">
@@ -333,13 +283,6 @@
 								</a>
 							</div>
 						</div>
-						<div class="fontawesome-icon-list">
-							<div class="icon-box col-md-3 col-sm-4">
-								<a class="agile-icon" href="/attend"> <i
-									class="fa fa-calendar" aria-hidden="true"></i>查看本班考勤
-								</a>
-							</div>
-						</div>
 					</c:when>
 
 					<c:when test="${sessionScope.account.roleId eq 2 }">
@@ -449,7 +392,6 @@
 			</div>
 		</div>
 	</div>
->>>>>>> 85e7000e9aded7fda7ddec8588d9539974409b73
 	
 	<!-- footer -->
 	<div class="mkl_footer">

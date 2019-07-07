@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>About Us</title>
-	<!-- meta-tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script>
+<title>关于我们</title>
+<!-- meta-tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
@@ -19,15 +18,20 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- //meta-tags -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome -->
-	<link href="/assets/css/font-awesome.css" rel="stylesheet">
-	<!-- fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-	    rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //meta-tags -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- font-awesome -->
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+<!-- fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -40,25 +44,22 @@
 				</p>
 			</div>
 			<div class="bottom_header_right">
-				<c:choose>
-				<c:when test="${!empty sessionScope.account}">
-					<div class="header-top-righ">
-					<a href="logout"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>注销
+				<div class="bottom-social-icons">
+					<a class="facebook" href="register.html"> <span
+						class="fa fa-facebook"></span>
+					</a> <a class="twitter" href="#"> <span class="fa fa-twitter"></span>
+					</a> <a class="pinterest" href="#"> <span class="fa fa-pinterest-p"></span>
+					</a> <a class="linkedin" href="#"> <span class="fa fa-linkedin"></span>
 					</a>
 				</div>
-				</c:when>
-				<c:otherwise>
 				<div class="header-top-righ">
 					<a href="login"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>登录
 					</a>
 				</div>
-				</c:otherwise>
-				</c:choose>
-				<div class="clearfix"> </div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 	<div class="header">
@@ -66,54 +67,35 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="index">
 							<h1>
-								<span class="fa fa-leanpub" aria-hidden="true"></span>Best Study
-								<label>Education & Courses</label>
+								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
+								<label>Education& Courses</label>
 							</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
 						<nav class="link-effect-2" id="link-effect-2">
 							<ul class="nav navbar-nav">
-								<li>
-									<a href="index.html" class="effect-3">Home</a>
-								</li>
-								<li class="active">
-									<a href="about.html" class="effect-3">About Us</a>
-								</li>
-								<li>
-									<a href="courses.html" class="effect-3">Courses</a>
-								</li>
-								<li>
-									<a href="join.html" class="effect-3">Join Us</a>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages
-										<span class="caret"></span>
-									</a>
+									<li><a href="index" class="">首页</a></li>
+									<li><a href="" class="">学校概况</a>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
+								</a>
 									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="codes.html">Short Codes</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="Gallery.html" class="effect-3">Gallery</a>
-								</li>
-								<li>
-									<a href="contact.html" class="effect-3">Contact Us</a>
-								</li>
+										<li><a href="">公告</a></li>
+										<li><a href="">新闻</a></li>
+									</ul></li>
+								<li><a href="" class="effect-3">校园风采</a></li>
+								<li><a href="" class="effect-3">师资队伍</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -123,31 +105,28 @@
 			</nav>
 		</div>
 	</div>
+	<br/>
 	<!-- banner -->
 	<div class="inner_page_agile">
 
 	</div>
 	<!--//banner -->
-	<!-- short -->
+	<!-- short-->
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li>
-					<a href="index.html">Home</a>
-					<span>| |</span>
-				</li>
-				<li>About Us</li>
+				<li><a href="/index">首页</a> <span>| |</span></li>
+				<li>关于我们</li>
 			</ul>
 		</div>
 	</div>
 	<!-- //short-->
-	<!-- about -->
 	<div class="about-sec" id="about">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>A</span>bout
-					<span>U</span>s
+					<span>关</span>于
+					<span>我</span>们
 				</h3>
 				<div class="tittle-style">
 
@@ -155,14 +134,14 @@
 			</div>
 			<div class="about-sub">
 				<div class="col-md-6 about_bottom_left">
-					<h4>Welcome to
-						<span>Best Study</span>
+					<h4>家校通
+						<span>简介</span>
 					</h4>
-					<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit, Nulla viverra pharetra sem eget.</p>
-					<p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-						pulvinar neque pharetra ac.Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla
-						viverra pharetra sem.</p>
-					<a class="button-style" href="join.html">Join Now</a>
+					
+					<p>   ————家校通（ Families School Communication，简写：FSC）是指利用无线通信技术和网络技术搭建的家校互通平台
+					，为家校之间提供充分、准确、及时的沟通方式，为全面监控学生和学生成长提供有效的途径，该平台运行于移动终端，
+					家长、学生、教师、领导都可以通过智能手机、平板电脑等媒介进行沟通和信息传递。</p>
+					<a class="button-style" href="https://github.com/Mas211/hwadee">加入我们</a>
 				</div>
 				<!-- Stats-->
 				<div class="col-md-6 about2-info">
@@ -173,14 +152,14 @@
 			</div>
 		</div>
 	</div>
-	<!-- //about -->
-	<!-- Achievements -->
+	
+	
 	<div class="aitsresumethree">
 		<div class="container">
 			<div class="title-div">
 				<h3 class="tittle">
-					<span>O</span>ur
-					<span>A</span>chievements
+					<span>我们</span>的
+					<span>进</span>展
 				</h3>
 				<div class="tittle-style">
 
@@ -194,34 +173,38 @@
 								<div class="work">
 									<div class="work-info">
 										<div class="col-xs-6 work-grid work-left">
-											<h4>2000-2017</h4>
+											<h4>6.28-6.30</h4>
 										</div>
 										<div class="col-xs-6 work-grid work-right">
-											<h5>Ranked Top 1st</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-												eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+											<h5>需求分析与设计</h5>
+											<p> 选题：家校通。需求分析：项目人员对项目需求进行熟悉，讨论出大家都能接受的设计方案。
+											设计：利用Powerdesigner完成数据流图，时序图，ER图等的设计，
+											navicat for mysql进行数据库的设计，利用css/js进行网页架构的设计。</p>
 										</div>
 										<div class="clearfix"> </div>
 									</div>
 									<div class="work-info">
 										<div class="col-xs-6 work-grid work-right work-right2">
-											<h4>2011 - 2012</h4>
+											<h4>6.30-7.6</h4>
 										</div>
 										<div class="col-xs-6 work-grid work-left work-left2">
-											<h5>Queen's Anniversary Prize</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-												eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+											<h5>编码阶段</h5>
+											<p>小组成员利用github进行项目管理，辅助工具TortoiseGit可以避免繁杂的命令输入，
+											界面化更方便的进行版本管理。利用maven，tomcat，spring等设计后台框架，编写类和mapper，
+											与前端逐渐结合，开始逐渐实现项目需求。</p>
 										</div>
 										<div class="clearfix"> </div>
 									</div>
 									<div class="work-info">
 										<div class="col-xs-6 work-grid work-left">
-											<h4>2004 - 2017</h4>
+											<h4>6.30-7.8</h4>
 										</div>
 										<div class="col-xs-6 work-grid work-right">
-											<h5 class="comp">Excellent University Guide</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-												eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+											<h5 class="comp">测试阶段</h5>
+											<p>对单个功能模块进行单元测试，主要由开发人员完成，集成和系统测试由测试人员完成。
+											测试人员在需求分析时就应该介入，写文档，设计用例，协助开发完成一些功能的实现，定位bug，
+											提交bug给开发并且协助开发修复bug。之后进行回归测试，兼容性测试，性能测试。
+											</p>
 										</div>
 										<div class="clearfix"> </div>
 									</div>
@@ -233,389 +216,53 @@
 			</div>
 		</div>
 	</div>
-	<!-- //Achievements -->
-	<!-- about-team -->
-	<div class="team">
-		<div class="container">
-			<div class="title-div">
-				<h3 class="tittle">
-					<span>O</span>ur
-					<span>F</span>aculties
-				</h3>
-				<div class="tittle-style">
 
-				</div>
-			</div>
-			<div class="team-row-agileinfo">
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t1.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Vaura Tegsner</h4>
-							<p>Principal</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t2.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Jark Kohnson</h4>
-							<p>Senior Teacher</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t3.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Chunk Erson</h4>
-							<p>Vice Principal</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
-					<div class="thumbnail team-agileits">
-						<img src="images/t4.jpg" class="img-responsive" alt="" />
-						<div class="effectd-caption">
-							<h4>Goes Mehak</h4>
-							<p>Teacher Science</p>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fa fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fa fa-facebook"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fa fa-google-plus"></span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //about-team -->
-	<!-- middle section -->
-	<div class="middle-sec-agile">
-		<div class="container">
-			<h4>Our
-				<span>Best Study</span> Institute</h4>
-			<ul>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Select A Course You Like And Explore It!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Join A Seminar To Know More About It!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="midle-left-w3l">
-						<span class="fa fa-check" aria-hidden="true"></span>
-					</div>
-					<div class="middle-right">
-						<h5>Get Enrolled And Start Better Future With Us!</h5>
-						<p>Integer eu facilisis nunc, a iaculis felis.</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-			</ul>
-			<a class="button-style" href="join.html">Join Now</a>
-		</div>
-		<div class="pencil-img">
-			<img src="images/bg5.png" alt="" />
-		</div>
-	</div>
-	<!-- //middle section -->
-	<!-- news -->
-	<div class="news" id="news">
-		<div class="container">
-			<div class="title-div">
-				<h3 class="tittle">
-					<span>O</span>ur
-					<span> E</span>vents
-				</h3>
-				<div class="tittle-style">
-
-				</div>
-			</div>
-			<div class="yaallahaa-news-grids-agile">
-				<div class="yaallahaa-news-grid">
-					<div class="col-md-6 yaallahaa-news-left">
-						<div class="col-xs-6 news-left-img">
-							<div class="news-left-text color-event1">
-								<h5>20 Dec</h5>
-							</div>
-						</div>
-						<div class="col-xs-6 news-grid-info-bottom-w3ls">
-							<div class="news-left-top-text text-color1">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-							</div>
-							<div class="date-grid">
-								<div class="admin">
-									<a href="#">
-										<span class="fa fa-clock-o" aria-hidden="true"></span> 7:00 pm - 9:00 pm</a>
-								</div>
-								<div class="time">
-									<p>
-										<span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 2589</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="news-grid-info-bottom-w3ls-text">
-								<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-6 yaallahaa-news-left">
-						<div class="col-xs-6 news-left-img news-left-img1">
-							<div class="news-left-text color-event2">
-								<h5>27 Dec</h5>
-							</div>
-						</div>
-						<div class="col-xs-6 news-grid-info-bottom-w3ls">
-							<div class="news-left-top-text text-color2">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-							</div>
-							<div class="date-grid">
-								<div class="admin">
-									<a href="#">
-										<span class="fa fa-clock-o" aria-hidden="true"></span> 6:00 am - 8:00 am</a>
-								</div>
-								<div class="time">
-									<p>
-										<span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 1452</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="news-grid-info-bottom-w3ls-text">
-								<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="yaallahaa-news-grid">
-					<div class="col-md-6 yaallahaa-news-left">
-						<div class="col-xs-6 news-left-img news-left-img2">
-							<div class="news-left-text color-event3">
-								<h5>28 Dec</h5>
-							</div>
-						</div>
-						<div class="col-xs-6 news-grid-info-bottom-w3ls">
-							<div class="news-left-top-text text-color3">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-							</div>
-							<div class="date-grid">
-								<div class="admin">
-									<a href="#">
-										<span class="fa fa-clock-o" aria-hidden="true"></span> 10:00 am - 1:00 pm</a>
-								</div>
-								<div class="time">
-									<p>
-										<span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 7458</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="news-grid-info-bottom-w3ls-text">
-								<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-6 yaallahaa-news-left">
-						<div class="col-xs-6 news-left-img news-left-img3">
-							<div class="news-left-text color-event4">
-								<h5>30 Dec</h5>
-							</div>
-						</div>
-						<div class="col-xs-6 news-grid-info-bottom-w3ls">
-							<div class="news-left-top-text text-color4">
-								<a href="#" data-toggle="modal" data-target="#myModal">Integer viverra eleifend neque</a>
-							</div>
-							<div class="date-grid">
-								<div class="admin">
-									<a href="#">
-										<span class="fa fa-clock-o" aria-hidden="true"></span> 7:00 pm - 9:00 pm</a>
-								</div>
-								<div class="time">
-									<p>
-										<span class="fa fa-map-marker" aria-hidden="true"></span> Newyork City, 786.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="news-grid-info-bottom-w3ls-text">
-								<p>Aliquam erat volutpat. Duis vulputate tempus laoreet.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- modal -->
-	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title">Best
-						<span>Study</span>
-					</h4>
-				</div>
-				<div class="modal-body">
-					<div class="model-img-info">
-						<img src="images/e1.jpg" alt="" />
-						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque
-							ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis
-							porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper. Cras tempor massa
-							luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //modal -->
-	<!-- //news -->
 	<!-- footer -->
 	<div class="mkl_footer">
 		<div class="sub-footer">
 			<div class="container">
 				<div class="mkls_footer_grid">
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Location:</h4>
-						<p>educa mfdflimbg 1235, Ipswich,
-							<br> Foxhall Road, USA</p>
+						<h4>地址:</h4>
+						<p>重庆市沙坪坝沙正街174号</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Mail Us:</h4>
+						<h4>联系我们:</h4>
 						<p>
-							<span>Phone : </span>001 234 5678</p>
+							<span>电话 : </span>800 820 8820</p>
 						<p>
-							<span>Email : </span>
-							<a href="mailto:info@example.com">mail@example.com</a>
+							<span>邮箱 : </span>
+							email@jxt.com
 						</p>
 					</div>
 					<div class="col-xs-4 mkls_footer_grid_left">
-						<h4>Opening Hours:</h4>
-						<p>Working days : 8am-10pm</p>
-						<p>Sunday
-							<span>(closed)</span>
-						</p>
+						<h4>上课时间</h4>
+						<p>周一到周五</p>
+						<p>8:20 - 16:30</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="about.html">关于我们</a>
 						</li>
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="courses.html">Courses</a>
-						</li>
-						<li>
-							<a href="join.html">Join Us</a>
-						</li>
-						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>
-				<!-- footer-button-info -->
-				<div class="footer-middle-thanks">
-					<h2>Thanks For watching</h2>
-				</div>
-				<!-- footer-button-info -->
 			</div>
 		</div>
 		<div class="footer-copy-right">
 			<div class="container">
 				<div class="allah-copy">
-					<p>Copyright &copy; 2018.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+					<p>Copyright &copy; 重庆市沙坪坝沙正街174号重庆大学龙爱家项目组  <a href="https://github.com/Mas211/hwadee" target="_blank" title="点击访问…">项目详情</a> </p>
 				</div>
-				<div class="footercopy-social">
-					<ul>
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-rss"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-vk"></span>
-							</a>
-						</li>
-					</ul>
-				</div>
+				
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -627,9 +274,6 @@
 	<script src="/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- bootstrap -->
 	<script src="/assets/js/bootstrap.js"></script>
-	<!-- stats numscroller-js-file -->
-	<script src="/assets/js/numscroller-1.0.js"></script>
-	<!-- //stats numscroller-js-file -->
 	<!-- smooth scrolling -->
 	<script src="/assets/js/SmoothScroll.min.js"></script>
 	<script src="/assets/js/move-top.js"></script>
@@ -655,7 +299,7 @@
 	<!-- //here ends scrolling icon -->
 	<!-- smooth scrolling -->
 	<!-- //js-files -->
-
+	<script src="/assets/js/canvas-nest.min.js"></script>
 </body>
 
 </html>
