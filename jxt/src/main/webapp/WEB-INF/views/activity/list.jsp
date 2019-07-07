@@ -43,7 +43,7 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="/index"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a><br />
 					<a href="/menu"> <span class="fa fa-tasks"

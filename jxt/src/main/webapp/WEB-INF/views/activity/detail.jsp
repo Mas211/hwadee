@@ -43,7 +43,7 @@
 				<c:choose>
 					<c:when test="${!empty sessionScope.account}">
 						<div class="header-top-righ">
-							<a href="/index"> <span class="fa fa-sign-out"
+							<a href="/logout"> <span class="fa fa-sign-out"
 								aria-hidden="true"></span>注销
 							</a> <br /> <a href="/menu"> <span class="fa fa-tasks"
 								aria-hidden="true"></span>个人中心
@@ -74,7 +74,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="/index">
 							<h1 >
 								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通
 								<!--这里插入logo的路径-->

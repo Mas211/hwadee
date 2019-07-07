@@ -51,7 +51,7 @@
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
-					<a href="/index"> <span class="fa fa-sign-out"
+					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
 					<br/>
@@ -84,7 +84,7 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index">
+						<a class="navbar-brand" href="/index">
 							<h1>
 								<span><img src="/assets/images/graduate.png" height="60" width="60"></span>家校通 
 								<label>Education& Courses</label>
@@ -98,7 +98,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="" class="effect-3"></a></li>
 								<li><a href="" class="effect-3"></a></li>
-									<li><a href="index" class="">首页</a></li>
+									<li><a href="/index" class="">首页</a></li>
 								<li><a href="#" class="">学校概况</a>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown">新闻资讯 <span class="caret"></span>
