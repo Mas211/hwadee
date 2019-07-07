@@ -44,12 +44,11 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right"  style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
-					</a>
-					<br/>
+					</a>&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
@@ -221,6 +220,13 @@
 						<a class="agile-icon" href="/u/s/stuRp" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-trophy" aria-hidden="true"></i>查看子女奖罚信息
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/s/vedio" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>查看视频
 								
 							</div></a>
 						</div>
@@ -425,6 +431,20 @@
 						<a class="agile-icon" href="/u/t/activity/activity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>发布活动照片
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/accountadding" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-snapchat-ghost" aria-hidden="true"></i>创建新用户
+								
+							</div></a>
+						</div>
+						<div class="fontawesome-icon-list">
+						<a class="agile-icon" href="/u/adminupdating" target="view_window"> 
+							<div class="icon-box col-md-3 col-sm-4">
+								<i class="fa fa-info" aria-hidden="true"></i>修改用户信息
 								
 							</div></a>
 						</div>

@@ -20,7 +20,7 @@ public class LogoutController {
 	//}
 	
 	
-	@RequestMapping(value="/u/s/logout",method=RequestMethod.GET)
+	@RequestMapping(value="/logout",method=RequestMethod.GET)
 	public String login(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException {
 		//false代表：不创建session对象，只是从request中获取。

@@ -39,14 +39,14 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
@@ -161,7 +161,7 @@
 							<td>${n.account.accountName }</td>
 							<td>${n.publisher}</td>
 							<td style="width: 200px;"><a href="/news/${n.newsId}">${n.newsTitle }</a></td>
-							<td style="width: 200px;">${n.newsIntro }</td>
+							<td style="width: 200px; overflow: hidden; height: 4em;">${n.newsIntro }</td>
 							<td>${n.newsCreate }</td>
 							<td>${n.newsModified }</td>
 							<td><a href="/u/t/updateNews/${n.newsId}">修改</a>|<a href="/u/t/deleteNews/${n.newsId}">删除</a>|
