@@ -44,15 +44,15 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -122,7 +122,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="/menu">功能菜单</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">功能菜单</a> <span>| |</span></li>
 				<li>查询评语</li>
 			</ul>
 		</div>
@@ -137,7 +137,7 @@
 				<div class="tittle-style"></div>
 			</div>
 			<div class="login-form">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 					<c:forEach items="${requestScope.list}" var="list">
 					<input type="text" value = ${list.teacherName}老师说${list.studentName}同学:${list.comment}></br>
 					</c:forEach>
@@ -174,13 +174,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="#">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="#">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="#">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

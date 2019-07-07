@@ -51,13 +51,13 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br /> 
-					<a href="/menu"> <span class="fa fa-tasks" aria-hidden="true"></span>个人中心
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks" aria-hidden="true"></span>个人中心
 					</a>
 				</div>
 				<div class="clearfix"> </div>
@@ -120,7 +120,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>更新作业</li>
@@ -151,7 +151,7 @@
 		<div class="container">
 			<div class="contact-grid agileits">
 				<h4>更 新 作 业</h4>
-				<form action="/homework/updatehomework" method="post">
+				<form action="/u/t/homework/updatehomework" method="post">
 					<input type="hidden" name="taskId" value="${task.taskId}"/>
 					<div class="">
 						<input type="text" name="taskTitle" value="${task.taskTitle }" placeholder="作业标题">
@@ -205,13 +205,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="about.html">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="courses.html">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="join.html">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

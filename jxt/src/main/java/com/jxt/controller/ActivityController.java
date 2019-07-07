@@ -16,17 +16,16 @@ import com.jxt.entity.Message;
 import com.jxt.service.ActivityService;
 
 @Controller
-@RequestMapping("/activity")
 public class ActivityController {
 	@Autowired
 	private ActivityService  activityService;
 	
-	@GetMapping("/activity")
+	@GetMapping("/u/t/activity/createActivity")
 	public String get() {
 		return "/activity/activity";
 	}
 	
-	@PostMapping("/activity")
+	@PostMapping("/u/t/activity/createActivity")
 	public String add(Activity activity) {
 		int rows = activityService.add(activity);
 		if(rows != activity.getActId()) {
@@ -48,7 +47,7 @@ public class ActivityController {
 	}
 
 	//查看活动详情
-	@GetMapping("/{actId}")
+	@GetMapping("/activity/{actId}")
 	public String showNews(@PathVariable("actId") int id, Model model) {
 		Activity activity = activityService.getActivityById(id);
 		int pubber = activity.getActPubberId();
@@ -61,7 +60,7 @@ public class ActivityController {
 	}
 	
 //	// 查看活动列表
-//	@GetMapping("/listactivity")
+//	@GetMapping("/activity/listactivity")
 //	public String listactivity(Model model) {
 //		List<Activity> activities = activityService.activities()
 //		model.addAttribute("activities", activities);
@@ -69,7 +68,7 @@ public class ActivityController {
 //	}
 	
 	// 查看活动列表
-	@GetMapping("/list")
+	@GetMapping("/activity/list")
 	public String list(Model model) {
 		List<Activity> activities = activityService.activities();
 		model.addAttribute("activities", activities);
@@ -77,10 +76,10 @@ public class ActivityController {
 	}
 	
 	// 删除某个活动
-	@GetMapping("/listactivity/{actId}")
+	@GetMapping("/u/t/activity/listActivity/{actId}")
 	public String delete(@PathVariable("actId") int id) {
 		activityService.delete(id);
 		activityService.deleteMessage(id);
-		return "redirect:/activity/listactivity";
+		return "redirect:/u/t/activity/listActivity";
 	}
 }

@@ -21,13 +21,13 @@ public class AttendanceController {
 
 
 	
-	@GetMapping("/attend")
+	@GetMapping("/u/s/attend")
 	public String attend(HttpServletRequest request, Model model) {
 		
 		List<Attendance> as;
 		
 		Account user = (Account) (request.getSession().getAttribute("account"));
-		int id =user.getAccountClassId();
+		int id = user.getAccountClassId();
 		int id2 = user.getAccountId();
 		if (user.getRoleId() == 4) {
 			as = attendanceService.findByPar(id2);
@@ -38,7 +38,9 @@ public class AttendanceController {
 		else if(user.getRoleId() == 3){
 			as = attendanceService.findByClass(id);
 		}
+
 		else as = attendanceService.findAll();
+
 		
 		model.addAttribute("as", as);
 		return "attend";
@@ -46,14 +48,10 @@ public class AttendanceController {
 	
 	
 	
-	@RequestMapping(value="/vedio",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/vedio",method=RequestMethod.GET)
 	public String get(){
 		return "vedio";
 	}
-
-
-	
-
 
 	
 }

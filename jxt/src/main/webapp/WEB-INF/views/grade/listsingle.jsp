@@ -44,13 +44,13 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br />
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -114,15 +114,15 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/grade/enteringgrades">录入成绩</a>
+					<a href="/u/t/grade/enteringgrades">录入成绩</a>
 					<span>| |</span>
 				</li>
 				<li>
-					<a href="/grade/listall">查看所有成绩</a>
+					<a href="/u/t/grade/listall">查看所有成绩</a>
 					<span>| |</span>
 				</li>
 				<li>查看单科成绩</li>
@@ -202,13 +202,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="#">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="#">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="#">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

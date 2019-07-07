@@ -42,15 +42,15 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<c:choose>
 				<c:when test="${!empty sessionScope.account}">
 					<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -124,7 +124,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/menu">个人中心</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>公告管理</li>
@@ -163,9 +163,9 @@
 							<p id="parse" style=" overflow: hidden; height: 100px;">${a.announceWord}</p></td>							
 							<td  style="vertical-align: middle;">${a.announceTime }</td>
 							<td  style="vertical-align: middle;">${a.announceModified }</td>
-							<td  style="vertical-align: middle;"><a href="/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
-							<c:if test="${a.setTop eq 1}"><a href="/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
-							<c:if test="${a.setTop ne 1}"><a href="/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
+							<td  style="vertical-align: middle;"><a href="/u/t/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
+							<c:if test="${a.setTop eq 1}"><a href="/u/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
+							<c:if test="${a.setTop ne 1}"><a href="/u/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>
 							</td>
 						</tr>
@@ -206,13 +206,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="#">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="#">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="#">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

@@ -1,6 +1,8 @@
 package com.jxt.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jxt.entity.Account;
+import com.jxt.service.AccountService;
+import com.jxt.service.MessageService;
 import com.jxt.service.RegisterService;
 
 
@@ -22,6 +26,12 @@ public class LoginController {
 	@Autowired
 	private RegisterService registerService; 
 	String target = "";
+	
+	@Autowired
+	private MessageService messageService;
+	
+	@Autowired
+	private AccountService accountService;
 	
 	//登录部分
 	@RequestMapping(value="/login",method=RequestMethod.GET)
@@ -35,6 +45,7 @@ public class LoginController {
 			throws ServletException, IOException {
 		int role_id_int=0;
 		//一.填充数据
+		
 		String accountId = request.getParameter("accountId");
 		int accountId_int = Integer.parseInt(accountId);
 		String password = request.getParameter("accountPassword");
@@ -66,6 +77,23 @@ public class LoginController {
 					//登录成功
 					HttpSession session = request.getSession(true);
 					session.setAttribute("account", account);//把user对象存到session中 以后每个页面中都可以取出来使用
+					
+					//消息提醒需要的session填充
+					session.setAttribute("messageAllRead",messageService.haveNotReadA(accountId_int));
+					//给session添加一个用户上次登录时间
+					//需要获得用户上次登录的时间
+					Date lastLogTime = account.getLastLogTime();
+					boolean newsAllRead=messageService.listNotReadNews(lastLogTime).isEmpty();
+					System.out.println("newsAllRead:"+newsAllRead);
+					boolean homeworksAllRead = messageService.listNotReadHomeworks(lastLogTime, accountId_int).isEmpty();
+					System.out.println("homeworksAllRead:"+homeworksAllRead);
+					session.setAttribute("newsAllRead", newsAllRead);
+					session.setAttribute("homeworksAllRead", homeworksAllRead);
+					
+					account.setLastLogTime(new Date());
+					System.out.println(account.toString());
+					accountService.updateTime(account);
+					
 					/*if(account.getRoleId()==1)
 					{
 						target = "redirect:/adminMenu";
@@ -86,7 +114,7 @@ public class LoginController {
 					{
 						target = "redirect:/studentMenu";
 					}*/
-					target = "redirect:/menu";
+					target = "redirect:/u/s/menu";
 				}
 				else if(account.getRoleId()!=role_id_int) {
 					//登录失败 跳回登录页面 显示 "用户身份与选择身份不符"
@@ -104,13 +132,13 @@ public class LoginController {
 	
 	
 	//找回密码部分
-	@RequestMapping(value="/retrieve",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/retrieve",method=RequestMethod.GET)
 	public String getretrieve(){
 		return "retrieve";
 	}
 	
 	
-	@RequestMapping(value="/retrieve",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/retrieve",method=RequestMethod.POST)
 	public String login(Account account,HttpServletRequest request)
 			throws ServletException, IOException {
 		Account account_temp = registerService.check1(account.getAccountId());

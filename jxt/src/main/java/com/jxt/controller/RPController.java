@@ -29,13 +29,13 @@ public class RPController {
 	@Autowired
 	private AccountService as;
 	
-	@GetMapping("/newRp")
+	@GetMapping("/u/t/newRp")
 	public String newRp() {
 		
 		return "RP/newRp";
 	}
 	
-	@PostMapping("/newRp")
+	@PostMapping("/u/t/newRp")
 	public String saveRp(RewardAndPunish rp, HttpServletRequest request) {
 		
 		rp.setRpTId(((Account) (request.getSession().getAttribute("account"))).getAccountId());
@@ -44,10 +44,10 @@ public class RPController {
 		
 		rps.add(rp);
 		
-		return "redirect:/rpManage";
+		return "redirect:/u/t/rpManage";
 	}
 	
-	@GetMapping("/rpManage")
+	@GetMapping("/u/t/rpManage")
 	public String rpManage(Model model, HttpServletRequest request) {
 		int rpTId = ((Account) (request.getSession().getAttribute("account"))).getAccountId();
 		
@@ -57,7 +57,7 @@ public class RPController {
 		return "RP/rpManage";
 	}
 	
-	@GetMapping("/updateRp/{rpId}")
+	@GetMapping("/u/t/updateRp/{rpId}")
 	public String updateRp(@PathVariable("rpId") int rpId, Model model) {
 		
 		RewardAndPunish rp = rps.getRewardAndPunishById(rpId);
@@ -68,22 +68,22 @@ public class RPController {
 		return "RP/updateRp";
 	}
 	
-	@PostMapping("/updateRp/{rpId}")
+	@PostMapping("/u/t/updateRp/{rpId}")
 	public String checkUpdateRp(RewardAndPunish rp) {
 		rps.update(rp);
 		
-		return "redirect:/rpManage";
+		return "redirect:/u/t/rpManage";
 	}
 	
-	@GetMapping("/deleteRp/{id}")
+	@GetMapping("/u/t/deleteRp/{id}")
 	public String deleteRp(@PathVariable("id") int id) {
 		
 		rps.delete(id);
 		
-		return "redirect:/rpManage";
+		return "redirect:/u/t/rpManage";
 	}
 	
-	@GetMapping("/stuRp")
+	@GetMapping("/u/s/stuRp")
 	public String stuRp(HttpServletRequest request, Model model) {
 		
 		List<RewardAndPunish> rp;

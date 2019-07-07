@@ -44,13 +44,13 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right">
+			<div class="bottom_header_right" style="width: 40%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
 					</a>
-					<br/>
-					<a href="/menu"> <span class="fa fa-tasks"
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/u/s/menu"> <span class="fa fa-tasks"
 						aria-hidden="true"></span>个人中心
 					</a>
 				</div>
@@ -114,7 +114,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="/menu">功能列表</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">功能列表</a> <span>| |</span></li>
 				<li>查看个人信息</li>
 			</ul>
 		</div>
@@ -131,7 +131,7 @@
 			<c:choose>
 			<c:when test="${sessionScope.account.roleId eq 5 }">
 			<div class="login-form" id = "student">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -164,7 +164,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 4}">
 			<div class="login-form" id = "parent">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 				<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -192,7 +192,7 @@
 			</c:when>
 			<c:when test="${sessionScope.account.roleId eq 3}">
 				<div class="login-form" id = "teacher">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 				<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -221,7 +221,7 @@
 			</c:when>
 						<c:when test="${sessionScope.account.roleId eq 2}">
 				<div class="login-form" id = "master">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 				<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -251,7 +251,7 @@
 			</c:when>
 			<c:otherwise>
 			<div class="login-form" id = "admin">
-				<form action="/menu" method="get">
+				<form action="/u/s/menu" method="get">
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -308,13 +308,13 @@
 				<div class="botttom-nav-allah">
 					<ul>
 						<li>
-							<a href="#">关于我们</a>
+							<a href="/about">关于我们</a>
 						</li>
 						<li>
-							<a href="#">联系我们</a>
+							<a href="https://github.com/Mas211/hwadee">联系我们</a>
 						</li>
 						<li>
-							<a href="#">反馈建议</a>
+							<a href="https://github.com/Mas211/hwadee">反馈建议</a>
 						</li>
 					</ul>
 				</div>

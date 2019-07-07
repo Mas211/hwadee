@@ -24,18 +24,18 @@ public class CommentController {
 	private RegisterService registerService;
 	
 	String target = "";
-	@RequestMapping(value="/commentadding",method=RequestMethod.GET)
+	@RequestMapping(value="/u/t/commentadding",method=RequestMethod.GET)
 	public String get(){
 		return "commentadding";
 	}
-	@RequestMapping(value="/commentviewing",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/commentviewing",method=RequestMethod.GET)
 	public String getview(){
 		return "commentviewing";
 	}
 	
 	
 	//学生查看评语
-	@RequestMapping(value="/commentstudentviewing",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/commentstudentviewing",method=RequestMethod.POST)
 	public String register(HttpServletRequest request) throws Exception{
 		HttpSession session = request.getSession(false);
 		Account account = (Account) session.getAttribute("account");
@@ -45,9 +45,8 @@ public class CommentController {
 	}
 	
 	//家长查看评语
-	@RequestMapping(value="/commentparentviewing",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/commentparentviewing",method=RequestMethod.POST)
 	public String getcomment(HttpServletRequest request) throws Exception{
-		System.out.println("11111");
 		HttpSession session = request.getSession(false);
 		Account account = (Account) session.getAttribute("account");
 		Account account_student =registerService.search(account.getAccountId());
@@ -60,7 +59,7 @@ public class CommentController {
 	
 	
 	//老师添加学生评语
-	@RequestMapping(value="/commentadding",method=RequestMethod.POST)
+	@RequestMapping(value="/u/t/commentadding",method=RequestMethod.POST)
 	public String register(Comment comment,HttpServletRequest request) throws Exception{
 		HttpSession session = request.getSession(false);
 		Account account = (Account) session.getAttribute("account");
@@ -85,7 +84,7 @@ public class CommentController {
 			comment_temp.setTeacherName(account.getAccountName());
 			comment_temp.setComment(comment.getComment());
 			commentService.add(comment_temp);
-			target = "redirect:/menu";
+			target = "redirect:/u/s/menu";
 		}		
 		return target;
 	}
