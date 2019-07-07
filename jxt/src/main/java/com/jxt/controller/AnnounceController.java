@@ -1,6 +1,7 @@
 package com.jxt.controller;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,13 +14,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.jxt.entity.Announce;
+import com.jxt.entity.Message;
 import com.jxt.service.AnnounceService;
+import com.jxt.service.MessageService;
 
 @Controller
 public class AnnounceController {
 
 	@Autowired
 	private AnnounceService announceService;
+	
+	@Autowired
+	private MessageService ms;
 	
 	@GetMapping("/createAnnounce")
 	public String get() {
@@ -35,7 +41,15 @@ public class AnnounceController {
 		announce.setAnnounceTime(time);
 		announce.setAnnounceModified(time);
 				
-		int rows = announceService.add(announce);
+		announceService.add(announce);
+		
+		Message m = new Message();
+		m.setMessageType(1);
+		m.setMessageContent(announce.getAnnounceTitle());
+		m.setMessagePath("/announce/" + announce.getAnnounceId());
+		Date date = announce.getAnnounceTime();
+		m.setTime(date);
+		ms.add(m);
 		
 		return "redirect:/announceManage";
 	}
@@ -102,8 +116,8 @@ public class AnnounceController {
 		List<Announce> topAnnounce = announceService.getTop();
 		
 		model.addAttribute("announce", announce);
-		model.addAttribute("pageId", pageId);
-		model.addAttribute("pId", pId);
+		model.addAttribute("announcePageId", pageId);
+		model.addAttribute("announcePId", pId);
 		model.addAttribute("topAnnounce", topAnnounce);
 		
 		return "announce/announceList";

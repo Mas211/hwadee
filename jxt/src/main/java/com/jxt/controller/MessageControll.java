@@ -1,6 +1,9 @@
 package com.jxt.controller;
 
 
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -49,21 +52,23 @@ public class MessageControll {
 	
 	@GetMapping("/delete")
 	public @ResponseBody void delete(int sourceId,HttpSession session) {
-		int targetId = (int) session.getAttribute("id");
+		Integer targetId = (Integer) session.getAttribute("id");
 		System.out.println(sourceId+"和"+targetId+"已被删除");
-		/* messageService.deleteChat(sourceId, targetId); */
+		messageService.deleteChat(sourceId, targetId);
 		/* messageService.delete(messageId); */
 	}
 	
-	@GetMapping("/findLastMessage")
-	public @ResponseBody String find(HttpSession session, int sourceId) {
-		int targetId = (int) session.getAttribute("id");
-		List<Message> chatList = messageService.listAllChatRecord(targetId, sourceId);
-		String lastMessageContent = chatList.get(0).getMessageContent();
-		return lastMessageContent;
+	//检查是否有未读
+	@GetMapping("/checkAccountNotRead")
+	public @ResponseBody boolean haveNotRead(HttpSession session, int sourceId) {
+		Integer targetId = (Integer) session.getAttribute("id");
+		System.out.println(messageService.haveNotRead(sourceId, targetId));
+		return messageService.haveNotRead(sourceId, targetId);
 	}
 	
 
+	
+	
 	//做了两次查询，待优化
 	@GetMapping("/findMessages")
 	public @ResponseBody List<Message> findAll(HttpSession session, int sourceId) {
@@ -75,8 +80,22 @@ public class MessageControll {
 	
 	//test
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
-	public String login(HttpSession session) {
-		session.setAttribute("id", 1);
+	public String login(HttpSession session) throws ParseException {
+		int accountId = 1;
+		session.setAttribute("id", accountId);
+		//给session添加一个留言是否全部已读的bool值
+		Integer targetId = (Integer) session.getAttribute("id");
+		session.setAttribute("messageAllRead",messageService.haveNotReadA(targetId));
+		//给session添加一个用户上次登录时间
+		Date lastLogTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2019-07-07 08:00:00");
+		boolean newsAllRead=messageService.listNotReadNews(lastLogTime).isEmpty();
+		System.out.println("newsAllRead:"+newsAllRead);
+		boolean homeworksAllRead = messageService.listNotReadHomeworks(lastLogTime, targetId).isEmpty();
+		System.out.println("homeworksAllRead:"+homeworksAllRead);
+		session.setAttribute("newsAllRead", newsAllRead);
+		session.setAttribute("homeworksAllRead", homeworksAllRead);
+		
+		
 		return "MessageCenter/news";
 	}
 	
@@ -87,9 +106,8 @@ public class MessageControll {
 	@GetMapping("/messageCommit")
 	public @ResponseBody Message messageCommit(int targetId,String messageContent,HttpSession session) {
 		
-		int sourceId = (int) session.getAttribute("id");
-		Date date = new Date();
-		SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		Integer sourceId = (Integer) session.getAttribute("id");
+		
 		//后面这里再加判断用户是否存在*************************
 		Message message = new Message();
 		message.setTargetId(targetId);
@@ -98,7 +116,7 @@ public class MessageControll {
 		message.setReplyId(1);//初始id，表示这条留言没有回复留言
 		message.setIsRead(0);
 		message.setMessageContent(messageContent);
-		message.setTime(dateFormat.format(date));
+		message.setTime(new Date());
 		messageService.add(message);  
 
 		return message;
@@ -115,8 +133,8 @@ public class MessageControll {
 	
 
 	@GetMapping("/test")
-	public @ResponseBody void test(String rec,int tarId,int mId){
-		System.out.println(rec+tarId+mId);
+	public @ResponseBody void test(int sourceId){
+		System.out.println(sourceId);
 		System.out.println("我被按了");
 	}
 	

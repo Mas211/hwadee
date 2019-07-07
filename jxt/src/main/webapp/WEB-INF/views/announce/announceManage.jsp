@@ -20,10 +20,6 @@
 		}
 	</script>
 
-	
-	<!-- 编辑器解码文件 -->
-	<script type="text/javascript" src="/ueditor/ueditor.parse.js"></script>
-
 
 
 	<!-- //meta-tags -->
@@ -147,7 +143,7 @@
 				</div>
 			</div>
 			<div class="bs-docs-example">
-				<table class="table table-striped"  >
+				<table class="table table-striped" style=" overflow: hidden;" >
 					<thead>
 						<tr >
 							<th style="text-align: center;">公告编号</th>
@@ -160,17 +156,18 @@
 					</thead>
 					<tbody>
 						<c:forEach items="${requestScope.announce }" var="a">
-						<tr style="text-align: center; vertical-align: middle;">
+						<tr style="text-align: center; vertical-align: middle; ">
 							<td style="vertical-align: middle;">${a.announceId }</td>
-							<td style="vertical-align: middle;"><a href="/announce/${a.announceId}">${a.announceTitle }</a></td>
-							<td width="400px" id="parse"  style="vertical-align: middle;">
-							${a.announceContent}</td>							
+							<td width="150px" style="vertical-align: middle;"><a href="/announce/${a.announceId}">${a.announceTitle }</a></td>
+							<td width="180px" style="vertical-align: middle; ">
+							<p id="parse" style=" overflow: hidden; height: 100px;">${a.announceWord}</p></td>							
 							<td  style="vertical-align: middle;">${a.announceTime }</td>
 							<td  style="vertical-align: middle;">${a.announceModified }</td>
-							<td  style="vertical-align: middle;"><a href="/updateAnnounce/${a.announceId}">修改</a>&nbsp;|&nbsp;<a href="/deleteAnnounce/${a.announceId}">删除</a></td>
-							<script type="text/javascript"> 
-								uparse("parse")
-							</script>
+							<td  style="vertical-align: middle;"><a href="/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
+							<c:if test="${a.setTop eq 1}"><a href="/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
+							<c:if test="${a.setTop ne 1}"><a href="/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>
+							</td>
 						</tr>
 						</c:forEach>
 					</tbody>

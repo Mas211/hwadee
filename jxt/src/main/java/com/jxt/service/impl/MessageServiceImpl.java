@@ -1,6 +1,7 @@
 package com.jxt.service.impl;
 
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,6 +85,7 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public List<Message> listAllChatRecord(int targetId, int sourceId) {
 		// TODO Auto-generated method stub
+		messageMapper.updateIsRead(sourceId, targetId);
 		return messageMapper.findAllByTargetAndSource(targetId,sourceId,3);
 	}
 
@@ -98,11 +100,47 @@ public class MessageServiceImpl implements MessageService {
 		// TODO Auto-generated method stub
 		return messageMapper.deleteChat(sourceId, targetId);
 	}
+
+	@Override
+	public int toRead(int sourceId, int targetId) {
+		// TODO Auto-generated method stub
+		return messageMapper.updateIsRead(sourceId, targetId);
+	}
+
+	@Override
+	public boolean haveNotRead(int sourceId, int targetId) {
+		// TODO Auto-generated method stub
+		List<Message> messages = messageMapper.findIsRead(sourceId, targetId);
+		return messages.isEmpty();
+	}
+
+	@Override
+	public boolean haveNotReadA(int targetId) {
+		List<Message> messages = messageMapper.findIsReadByTargetId(targetId);
+		return messages.isEmpty();
+	}
+
+	@Override
+	public List<Message> listNotReadNews(Date date) {
+		return messageMapper.findNewsByTime(date);
+	}
+
+	@Override
+	public List<Message> listNotReadHomeworks(Date date, int accountId) {
+		int classId = accountMapper.findClassId(accountId);
+		Message message = new Message();
+		System.out.println(date);
+		message.setTime(date);
+		message.setTargetId(classId);
+		return messageMapper.findHomeworksByTime(message);
+	}
 	
 	/*
 	 * //判断用户是否存在 public boolean isAccount(int accountId) {
 	 * if(accountMapper.findById(accountId) == null) { return true; } return false;
 	 * }
 	 */
+	
+	
 	
 }

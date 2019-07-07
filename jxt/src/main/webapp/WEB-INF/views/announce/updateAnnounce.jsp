@@ -154,7 +154,7 @@
 							<label class="header">公告标题</label>
 							<input type="text" name="announceTitle" value="${requestScope.announce.announceTitle}">
 						</div>
-						
+						<input type="hidden" name="announceWord" id="announceWord" value="${requestScope.announce.announceWord}">
 						<div class="styled-input"  >
 							<label class="header">公告内容</label><br/>
 							<script id="container" name="newsContent" type="text/plain" style="height: 300px">
@@ -166,6 +166,10 @@
 							<!-- 实例化编辑器 -->
 							<script type="text/javascript">
 								var ue = UE.getEditor('container',{toolbars: [['undo', 'redo', 'bold','italic','underline']]});
+								var domUtils = UE.dom.domUtils;
+								ue.addListener("blur",function(){
+									$("#announceWord").val(ue.getContentTxt());
+								});
 							</script>
 						</div>
 						<div class="clearfix"> </div>

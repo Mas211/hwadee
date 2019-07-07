@@ -1,5 +1,9 @@
 package com.jxt.entity;
 
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 //消息
 public class Message {
 	private Integer messageId;
@@ -10,17 +14,18 @@ public class Message {
 	private Integer isRead;
 	private Integer messageType;
 	private Integer commentActId;
-	private String time;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date time;
 	private String messagePath;
 	private String messageContent;
 	//
 	private Account account;
 	private Message replyMessage;
 	
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 	public String getMessagePath() {

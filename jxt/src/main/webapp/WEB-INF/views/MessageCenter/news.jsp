@@ -18,9 +18,24 @@
 					<div class="clearfix">消息中心</div>
 				</div>
 				<ul class="list ">
-					<li><a id="1" href="新闻通知">新闻通知</a></li>
-					<li><a id="2" href="作业通知">作业通知</a></li>
-					<li><a id="3" href="我的回复">我的回复</a></li>
+					<li>
+						<c:if test="${sessionScope.newsAllRead == false}">
+							<div id="3" class="point" style="float:left"></div>
+						</c:if>
+						<a id="1" href="新闻通知">新闻通知</a>
+					</li>
+					<li>
+						<c:if test="${sessionScope.homeworksAllRead == false}">
+							<div id="3" class="point" style="float:left"></div>
+						</c:if>
+						<a id="2" href="作业通知">作业通知</a>
+					</li>
+					<li>
+						<c:if test="${sessionScope.messageAllRead == false}">
+							<div id="3" class="point" style="float:left"></div>
+						</c:if>
+						<a id="3" href="我的回复">我的回复</a>
+					</li>
 					<li><a id="4" href="我要留言">我要留言</a></li>
 				</ul>
 			</div>
@@ -44,8 +59,16 @@
 			$(".list a").click(function(e){
 				e.preventDefault();
 				var aChoose = $( this );
-				var bottom = $("div.space-right-bottom").empty();
 				
+				var bottom = $("div.space-right-bottom").empty();
+				/* $.get("/MyMessages/checkNotReadA",function(haveNotRead){
+					if(!haveNotRead){
+						$("div#3.point").show();
+					}
+					else{
+						$("div#3.point").hide();
+					}
+				},"json"); */
 				
 				//标题
 				var title = $("div.space-right-top .title").empty();
@@ -126,7 +149,7 @@
 						var cardWhisper = $("<div />").attr("class", "card whisper");
 						var leavingList = $("<div />").attr("class", "leaving-list");
 						var dialog = $("<div />").attr("class" , "dialog");
-						var listTitle = $("<div>近期通知</div>").attr("class", "list-title");
+						var listTitle = $("<div>近期留言</div>").attr("class", "list-title");
 						var listContent = $("<div />").attr("class", "list-content ps");
 						var listContentDiv = $("<div />");
 						var dialogTitle = $("<div />").attr("class","title");
@@ -139,43 +162,60 @@
 						$.each(value.leavMessagesAccountList, function(i,m){
 							var listItem = $("<a/>").attr("class", "list-item").attr("href","javascript:void(0);").attr("name",m.account.accountName);
 							var avatar = $("<div />").attr("class", "avatar");
+							var point = $("<div />").attr("class","point").attr("style","display:none");
+							point.appendTo(avatar);
 							var nameBox = $("<div />").attr("class", "name-bax");
 							var name = $("<div />").attr("class", "name").html(m.account.accountName);
-							/* $.get("/MyMessages/findLastMessage",{sourceId : m.sourceId, t : new Date().getTime()},function(lastMessageContent){
-								var lastWord = $("<div />").html(lastMessageContent).attr("class", "last-word");
-								nameBox.append(name).append(lastWord);
-								listItem.append(avatar).append(nameBox).appendTo(listContentDiv);
-							}); */
-							var lastWord = $("<div>没有最新留言</div>").attr("class", "last-word");
+					
+							var lastWord = $("<div>没有新的留言</div>").attr("class", "last-word");
 							var close = $("<div />").attr("class","close").attr("style","display:none");
 							var closeIcon = $("<div />").attr("class","close-icon").attr("style","background-color:black");
+							$.get("/MyMessages/checkAccountNotRead",{sourceId : m.account.accountId, t : new Date().getTime()},function(havaNotRead){
+								if(havaNotRead == false){
+									point.show();
+									lastWord.html("你有新的留言");
+								}
+							},"json"); 
 							close.append(closeIcon).appendTo(listItem);
-								
 							nameBox.append(name).append(lastWord);
 							listItem.append(avatar).append(nameBox).appendTo(listContentDiv);
 							
-							listItem.children("div").hover(function( e ){
+							listItem.find("div").hover(function( e ){
 								close.show();
 							});
 							
-							listItem.children("div").mouseout(function( e ){
+							listItem.find("div").mouseout(function( e ){
 								close.hide();
 							});
 							
+						 	listItem.on({
+						            "click": function(){
+						            	$("a.list-item.grey").removeClass("grey");
+						            	listItem.addClass("grey");
+						            }
+						        }); 
+						        
 							closeIcon.click(function( e ){
 								e.stopPropagation();
-								listItem.empty();
-								var sourceId =  m.account.accountId;
-								/*屏蔽listItem的点击事件*/
-								/* $.get("/MyMessages/delete",{sourceId :sourceId,t : new Date().getTime()},function(){
+								listItem.remove();
+								messageList.empty();
+								dialogTitle.empty();
+								
+								$.get("/MyMessages/delete",{sourceId :m.account.accountId, session:$.session, t:new Date().getTime()},function(){
 				            		
-				            	}); */
+				            	},"json");
 							}); 
 			
 							
 							listItem.on({
 					            "click": function(e){
+					   				if($(".avatar div.point").is(":hidden")){
+					   					$("div#3.point").hide();
+					   				}
+					   				
 					            	e.preventDefault();
+					            	point.hide();
+					            	lastWord.html("没有新的留言");
 					            	dialogTitle.empty();
 					            	/*var dialogTitle = $("<div />").attr("class","title");*/
 					            	var dialogTitleSpan = $("<span />").html($(this).attr("name"));
@@ -234,7 +274,7 @@
 								            	var targetId = n.sourceId;
 								            	var messageId = n.messageId;
 								            	
-						            			$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, session:$.session, t:new Date()},function(message){
+						            			$.get("/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, t:new Date()},function(message){
 						            				var replyId = message.messageId;
 						            				
 									            	recCard.hide();
