@@ -158,12 +158,12 @@
 		跳转到指定页面
 		<div style="margin: 0 auto;width: 200px; display: inline-block;">
 	
-				<input id="jumpId" type="test" value="${requestScope.pageId}" style="width: 50px;">
-				<span style="font-size: 20px;">/${requestScope.pId}</span>
+				<input id="jumannouncePId" type="test" value="${requestScope.announcePageId}" style="width: 50px;">
+				<span style="font-size: 20px;">/${requestScope.announcePId}</span>
 				<input type="button" value="跳转" onclick="jump()">
 				<script type="text/javascript">
 					function jump(){
-						var page = document.getElementById("jumpId").value;
+						var page = document.getElementById("jumannouncePId").value;
 						window.location = "/newsList/" + page;
 					}
 				</script>
@@ -173,44 +173,44 @@
 		<div class="col-md-6" style="margin: 0 200px; ">
 			<nav  >
 				<ul class="pagination">
-					<c:if test="${requestScope.pageId gt 1}">
+					<c:if test="${requestScope.announcePageId gt 1}">
 						<li>
-							<a href="/newsList/${requestScope.pageId - 1}" aria-label="Previous">
+							<a href="/announceList/${requestScope.announcePageId - 1}" aria-label="Previous">
 								<span aria-hidden="true">«</span>
 							</a>
 						</li>
 					</c:if>
-					<c:if test="${(requestScope.pageId - 2) gt 0}">
+					<c:if test="${(requestScope.announcePageId - 2) gt 0}">
 						<li>
-							<a href="/newsList/${requestScope.pageId - 2}">${requestScope.pageId - 2}</a>
+							<a href="/announceList/${requestScope.announcePageId - 2}">${requestScope.announcePageId - 2}</a>
 						</li>
 					</c:if>
 
-					<c:if test="${(requestScope.pageId - 1) gt 0}">
+					<c:if test="${(requestScope.announcePageId - 1) gt 0}">
 						<li>
-							<a href="/newsList/${requestScope.pageId - 1}">${requestScope.pageId - 1}</a>
+							<a href="/announceList/${requestScope.announcePageId - 1}">${requestScope.announcePageId - 1}</a>
 						</li>
 					</c:if>
 					
 					<li >
-						<a style="background-color: #f5f5f5;">${requestScope.pageId}</a>
+						<a style="background-color: #f5f5f5;">${requestScope.announcePageId}</a>
 					</li>
 					
-					<c:if test="${requestScope.pageId lt requestScope.pId}">
+					<c:if test="${requestScope.announcePageId lt requestScope.announcePId}">
 						<li>
-							<a href="/newsList/${requestScope.pageId + 1}">${requestScope.pageId + 1}</a>
+							<a href="/announceList/${requestScope.announcePageId + 1}">${requestScope.announcePageId + 1}</a>
 						</li>						
 					</c:if>
 					
-					<c:if test="${(requestScope.pageId + 1) lt requestScope.pId}">
+					<c:if test="${(requestScope.announcePageId + 1) lt requestScope.announcePId}">
 						<li>
-							<a href="/newsList/${requestScope.pageId + 2}">${requestScope.pageId + 2}</a>
+							<a href="/announceList/${requestScope.announcePageId + 2}">${requestScope.announcePageId + 2}</a>
 						</li>
 					</c:if>
 					
-					<c:if test="${requestScope.pageId lt requestScope.pId}">
+					<c:if test="${requestScope.announcePageId lt requestScope.announcePId}">
 						<li>
-							<a href="/newsList/${requestScope.pageId + 1}" aria-label="Next">
+							<a href="/announceList/${requestScope.announcePageId + 1}" aria-label="Next">
 								<span aria-hidden="true">»</span>
 							</a>
 						</li>

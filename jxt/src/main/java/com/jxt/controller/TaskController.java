@@ -1,6 +1,7 @@
 package com.jxt.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +39,8 @@ public class TaskController {
 			Message message = new Message();
 			message.setTargetId(task.getTaskId());
 			message.setSourceId(task.getTaskTeacherId());
-			message.setMessageType(2);
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-			String dateString = sdf.format(task.getTaskBeginTime());
-			message.setTime(dateString);
+			message.setMessageType(2); 
+			message.setTime(new Date());
 			message.setMessageContent(task.getTaskContent());
 			int row = taskService.addMessage(message);
 			if(row != message.getMessageId()) {

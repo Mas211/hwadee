@@ -152,7 +152,7 @@
 							<label class="header">公告标题</label>
 							<input type="text" name="announceTitle" value="公告标题">
 						</div>
-						
+						<input type="hidden" name="announceWord" id="announceWord">
 						<div class="styled-input"  >
 							<label class="header">公告内容</label><br/>
 							<!-- 加载编辑器的容器 -->
@@ -164,28 +164,17 @@
 							<!-- 实例化编辑器 -->
 							<script type="text/javascript">
 								var ue = UE.getEditor('container',{toolbars: [['undo', 'redo', 'bold','italic','underline']]});
+								var domUtils = UE.dom.domUtils;
+								ue.addListener("blur",function(){
+									$("#announceWord").val(ue.getContentTxt());
+								});
 							</script>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<input type="submit" value="发布">
 				</form>
-				<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-				<script type="text/javascript">
-					$(function(){
-						$("div > input[name=accountId]").blur(function(e){
-							var input = $( this );
-							$.get("/check3",{id :input.val(), t : new Date().getTime()}, function( data ){
-							if( data == 1 ){ 
-								input.next("span").html("*该账号存在且为学生账号").css("color", "red");
-							} else {
-								input.next("span").html("*该账号不存在或不是学生账号").css("color", "green");
-							}
-				}, "json");
-			});
-			
-		});
-	</script>
+				
 			</div>
 		</div>
 	</div>
