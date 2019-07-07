@@ -139,7 +139,9 @@
 				<form action="" method="post">
 					<div class="">
 						<label>学生学号：</label>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" />
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " 
+						onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " name="rpStuId" required="" />
+						<span></span><br/>
 						<label>学生姓名：</label>
 						<input type="text" name="stuName" id="stuName">
 					</div>
@@ -147,12 +149,41 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="radio" name="rewardOrPunish" value="0">罚<br>
 					<label>奖罚内容：</label><br/>
-					<textarea name="rpContent" style="width: 100%; height: 100px;"></textarea>
+					<textarea name="rpContent" style="width: 100%; height: 100px;" required="" ></textarea>
 
 					
 					<input type="submit" value="提交">
 				</form>
 			</div>
+
+
+			<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+			<script type="text/javascript">
+				$(function(){
+				$("div > input[name=rpStuId]").blur(function(e){
+					var input = $( this );
+					$.ajax({
+						url:"/getName",
+						type:"GET",
+						scriptCharset:"utf-8",
+						dataType:"text",
+						data: {id: input.val()},
+						contentType:"application/json;charset=UTF-8",
+						success:function(data, textStatus, jqXHR){
+							var result = new Array();
+							result = data.split("|");
+							if(result[1] == "5"){
+								input.next("span").html("");
+							}
+							else{
+								input.next("span").html("!请输入学生学号").css("color", "red");
+							}
+							$("#stuName").val(result[0]);
+						}
+					});
+				});
+			});
+			</script>
 
 		</div>
 	</div>
