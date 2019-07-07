@@ -1,29 +1,29 @@
-body {
+/* body {
 	margin: 0px;
 	background-image: url(/assets/images/1.jpg);
 	font-family: Microsoft YaHei;
 	font-size: 13px;
 	line-height: 12px;
 	color: #666;
-}
+} */
 
-div {
+.container div {
 	display: block;
 }
 
-p, span {
+.container p, span {
 	margin: 0;
 	padding: 0;
 }
 
-a, img {
+.container a, img {
 	color: inherit;
 	border: 0;
 	outline: 0;
 	text-decoration: none;
 }
 
-a, button, input, select, textarea {
+.container a, button, input, select, textarea {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, .1);
 	outline: 0;
 	padding: 0;
@@ -37,6 +37,12 @@ a, button, input, select, textarea {
 	margin: 0 auto;
 	max-width: 1143px;
 	width: 980px;
+	margin: 0px;
+	background-image: url(/assets/images/1.jpg);
+	font-family: Microsoft YaHei;
+	font-size: 13px;
+	line-height: 12px;
+	color: #666;
 }
 
 .container * {
@@ -45,6 +51,12 @@ a, button, input, select, textarea {
 
 .container>div {
 	display: inline-block;
+}
+
+.container ul.list{
+	padding-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .container .space-left {
@@ -61,61 +73,61 @@ a, button, input, select, textarea {
 	background-color: rgba(255, 255, 255, 0.4);
 }
 
-.space-left .side-bar {
+.container .space-left .side-bar {
 	font-size: 15px;
 	font-weight: 700;
 	height: 363px;
 	width: 100%;
 }
 
-.side-bar .title {
+.container .side-bar .title {
 	font-size: 18px;
 	height: 62px;
 	width: 100px;
 	margin: 0 auto;
 }
 
-.side-bar .title div {
+.container .side-bar .title div {
 	margin: 30px 0;
 	float: left;
 }
 
-.side-bar .title .icon {
+.container .side-bar .title .icon {
 	width: 14px;
 	height: 16px;
 	margin-right: 10px;
 	background-color: red;
 }
 
-.list li {
+.container .list li {
 	height: 40px;
 	position: relative;
 }
 
-.list li a {
+.container .list li a {
 	padding-left: 10px;
 	line-height: 40px;
 	flex: 1;
 	text-decoration: none
 }
 
-.list>li a:hover {
+.container .list>li a:hover {
 	color: #2faee3;
 	font-size: 18px;
 }
 
-.space-right .space-right-top {
+.container .space-right .space-right-top {
 	height: 52px;
 	padding: 10px 10px 0;
 }
 
-.space-right .space-right-bottom {
+.container .space-right .space-right-bottom {
 	height: calc(100% - 52px);
 	padding: 10px;
 	overflow-y: auto;
 }
 
-.space-right-top .title {
+.container .space-right-top .title {
 	height: 42px;
 	box-shadow: 0 2px 4px 0 rgba(121, 146, 185, .54);
 	flex-shrink: 0;
@@ -129,46 +141,46 @@ a, button, input, select, textarea {
 	background-color: white;
 }
 
-.card {
+.container .card {
 	padding: 24px 16px;
 	background-color: #fff;
 	margin-bottom: 10px;
 	border-radius: 4px;
 }
 
-.new-item {
+.container .new-item {
 	line-height: 24px;
 	position: relative;
 }
 
-.title {
+.container .title {
 	color: #333;
 	font-weight: 700;
 }
 
-.time {
+.container .time {
 	color: #999;
 	font-size: 12px;
 	line-height: 22px;
 	margin: 0 10px;
 }
 
-.card .bottom {
+.container .card .bottom {
 	padding-left: 8px;
 }
 
-.im-dynamic-link {
+.container .im-dynamic-link {
 	color: #0097d0;
 	padding: 0 5px;
 	text-decoration: none;
 }
 
-.action-menu {
+.container .action-menu {
 	position: absolute;
 	z-index: 2;
 }
 
-.action-menu .menu-list {
+.container .action-menu .menu-list {
 	position: absolute;
 	top: 35px;
 	background: #fff;
@@ -182,7 +194,7 @@ a, button, input, select, textarea {
 	width: 106px;
 }
 
-.action-menu .menu-list:before {
+.container .action-menu .menu-list:before {
 	position: absolute;
 	top: -6px;
 	left: calc(50% - 5px);
@@ -197,7 +209,7 @@ a, button, input, select, textarea {
 	transform: rotate(-45deg);
 }
 
-.action-menu .menu-list a {
+.container .action-menu .menu-list a {
 	display: block;
 	margin-bottom: 6px;
 	line-height: 20px;
@@ -206,11 +218,11 @@ a, button, input, select, textarea {
 	word-break: keep-all;
 }
 
-.action-menu .menu-list a:last-child {
+.container .action-menu .menu-list a:last-child {
 	margin-bottom: 0;
 }
 
-.action-menu a.bp-icon-font {
+.container .action-menu a.bp-icon-font {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
@@ -220,7 +232,7 @@ a, button, input, select, textarea {
 	/*cursor: pointer;*/
 }
 
-.bp-icon-font {
+.container .bp-icon-font {
 	font-family: "bp-icon-font" !important;
 	font-size: 14px;
 	font-style: normal;
@@ -230,24 +242,24 @@ a, button, input, select, textarea {
 	display: inline-block;
 }
 
-.bp-icon-font.icon-more-1:before {
+.container .bp-icon-font.icon-more-1:before {
 	content: "\E00F";
 }
 
-a:-webkit-any-link {
+.container a:-webkit-any-link {
 	cursor: pointer;
 }
 
-.display {
+.container .display {
 	display: inline-block;
 }
 
-.hide {
+.container .hide {
 	display: none;
 }
 
 /* 我的回复模块样式*/
-.whisper {
+.container .whisper {
 	padding: 0 !important;
 	display: -ms-flexbox;
 	display: flex;
@@ -257,14 +269,14 @@ a:-webkit-any-link {
 	margin-bottom: 0 !important;
 }
 
-.leaving-list {
+.container .leaving-list {
 	width: 240px;
 	display: flex;
 	flex-direction: column;
 	border-right: 1px solid #e9eaec;
 }
 
-.leaving-list .list-title {
+.container .leaving-list .list-title {
 	padding-left: 24px;
 	line-height: 35px;
 	border-bottom: 1px solid #e9eaec;
@@ -273,19 +285,19 @@ a:-webkit-any-link {
 	user-select: none;
 }
 
-.ps {
+.container .ps {
 	touch-action: auto;
 	/*  overflow: hidden!important; */
 }
 
-.list-content {
+.container .list-content {
 	position: relative;
 	overflow-y: auto;
 	overflow-x: hidden;
 	flex: 1;
 }
 /*留言用户的a标签样式*/
-.list-item {
+.container .list-item {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -295,15 +307,15 @@ a:-webkit-any-link {
 	overflow: hidden;
 }
 
-a.list-item:hover {
+.container a.list-item:hover {
 	background-color: #f4f4f4;
 }
 
-.active {
+.container .active {
 	background-color: #f4f4f4;
 }
 
-.list-item .avatar {
+.container .list-item .avatar {
 	display: block;
 	width: 42px;
 	height: 42px;
@@ -318,26 +330,26 @@ a.list-item:hover {
 		url("https://i2.hdslb.com/bfs/face/8b2c6caec32a9731aee253a81a0ef99c0a6396f9.jpg@42w_42h_1c.webp");
 }
 
-.list-item .name-box {
+.container .list-item .name-box {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-.list-item .name {
+.container .list-item .name {
 	color: #333;
 	font-size: 14px;
 	min-height: 16px;
 	line-height: 1;
 }
 
-.list-item .last-word {
+.container .list-item .last-word {
 	color: #999;
 	padding: 8px 0;
 	margin-bottom: -6px;
 }
 
-.list-item .close {
+.container .list-item .close {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -345,12 +357,12 @@ a.list-item:hover {
 	transition: .3s;
 }
 
-.list-item .close .close-icon {
+.container .list-item .close .close-icon {
 	width: 10px;
 	height: 10px;
 }
 
-.dialog {
+.container .dialog {
 	flex: 1;
 	height: 100%;
 	display: flex;
@@ -358,7 +370,7 @@ a.list-item:hover {
 	align-items: stretch;
 }
 
-.dialog .title {
+.container .dialog .title {
 	height: 36px;
 	flex-shrink: 0;
 	display: flex;
@@ -370,11 +382,11 @@ a.list-item:hover {
 	color: #333;
 }
 
-.dialog .title span {
+.container .dialog .title span {
 	font-size: 14px;
 }
 
-.message-list {
+.container .message-list {
 	flex: 1;
 	position: relative;
 	overflow-y: auto; /*滚动条*/
@@ -382,12 +394,12 @@ a.list-item:hover {
 	padding: 10px;
 }
 
-.message-list .message-time {
+.container .message-list .message-time {
 	padding: 16px 0;
 	text-align: center;
 }
 
-.message-list .card {
+.container .message-list .card {
 	padding: 0;
 	overflow: hidden;
 	min-height: 48px;
@@ -395,14 +407,14 @@ a.list-item:hover {
 	box-shadow: white 0px 0px 10px 5px;
 }
 
-.card .message {
+.container .card .message {
 	margin: 0 10px;
 	position: relative;
 	overflow: hidden;
 	color: #333;
 }
 
-.card .message-content {
+.container .card .message-content {
 	line-height: 1.5;
 	font-size: 14px;
 	padding: 8px 8px 8px 10px;
@@ -410,7 +422,7 @@ a.list-item:hover {
 	word-wrap: break-word;
 }
 
-.details {
+.container .details {
 	max-width: 300px;
 	padding-top: 0px;
 	font-size: 12px;
@@ -420,7 +432,7 @@ a.list-item:hover {
 	white-space: nowrap;
 }
 
-.details-content {
+.container .details-content {
 	max-width: 530px;
 	padding-top: 0px;
 	font-size: 12px;
@@ -429,7 +441,7 @@ a.list-item:hover {
 	word-wrap: break-word;
 }
 
-.rec-leav {
+.container .rec-leav {
 	margin: 0 10px;
 	display: inline-block;
 	font-size: 10px;
@@ -437,7 +449,7 @@ a.list-item:hover {
 	cursor: pointer;
 }
 
-.textarea {
+.container .textarea {
 	resize: none;
 	height: 100%;
 	width: 100%;
@@ -448,7 +460,7 @@ a.list-item:hover {
 	font-family: monospace;
 }
 
-.leav-message {
+.container .leav-message {
 	background-color: rgba(255, 255, 255, 0.6);
 	padding: 24px 16px;
 	margin: 50px auto;
@@ -457,25 +469,25 @@ a.list-item:hover {
 	width: calc(100vh - 200px);
 }
 
-.leav-message-card {
+.container .leav-message-card {
 	margin: 10px 20px 40px;
 	height: 40px;
 }
 
-.leav-message-card, .card {
+.container .leav-message-card,.leav-message .card {
 	padding: 10px 8px;
 }
 
-.leav-message-card .card {
+.container .leav-message-card .card {
 	display: inline-block;
 }
 
-.sel-input {
+.container .sel-input {
 	position: relative;
 	height: var(- -input-height);
 }
 
-.sel-input:before {
+.container .sel-input:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -484,7 +496,7 @@ a.list-item:hover {
 	border-left: var(- -input-border);
 }
 
-.sel-input.select:after {
+.container .sel-input.select:after {
 	border-top: solid 5px;
 	border-left: solid 6px transparent;
 	border-right: solid 6px transparent;
@@ -494,22 +506,22 @@ a.list-item:hover {
 	cursor: pointer;
 }
 
-.sel-input.select:after {
+.container .sel-input.select:after {
 	content: "";
 	position: absolute;
 }
 
-.sel-input.select input {
+.container .sel-input.select input {
 	padding-right: 40px;
 }
 
-.leav-message-card input {
+.container .leav-message-card input {
 	height: var(- -input-height);
 	width: 100%;
 	padding: 0 14px;
 }
 
-.sel-list {
+.container .sel-list {
 	position: absolute;
 	top: 32px;
 	margin-top: 2px;
@@ -520,7 +532,7 @@ a.list-item:hover {
 	z-index: 9;
 }
 
-.scroll-bar {
+.container .scroll-bar {
 	position: absolute;
 	right: 2px;
 	width: 6px;
@@ -530,19 +542,19 @@ a.list-item:hover {
 	opacity: .8;
 }
 
-.sel-list .scroll-con {
+.container .sel-list .scroll-con {
 	display: block;
 	padding: 2px;
 	overflow: hidden;
 	max-height: 166px;
 }
 
-.scroll>.scroll-con {
+.container .scroll>.scroll-con {
 	height: 100%;
 	margin: 0;
 }
 
-.sel-list li {
+.container .sel-list li {
 	display: block;
 	line-height: 30px;
 	margin: 1px 0;
@@ -550,34 +562,34 @@ a.list-item:hover {
 	list-style: none;
 }
 
-.scroll-con li:hover {
+.container .scroll-con li:hover {
 	background-color: #f4f4f4;
 }
 
-.leav-message .message-content {
+.container .leav-message .message-content {
 	height: 320px;
 	margin-bottom: 0px;
 }
 
-.indicator {
+.container .indicator {
 	position: absolute;
 	padding: 1px;
 	font-size: 12px;
 }
 
-.row {
+.container .row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
-.row.right {
+.container .row.right {
 	justify-content: flex-end;
 	height: 43px;
 	margin: 0 20px;
 }
 
-.btn-box {
+.container .btn-box {
 	cursor: pointer;
 	margin: 0;
 	position: relative;
@@ -587,12 +599,12 @@ a.list-item:hover {
 	border: 1px solid #e7e7e7;
 }
 
-.send-btn {
+.container .send-btn {
 	background-color: #fff;
 	border-radius: 4px;
 }
 
-.clearfix {
+.container .clearfix {
 	display: inline-block;
 }
 /*  Hides from IE-mac  \*/
@@ -600,49 +612,49 @@ a.list-item:hover {
 	height: 1%;
 }
 
-.clearfix {
+.container .clearfix {
 	display: block;
 }
 
-.shoppingcar:hover>.car {
+.container .shoppingcar:hover>.car {
 	display: block;
 }
 
 /*div 滚动条*/
-div::-webkit-scrollbar {
+.container div::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
 }
 
-div::-webkit-scrollbar-thumb {
+.container div::-webkit-scrollbar-thumb {
 	background-color: rgba(0, 0, 0, .05);
 	border-radius: 10px;
 	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
 }
 
-div::-webkit-scrollbar-thumb {
+.container div::-webkit-scrollbar-thumb {
 	background-color: rgba(0, 0, 0, .2);
 	border-radius: 10px;
 	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
 }
 
-div::-webkit-scrollbar-thumb:hover {
+.container div::-webkit-scrollbar-thumb:hover {
 	background-color: rgba(0, 0, 0, .4);
 	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
 }
 
-div::-webkit-scrollbar-track {
+.container div::-webkit-scrollbar-track {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
 	background-color: white;
 }
 
-div::-webkit-scrollbar-track:hover {
+.container div::-webkit-scrollbar-track:hover {
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .4);
 	background-color: rgba(0, 0, 0, .01);
 }
 
-.recarea {
+.container .recarea {
 	font-size: 12px;
 	resize: none;
 	overflow-x: hidden;
@@ -658,11 +670,11 @@ div::-webkit-scrollbar-track:hover {
 	margin: 10px;
 }
 
-.grey {
+.container .grey {
 	background-color: #f4f4f4;
 }
 
-.point {
+.container .point {
 	width: 7px;
 	height: 7px;
 	-moz-border-radius: 15px;
