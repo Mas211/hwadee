@@ -88,7 +88,6 @@
 	WHERE
 			a.account_class_id = #{value}
 	</select>
-	
 	<select id="findAll" resultMap="attendanceMap">
 	SELECT
         a.account_id,

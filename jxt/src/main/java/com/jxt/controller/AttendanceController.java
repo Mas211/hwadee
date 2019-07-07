@@ -38,7 +38,9 @@ public class AttendanceController {
 		else if(user.getRoleId() == 3){
 			as = attendanceService.findByClass(id);
 		}
-		else as=attendanceService.findAll();
+
+		else as = attendanceService.findAll();
+
 		
 		model.addAttribute("as", as);
 		return "attend";
