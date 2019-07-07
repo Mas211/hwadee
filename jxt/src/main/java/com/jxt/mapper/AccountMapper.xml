@@ -6,8 +6,8 @@
 	
 	 <!-- 需要修改的地方 -->
 	<insert id="insert" parameterType="com.jxt.entity.Account" useGeneratedKeys="true" keyProperty="accountId">
-		INSERT INTO account(account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject) 
-		VALUES(#{accountId}, #{roleId}, #{accountPassword}, #{accountName}, #{accountSex}, #{accountPhone}, #{accountAddress}, #{parId}, #{accountClassId}, #{tSubject})
+		INSERT INTO account(account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject, last_log_time) 
+		VALUES(#{accountId}, #{roleId}, #{accountPassword}, #{accountName}, #{accountSex}, #{accountPhone}, #{accountAddress}, #{parId}, #{accountClassId}, #{tSubject}, #{lastLogTime})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
@@ -20,7 +20,7 @@
 	<select id="findById" parameterType="int"
 		resultType="com.jxt.entity.Account">
 		SELECT
-			account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject
+			account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject, last_log_time
 		FROM
 			account
 		WHERE
@@ -31,7 +31,7 @@
 	<select id="search" parameterType="int"
 		resultType="com.jxt.entity.Account">
 		SELECT
-			account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject
+			account_id, role_id, account_password, account_name, account_sex, account_phone, account_address, par_id, account_class_id, t_subject, last_log_time
 		FROM
 			account
 		WHERE
@@ -47,12 +47,18 @@
 	
 	<select id="findClassId" parameterType="int" resultType="int">
 		SELECT
-			class_id
+			account_class_id
 		FROM
-			account_class
+			account
 		WHERE
 			account_id = #{accountId}
 	</select>
+	
+	<update id="updateTime" parameterType="com.jxt.entity.Account">
+		UPDATE account SET last_log_time = #{lastLogTime}
+		WHERE
+			account_id = #{accountId}
+	</update>
 	
 	
 </mapper>

@@ -45,5 +45,12 @@ public class AccountServiceImpl implements AccountService {
 		// TODO Auto-generated method stub
 		return accountMapper.findById(accountId);
 	}
+	
+	@Override
+	public int updateTime(Account account) {
+		System.out.println("我来");
+		System.out.println(account.toString());
+		return accountMapper.updateTime(account);
+	}
 
 }
