@@ -175,7 +175,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -235,7 +235,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -340,7 +340,7 @@
 							</div></a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -415,7 +415,7 @@
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
@@ -490,7 +490,7 @@
 						</div>
 						
 						<div class="fontawesome-icon-list">
-						<a class="agile-icon" href="/MyMessages/MessageCenter" target="view_window"> 
+						<a class="agile-icon" href="/u/s/MessageCenter" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-bell-o" aria-hidden="true"></i>消息中心
 								<c:if test="${sessionScope.newsAllRead eq false or sessionScope.homeworksAllRead eq false or sessionScope.messageAllRead eq false}">
