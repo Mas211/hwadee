@@ -442,16 +442,10 @@
 						            			var recContent = recArea.val();
 								            	var targetId = n.sourceId;
 								            	var messageId = n.messageId;
-								            	
-						            			$.get("/u/s/MyMessages/messageCommit",{targetId:targetId, messageContent:recContent, t:new Date()},function(message){
-						            				var replyId = message.messageId;
-						            				
-									            	recCard.hide();
-									            	var recDetails = messageDetails.find("div#leav.details-content");
-									            	recDetails.html("我的回复:"+recContent);
-						            				$.get("/u/s/MyMessages/setReply",{replyId:replyId, beReplyId:messageId,t:new Date()},function(){
-						            					
-						            				},"json");
+								            	recCard.hide();
+								            	var recDetails = messageDetails.find("div#leav.details-content");
+								            	recDetails.html("我的回复:"+recContent);
+						            			$.get("/u/s/MyMessages/messageReplyCommit",{targetId:targetId, messageContent:recContent, beReplyId:messageId, t:new Date()},function(){
 						            			},"json");
 						            		});
 						            		
