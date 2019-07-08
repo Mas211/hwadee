@@ -238,7 +238,7 @@
 							<div style=" float: right; width: 60%; padding-left: 20px">
 								<h3><a href="/news/${t.newsId }">${t.newsTitle}</a></h3>
 								<br/><br/>
-								<div style="color: #666; overflow: hidden;">${t.newsIntro}</div>
+								<div ><p style="color: #666; overflow: hidden; height: 50px;">${t.newsIntro}</p></div>
 							</div>
 						</div>
 					</c:forEach>

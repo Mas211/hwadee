@@ -15,6 +15,7 @@ public class Task {
 	private Date taskDeadline;
 	private Integer taskTeacherId;
 	private String taskIsFinish;
+	private Integer taskClassId;
 	private Account account;
 	
 	public Integer getTaskId() {
@@ -72,5 +73,11 @@ public class Task {
 		return "Task [taskId=" + taskId + ", taskTitle=" + taskTitle + ", taskContent=" + taskContent
 				+ ", taskBeginTime=" + taskBeginTime + ", taskDeadline=" + taskDeadline + ", taskTeacherId="
 				+ taskTeacherId + ", taskIsFinish=" + taskIsFinish + ", account=" + account + "]";
+	}
+	public Integer getTaskClassId() {
+		return taskClassId;
+	}
+	public void setTaskClassId(Integer taskClassId) {
+		this.taskClassId = taskClassId;
 	}
 }
