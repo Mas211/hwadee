@@ -58,7 +58,7 @@ public class NewsController {
 		
 		Message m = new Message();
 		m.setMessageType(1);
-		m.setMessageContent(news.getNewsContent());
+		m.setMessageContent(news.getNewsTitle());
 		m.setMessagePath("/news/" + news.getNewsId());
 		Date date = news.getNewsCreate();
 		m.setTime(date);

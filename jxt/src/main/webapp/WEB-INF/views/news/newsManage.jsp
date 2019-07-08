@@ -161,7 +161,8 @@
 							<td>${n.account.accountName }</td>
 							<td>${n.publisher}</td>
 							<td style="width: 200px;"><a href="/news/${n.newsId}">${n.newsTitle }</a></td>
-							<td style="width: 200px; overflow: hidden; height: 4em;">${n.newsIntro }</td>
+							<td style="width: 200px;"><p style=" overflow: hidden; height: 50px;" title="${n.newsIntro }">
+							${n.newsIntro }</p></td>
 							<td>${n.newsCreate }</td>
 							<td>${n.newsModified }</td>
 							<td><a href="/u/t/updateNews/${n.newsId}">修改</a>|<a href="/u/t/deleteNews/${n.newsId}">删除</a>|

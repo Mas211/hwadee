@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
-	<title>Document</title>
+	<title>消息中心</title>
 	<link rel="stylesheet" type="text/css" href="/MessageCenter.css" />
 	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
@@ -126,14 +126,14 @@
 					<ul class="list">
 						<li>
 							<c:if test="${sessionScope.newsAllRead == false}">
-								<div id="3" class="point" style="float:left"></div>
+								<div id="1" class="point" style="float:left"></div>
 							</c:if>
 							<a id="1" href="新闻通知">新闻通知</a>
 						</li>
 						<c:if test="${sessionScope.account.roleId ne 1 }">
 						<li>
 							<c:if test="${sessionScope.homeworksAllRead == false}">
-								<div id="3" class="point" style="float:left"></div>
+								<div id="2" class="point" style="float:left"></div>
 							</c:if>
 							<a id="2" href="作业通知">作业通知</a>
 						</li></c:if>
@@ -212,6 +212,7 @@
 	</div>
 	
 	<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js"></script>
 	<script type="text/javascript">
 		
 		$(function(){
@@ -286,20 +287,27 @@
 						});
 					}
 					else if(value.flag == 2){
+						$("div#2.point").hide();
+						$.get("/MyMessages/setRead",{messageType:"2",t:new Date().getTime()},function(){});
 						$.each(value.homeworks, function(i,m){
-							$("div#2.point").hide();
-							$.get("/MyMessages/setRead",{messageType:"2",t:new Date().getTime()},function(){});
+							
 							var card = $("<div/>").attr("class","new-item card");
 						
 							var cardTop = $("<div/>").attr("class","top");
 							var cardBottom = $("<div/>").attr("class","bottom");
-							var cardTopTitle = $("<span>你有一条作业通知</span>").attr("class","title");
+							$.get("/u/s/getRole",function(homeworkContent){
+								var cardTopTitle = $("<span />").attr("class","title").html(homeworkContent);
+								cardTop.append(cardTopTitle);
+							},"text");
+							/* var cardTopTitle = $("<span />").attr("class","title").html("你有一条作业");
+							cardTop.append(cardTopTitle);  */
 							var cardTopTime = $("<span/>").attr("class","time").html(m.time);
 							var cardBottomContent = $("<span/>").html(m.messageContent);
 							var cardA = $("<a>链接</a>").attr("href", m.messagePath).attr("class", "im-dynamic-link");
-							cardTop.append(cardTopTitle).append(cardTopTime).appendTo(card);
+							cardTop/* .append(cardTopTitle) */.append(cardTopTime).appendTo(card);
 							cardBottom.append(cardBottomContent).append(cardA).appendTo(card);
 							card.appendTo(bottom);
+							
 	
 						}); 
 					}
@@ -386,7 +394,9 @@
 					            			var mTime = $("<span />").html(n.time).attr("class","time");
 					            			var messageCard = $("<div />").attr("class","card");
 					            			var leavMessage = $("<div />").attr("class","message");
-					            			var messageTitle = $("<div>你有一条新的留言</div>").attr("class","message-content");
+
+					            			var messageTitle = $("<div>给你的留言</div>").attr("class","message-content");
+					            			
 					            			var messageDetails = $("<div />").attr("class","message");
 					            			var details = $("<div />").attr("class","details").html(n.messageContent);
 					            			messageDetails.append(details);
@@ -520,6 +530,8 @@
 			        		
 				        });
 				        
+				        
+				        
 				        button.on({
 				            "click": function(e){
 				            	var messageContent = textarea.val();
@@ -527,10 +539,25 @@
 				            	
 				            	$.get("/u/s/MyMessages/messageCommit",{targetId:targetId, messageContent:messageContent, session:$.session, t:new Date().getTime()},function(isLeav){
 				            			if(isLeav){
+				            				swal({
+				            					title:"留言成功!",
+				            					text:"你已经留言成功！",
+				        						type:"success"
+				          					})
 				            				textarea.val('');
 											input.val('');
 											input2.val('');
 											text.val('');
+											
+				            			}
+				            			else{
+				            				swal({
+				            					title:"留言失败!",
+				            					text:"你要留言的用户不存在！",
+				            					type:"info"
+				      
+				          					})
+
 				            			}
 				            		
 				            	},"json"); 

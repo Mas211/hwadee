@@ -137,7 +137,7 @@
 	</update>
 	
 	<select id="findNewsHomeworks" parameterType="int" resultType="Message">
-		SELECT
+		(SELECT
 			p.message_id,
 			p.source_id,
 			p.target_id,
@@ -148,7 +148,10 @@
 			p.message_path
 		FROM
 			message p
-		where message_type = #{messageType}
+		WHERE
+			message_type = #{messageType})
+		ORDER BY
+			p.time DESC
 	</select>
 	 	
 	 <delete id="deleteChat" parameterType="int">

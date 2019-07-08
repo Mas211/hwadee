@@ -115,7 +115,7 @@
 	<div class="services-breadcrumb">
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
-				<li><a href="/index">首页</a> <span>| |</span></li>
+				<li><a href="/u/s/menu">个人中心</a> <span>| |</span></li>
 				<li>修改个人信息</li>
 			</ul>
 		</div>
