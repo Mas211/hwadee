@@ -119,7 +119,7 @@
 		<div class="inner_breadcrumb">
 			<ul class="short_ls">
 				<li>
-					<a href="/index">首页</a>
+					<a href="/u/s/menu">个人中心</a>
 					<span>| |</span>
 				</li>
 				<li>活动详情</li>

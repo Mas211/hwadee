@@ -430,6 +430,7 @@
 							</a>
 						</div>
 						<div class="fontawesome-icon-list">
+
 						<a class="agile-icon" href="/u/t/activity/createActivity" target="view_window"> 
 							<div class="icon-box col-md-3 col-sm-4">
 								<i class="fa fa-puzzle-piece" aria-hidden="true"></i>发布活动照片
