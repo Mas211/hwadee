@@ -146,7 +146,6 @@ public class MessageControll {
 	//提交留言，插入数据库
 	//返回是否提交成功(判断是否存在留言目标用户)
 	//warning:我要留言的留言replyId指向一个初始留言(暂且假定为1号留言)
-	//留言类型和title还没用上
 	@GetMapping("/u/s/MyMessages/messageCommit")
 	public @ResponseBody boolean messageCommit(String targetId,String messageContent,HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
@@ -173,14 +172,32 @@ public class MessageControll {
 	}
 	
 	//更新留言的replyId
-	@GetMapping("/u/s/MyMessages/setReply")
-	public @ResponseBody void haveReply(int replyId,int beReplyId) {
-		System.out.println("更新中"+replyId+beReplyId);
+	@GetMapping("/u/s/MyMessages/messageReplyCommit")
+	public @ResponseBody void messageReplyCommit(Integer targetId, String messageContent,Integer beReplyId,HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		Account account = (Account) session.getAttribute("account");
+		int sourceId = account.getAccountId();
+		Message message = new Message();
+		message.setTargetId(targetId);
+		message.setSourceId(sourceId);
+		message.setMessageType(3);
+		message.setReplyId(1);//初始id，表示这条留言没有回复留言
+		message.setIsRead(0);
+		message.setMessageContent(messageContent);
+		message.setTime(new Date());
+		messageService.add(message); 
+		Integer replyId = message.getMessageId();
+		System.out.println("更新中"+replyId+beReplyId+messageContent);
 		messageService.updateReply(beReplyId, replyId);
 		
 	}
 	
-	
+	@GetMapping("/u/s/MyMessages/setReply")
+	public @ResponseBody void haveReply(Integer replyId,Integer beReplyId) {
+		System.out.println("更新中"+replyId+beReplyId);
+		messageService.updateReply(beReplyId, replyId);
+		
+	}
 
 	@GetMapping("/u/s/MyMessages/test")
 	public @ResponseBody void test(int sourceId){
