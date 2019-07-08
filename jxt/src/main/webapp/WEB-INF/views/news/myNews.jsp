@@ -147,7 +147,7 @@
 							<td>${n.editorId }</td>
 							<td>${n.publisher}</td>
 							<td><a href="/news/${n.newsId}">${n.newsTitle }</a></td>
-							<td>${n.newsIntro }</td>
+							<td style="width: 200px;"><p style=" overflow: hidden; height: 50px;" title="${n.newsIntro }">${n.newsIntro }</td>
 							<td>${n.newsCreate }</td>
 							<td>${n.newsModified }</td>
 							<td><a href="/u/t/updateNews/${n.newsId}">修改</a>&nbsp;|&nbsp;<a href="/u/t/deleteNews/${n.newsId}">删除</a></td>

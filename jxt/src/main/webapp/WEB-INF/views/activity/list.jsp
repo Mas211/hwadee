@@ -138,7 +138,7 @@
 							<span>| |</span>
 						</li>
 						<li>
-							<a href="/u/t/activity/activity">发布活动</a>
+							<a href="/u/t/activity/createActivity">发布活动</a>
 							<span>| |</span>
 						</li>
 					</c:otherwise>
