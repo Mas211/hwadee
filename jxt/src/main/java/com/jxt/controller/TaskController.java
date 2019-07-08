@@ -35,11 +35,12 @@ public class TaskController {
 		else {
 			//将任务数据写入消息中
 			Message message = new Message();
-			message.setTargetId(task.getTaskId());
+			message.setTargetId(task.getTaskClassId());
 			message.setSourceId(task.getTaskTeacherId());
 			message.setMessageType(2); 
 			message.setTime(new Date());
 			message.setMessageContent(task.getTaskContent());
+			message.setMessagePath("/u/s/homework/listhomework");
 			int row = taskService.addMessage(message);
 			if(row != message.getMessageId()) {
 				throw new RuntimeException("添加失败");
