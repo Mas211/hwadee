@@ -39,7 +39,7 @@ public class RegisterController {
 			registerService.update(account_student);
 			account.setRoleId(4);
 			int rows = registerService.register(account);
-			target = "redirect:/login.jsp";
+			target = "redirect:/login";
 		}		
 		return target;
 	}

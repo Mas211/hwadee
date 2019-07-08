@@ -27,15 +27,10 @@ public class AuthInterceptor implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		Account account =(Account) session.getAttribute("account");
 		if( null != account ) {
-			
 			List<Auth> list = as.getAuthByRoleId(account.getRoleId());
 			for(Auth a : list) {
 				if( uri.startsWith( a.getAuthPath()) ) {
 					return true;
-				}
-				else {
-					response.sendRedirect("/u/menu");
-					return false;
 				}
 			}
 		}

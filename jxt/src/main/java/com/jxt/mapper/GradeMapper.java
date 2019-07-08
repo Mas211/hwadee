@@ -14,7 +14,7 @@ public interface GradeMapper {
 	// 查
 	List<Grade> findById(int stuId);
 	List<Grade> findAll();
-	int findByParId(int parId);
+	int findByParId(int accountId);
 
 	// 改
 	int update(Grade grade);

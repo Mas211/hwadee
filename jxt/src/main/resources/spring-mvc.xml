@@ -31,7 +31,7 @@
 	<!-- 拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/u/*" />
+			<mvc:mapping path="/u/**" />
 			<bean class="com.jxt.interceptor.AuthInterceptor" ></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>

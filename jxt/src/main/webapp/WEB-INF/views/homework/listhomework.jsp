@@ -56,7 +56,7 @@
 					<span class="fa fa-map-marker" aria-hidden="true"></span>成都，中国
 				</p>
 			</div>
-			<div class="bottom_header_right" style="width: 40%;">
+			<div class="bottom_header_right" style="width: 80%;">
 				<div class="header-top-righ">
 					<a href="/logout"> <span class="fa fa-sign-out"
 						aria-hidden="true"></span>注销
@@ -184,7 +184,7 @@
 								<tr>
 									<td>${t.taskId }</td>
 									<td>${t.account.accountName }</td>
-									<td>${t.account.accountClassId }</td>
+									<td>${t.taskClassId }</td>
 									<td>${t.taskTitle }</td>
 									<td>${t.taskBeginTime }</td>
 									<td>${t.taskDeadline }</td>
@@ -217,11 +217,11 @@
 						<tbody>
 							<c:forEach items="${requestScope.tasks }" var="t">
 									<c:if
-										test="${sessionScope.account.accountClassId == t.account.accountClassId}">
+										test="${sessionScope.account.accountClassId == t.taskClassId}">
 										<tr>
 											<td>${t.taskId }</td>
 											<td>${t.account.accountName }</td>
-											<td>${t.account.accountClassId }</td>
+											<td>${t.taskClassId }</td>
 											<td>${t.taskTitle }</td>
 											<td>${t.taskBeginTime }</td>
 											<td>${t.taskDeadline }</td>
@@ -250,11 +250,11 @@
 						<tbody>
 							<c:forEach items="${requestScope.tasks }" var="t">
 									<c:if
-										test="${sessionScope.account.accountClassId == t.account.accountClassId}">
+										test="${sessionScope.account.accountClassId == t.taskClassId}">
 										<tr>
 											<td>${t.taskId }</td>
 											<td>${t.account.accountName }</td>
-											<td>${t.account.accountClassId }</td>
+											<td>${t.taskClassId }</td>
 											<td>${t.taskTitle }</td>
 											<td>${t.taskBeginTime }</td>
 											<td>${t.taskDeadline }</td>

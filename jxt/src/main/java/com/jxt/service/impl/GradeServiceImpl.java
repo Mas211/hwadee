@@ -49,9 +49,9 @@ public class GradeServiceImpl implements GradeService {
 	}
 
 	@Override
-	public int getStuIdByParId(int parId) {
+	public int getStuIdByParId(int accountId) {
 		// TODO Auto-generated method stub
-		return gradeMapper.findByParId(parId);
+		return gradeMapper.findByParId(accountId);
 	}
 
 }

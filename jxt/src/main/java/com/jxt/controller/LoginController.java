@@ -94,26 +94,6 @@ public class LoginController {
 					System.out.println(account.toString());
 					accountService.updateTime(account);
 					
-					/*if(account.getRoleId()==1)
-					{
-						target = "redirect:/adminMenu";
-					}
-					else if(account.getRoleId()==2)
-					{
-						target = "redirect:/masterMenu";
-					}
-					else if(account.getRoleId()==3) 
-					{
-						target = "redirect:/teacherMenu";
-					}
-					else if(account.getRoleId()==4) 
-					{
-						target = "redirect:/parentMenu";
-					}
-					else if(account.getRoleId()==5) 
-					{
-						target = "redirect:/studentMenu";
-					}*/
 					target = "redirect:/u/s/menu";
 				}
 				else if(account.getRoleId()!=role_id_int) {

@@ -58,7 +58,7 @@ public class GradeController {
 		int stuId = 0;
 		if(roleId == 4) {
 			//如果是家长，就找到学生学号
-			stuId = gradeService.getStuIdByParId(user.getParId());
+			stuId = gradeService.getStuIdByParId(user.getAccountId());
 		}
 		else {
 			stuId = user.getAccountId();
