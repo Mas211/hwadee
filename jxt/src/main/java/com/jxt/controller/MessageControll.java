@@ -61,7 +61,12 @@ public class MessageControll {
 		Value value = new Value();
 		value.setFlag(typeId);
 		if(typeId==1) {
-			value.setNews(messageService.listNewsMessages());
+			List<Message> newsList = messageService.listNewsMessages();
+//			value.setNews(messageService.listNewsMessages());
+			value.setNews(newsList);
+			for(Message m:newsList) {
+				System.out.println(m.toString());
+			}
 		}
 		else if(typeId==2) {
 			value.setHomeworks(messageService.listHomeWorksMessages(targetId));
@@ -113,8 +118,11 @@ public class MessageControll {
 		return "MessageCenter/news";
 	}
 	
+	
+	
+	
 	@RequestMapping(value = "/u/s/getRole",method = RequestMethod.GET)
-	public String getRole(HttpServletRequest request){
+	public@ResponseBody String getRole(HttpServletRequest request){
 		HttpSession session = request.getSession(false);
 		Account account = (Account) session.getAttribute("account");
 		System.out.println("用户的roleId为:"+account.getRoleId());

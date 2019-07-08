@@ -295,17 +295,18 @@
 							var cardTop = $("<div/>").attr("class","top");
 							var cardBottom = $("<div/>").attr("class","bottom");
 							$.get("/u/s/getRole",function(homeworkContent){
-								
 								var cardTopTitle = $("<span />").attr("class","title").html(homeworkContent);
 								cardTop.append(cardTopTitle);
-							},"json");
-							
+							},"text");
+							/* var cardTopTitle = $("<span />").attr("class","title").html("你有一条作业");
+							cardTop.append(cardTopTitle);  */
 							var cardTopTime = $("<span/>").attr("class","time").html(m.time);
 							var cardBottomContent = $("<span/>").html(m.messageContent);
 							var cardA = $("<a>链接</a>").attr("href", m.messagePath).attr("class", "im-dynamic-link");
 							cardTop/* .append(cardTopTitle) */.append(cardTopTime).appendTo(card);
 							cardBottom.append(cardBottomContent).append(cardA).appendTo(card);
 							card.appendTo(bottom);
+							
 	
 						}); 
 					}
