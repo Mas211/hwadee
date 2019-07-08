@@ -47,8 +47,8 @@
 			</div>
 			<div class="bottom_header_right">
 				<div class="header-top-righ">
-					<a href="/logout"> <span class="fa fa-sign-out"
-						aria-hidden="true"></span>注销
+					<a href="/login"> <span class="fa fa-sign-out"
+						aria-hidden="true"></span>登录
 					</a>
 				</div>
 				<div class="clearfix"></div>
@@ -138,7 +138,7 @@
 					</div>
 					<div class="">
 						<p>学生账号 </p>
-						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required=""  value="1"/><span></span>
+						<input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'') "  onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  name="accountId" required="required" /><span></span>
 					</div>
 					<div class="">
 						<p>学生姓名</p>

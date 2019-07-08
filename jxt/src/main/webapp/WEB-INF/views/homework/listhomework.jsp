@@ -216,17 +216,20 @@
 						</thead>
 						<tbody>
 							<c:forEach items="${requestScope.tasks }" var="t">
-								<tr>
-									<td>${t.taskId }</td>
-									<td>${t.account.accountName }</td>
-									<td>${t.account.accountClassId }</td>
-									<td>${t.taskTitle }</td>
-									<td>${t.taskBeginTime }</td>
-									<td>${t.taskDeadline }</td>
-									<td>${t.taskContent }</td>
-									<td>${t.taskIsFinish }</td>
-								</tr>
-							</c:forEach>
+									<c:if
+										test="${sessionScope.account.accountClassId == t.account.accountClassId}">
+										<tr>
+											<td>${t.taskId }</td>
+											<td>${t.account.accountName }</td>
+											<td>${t.account.accountClassId }</td>
+											<td>${t.taskTitle }</td>
+											<td>${t.taskBeginTime }</td>
+											<td>${t.taskDeadline }</td>
+											<td>${t.taskContent }</td>
+											<td>${t.taskIsFinish }</td>
+										</tr>
+									</c:if>
+								</c:forEach>
 						</tbody>
 					</table>
 				</c:when>
@@ -246,17 +249,20 @@
 						</thead>
 						<tbody>
 							<c:forEach items="${requestScope.tasks }" var="t">
-								<tr>
-									<td>${t.taskId }</td>
-									<td>${t.account.accountName }</td>
-									<td>${t.account.accountClassId }</td>
-									<td>${t.taskTitle }</td>
-									<td>${t.taskBeginTime }</td>
-									<td>${t.taskDeadline }</td>
-									<td>${t.taskContent }</td>
-									<td>${t.taskIsFinish }</td>
-								</tr>
-							</c:forEach>
+									<c:if
+										test="${sessionScope.account.accountClassId == t.account.accountClassId}">
+										<tr>
+											<td>${t.taskId }</td>
+											<td>${t.account.accountName }</td>
+											<td>${t.account.accountClassId }</td>
+											<td>${t.taskTitle }</td>
+											<td>${t.taskBeginTime }</td>
+											<td>${t.taskDeadline }</td>
+											<td>${t.taskContent }</td>
+											<td>${t.taskIsFinish }</td>
+										</tr>
+									</c:if>
+								</c:forEach>
 						</tbody>
 					</table>
 				</c:when>

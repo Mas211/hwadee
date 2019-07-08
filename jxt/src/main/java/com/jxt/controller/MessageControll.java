@@ -37,6 +37,7 @@ public class MessageControll {
 	@GetMapping("/MyMessages/setRead")
 	public @ResponseBody void setRead(int messageType, HttpServletRequest request) {
 		HttpSession httpSession = request.getSession(false);
+
 		if (messageType == 1) {
 			httpSession.setAttribute("newsAllRead", true);
 			System.out.println("新闻已读bool"+httpSession.getAttribute("newsAllRead"));

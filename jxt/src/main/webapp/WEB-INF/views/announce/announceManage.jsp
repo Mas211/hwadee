@@ -163,7 +163,7 @@
 							<p id="parse" style=" overflow: hidden; height: 100px;">${a.announceWord}</p></td>							
 							<td  style="vertical-align: middle;">${a.announceTime }</td>
 							<td  style="vertical-align: middle;">${a.announceModified }</td>
-							<td  style="vertical-align: middle;"><a href="/u/t/updateAnnounce/${a.announceId}">修改</a>|<a href="/deleteAnnounce/${a.announceId}">删除</a>|
+							<td  style="vertical-align: middle;"><a href="/u/updateAnnounce/${a.announceId}">修改</a>|<a href="/u/deleteAnnounce/${a.announceId}">删除</a>|
 							<c:if test="${a.setTop eq 1}"><a href="/u/cancelAnnounceTop/${a.announceId}">取消置顶</a></c:if>
 							<c:if test="${a.setTop ne 1}"><a href="/u/setAnnounceTop/${a.announceId}">置顶</a>&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;</c:if>

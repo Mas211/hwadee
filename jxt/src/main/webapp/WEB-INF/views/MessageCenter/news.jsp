@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
-	<title>Document</title>
+	<title>消息中心</title>
 	<link rel="stylesheet" type="text/css" href="/MessageCenter.css" />
 	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
@@ -130,12 +130,13 @@
 							</c:if>
 							<a id="1" href="新闻通知">新闻通知</a>
 						</li>
+						<c:if test="${sessionScope.account.roleId ne 1 }">
 						<li>
 							<c:if test="${sessionScope.homeworksAllRead == false}">
 								<div id="2" class="point" style="float:left"></div>
 							</c:if>
 							<a id="2" href="作业通知">作业通知</a>
-						</li>
+						</li></c:if>
 						<li>
 							<c:if test="${sessionScope.messageAllRead == false}">
 								<div id="3" class="point" style="float:left"></div>

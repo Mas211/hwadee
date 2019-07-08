@@ -24,7 +24,7 @@ public class CommentController {
 	private RegisterService registerService;
 	
 	String target = "";
-	@RequestMapping(value="/u/t/commentadding",method=RequestMethod.GET)
+	@RequestMapping(value="/u/s/commentadding",method=RequestMethod.GET)
 	public String get(){
 		return "commentadding";
 	}
@@ -59,7 +59,7 @@ public class CommentController {
 	
 	
 	//老师添加学生评语
-	@RequestMapping(value="/u/t/commentadding",method=RequestMethod.POST)
+	@RequestMapping(value="/u/s/commentadding",method=RequestMethod.POST)
 	public String register(Comment comment,HttpServletRequest request) throws Exception{
 		HttpSession session = request.getSession(false);
 		Account account = (Account) session.getAttribute("account");
