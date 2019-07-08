@@ -139,7 +139,7 @@
 				
 					<div>
 						<a href="/news/${t.newsId}" target="view_window">
-							<img src="${n.newsCoverPath}" width="100%" height="100%">
+							<img src="${t.newsCoverPath}" width="100%" height="100%">
 							<h3>${t.newsTitle}</h3>
 							<p style="font-family: 'Open Sans', sans-serif; height: 80px; color: #999; overflow: hidden;">${t.newsIntro}</p>
 						</a>
